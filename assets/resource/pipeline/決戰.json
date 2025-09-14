@@ -6,7 +6,7 @@
             "决战沉默战士",
             "退出决战",
             "自动决战",
-            "识别决战点"
+            "Ex_select"
         ]
     },
     "决战领取奖励": {
@@ -85,15 +85,43 @@
         ],
         "action": "Click",
         "next": [
+            "Ex_select"
+        ]
+    },
+    "Ex_select": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    1043,
+                    583,
+                    71,
+                    47
+                ],
+                "expected": [
+                    "^Ex","^EX"
+                ]
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "final_battle_ex_select",
+                "custom_action_param": {
+                    "want_to": 6
+                }
+            }
+        },
+        "next": [
             "识别决战点"
         ]
     },
     "识别决战点": {
         "next": [
             "重置关卡",
-            "决战沉默战士E6-3",
-            "决战沉默战士E6-23",
-            "决战沉默战士E6-1"
+            "决战沉默战士Ek-3",
+            "决战沉默战士Ek-23",
+            "决战沉默战士Ek-1"
         ]
     },
     "重置关卡": {
@@ -141,7 +169,7 @@
         ],
         "action": "Click",
         "next": [
-            "决战沉默战士E6-1"
+            "决战沉默战士Ek-1"
         ]
     },
     "决战次数已耗尽": {
@@ -153,14 +181,15 @@
         ],
         "focus": "决战次数已耗尽"
     },
-    "决战沉默战士E6-1": {
+    "决战沉默战士Ek-1": {
         "recognition": "TemplateMatch",
-        "template": "E6-1.png",
+        "template": "Ek-1",
+        "threshold": 0.99,
         "roi": [
-            625,
-            55,
-            278,
-            247
+            357,
+            57,
+            801,
+            388
         ],
         "next": [
             "检查副官"
@@ -222,7 +251,7 @@
             74
         ],
         "next": [
-            "进入沉默战士决战E6-1"
+            "进入沉默战士决战Ek-1"
         ],
         "focus": "副官替换"
     },
@@ -237,17 +266,18 @@
         ],
         "action": "Click",
         "next": [
-            "进入沉默战士决战E6-1"
+            "进入沉默战士决战Ek-1"
         ]
     },
-    "决战沉默战士E6-23": {
+    "决战沉默战士Ek-23": {
         "recognition": "TemplateMatch",
-        "template": "E6-2.png",
+        "template": "Ek-2",
+        "threshold": 0.99,
         "roi": [
-            637,
-            353,
-            100,
-            85
+            357,
+            57,
+            801,
+            388
         ],
         "next": [
             "检查副官1"
@@ -309,7 +339,7 @@
             74
         ],
         "next": [
-            "决战沉默战士E6-22"
+            "决战沉默战士Ek-22"
         ],
         "focus": "副官替换"
     },
@@ -324,28 +354,31 @@
         ],
         "action": "Click",
         "next": [
-            "决战沉默战士E6-22"
+            "决战沉默战士Ek-22"
         ]
     },
-    "进入沉默战士决战E6-1": {
+    "进入沉默战士决战Ek-1": {
         "recognition": "TemplateMatch",
-        "template": "E6-1.png",
+        "template": "Ek-1",
+        "threshold": 0.99,
         "roi": [
-            625,
-            55,
-            278,
-            247
+            357,
+            57,
+            801,
+            388
         ],
         "action": "Click",
         "next": [
             "上次选船",
-            "选择前进点A1"
+            "选择前进点A1",
+            "检查开局舰船1",
+            "战备舰队获取刷新"
         ],
         "on_error": [
             "决战检查编队",
             "决战解装"
         ],
-        "focus": "进入沉默战士决战E6"
+        "focus": "进入沉默战士决战Ek-1"
     },
     "决战检查编队": {
         "recognition": "TemplateMatch",
@@ -379,7 +412,9 @@
         "template": "上次选船确定.png",
         "action": "Click",
         "next": [
-            "选择前进点A1"
+            "选择前进点A1",
+            "检查开局舰船1",
+            "战备舰队获取刷新"
         ],
         "focus": "上次选船确认"
     },
@@ -394,7 +429,9 @@
         ],
         "action": "Click",
         "next": [
-            "前进点确认A1"
+            "前进点确认A1",
+            "检查开局舰船1",
+            "战备舰队获取刷新"
         ],
         "focus": "选择前进点"
     },
@@ -498,7 +535,7 @@
         "template": "确认退出.png",
         "action": "Click",
         "next": [
-            "进入沉默战士决战E6-1"
+            "进入沉默战士决战Ek-1"
         ]
     },
     "初始确定": {
@@ -743,6 +780,7 @@
         "recognition": "TemplateMatch",
         "template": "决战编队.png",
         "action": "Click",
+        "post_delay": 1000,
         "focus": "结束战前决策，进入编队"
     },
     "决战进入编队界面": {
@@ -778,6 +816,7 @@
     "决战添加舰船": {
         "recognition": "TemplateMatch",
         "template": "添加舰船.png",
+        "post_wait_freezes": 2000,
         "action": "Click",
         "next": [
             "决战优先添加",
@@ -1421,7 +1460,7 @@
     },
     "决战识别boss点": {
         "recognition": "TemplateMatch",
-        "template": "决战J1.png",
+        "template": "final_boss",
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
@@ -1438,7 +1477,7 @@
     },
     "决战识别boss点2": {
         "recognition": "TemplateMatch",
-        "template": "决战J1.png",
+        "template": "final_boss",
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
@@ -1471,6 +1510,7 @@
     "决战添加舰船BOSS": {
         "recognition": "TemplateMatch",
         "template": "添加舰船.png",
+        "post_wait_freezes": 2000,
         "action": "Click",
         "next": [
             "决战优先添加BOSS",
@@ -1917,7 +1957,7 @@
         "action": "Click",
         "target": "决战再次确认通关",
         "next": [
-            "决战沉默战士E6-2",
+            "决战沉默战士Ek-2",
             "决战奖励舰船"
         ]
     },
@@ -1925,22 +1965,23 @@
         "action": "Click",
         "target": "决战再次确认通关2",
         "next": [
-            "决战沉默战士E6-22",
+            "决战沉默战士Ek-22",
             "决战奖励舰船2"
         ]
     },
-    "决战沉默战士E6-2": {
+    "决战沉默战士Ek-2": {
         "recognition": "TemplateMatch",
-        "template": "E6-2.png",
+        "template": "Ek-2",
+        "threshold": 0.99,
         "roi": [
-            637,
-            353,
-            100,
-            85
+            357,
+            57,
+            801,
+            388
         ],
         "action": "Click",
         "next": [
-            "决战E6-2凹开局"
+            "决战Ek-2凹开局"
         ],
         "interrupt": [
             "决战前进点A1"
@@ -1948,20 +1989,21 @@
         "on_error": [
             "决战解装"
         ],
-        "focus": "进入E6-2"
+        "focus": "进入Ek-2"
     },
-    "决战沉默战士E6-22": {
+    "决战沉默战士Ek-22": {
         "recognition": "TemplateMatch",
-        "template": "E6-2.png",
+        "template": "Ek-2",
+        "threshold": 0.99,
         "roi": [
-            637,
-            353,
-            100,
-            85
+            357,
+            57,
+            801,
+            388
         ],
         "action": "Click",
         "next": [
-            "决战E6-2凹开局2"
+            "决战Ek-2凹开局2"
         ],
         "interrupt": [
             "决战前进点A1"
@@ -1970,7 +2012,7 @@
             "决战决策3",
             "决战解装"
         ],
-        "focus": "进入E6-2"
+        "focus": "进入Ek-2"
     },
     "决战前进点A1": {
         "recognition": "OCR",
@@ -1993,7 +2035,7 @@
         "action": "Click",
         "focus": "确认前进点"
     },
-    "决战E6-2凹开局": {
+    "决战Ek-2凹开局": {
         "recognition": "OCR",
         "expected": "战备舰队获取",
         "next": [
@@ -2023,7 +2065,7 @@
         "template": "确认退出.png",
         "action": "Click",
         "next": [
-            "决战沉默战士E6-2"
+            "决战沉默战士Ek-2"
         ]
     },
     "放弃重开3": {
@@ -2047,10 +2089,10 @@
         "template": "确认退出.png",
         "action": "Click",
         "next": [
-            "决战沉默战士E6-22"
+            "决战沉默战士Ek-22"
         ]
     },
-    "决战E6-2凹开局2": {
+    "决战Ek-2凹开局2": {
         "recognition": "OCR",
         "expected": "战备舰队获取",
         "next": [
@@ -2171,6 +2213,7 @@
     "决战添加舰船2": {
         "recognition": "TemplateMatch",
         "template": "添加舰船.png",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "决战添加舰船3"
@@ -2326,7 +2369,7 @@
     },
     "决战识别boss点3": {
         "recognition": "TemplateMatch",
-        "template": "决战J1.png",
+        "template": "final_boss",
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
@@ -2519,18 +2562,19 @@
         "action": "Click",
         "target": "决战再次确认通关3",
         "next": [
-            "决战沉默战士E6-3",
+            "决战沉默战士Ek-3",
             "决战奖励舰船3"
         ]
     },
-    "决战沉默战士E6-3": {
+    "决战沉默战士Ek-3": {
         "recognition": "TemplateMatch",
-        "template": "E6-3.png",
+        "template": "Ek-3",
+        "threshold": 0.99,
         "roi": [
-            1065,
-            324,
-            105,
-            79
+            357,
+            57,
+            801,
+            388
         ],
         "next": [
             "更换副官"
@@ -2591,7 +2635,7 @@
             74
         ],
         "next": [
-            "进入沉默战士决战E6-3"
+            "进入沉默战士决战Ek-3"
         ],
         "focus": "副官替换"
     },
@@ -2606,17 +2650,18 @@
         ],
         "action": "Click",
         "next": [
-            "进入沉默战士决战E6-3"
+            "进入沉默战士决战Ek-3"
         ]
     },
-    "进入沉默战士决战E6-3": {
+    "进入沉默战士决战Ek-3": {
         "recognition": "TemplateMatch",
-        "template": "E6-3.png",
+        "template": "Ek-3",
+        "threshold": 0.99,
         "roi": [
-            1065,
-            324,
-            105,
-            79
+            357,
+            57,
+            801,
+            388
         ],
         "action": "Click",
         "next": [
@@ -2625,7 +2670,7 @@
         "on_error": [
             "决战解装"
         ],
-        "focus": "进入E6-3"
+        "focus": "进入Ek-3"
     },
     "决战决策4": {
         "recognition": "TemplateMatch",
@@ -2792,13 +2837,13 @@
         "target": "决战点击继续4",
         "next": [
             "决战决策4",
-            "决战沉默战士E6",
+            "决战沉默战士Ek",
             "决战再点继续4"
         ]
     },
     "决战识别boss点4": {
         "recognition": "TemplateMatch",
-        "template": "决战J1.png",
+        "template": "final_boss",
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
@@ -3005,11 +3050,11 @@
         "action": "Click",
         "target": "决战再次确认通关3",
         "next": [
-            "决战沉默战士E6",
+            "决战沉默战士Ek",
             "决战奖励舰船4"
         ]
     },
-    "决战沉默战士E6": {
+    "决战沉默战士Ek": {
         "recognition": "OCR",
         "expected": "重置关卡",
         "next": [

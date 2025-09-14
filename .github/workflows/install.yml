@@ -91,6 +91,11 @@ jobs:
           out-file-path: "MFA"
           extract: true
 
+      - name: Setup Embed Python on Windows
+        shell: bash
+        run: |
+          python setup_embed_python.py
+
       - name: Install
         shell: bash
         run: |
@@ -136,6 +141,19 @@ jobs:
           latest: true
           out-file-path: "MFA"
           extract: true
+
+      - name: Setup Embed Python on macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          python3 setup_embed_python.py
+          EMBED_PYTHON_PATH="./install/python/bin/python3"
+          if [ -f "$EMBED_PYTHON_PATH" ]; then
+            echo "Setting execute permission for $EMBED_PYTHON_PATH"
+            chmod +x "$EMBED_PYTHON_PATH"
+          else
+            echo "Warning: Embedded Python executable not found at $EMBED_PYTHON_PATH. Skipping chmod."
+          fi
 
       - name: Install
         shell: bash

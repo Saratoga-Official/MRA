@@ -20,6 +20,13 @@
             ]
         }
     ],
+    "agent": {
+        "child_exec": "{PROJECT_DIR}/python/python.exe",
+        "child_args": [
+            "-u",
+            "{PROJECT_DIR}/agent/main.py"
+        ]
+    },
     "task": [
         {
             "name": "开始前任务",
@@ -104,10 +111,12 @@
                 "战斗无限次数",
                 "战斗大破/中破舰船处理",
                 "船舱满自动拆船（危险功能）",
+                "拆船时保留装备",
                 "战斗使用军阶buff",
                 "战斗节点",
                 "门口SL目标1",
                 "门口SL目标2",
+                "点2SL目标",
                 "节点1阵型",
                 "节点1追击",
                 "节点2阵型",
@@ -190,7 +199,7 @@
             }
         },
         {
-            "name": "自动决战E6",
+            "name": "自动决战Ek",
             "entry": "开始自动决战",
             "check": false,
             "repeatable": true,
@@ -205,6 +214,7 @@
                 "[color:red]⑧由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MRA（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
             ],
             "option": [
+                "自动决战Ex-?",
                 "第一关开局舰船1",
                 "第一关开局舰船2",
                 "第二关开局舰船",
@@ -1373,6 +1383,75 @@
                 }
             ]
         },
+        "点2SL目标": {
+            "cases": [
+                {
+                    "name": "无",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "轻母",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "轻母"
+                        }
+                    }
+                },
+                {
+                    "name": "雷巡",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "雷巡"
+                        }
+                    }
+                },
+                {
+                    "name": "重巡",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "重巡"
+                        }
+                    }
+                },
+                {
+                    "name": "轻巡",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "轻巡"
+                        }
+                    }
+                },
+                {
+                    "name": "驱逐",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "驱逐"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "潜艇"
+                        }
+                    }
+                },
+                {
+                    "name": "无补给",
+                    "pipeline_override": {
+                        "点2识别SL目标1": {
+                            "expected": "补给",
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
         "战斗大破/中破舰船处理": {
             "cases": [
                 {
@@ -1491,6 +1570,24 @@
                             "post_delay": 5000,
                             "next": [
                                 "拆船点击添加"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "拆船时保留装备": {
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "拆船点击确定": {
+                            "next": [
+                                "拆船时保留装备"
                             ]
                         }
                     }
@@ -1994,6 +2091,58 @@
                 }
             ]
         },
+        "自动决战Ex-?": {
+            "cases": [
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "Ex_select": {
+                            "action": {
+                                "param": {
+                                    "custom_action_param": {
+                                        "want_to": 4
+                                    }
+                                }
+                            }
+                        },
+                        "决战沉默战士Ek-1": {
+                            "template": "Ek-1/Ex4-1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "Ex_select": {
+                            "action": {
+                                "param": {
+                                    "custom_action_param": {
+                                        "want_to": 5
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "name": "6",
+                    "pipeline_override": {
+                        "Ex_select": {
+                            "action": {
+                                "param": {
+                                    "custom_action_param": {
+                                        "want_to": 6
+                                    }
+                                }
+                            }
+                        },
+                        "决战沉默战士Ek-1": {
+                            "template": "Ek-1/Ex6-1.png"
+                        }
+                    }
+                }
+            ]
+        },
         "第一关开局舰船1": {
             "cases": [
                 {
@@ -2488,7 +2637,7 @@
                 {
                     "name": "yes",
                     "pipeline_override": {
-                        "决战沉默战士E6": {
+                        "决战沉默战士Ek": {
                             "next": [
                                 "识别决战点"
                             ]

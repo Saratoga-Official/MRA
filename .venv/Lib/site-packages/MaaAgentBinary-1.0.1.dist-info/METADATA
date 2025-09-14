@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: MaaAgentBinary
+Version: 1.0.1
+Summary: AgentBinary for MaaFw
+Author: MaaXYZ
+Project-URL: Homepage, https://github.com/MaaXYZ/MaaAgentBinary
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# MaaAgentBinary
+
+## minitouch
+
+from [minitouch-prebuilt](https://github.com/openatx/stf-binaries/tree/master/node_modules/minitouch-prebuilt)
+
+## maatouch
+
+from [MaaTouch](https://github.com/MaaAssistantArknights/MaaTouch)
+
+## minicap
+
+from [minicap-prebuilt](https://github.com/openatx/stf-binaries/tree/master/node_modules/minicap-prebuilt)
