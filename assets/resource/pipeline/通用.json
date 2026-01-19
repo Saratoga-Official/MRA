@@ -11,7 +11,6 @@
             64
         ],
         "action": "Click",
-        "interrupt": [],
         "on_error": [],
         "pre_delay": 0,
         "post_delay": 0,
@@ -19,7 +18,6 @@
     },
     "任务出错": {
         "action": "StopTask",
-        "interrupt": [],
         "on_error": [],
         "post_wait_freezes": 0,
         "focus": "[color:red]任务出错[/color]"
@@ -39,7 +37,6 @@
         "next": [
             "重新连接"
         ],
-        "interrupt": [],
         "on_error": [
             "无动作结束"
         ],
@@ -82,13 +79,11 @@
     },
     "无动作结束": {
         "post_wait_freezes": 0,
-        "interrupt": [],
         "on_error": []
     },
     "任务结束": {
         "action": "StopTask",
         "post_wait_freezes": 0,
-        "interrupt": [],
         "on_error": []
     },
     "点击确认": {

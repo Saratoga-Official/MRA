@@ -573,14 +573,12 @@
         "timeout": 120000,
         "next": [
             "决战进入编队界面",
-            "决战识别boss点"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "决战招募识别",
-            "决战检测紫貂技能",
-            "决战检测经验将满",
-            "决战进入编队"
+            "决战识别boss点",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]决战招募识别",
+            "[JumpBack]决战检测紫貂技能",
+            "[JumpBack]决战检测经验将满",
+            "[JumpBack]决战进入编队"
         ],
         "focus": "战前决策"
     },
@@ -918,11 +916,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型",
-            "决战点击继续"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -948,10 +944,8 @@
         "action": "Click",
         "timeout": 120000,
         "next": [
-            "决战点击继续"
-        ],
-        "interrupt": [
-            "决战追击"
+            "决战点击继续",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -1333,11 +1327,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型2",
-            "决战点击继续2"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续2",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -1356,10 +1348,8 @@
         "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
-            "决战点击继续2"
-        ],
-        "interrupt": [
-            "决战追击"
+            "决战点击继续2",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -1392,13 +1382,11 @@
         "timeout": 120000,
         "next": [
             "决战进入编队界面2",
-            "决战识别boss点2"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "关闭招募",
-            "决战检测等级小于9",
-            "决战进入编队"
+            "决战识别boss点2",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]关闭招募",
+            "[JumpBack]决战检测等级小于9",
+            "[JumpBack]决战进入编队"
         ],
         "on_error": [
             "决战确认通关2"
@@ -1426,13 +1414,11 @@
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
-            "决战进入编队界面BOSS"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "决战招募识别",
-            "决战检测等级小于9",
-            "决战进入编队"
+            "决战进入编队界面BOSS",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]决战招募识别",
+            "[JumpBack]决战检测等级小于9",
+            "[JumpBack]决战进入编队"
         ],
         "focus": "识别到BOSS点"
     },
@@ -1443,13 +1429,11 @@
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
-            "决战进入编队界面BOSS"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "关闭招募",
-            "决战检测等级小于9",
-            "决战进入编队"
+            "决战进入编队界面BOSS",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]关闭招募",
+            "[JumpBack]决战检测等级小于9",
+            "[JumpBack]决战进入编队"
         ],
         "focus": "识别到BOSS点"
     },
@@ -1662,11 +1646,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型BOSS",
-            "决战点击继续BOSS"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -1740,11 +1722,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型BOSS2",
-            "决战点击继续BOSS2"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS2",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -1763,10 +1743,8 @@
         "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
-            "决战点击继续BOSS"
-        ],
-        "interrupt": [
-            "决战追击"
+            "决战点击继续BOSS",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -1785,11 +1763,9 @@
         "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
-            "决战点击继续BOSS2"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS2",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -1940,10 +1916,8 @@
         ],
         "action": "Click",
         "next": [
-            "决战E6-2凹开局"
-        ],
-        "interrupt": [
-            "决战前进点A1"
+            "决战E6-2凹开局",
+            "[JumpBack]决战前进点A1"
         ],
         "on_error": [
             "决战解装"
@@ -1961,10 +1935,8 @@
         ],
         "action": "Click",
         "next": [
-            "决战E6-2凹开局2"
-        ],
-        "interrupt": [
-            "决战前进点A1"
+            "决战E6-2凹开局2",
+            "[JumpBack]决战前进点A1"
         ],
         "on_error": [
             "决战决策3",
@@ -2071,14 +2043,12 @@
         "timeout": 120000,
         "next": [
             "决战进入编队界面3",
-            "决战识别boss点3"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "决战招募",
-            "决战检测紫貂技能2",
-            "决战检测等级",
-            "决战进入编队"
+            "决战识别boss点3",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]决战招募",
+            "[JumpBack]决战检测紫貂技能2",
+            "[JumpBack]决战检测等级",
+            "[JumpBack]决战进入编队"
         ],
         "on_error": [
             "决战确认通关3"
@@ -2271,11 +2241,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型3",
-            "决战点击继续3"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续3",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -2294,10 +2262,8 @@
         "action": "Click",
         "timeout": 120000,
         "next": [
-            "决战点击继续3"
-        ],
-        "interrupt": [
-            "决战追击"
+            "决战点击继续3",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -2331,12 +2297,10 @@
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
-            "决战进入编队界面BOSS2"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "决战招募",
-            "决战进入编队"
+            "决战进入编队界面BOSS2",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]决战招募",
+            "[JumpBack]决战进入编队"
         ],
         "focus": "识别到BOSS点"
     },
@@ -2424,11 +2388,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型BOSS3",
-            "决战点击继续BOSS3"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS3",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -2447,11 +2409,9 @@
         "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
-            "决战点击继续BOSS3"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS3",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -2633,12 +2593,10 @@
         "timeout": 120000,
         "next": [
             "决战进入编队界面4",
-            "决战识别boss点4"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "决战招募",
-            "决战进入编队"
+            "决战识别boss点4",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]决战招募",
+            "[JumpBack]决战进入编队"
         ],
         "on_error": [
             "决战确认通关4"
@@ -2742,11 +2700,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型4",
-            "决战点击继续4"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续4",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -2765,10 +2721,8 @@
         "action": "Click",
         "timeout": 120000,
         "next": [
-            "决战点击继续4"
-        ],
-        "interrupt": [
-            "决战追击"
+            "决战点击继续4",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
@@ -2803,13 +2757,11 @@
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
-            "决战进入编队界面BOSS3"
-        ],
-        "interrupt": [
-            "决战请选择前进点",
-            "决战招募",
-            "决战使用奇尔沙治技能",
-            "决战进入编队"
+            "决战进入编队界面BOSS3",
+            "[JumpBack]决战请选择前进点",
+            "[JumpBack]决战招募",
+            "[JumpBack]决战使用奇尔沙治技能",
+            "[JumpBack]决战进入编队"
         ],
         "focus": "识别到BOSS点"
     },
@@ -2910,11 +2862,9 @@
         "post_wait_freezes": 0,
         "next": [
             "决战阵型BOSS4",
-            "决战点击继续BOSS4"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS4",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "开始出征"
     },
@@ -2933,11 +2883,9 @@
         "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
-            "决战点击继续BOSS4"
-        ],
-        "interrupt": [
-            "决战开始战斗",
-            "决战追击"
+            "决战点击继续BOSS4",
+            "[JumpBack]决战开始战斗",
+            "[JumpBack]决战追击"
         ],
         "focus": "点击梯形阵"
     },
