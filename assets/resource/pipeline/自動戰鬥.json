@@ -9,6 +9,7 @@
             52
         ],
         "next": [
+            "[JumpBack]重新连接",
             "点击远征",
             "无限战斗",
             "无动作结束"
@@ -17,6 +18,7 @@
     "无限战斗": {
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "开始导航"
         ]
     },
@@ -31,6 +33,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "确认进入关卡",
             "进入关卡"
         ]
@@ -39,6 +42,7 @@
         "recognition": "TemplateMatch",
         "template": "开始出征.png",
         "next": [
+            "[JumpBack]重新连接",
             "启用军阶buff",
             "战斗编队",
             "战斗自动补给",
@@ -69,6 +73,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "识别当前BUFF",
             "更换BUFF"
         ],
@@ -95,6 +100,7 @@
             39
         ],
         "next": [
+            "[JumpBack]重新连接",
             "退出当前BUFF"
         ]
     },
@@ -102,6 +108,7 @@
         "action": "Click",
         "target": "识别当前BUFF",
         "next": [
+            "[JumpBack]重新连接",
             "战斗编队",
             "战斗自动补给",
             "战斗修理检测大破",
@@ -118,6 +125,7 @@
             96
         ],
         "next": [
+            "[JumpBack]重新连接",
             "点击buff"
         ]
     },
@@ -137,6 +145,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点击上阵buff",
             "退出buff"
         ]
@@ -152,6 +161,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "退出buff"
         ]
     },
@@ -166,6 +176,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "识别当前BUFF"
         ]
     },
@@ -196,6 +207,7 @@
             46
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗自动补给",
             "战斗检测等级",
             "战斗修理检测大破",
@@ -216,6 +228,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗自动补给",
             "战斗检测等级",
             "战斗修理检测大破",
@@ -234,6 +247,7 @@
             15
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗退出"
         ],
         "enabled": false,
@@ -258,6 +272,7 @@
             57
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗快速修理"
         ],
         "connected": true,
@@ -282,6 +297,7 @@
             52
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗快速修理"
         ],
         "connected": true,
@@ -292,6 +308,7 @@
         "expected": "快速修理",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗修理大破舰船",
             "战斗修理中破舰船"
         ]
@@ -318,6 +335,7 @@
         "connected": true,
         "post_delay": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "战斗修理大破舰船",
             "战斗修理中破舰船",
             "战斗开始出征"
@@ -345,6 +363,7 @@
         "connected": true,
         "post_delay": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "战斗修理大破舰船",
             "战斗修理中破舰船",
             "战斗开始出征"
@@ -356,6 +375,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗船舱满",
             "战斗开始出征",
             "进入战斗"
@@ -364,14 +384,14 @@
     "进入战斗": {
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗索敌成功",
             "战斗阵型",
             "战斗点击继续",
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击"
         ],
         "timeout": 300000,
         "focus": "开始出征"
@@ -381,6 +401,7 @@
         "template": "关闭船舱满提醒.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗船舱满退出"
         ],
         "on_error": [
@@ -395,6 +416,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "任务结束"
         ]
     },
@@ -404,6 +426,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "任务结束"
         ]
     },
@@ -417,6 +440,7 @@
             89
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗识别SL目标1",
             "战斗识别SL目标2",
             "战斗开始"
@@ -432,6 +456,7 @@
             299
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗SL"
         ],
         "focus": "识别到SL目标"
@@ -446,6 +471,7 @@
             299
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战斗SL"
         ],
         "focus": "识别到SL目标"
@@ -461,6 +487,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "进入关卡"
         ]
     },
@@ -477,10 +504,10 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗阵型",
             "战斗点击继续",
-            "[JumpBack]战斗追击",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击"
         ],
         "focus": "战斗开始"
     },
@@ -499,9 +526,9 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗点击继续",
-            "[JumpBack]战斗追击",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击"
         ],
         "focus": "选择预设阵型"
     },
@@ -516,6 +543,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗再点继续"
         ],
         "focus": "战斗结束"
@@ -524,6 +552,7 @@
         "action": "Click",
         "target": "战斗点击继续",
         "next": [
+            "[JumpBack]重新连接",
             "战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -540,6 +569,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "回到关卡了"
         ]
     },
@@ -547,6 +577,7 @@
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
         "next": [
+            "[JumpBack]重新连接",
             "战斗大破检测",
             "战斗前进"
         ]
@@ -556,6 +587,7 @@
         "template": "回港.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "回到关卡了",
             "战斗回港"
         ],
@@ -566,6 +598,7 @@
         "template": "大破回港.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "回到关卡了",
             "战斗大破回港"
         ],
@@ -575,6 +608,7 @@
         "recognition": "TemplateMatch",
         "template": "大破提醒.png",
         "next": [
+            "[JumpBack]重新连接",
             "战斗回港"
         ],
         "focus": "[color:red]检测到大破提醒[/color]"
@@ -586,6 +620,7 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗开始2",
             "战斗阵型2",
             "战斗点击继续2",
@@ -593,8 +628,7 @@
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击2",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击2"
         ],
         "focus": "前进"
     },
@@ -611,10 +645,10 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗阵型2",
             "战斗点击继续2",
-            "[JumpBack]战斗追击2",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击2"
         ],
         "focus": "战斗开始"
     },
@@ -633,9 +667,9 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗点击继续2",
-            "[JumpBack]战斗追击2",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击2"
         ],
         "focus": "选择预设阵型"
     },
@@ -650,6 +684,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗再点继续2"
         ],
         "focus": "战斗结束"
@@ -658,6 +693,7 @@
         "action": "Click",
         "target": "战斗点击继续2",
         "next": [
+            "[JumpBack]重新连接",
             "战斗舰队补给2",
             "战斗大破回港",
             "回到关卡了",
@@ -668,6 +704,7 @@
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
         "next": [
+            "[JumpBack]重新连接",
             "战斗大破检测",
             "战斗前进2"
         ]
@@ -679,6 +716,7 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗开始3",
             "战斗阵型3",
             "战斗点击继续3",
@@ -686,8 +724,7 @@
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击3",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击3"
         ],
         "focus": "前进"
     },
@@ -704,10 +741,10 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗阵型3",
             "战斗点击继续3",
-            "[JumpBack]战斗追击3",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击3"
         ],
         "focus": "战斗开始"
     },
@@ -726,9 +763,9 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗点击继续3",
-            "[JumpBack]战斗追击3",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击3"
         ],
         "focus": "选择预设阵型"
     },
@@ -743,6 +780,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗再点继续3"
         ],
         "focus": "战斗结束"
@@ -751,6 +789,7 @@
         "action": "Click",
         "target": "战斗点击继续3",
         "next": [
+            "[JumpBack]重新连接",
             "战斗舰队补给3",
             "战斗大破回港",
             "回到关卡了",
@@ -761,6 +800,7 @@
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
         "next": [
+            "[JumpBack]重新连接",
             "战斗大破检测",
             "战斗前进3"
         ]
@@ -772,6 +812,7 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗开始4",
             "战斗阵型4",
             "战斗点击继续4",
@@ -779,8 +820,7 @@
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击4",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击4"
         ],
         "focus": "前进"
     },
@@ -797,10 +837,10 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗阵型4",
             "战斗点击继续4",
-            "[JumpBack]战斗追击4",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击4"
         ],
         "focus": "战斗开始"
     },
@@ -819,9 +859,9 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗点击继续4",
-            "[JumpBack]战斗追击4",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击4"
         ],
         "focus": "选择预设阵型"
     },
@@ -836,6 +876,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗再点继续4"
         ],
         "focus": "战斗结束"
@@ -844,6 +885,7 @@
         "action": "Click",
         "target": "战斗点击继续4",
         "next": [
+            "[JumpBack]重新连接",
             "战斗舰队补给4",
             "战斗大破回港",
             "回到关卡了",
@@ -854,6 +896,7 @@
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
         "next": [
+            "[JumpBack]重新连接",
             "战斗大破检测",
             "战斗前进4"
         ]
@@ -865,6 +908,7 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗开始5",
             "战斗阵型5",
             "战斗点击继续5",
@@ -872,8 +916,7 @@
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击5",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击5"
         ],
         "focus": "前进"
     },
@@ -890,10 +933,10 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗阵型5",
             "战斗点击继续5",
-            "[JumpBack]战斗追击5",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击5"
         ],
         "focus": "战斗开始"
     },
@@ -912,9 +955,9 @@
         "timeout": 300000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战斗点击继续5",
-            "[JumpBack]战斗追击5",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击5"
         ],
         "focus": "选择预设阵型"
     },
@@ -929,6 +972,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战斗再点继续5"
         ],
         "focus": "战斗结束"
@@ -937,6 +981,7 @@
         "action": "Click",
         "target": "战斗点击继续5",
         "next": [
+            "[JumpBack]重新连接",
             "战斗舰队补给5",
             "战斗大破回港",
             "回到关卡了",
@@ -947,6 +992,7 @@
         "recognition": "TemplateMatch",
         "template": "舰队补给.png",
         "next": [
+            "[JumpBack]重新连接",
             "战斗大破检测",
             "战斗前进4"
         ]
@@ -957,6 +1003,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认拆船领取奖励",
             "拆船前领奖舰船"
         ]
@@ -966,6 +1013,7 @@
         "target": "拆船前领奖",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认拆船领取奖励",
             "战斗船舱满尝试拆船"
         ]
@@ -976,6 +1024,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "战斗船舱满尝试拆船"
         ]
     },
@@ -991,6 +1040,7 @@
             28
         ],
         "next": [
+            "[JumpBack]重新连接",
             "拆船前领奖",
             "拆船点击建造",
             "战斗船舱满尝试拆船"
@@ -1009,6 +1059,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击建造2"
         ]
     },
@@ -1025,6 +1076,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击解装"
         ]
     },
@@ -1041,6 +1093,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击添加"
         ]
     },
@@ -1055,6 +1108,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击快速选择"
         ]
     },
@@ -1071,6 +1125,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击确定"
         ]
     },
@@ -1087,6 +1142,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击解装2"
         ]
     },
@@ -1103,6 +1159,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船点击确认",
             "拆船结束退出"
         ]
@@ -1120,6 +1177,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "拆船结束退出"
         ]
     },
@@ -1135,6 +1193,7 @@
             705
         ],
         "next": [
+            "[JumpBack]重新连接",
             "开始出征"
         ]
     },
@@ -1151,6 +1210,7 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
+            "[JumpBack]重新连接",
             "结束领取奖励3",
             "点击船坞",
             "关闭游戏"

@@ -1,6 +1,11 @@
 {
+    "interface_version": 2,
     "name": "MRA",
     "version": "DEBUG_VERSION",
+    "icon": "/logo.ico",
+    "contact": "QQ群457094182",
+    "license": "/LICENSE",
+    "github": "https://github.com/Saratoga-Official/MRA",
     "url": "https://github.com/Saratoga-Official/MRA",
     "custom_title": "MRA",
     "mirrorchyan_rid": "MaaJR",
@@ -24,13 +29,12 @@
         {
             "name": "开始前任务",
             "entry": "开始唤醒",
-            "check": true,
-            "repeatable": false,
+            "default_check": true,
             "doc": [
                 "用于打开游戏，领取登录奖励等",
-                "[color:red]请将本任务放在所有任务之前[/color]",
-                "[color:red]切换区服不可选择非当前大区的区服[/color]",
-                "如果需要切换大区或切换账号请使用多开模拟器"
+                "<br>[color:red]请将本任务放在所有任务之前[/color]",
+                "<br>[color:red]切换区服不可选择非当前大区的区服[/color]",
+                "<br>如果需要切换大区或切换账号请使用多开模拟器"
             ],
             "option": [
                 "切换区服"
@@ -39,11 +43,10 @@
         {
             "name": "自动远征",
             "entry": "开始自动远征",
-            "check": false,
-            "repeatable": false,
+            "default_check": false,
             "doc": [
                 "开启远征等待模式会在程序关闭前无限等待收发远征",
-                "现在可结合定时执行功能实现定点收远征"
+                "<br>现在可结合定时执行功能实现定点收远征"
             ],
             "option": [
                 "远征等待模式"
@@ -52,11 +55,11 @@
         {
             "name": "自动战役",
             "entry": "开始自动战役",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": [
                 "[color:red]①需提前编好队，再开始[/color]",
-                "②不开启战役打完次数将按照重复次数来执行"
+                "<br>②不开启战役打完次数将按照重复次数来执行"
             ],
             "option": [
                 "战役困难难度",
@@ -69,12 +72,11 @@
         {
             "name": "自动演习",
             "entry": "开始自动演习",
-            "check": false,
-            "repeatable": false,
+            "default_check": false,
             "doc": [
                 "①目前演习刷新策略暂定第一个官方演习队不刷新直接打，其余按所选策略刷新",
-                "[color:red]②需提前编好队，再开始[/color]",
-                "现在可结合定时执行功能实现刷不同时间段的演习"
+                "<br>[color:red]②需提前编好队，再开始[/color]",
+                "<br>现在可结合定时执行功能实现刷不同时间段的演习"
             ],
             "option": [
                 "演习编队",
@@ -85,18 +87,17 @@
         {
             "name": "自动出征",
             "entry": "开始出征",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": [
                 "[color:red]①需提前编好队，满足带路条件，再开始[/color]",
-                "②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航",
-                "③门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL",
-                "[color:red]④自动拆船，确保船舱想保留的船均锁好才可使用[/color]",
-                "⑤本功能会在战斗结束后自动收发远征",
-                "⑥战斗点位，设置几点就打到几点，并按该节点所选阵型和夜战追击设置操作",
-                "⑦追击设置中潜艇用智能追击属于测试功能，会检测敌方是否存在潜艇打不到的敌人从而决定是否进行夜战追击（敌方五号位会被挡住检测不到）"
+                "<br>②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航",
+                "<br>③门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL",
+                "<br>[color:red]④自动拆船，确保船舱想保留的船均锁好才可使用[/color]",
+                "<br>⑤本功能会在战斗结束后自动收发远征",
+                "<br>⑥战斗点位，设置几点就打到几点，并按该节点所选阵型和夜战追击设置操作",
+                "<br>⑦追击设置中潜艇用智能追击属于测试功能，会检测敌方是否存在潜艇打不到的敌人从而决定是否进行夜战追击（敌方五号位会被挡住检测不到）"
             ],
-            "repeat_count": 1,
             "option": [
                 "自动导航章节",
                 "自动导航关卡",
@@ -105,19 +106,9 @@
                 "战斗大破/中破舰船处理",
                 "船舱满自动拆船（危险功能）",
                 "战斗使用军阶buff",
-                "战斗节点",
                 "门口SL目标1",
                 "门口SL目标2",
-                "节点1阵型",
-                "节点1追击",
-                "节点2阵型",
-                "节点2追击",
-                "节点3阵型",
-                "节点3追击",
-                "节点4阵型",
-                "节点4追击",
-                "节点5阵型",
-                "节点5追击"
+                "战斗节点"
             ],
             "pipeline_override": {
                 "退出远征1": {
@@ -133,12 +124,12 @@
         {
             "name": "无消耗刷1-1",
             "entry": "开始出征",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": [
                 "[color:red]①会自动编队编入最近获得的船，不能和其他编队混用[/color]",
-                "[color:red]②确保船舱想保留的船均锁好才可使用自动拆船[/color]",
-                "③本功能会在战斗结束后自动收发远征"
+                "<br>[color:red]②确保船舱想保留的船均锁好才可使用自动拆船[/color]",
+                "<br>③本功能会在战斗结束后自动收发远征"
             ],
             "option": [
                 "1-1编队",
@@ -148,29 +139,25 @@
             "pipeline_override": {
                 "开始导航": {
                     "next": [
-                        "第一章"
-                    ],
-                    "interrupt": [
-                        "9到8",
-                        "8到7",
-                        "7到6",
-                        "6到5",
-                        "5到4",
-                        "4到3",
-                        "3到2",
-                        "2到1"
+                        "第一章",
+                        "[JumpBack]9到8",
+                        "[JumpBack]8到7",
+                        "[JumpBack]7到6",
+                        "[JumpBack]6到5",
+                        "[JumpBack]5到4",
+                        "[JumpBack]4到3",
+                        "[JumpBack]3到2",
+                        "[JumpBack]2到1"
                     ]
                 },
                 "找关卡": {
                     "next": [
-                        "狗粮1-1"
-                    ],
-                    "interrupt": [
-                        "X-2左",
-                        "X-3左",
-                        "X-4左",
-                        "X-5左",
-                        "X-6"
+                        "狗粮1-1",
+                        "[JumpBack]X-2左",
+                        "[JumpBack]X-3左",
+                        "[JumpBack]X-4左",
+                        "[JumpBack]X-5左",
+                        "[JumpBack]X-6"
                     ]
                 },
                 "开始出征": {
@@ -192,22 +179,21 @@
         {
             "name": "自动决战E6",
             "entry": "开始自动决战",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": [
                 "[color:red]①使用前确认副官已开启奇尔沙治[/color]",
-                "[color:red]②选船配置中大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船带一条4费鱼其余全选改造鱼[/color]",
-                "[color:red]③4费船总数大于3时，需要带一艘2或3费中型船[/color]",
-                "[color:red]④如果不符合要求，手动选好后进去点撤退退出来即可开始，之后只要不改配置将一直沿用上次选船配置[/color]",
-                "[color:red]⑤第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要选同一个船，会出逻辑bug[/color]",
-                "[color:red]⑥第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取，中途开始进入关卡除外[/color]",
-                "[color:red]⑦决战中将自动使用快速修理，请备好足够的桶[/color]",
-                "[color:red]⑧由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MRA（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
+                "<br>[color:red]②选船配置中大型船全选6费,中型船有5费选5费，5费不够用4费填满，小型船带一条4费鱼其余全选改造鱼[/color]",
+                "<br>[color:red]③4费船总数大于3时，需要带一艘2或3费中型船[/color]",
+                "<br>[color:red]④如果不符合要求，手动选好后进去点撤退退出来即可开始，之后只要不改配置将一直沿用上次选船配置[/color]",
+                "<br>[color:red]⑤第一关开局舰船1和2设置后将按照设置刷第一关开局舰船，如果指定6费鱼刷了很久没出就换成默认或者指定四费鱼，注意不要选同一个船，会出逻辑bug[/color]",
+                "<br>[color:red]⑥第二关开局舰船设置后如果第一关没招到该舰船将在第二关开局刷取，中途开始进入关卡除外[/color]",
+                "<br>[color:red]⑦决战中将自动使用快速修理，请备好足够的桶[/color]",
+                "<br>[color:red]⑧由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MRA（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
             ],
             "option": [
-                "第一关开局舰船1",
-                "第一关开局舰船2",
-                "第二关开局舰船",
+                "第一关指定开局潜艇",
+                "第二关指定开局潜艇",
                 "决战打完次数",
                 "决战船舱满自动拆船（危险功能）"
             ],
@@ -216,15 +202,15 @@
         {
             "name": "自动造船",
             "entry": "开始自动建造",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": [
                 "[color:red]①请确保自己满足所选造船所需资源和道具足够，否则该功能会无法进行[/color]",
-                "②目前给出的公式选项资源数量都是根据常用的几个造船公式给的，选沿用上次就是对应资源沿用你上次建造数量",
-                "③可使用重复次数来指定建造次数，但未勾选使用快速建造工具最多只能造满空位",
-                "④造满空位和使用快建工具一同勾选将会视情况执行其中之一，若勾选了批量建造则造满空位失效",
-                "⑤本功能会自动收取所有已完成建造的船",
-                "⑥最后祝各位都能出货(｡･ω･｡)ﾉ♡"
+                "<br>②目前给出的公式选项资源数量都是根据常用的几个造船公式给的，选沿用上次就是对应资源沿用你上次建造数量",
+                "<br>③可使用重复次数来指定建造次数，但未勾选使用快速建造工具最多只能造满空位",
+                "<br>④造满空位和使用快建工具一同勾选将会视情况执行其中之一，若勾选了批量建造则造满空位失效",
+                "<br>⑤本功能会自动收取所有已完成建造的船",
+                "<br>⑥最后祝各位都能出货(｡･ω･｡)ﾉ♡"
             ],
             "option": [
                 "燃料",
@@ -240,8 +226,7 @@
         {
             "name": "结束前任务",
             "entry": "收尾工作",
-            "check": false,
-            "repeatable": false,
+            "default_check": false,
             "doc": [
                 "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]"
             ],
@@ -267,29 +252,18 @@
         {
             "name": "活动练级",
             "entry": "进入活动",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": "[color:red]活动不支持自动导航，活须在出击准备界面点开始，其余设置沿用自动出征[/color]",
-            "repeat_count": 1,
             "option": [
                 "战斗编队",
                 "活动无限次数",
                 "战斗大破/中破舰船处理",
                 "船舱满自动拆船（危险功能）",
                 "战斗使用军阶buff",
-                "战斗节点",
                 "门口SL目标1",
                 "门口SL目标2",
-                "节点1阵型",
-                "节点1追击",
-                "节点2阵型",
-                "节点2追击",
-                "节点3阵型",
-                "节点3追击",
-                "节点4阵型",
-                "节点4追击",
-                "节点5阵型",
-                "节点5追击"
+                "战斗节点"
             ],
             "pipeline_override": {
                 "回到关卡了": {
@@ -324,14 +298,13 @@
         {
             "name": "立体强袭",
             "entry": "立体强袭开始",
-            "check": false,
+            "default_check": false,
             "repeatable": true,
             "doc": [
                 "[color:red]立体强袭关卡不支持导航，需在紧急情况按钮前开始[/color]",
-                "[color:red]仅支持打第一个点[/color]",
-                "[color:red]最好不要和其他任务一起使用，否则可能会无法进行[/color]"
+                "<br>[color:red]仅支持打第一个点[/color]",
+                "<br>[color:red]最好不要和其他任务一起使用，否则可能会无法进行[/color]"
             ],
-            "repeat_count": 1,
             "option": [
                 "立体强袭阵型",
                 "立体强袭无限次数",
@@ -343,11 +316,10 @@
         {
             "name": "舰队问答自动答题",
             "entry": "检查题目",
-            "check": false,
-            "repeatable": false,
+            "default_check": false,
             "doc": [
                 "[color:red]需要在答题界面开始[/color]",
-                "[color:red]无脑选择选项，不追求答对[/color]"
+                "<br>[color:red]无脑选择选项，不追求答对[/color]"
             ],
             "option": [],
             "pipeline_override": {
@@ -448,6 +420,7 @@
             ]
         },
         "战役困难难度": {
+            "type": "select",
             "cases": [
                 {
                     "name": "yes",
@@ -633,6 +606,7 @@
             ]
         },
         "战役打完次数": {
+            "type": "select",
             "cases": [
                 {
                     "name": "yes",
@@ -652,6 +626,7 @@
             ]
         },
         "远征等待模式": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -700,17 +675,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第一章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "7到6",
-                                "6到5",
-                                "5到4",
-                                "4到3",
-                                "3到2",
-                                "2到1"
+                                "第一章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]4到3",
+                                "[JumpBack]3到2",
+                                "[JumpBack]2到1"
                             ]
                         }
                     }
@@ -720,17 +693,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第二章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "7到6",
-                                "6到5",
-                                "5到4",
-                                "4到3",
-                                "3到2",
-                                "1到2"
+                                "第二章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]4到3",
+                                "[JumpBack]3到2",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -740,17 +711,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第三章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "7到6",
-                                "6到5",
-                                "5到4",
-                                "4到3",
-                                "2到3",
-                                "1到2"
+                                "第三章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]4到3",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -760,17 +729,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第四章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "7到6",
-                                "6到5",
-                                "5到4",
-                                "3到4",
-                                "2到3",
-                                "1到2"
+                                "第四章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -780,17 +747,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第五章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "7到6",
-                                "6到5",
-                                "4到5",
-                                "3到4",
-                                "2到3",
-                                "1到2"
+                                "第五章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -800,17 +765,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第六章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "7到6",
-                                "5到6",
-                                "4到5",
-                                "3到4",
-                                "2到3",
-                                "1到2"
+                                "第六章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -820,17 +783,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第七章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "8到7",
-                                "6到7",
-                                "5到6",
-                                "4到5",
-                                "3到4",
-                                "2到3",
-                                "1到2"
+                                "第七章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]6到7",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -840,17 +801,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第八章"
-                            ],
-                            "interrupt": [
-                                "9到8",
-                                "7到8",
-                                "6到7",
-                                "5到6",
-                                "4到5",
-                                "3到4",
-                                "2到3",
-                                "1到2"
+                                "第八章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]7到8",
+                                "[JumpBack]6到7",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -860,17 +819,15 @@
                     "pipeline_override": {
                         "开始导航": {
                             "next": [
-                                "第九章"
-                            ],
-                            "interrupt": [
-                                "8到9",
-                                "7到8",
-                                "6到7",
-                                "5到6",
-                                "4到5",
-                                "3到4",
-                                "2到3",
-                                "1到2"
+                                "第九章",
+                                "[JumpBack]8到9",
+                                "[JumpBack]7到8",
+                                "[JumpBack]6到7",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
                             ]
                         }
                     }
@@ -897,14 +854,12 @@
                     "pipeline_override": {
                         "找关卡": {
                             "next": [
-                                "进入关卡"
-                            ],
-                            "interrupt": [
-                                "X-2左",
-                                "X-3左",
-                                "X-4左",
-                                "X-5左",
-                                "X-6"
+                                "进入关卡",
+                                "[JumpBack]X-2左",
+                                "[JumpBack]X-3左",
+                                "[JumpBack]X-4左",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
                             ]
                         },
                         "进入关卡": {
@@ -917,14 +872,12 @@
                     "pipeline_override": {
                         "找关卡": {
                             "next": [
-                                "进入关卡"
-                            ],
-                            "interrupt": [
-                                "X-1",
-                                "X-3左",
-                                "X-4左",
-                                "X-5左",
-                                "X-6"
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-3左",
+                                "[JumpBack]X-4左",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
                             ]
                         },
                         "进入关卡": {
@@ -937,14 +890,12 @@
                     "pipeline_override": {
                         "找关卡": {
                             "next": [
-                                "进入关卡"
-                            ],
-                            "interrupt": [
-                                "X-1",
-                                "X-2右",
-                                "X-4左",
-                                "X-5左",
-                                "X-6"
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-4左",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
                             ]
                         },
                         "进入关卡": {
@@ -957,14 +908,12 @@
                     "pipeline_override": {
                         "找关卡": {
                             "next": [
-                                "进入关卡"
-                            ],
-                            "interrupt": [
-                                "X-1",
-                                "X-2右",
-                                "X-3右",
-                                "X-5左",
-                                "X-6"
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-3右",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
                             ]
                         },
                         "进入关卡": {
@@ -977,14 +926,12 @@
                     "pipeline_override": {
                         "找关卡": {
                             "next": [
-                                "进入关卡"
-                            ],
-                            "interrupt": [
-                                "X-1",
-                                "X-2右",
-                                "X-3右",
-                                "X-4右",
-                                "X-6"
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-3右",
+                                "[JumpBack]X-4右",
+                                "[JumpBack]X-6"
                             ]
                         },
                         "进入关卡": {
@@ -997,14 +944,12 @@
                     "pipeline_override": {
                         "找关卡": {
                             "next": [
-                                "进入关卡"
-                            ],
-                            "interrupt": [
-                                "X-1",
-                                "X-2右",
-                                "X-3右",
-                                "X-4右",
-                                "X-5右"
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-3右",
+                                "[JumpBack]X-4右",
+                                "[JumpBack]X-5右"
                             ]
                         },
                         "进入关卡": {
@@ -1074,110 +1019,6 @@
                                 150,
                                 44
                             ]
-                        }
-                    }
-                }
-            ]
-        },
-        "战斗阵型": {
-            "cases": [
-                {
-                    "name": "单纵阵",
-                    "pipeline_override": {
-                        "战斗阵型": {
-                            "expected": "单纵阵"
-                        },
-                        "战斗阵型2": {
-                            "expected": "单纵阵"
-                        },
-                        "战斗阵型3": {
-                            "expected": "单纵阵"
-                        },
-                        "战斗阵型4": {
-                            "expected": "单纵阵"
-                        },
-                        "战斗阵型5": {
-                            "expected": "单纵阵"
-                        }
-                    }
-                },
-                {
-                    "name": "复纵阵",
-                    "pipeline_override": {
-                        "战斗阵型": {
-                            "expected": "复纵阵"
-                        },
-                        "战斗阵型2": {
-                            "expected": "复纵阵"
-                        },
-                        "战斗阵型3": {
-                            "expected": "复纵阵"
-                        },
-                        "战斗阵型4": {
-                            "expected": "复纵阵"
-                        },
-                        "战斗阵型5": {
-                            "expected": "复纵阵"
-                        }
-                    }
-                },
-                {
-                    "name": "轮型阵",
-                    "pipeline_override": {
-                        "战斗阵型": {
-                            "expected": "轮型阵"
-                        },
-                        "战斗阵型2": {
-                            "expected": "轮型阵"
-                        },
-                        "战斗阵型3": {
-                            "expected": "轮型阵"
-                        },
-                        "战斗阵型4": {
-                            "expected": "轮型阵"
-                        },
-                        "战斗阵型5": {
-                            "expected": "轮型阵"
-                        }
-                    }
-                },
-                {
-                    "name": "梯形阵",
-                    "pipeline_override": {
-                        "战斗阵型": {
-                            "expected": "梯形阵"
-                        },
-                        "战斗阵型2": {
-                            "expected": "梯形阵"
-                        },
-                        "战斗阵型3": {
-                            "expected": "梯形阵"
-                        },
-                        "战斗阵型4": {
-                            "expected": "梯形阵"
-                        },
-                        "战斗阵型5": {
-                            "expected": "梯形阵"
-                        }
-                    }
-                },
-                {
-                    "name": "单横阵",
-                    "pipeline_override": {
-                        "战斗阵型": {
-                            "expected": "单横阵"
-                        },
-                        "战斗阵型2": {
-                            "expected": "单横阵"
-                        },
-                        "战斗阵型3": {
-                            "expected": "单横阵"
-                        },
-                        "战斗阵型4": {
-                            "expected": "单横阵"
-                        },
-                        "战斗阵型5": {
-                            "expected": "单横阵"
                         }
                     }
                 }
@@ -1438,7 +1279,11 @@
                                 "战斗回港"
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "节点1阵型",
+                        "节点1追击"
+                    ]
                 },
                 {
                     "name": "2",
@@ -1448,7 +1293,13 @@
                                 "战斗回港"
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2阵型",
+                        "节点2追击"
+                    ]
                 },
                 {
                     "name": "3",
@@ -1458,7 +1309,15 @@
                                 "战斗回港"
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2阵型",
+                        "节点2追击",
+                        "节点3阵型",
+                        "节点3追击"
+                    ]
                 },
                 {
                     "name": "4",
@@ -1468,15 +1327,38 @@
                                 "战斗回港"
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2阵型",
+                        "节点2追击",
+                        "节点3阵型",
+                        "节点3追击",
+                        "节点4阵型",
+                        "节点4追击"
+                    ]
                 },
                 {
                     "name": "5及后续节点",
-                    "pipeline_override": {}
+                    "pipeline_override": {},
+                    "option": [
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2阵型",
+                        "节点2追击",
+                        "节点3阵型",
+                        "节点3追击",
+                        "节点4阵型",
+                        "节点4追击",
+                        "节点5阵型",
+                        "节点5追击"
+                    ]
                 }
             ]
         },
         "船舱满自动拆船（危险功能）": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -1635,6 +1517,7 @@
             ]
         },
         "1-1无限次数": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -1651,6 +1534,7 @@
             ]
         },
         "刷满船舱后自动拆船（危险功能）": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -1931,6 +1815,7 @@
             ]
         },
         "自动入浴": {
+            "type": "select",
             "cases": [
                 {
                     "name": "yes",
@@ -1947,6 +1832,7 @@
             ]
         },
         "自动领取任务奖励": {
+            "type": "select",
             "cases": [
                 {
                     "name": "yes",
@@ -1963,6 +1849,7 @@
             ]
         },
         "自动拆船（危险功能）": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -1979,6 +1866,7 @@
             ]
         },
         "结束后关闭游戏": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -1994,10 +1882,11 @@
                 }
             ]
         },
-        "第一关开局舰船1": {
+        "第一关指定开局潜艇": {
+            "type": "switch",
             "cases": [
                 {
-                    "name": "默认",
+                    "name": "no",
                     "pipeline_override": {
                         "检查开局舰船1": {
                             "expected": [
@@ -2011,329 +1900,65 @@
                                 "U-1206",
                                 "U-1405"
                             ]
-                        }
-                    }
-                },
-                {
-                    "name": "随机U艇",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
+                        },
+                        "检查开局舰船2": {
                             "expected": [
-                                "U-47",
-                                "U-505",
-                                "U-81",
-                                "U-96",
-                                "U-2540",
-                                "U-1206",
-                                "U-1405"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "大青花鱼",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "大青花鱼"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "射水鱼",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "射水鱼"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-47",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-47"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-505",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-505"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-81",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-81"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-96",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-96"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-2540",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-2540"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-1206",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-1206"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-1405",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-1405"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "M-296",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "M-296"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "鹦鹉螺",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "鹦鹉螺"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "达·芬奇",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "达·芬奇",
-                                "芬奇"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "鹰",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "鹰"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "K-21",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "K-21"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "潜甲",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "潜甲"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "潜乙",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "潜乙"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-441",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
-                                "U-441"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "IIIA",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
+                                "M-296",
+                                "鹦鹉螺",
+                                "芬奇",
+                                "鹰",
+                                "K-21",
+                                "潜甲",
+                                "潜乙",
+                                "U-441",
                                 "IIIA",
-                                "lllA"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "伊-201",
-                    "pipeline_override": {
-                        "检查开局舰船1": {
-                            "expected": [
+                                "lllA",
                                 "伊-201"
                             ]
                         }
                     }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {},
+                    "option": [
+                        "第一关潜艇名称"
+                    ]
                 }
             ]
         },
-        "第一关开局舰船2": {
-            "cases": [
+        "第一关潜艇名称": {
+            "type": "input",
+            "inputs": [
                 {
-                    "name": "M-296",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "M-296"
-                            ]
-                        }
-                    }
+                    "name": "潜艇名1",
+                    "default": "U-47",
+                    "pipeline_type": "string"
                 },
                 {
-                    "name": "鹦鹉螺",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "鹦鹉螺"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "达·芬奇",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "达·芬奇",
-                                "芬奇"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "鹰",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "鹰"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "K-21",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "K-21"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "潜甲",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "潜甲"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "潜乙",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "潜乙"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-441",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "U-441"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "IIIA",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "IIIA",
-                                "lllA"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "伊-201",
-                    "pipeline_override": {
-                        "检查开局舰船2": {
-                            "expected": [
-                                "伊-201"
-                            ]
-                        }
-                    }
+                    "name": "潜艇名2",
+                    "default": "M-296",
+                    "pipeline_type": "string"
                 }
-            ]
+            ],
+            "pipeline_override": {
+                "检查开局舰船1": {
+                    "expected": [
+                        "{潜艇名1}"
+                    ]
+                },
+                "检查开局舰船2": {
+                    "expected": [
+                        "{潜艇名2}"
+                    ]
+                }
+            }
         },
-        "第二关开局舰船": {
+        "第二关指定开局潜艇": {
+            "type": "switch",
             "cases": [
                 {
-                    "name": "默认",
+                    "name": "no",
                     "pipeline_override": {
                         "决战检查舰船BOSS": {
                             "next": [
@@ -2343,143 +1968,38 @@
                     }
                 },
                 {
-                    "name": "U-1206",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-1206"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-1206"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "大青花鱼",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "大青花鱼"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "大青花鱼"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "射水鱼",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "射水鱼"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "射水鱼"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-47",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-47"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-47"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-505",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-505"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-505"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-81",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-81"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-81"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-96",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-96"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-96"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-2540",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-2540"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-2540"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "U-1405",
-                    "pipeline_override": {
-                        "决战检查舰船BOSS2": {
-                            "expected": [
-                                "U-1405"
-                            ]
-                        },
-                        "决战寻找特定舰船": {
-                            "expected": [
-                                "U-1405"
-                            ]
-                        }
-                    }
+                    "name": "yes",
+                    "pipeline_override": {},
+                    "option": [
+                        "第二关潜艇名称"
+                    ]
                 }
             ]
         },
+        "第二关潜艇名称": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "潜艇名3",
+                    "default": "U-1206",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "决战检查舰船BOSS2": {
+                    "expected": [
+                        "{潜艇名3}"
+                    ]
+                },
+                "决战寻找特定舰船": {
+                    "expected": [
+                        "{潜艇名3}"
+                    ]
+                }
+            }
+        },
         "决战打完次数": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -2498,6 +2018,7 @@
             ]
         },
         "决战船舱满自动拆船（危险功能）": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -2644,6 +2165,7 @@
             ]
         },
         "立体强袭允许追击": {
+            "type": "select",
             "cases": [
                 {
                     "name": "yes",
@@ -3348,6 +2870,7 @@
             ]
         },
         "造满空位": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -3367,6 +2890,7 @@
             ]
         },
         "若无空位使用快速建造工具": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -3383,6 +2907,7 @@
             ]
         },
         "使用批量建造十连": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",
@@ -3402,6 +2927,7 @@
             ]
         },
         "建造船舱满拆船（危险功能）": {
+            "type": "select",
             "cases": [
                 {
                     "name": "no",

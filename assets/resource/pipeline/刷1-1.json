@@ -10,6 +10,7 @@
             50
         ],
         "next": [
+            "[JumpBack]重新连接",
             "狗粮编队",
             "狗粮自动补给",
             "换狗粮检测"
@@ -22,6 +23,7 @@
         "threshold": 0.95,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮自动补给",
             "换狗粮检测"
         ]
@@ -37,12 +39,14 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "换狗粮检测"
         ]
     },
     "换狗粮检测": {
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "狗粮编队检测",
             "换狗粮"
         ]
@@ -56,6 +60,7 @@
             258
         ],
         "next": [
+            "[JumpBack]重新连接",
             "点离队",
             "点星星",
             "点排序"
@@ -66,6 +71,7 @@
         "template": "离队.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "换狗粮"
         ]
     },
@@ -74,6 +80,7 @@
         "template": "星星.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点排序"
         ]
     },
@@ -88,6 +95,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点获得时间",
             "点排序确定"
         ]
@@ -103,6 +111,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点排序确定"
         ]
     },
@@ -117,6 +126,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点类型"
         ]
     },
@@ -131,6 +141,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点护卫",
             "点类型确定"
         ]
@@ -146,6 +157,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点类型确定"
         ]
     },
@@ -160,6 +172,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点狗粮"
         ]
     },
@@ -172,6 +185,7 @@
             202
         ],
         "next": [
+            "[JumpBack]重新连接",
             "换人检测",
             "换人大破检测",
             "狗粮开始出征"
@@ -184,6 +198,7 @@
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
+            "[JumpBack]重新连接",
             "狗粮编队检测2",
             "换狗粮"
         ]
@@ -200,6 +215,7 @@
         ],
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "换人检测",
             "换人大破检测",
             "狗粮开始出征"
@@ -225,6 +241,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点星星2",
             "点排序2"
         ]
@@ -249,6 +266,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点星星2",
             "点排序2"
         ]
@@ -258,6 +276,7 @@
         "template": "星星.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点排序2"
         ]
     },
@@ -272,6 +291,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点获得时间2",
             "点排序确定2"
         ]
@@ -287,6 +307,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点排序确定2"
         ]
     },
@@ -301,6 +322,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "点狗粮2"
         ]
     },
@@ -313,6 +335,7 @@
             195
         ],
         "next": [
+            "[JumpBack]重新连接",
             "换人检测2",
             "换人大破检测2",
             "狗粮开始出征"
@@ -338,6 +361,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮不满足出征要求"
         ],
         "focus": "[color:red]新获得舰船不满足出征要求，结束任务[/color]"
@@ -362,6 +386,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮不满足出征要求"
         ],
         "focus": "[color:red]新获得舰船不满足出征要求，结束任务[/color]"
@@ -372,6 +397,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "任务结束"
         ]
     },
@@ -382,6 +408,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "狗粮开始战斗",
             "狗粮追击",
             "狗粮船舱满",
@@ -394,6 +421,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "退出狗粮"
         ],
         "focus": "[color:red]船舱已满[/color]"
@@ -405,6 +433,7 @@
         "green_mask": true,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "任务结束"
         ]
     },
@@ -415,6 +444,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "狗粮追击",
             "狗粮点击继续"
         ]
@@ -425,6 +455,7 @@
         "action": "Click",
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "狗粮点击继续"
         ]
     },
@@ -439,6 +470,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮再点继续"
         ]
     },
@@ -446,6 +478,7 @@
         "action": "Click",
         "target": "狗粮点击继续",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮大破回港",
             "狗粮回港",
             "狗粮再点继续"
@@ -456,6 +489,7 @@
         "template": "回港.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮回到关卡"
         ]
     },
@@ -464,6 +498,7 @@
         "template": "大破回港.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "狗粮回到关卡"
         ]
     },
@@ -477,6 +512,7 @@
             52
         ],
         "next": [
+            "[JumpBack]重新连接",
             "点击远征",
             "狗粮检测刷满",
             "狗粮继续",
@@ -486,6 +522,7 @@
     "狗粮继续": {
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "狗粮1-1"
         ]
     },
@@ -499,6 +536,7 @@
             30
         ],
         "next": [
+            "[JumpBack]重新连接",
             "任务结束"
         ],
         "focus": "[color:red]今日捞船已达上限[/color]"

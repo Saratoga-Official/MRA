@@ -32,14 +32,6 @@
             48
         ],
         "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 60000,
-        "next": [
-            "重新连接"
-        ],
-        "on_error": [
-            "无动作结束"
-        ],
         "focus": "[color:red]网络断开[/color]"
     },
     "战斗追击": {

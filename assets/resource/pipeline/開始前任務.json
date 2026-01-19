@@ -4,12 +4,14 @@
         "package": "com.huanmeng.zhanjian2/com.unity3d.player.UnityPlayerActivity",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "打开游戏"
         ]
     },
     "打开游戏": {
         "timeout": 300000,
         "next": [
+            "[JumpBack]重新连接",
             "游戏更新",
             "进入游戏前",
             "退出公告",
@@ -31,6 +33,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "打开游戏"
         ]
     },
@@ -45,6 +48,7 @@
         ],
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "更新确认"
         ]
     },
@@ -61,10 +65,23 @@
         "timeout": 300000,
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
+            "更新确认",
             "游戏更新",
             "更换区服",
-            "进入游戏"
+            "进入游戏",
+            "[JumpBack]正在更新"
         ]
+    },
+    "正在更新": {
+        "recognition": "OCR",
+        "expected": [
+            "正在为您",
+            "为您下载",
+            "下载更新",
+            "更新资源"
+        ],
+        "timeout": 300000
     },
     "更换区服": {
         "recognition": "OCR",
@@ -83,6 +100,7 @@
             57
         ],
         "next": [
+            "[JumpBack]重新连接",
             "选择区服",
             "切换大区"
         ],
@@ -100,6 +118,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "进入游戏"
         ]
     },
@@ -113,6 +132,7 @@
             52
         ],
         "next": [
+            "[JumpBack]重新连接",
             "任务出错"
         ],
         "on_error": [
@@ -126,6 +146,7 @@
         "timeout": 300000,
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "更换区服",
             "进入游戏"
         ]
@@ -135,6 +156,7 @@
         "template": "进入游戏.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
@@ -148,6 +170,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "退出主界面"
         ]
     },
@@ -158,6 +181,7 @@
         "green_mask": true,
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
@@ -170,6 +194,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "退出公告",
             "登录奖励",
             "小长春的赠礼",
@@ -182,6 +207,7 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
+            "[JumpBack]重新连接",
             "确认领取登录奖励",
             "登录舰船奖励"
         ]
@@ -190,6 +216,7 @@
         "action": "Click",
         "target": "登录奖励",
         "next": [
+            "[JumpBack]重新连接",
             "确认领取登录奖励",
             "小长春的赠礼",
             "结束开始唤醒"
@@ -203,6 +230,7 @@
         "template": "确认.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "小长春的赠礼",
             "结束开始唤醒"
         ]
@@ -212,6 +240,7 @@
         "template": "立即领取.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "确认领取小长春的赠礼"
         ]
     },
@@ -220,6 +249,7 @@
         "template": "确认.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "关闭小长春的赠礼"
         ]
     },
@@ -229,6 +259,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "结束开始唤醒"
         ]
     },

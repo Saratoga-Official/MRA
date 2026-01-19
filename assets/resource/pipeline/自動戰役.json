@@ -1,6 +1,7 @@
 {
     "开始自动战役": {
         "next": [
+            "[JumpBack]重新连接",
             "战役领取奖励",
             "点击战役",
             "战役次数",
@@ -16,6 +17,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认战役领取奖励",
             "战役领奖舰船"
         ]
@@ -25,6 +27,7 @@
         "target": "战役领取奖励",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认战役领取奖励",
             "开始自动战役"
         ]
@@ -35,6 +38,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "开始自动战役"
         ]
     },
@@ -44,6 +48,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "点击战役",
             "战役次数",
             "普通难度",
@@ -56,6 +61,7 @@
         "action": "Click",
         "threshold": 0.9,
         "next": [
+            "[JumpBack]重新连接",
             "战役次数",
             "普通难度",
             "困难难度"
@@ -66,6 +72,7 @@
         "template": "困难难度.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战役次数",
             "选择战役"
         ]
@@ -74,6 +81,7 @@
         "recognition": "TemplateMatch",
         "template": "普通难度.png",
         "next": [
+            "[JumpBack]重新连接",
             "战役次数",
             "选择战役"
         ]
@@ -92,6 +100,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战役确认",
             "战役自动补给"
         ]
@@ -105,6 +114,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战役确认",
             "战役自动补给"
         ]
@@ -114,6 +124,7 @@
         "template": "对号.png",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战役修理检测大破",
             "战役修理检测中破",
             "战役开始出征"
@@ -138,6 +149,7 @@
             57
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战役快速修理"
         ],
         "connected": true,
@@ -162,6 +174,7 @@
             52
         ],
         "next": [
+            "[JumpBack]重新连接",
             "战役快速修理"
         ],
         "connected": true,
@@ -172,6 +185,7 @@
         "expected": "快速修理",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战役修理大破舰船",
             "战役修理中破舰船"
         ]
@@ -197,6 +211,7 @@
         "action": "Click",
         "connected": true,
         "next": [
+            "[JumpBack]重新连接",
             "战役修理大破舰船",
             "战役修理中破舰船",
             "战役开始出征"
@@ -223,6 +238,7 @@
         "action": "Click",
         "connected": true,
         "next": [
+            "[JumpBack]重新连接",
             "战役修理大破舰船",
             "战役修理中破舰船",
             "战役开始出征"
@@ -234,11 +250,11 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战役开始战斗",
             "战役阵型",
             "战役点击继续",
-            "[JumpBack]战斗追击",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击"
         ],
         "timeout": 60000,
         "focus": "开始出征"
@@ -249,10 +265,10 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战役阵型",
             "战役点击继续",
-            "[JumpBack]战斗追击",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击"
         ],
         "timeout": 90000
     },
@@ -271,9 +287,9 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "战役点击继续",
-            "[JumpBack]战斗追击",
-            "[JumpBack]重新连接"
+            "[JumpBack]战斗追击"
         ]
     },
     "战役点击继续": {
@@ -287,6 +303,7 @@
         ],
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "战役再点继续"
         ]
     },
@@ -294,6 +311,7 @@
         "action": "Click",
         "target": "战役点击继续",
         "next": [
+            "[JumpBack]重新连接",
             "战役次数",
             "选择战役",
             "战役再点继续"
@@ -312,6 +330,7 @@
             89
         ],
         "next": [
+            "[JumpBack]重新连接",
             "任务结束"
         ],
         "focus": "[color:red]战役次数已达上限[/color]"
@@ -328,6 +347,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "开始自动战役"
         ]
     },

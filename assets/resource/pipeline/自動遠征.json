@@ -1,6 +1,7 @@
 {
     "开始自动远征": {
         "next": [
+            "[JumpBack]重新连接",
             "退出远征",
             "自动收远征"
         ]
@@ -11,6 +12,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认远征领取奖励",
             "远征领奖舰船"
         ]
@@ -20,6 +22,7 @@
         "target": "远征领取奖励",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认远征领取奖励",
             "无动作结束"
         ]
@@ -29,6 +32,7 @@
         "template": "确认.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "无动作结束"
         ]
     },
@@ -38,6 +42,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认远征领取奖励2",
             "远征领奖舰船2"
         ]
@@ -47,6 +52,7 @@
         "target": "远征领取奖励2",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认远征领取奖励2",
             "点击出征2"
         ]
@@ -57,6 +63,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "点击出征2"
         ]
     },
@@ -67,6 +74,7 @@
         "green_mask": true,
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "远征收获奖励",
             "点击出征3",
             "等待远征"
@@ -81,12 +89,14 @@
         ],
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "点击远征",
             "等待远征"
         ]
     },
     "等待远征": {
         "next": [
+            "[JumpBack]重新连接",
             "退出远征2"
         ],
         "post_delay": 60000,
@@ -103,6 +113,7 @@
         "post_wait_freezes": 1000,
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "点击远征",
             "远征收获奖励",
             "退出远征1"
@@ -119,6 +130,7 @@
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "远征收获奖励",
             "退出远征1"
         ]
@@ -129,6 +141,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "继续远征"
         ]
     },
@@ -138,6 +151,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "确认远征"
         ]
     },
@@ -147,6 +161,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "远征收获奖励",
             "退出远征1"
         ]
@@ -164,6 +179,7 @@
         "green_mask": true,
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "退出远征",
             "远征领取奖励",
             "自动收远征",
@@ -177,6 +193,7 @@
         "green_mask": true,
         "post_wait_freezes": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "退出远征1",
             "远征领取奖励",
             "无动作结束"
@@ -188,6 +205,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "退出远征2",
             "远征领取奖励2",
             "点击出征2"
@@ -195,6 +213,7 @@
     },
     "退出远征3": {
         "next": [
+            "[JumpBack]重新连接",
             "退出远征2"
         ]
     }

@@ -2,6 +2,7 @@
     "收尾工作": {
         "post_delay": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "结束领取奖励",
             "结束前退出",
             "点击任务",
@@ -22,6 +23,7 @@
         "green_mask": true,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "收尾工作"
         ]
     },
@@ -31,6 +33,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认结束领取奖励",
             "结束领奖舰船"
         ]
@@ -40,6 +43,7 @@
         "target": "结束领取奖励",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认结束领取奖励",
             "收尾工作"
         ]
@@ -50,6 +54,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "收尾工作"
         ]
     },
@@ -58,6 +63,7 @@
         "template": "任务.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "全部领取",
             "退出任务"
         ]
@@ -68,6 +74,7 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
+            "[JumpBack]重新连接",
             "确认全部领取奖励",
             "退出任务"
         ]
@@ -77,6 +84,7 @@
         "template": "确认.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "退出任务"
         ]
     },
@@ -87,6 +95,7 @@
         "green_mask": true,
         "post_delay": 3000,
         "next": [
+            "[JumpBack]重新连接",
             "结束领取奖励2",
             "点击船坞",
             "关闭游戏"
@@ -98,6 +107,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认结束领取奖励2",
             "结束领奖舰船2"
         ]
@@ -107,6 +117,7 @@
         "target": "结束领取奖励2",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认结束领取奖励2",
             "战斗船舱满尝试拆船",
             "点击船坞",
@@ -119,6 +130,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "战斗船舱满尝试拆船",
             "点击船坞",
             "关闭游戏"
@@ -130,6 +142,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认结束领取奖励3",
             "结束领奖舰船3"
         ]
@@ -139,6 +152,7 @@
         "target": "结束领取奖励3",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认结束领取奖励3",
             "点击船坞",
             "关闭游戏"
@@ -150,6 +164,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "点击船坞",
             "关闭游戏"
         ]
@@ -159,6 +174,7 @@
         "template": "船坞.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "自动入浴"
         ]
     },
@@ -169,6 +185,7 @@
         "green_mask": true,
         "post_delay": 3000,
         "next": [
+            "[JumpBack]重新连接",
             "关闭游戏"
         ]
     },

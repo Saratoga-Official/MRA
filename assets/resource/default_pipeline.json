@@ -1,6 +1,5 @@
 {
     "Default": {
-        "next": ["[JumpBack]重新连接"],
         "post_wait_freezes": 1000,
         "on_error": [
             "任务出错"

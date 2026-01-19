@@ -1,6 +1,7 @@
 {
     "开始自动演习": {
         "next": [
+            "[JumpBack]重新连接",
             "演习领取奖励",
             "点击演习",
             "处于演习界面",
@@ -14,6 +15,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认演习领取奖励",
             "演习领奖舰船"
         ]
@@ -23,6 +25,7 @@
         "target": "演习领取奖励",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "确认演习领取奖励",
             "开始自动演习"
         ]
@@ -33,6 +36,7 @@
         "action": "Click",
         "post_delay": 5000,
         "next": [
+            "[JumpBack]重新连接",
             "开始自动演习"
         ]
     },
@@ -46,6 +50,7 @@
             585
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习向下滑"
         ]
     },
@@ -55,6 +60,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "点击演习"
         ]
     },
@@ -64,6 +70,7 @@
         "action": "Click",
         "threshold": 0.9,
         "next": [
+            "[JumpBack]重新连接",
             "演习向下滑"
         ]
     },
@@ -82,6 +89,7 @@
             1
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习挑战",
             "演习向上滑"
         ]
@@ -101,6 +109,7 @@
             1
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习挑战2",
             "演习退出"
         ]
@@ -124,6 +133,7 @@
         ],
         "index": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习识别舰船",
             "演习开始挑战"
         ]
@@ -146,6 +156,7 @@
             "炮潜"
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新次数",
             "演习刷新"
         ]
@@ -155,6 +166,7 @@
         "template": "演习次数.png",
         "threshold": 0.9,
         "next": [
+            "[JumpBack]重新连接",
             "演习关闭"
         ]
     },
@@ -163,6 +175,7 @@
         "template": "演习刷新.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习识别舰船",
             "演习开始挑战"
         ]
@@ -179,6 +192,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习编队",
             "演习自动补给",
             "演习开始出征"
@@ -196,6 +210,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习开始出征"
         ]
     },
@@ -206,6 +221,7 @@
         "threshold": 0.95,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习自动补给",
             "演习开始出征"
         ]
@@ -216,6 +232,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习开始战斗",
             "演习阵型"
         ]
@@ -226,6 +243,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习阵型"
         ]
     },
@@ -244,6 +262,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习追击",
             "演习点击继续"
         ]
@@ -255,6 +274,7 @@
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "演习点击继续"
         ]
     },
@@ -275,6 +295,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习再点继续"
         ]
     },
@@ -287,6 +308,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习结束",
             "演习再点继续"
         ]
@@ -295,6 +317,7 @@
         "recognition": "TemplateMatch",
         "template": "出征1.png",
         "next": [
+            "[JumpBack]重新连接",
             "演习向下滑"
         ]
     },
@@ -303,6 +326,7 @@
         "template": "关闭演习.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新失败1",
             "演习向上滑"
         ],
@@ -321,6 +345,7 @@
         ],
         "index": 1,
         "next": [
+            "[JumpBack]重新连接",
             "演习识别舰船1",
             "演习开始挑战1"
         ]
@@ -343,6 +368,7 @@
             "炮潜"
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习关闭1"
         ]
     },
@@ -351,6 +377,7 @@
         "template": "关闭演习.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新失败2",
             "演习向上滑"
         ],
@@ -369,6 +396,7 @@
         ],
         "index": 2,
         "next": [
+            "[JumpBack]重新连接",
             "演习识别舰船2",
             "演习开始挑战2"
         ]
@@ -391,6 +419,7 @@
             "炮潜"
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习关闭2"
         ]
     },
@@ -399,6 +428,7 @@
         "template": "关闭演习.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新失败3",
             "演习向上滑"
         ],
@@ -417,6 +447,7 @@
         ],
         "index": 3,
         "next": [
+            "[JumpBack]重新连接",
             "演习识别舰船3",
             "演习开始挑战3"
         ]
@@ -439,6 +470,7 @@
             "炮潜"
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习关闭3"
         ]
     },
@@ -447,6 +479,7 @@
         "template": "关闭演习.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习向上滑"
         ],
         "focus": "[color:red]放弃本次演习（共四次）[/color]"
@@ -463,6 +496,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习编队1",
             "演习自动补给1",
             "演习开始出征1"
@@ -480,6 +514,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习开始出征1"
         ]
     },
@@ -490,6 +525,7 @@
         "threshold": 0.95,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习自动补给1",
             "演习开始出征1"
         ]
@@ -500,6 +536,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习开始战斗1",
             "演习阵型1"
         ]
@@ -510,6 +547,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习阵型1"
         ]
     },
@@ -528,6 +566,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习追击1",
             "演习点击继续1"
         ]
@@ -539,6 +578,7 @@
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "演习点击继续1"
         ]
     },
@@ -559,6 +599,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习再点继续1"
         ]
     },
@@ -571,6 +612,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习结束1",
             "演习再点继续1"
         ]
@@ -579,6 +621,7 @@
         "recognition": "TemplateMatch",
         "template": "出征1.png",
         "next": [
+            "[JumpBack]重新连接",
             "演习向下滑1"
         ]
     },
@@ -597,6 +640,7 @@
             1
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新失败1",
             "演习向上滑"
         ]
@@ -613,6 +657,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习编队2",
             "演习自动补给2",
             "演习开始出征2"
@@ -630,6 +675,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习开始出征2"
         ]
     },
@@ -640,6 +686,7 @@
         "threshold": 0.95,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习自动补给2",
             "演习开始出征2"
         ]
@@ -650,6 +697,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习开始战斗2",
             "演习阵型2"
         ]
@@ -660,6 +708,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习阵型2"
         ]
     },
@@ -678,6 +727,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习追击2",
             "演习点击继续2"
         ]
@@ -689,6 +739,7 @@
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "演习点击继续2"
         ]
     },
@@ -709,6 +760,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习再点继续2"
         ]
     },
@@ -721,6 +773,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习结束2",
             "演习再点继续2"
         ]
@@ -729,6 +782,7 @@
         "recognition": "TemplateMatch",
         "template": "出征1.png",
         "next": [
+            "[JumpBack]重新连接",
             "演习向下滑2"
         ]
     },
@@ -747,6 +801,7 @@
             1
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新失败2",
             "演习向上滑"
         ]
@@ -763,6 +818,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习编队3",
             "演习自动补给3",
             "演习开始出征3"
@@ -780,6 +836,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习开始出征3"
         ]
     },
@@ -790,6 +847,7 @@
         "threshold": 0.95,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习自动补给3",
             "演习开始出征3"
         ]
@@ -800,6 +858,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习开始战斗3",
             "演习阵型3"
         ]
@@ -810,6 +869,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习阵型3"
         ]
     },
@@ -828,6 +888,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习追击3",
             "演习点击继续3"
         ]
@@ -839,6 +900,7 @@
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "演习点击继续3"
         ]
     },
@@ -859,6 +921,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习再点继续3"
         ]
     },
@@ -871,6 +934,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习结束3",
             "演习再点继续3"
         ]
@@ -879,6 +943,7 @@
         "recognition": "TemplateMatch",
         "template": "出征1.png",
         "next": [
+            "[JumpBack]重新连接",
             "演习向下滑3"
         ]
     },
@@ -897,6 +962,7 @@
             1
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习刷新失败3",
             "演习向上滑"
         ]
@@ -914,6 +980,7 @@
         ],
         "index": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习开始挑战4"
         ]
     },
@@ -929,6 +996,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习编队4",
             "演习自动补给4",
             "演习开始出征4"
@@ -946,6 +1014,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习开始出征4"
         ]
     },
@@ -956,6 +1025,7 @@
         "threshold": 0.95,
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "演习自动补给4",
             "演习开始出征4"
         ]
@@ -966,6 +1036,7 @@
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
+            "[JumpBack]重新连接",
             "演习开始战斗4",
             "演习阵型4"
         ]
@@ -976,6 +1047,7 @@
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习阵型4"
         ]
     },
@@ -994,6 +1066,7 @@
         "timeout": 90000,
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "演习追击4",
             "演习点击继续4"
         ]
@@ -1005,6 +1078,7 @@
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "演习点击继续4"
         ]
     },
@@ -1025,6 +1099,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习再点继续4"
         ]
     },
@@ -1037,6 +1112,7 @@
             482
         ],
         "next": [
+            "[JumpBack]重新连接",
             "演习结束4",
             "演习再点继续4"
         ]
@@ -1045,6 +1121,7 @@
         "recognition": "TemplateMatch",
         "template": "出征1.png",
         "next": [
+            "[JumpBack]重新连接",
             "演习退出"
         ]
     },
@@ -1060,6 +1137,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "开始自动演习"
         ]
     }

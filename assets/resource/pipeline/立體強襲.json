@@ -3,6 +3,7 @@
         "action": "DoNothing",
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭紧急情况"
         ]
     },
@@ -13,6 +14,7 @@
         "post_wait_freezes": 0,
         "post_delay": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭不处理"
         ],
         "focus": "紧急情况"
@@ -23,6 +25,7 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭自动补给",
             "立体强袭检测等级",
             "立体强袭修理检测大破",
@@ -41,6 +44,7 @@
             15
         ],
         "next": [
+            "[JumpBack]重新连接",
             "退出立体强袭"
         ],
         "enabled": false,
@@ -58,6 +62,7 @@
             22
         ],
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭自动补给",
             "立体强袭检测等级",
             "立体强袭修理检测大破",
@@ -84,6 +89,7 @@
             57
         ],
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭快速修理"
         ],
         "connected": true,
@@ -108,6 +114,7 @@
             52
         ],
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭快速修理"
         ],
         "connected": true,
@@ -118,6 +125,7 @@
         "expected": "快速修理",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭修理大破舰船",
             "立体强袭修理中破舰船"
         ]
@@ -143,6 +151,7 @@
         "action": "Click",
         "connected": true,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭修理大破舰船",
             "立体强袭修理中破舰船",
             "立体强袭开始出征"
@@ -169,6 +178,7 @@
         "action": "Click",
         "connected": true,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭修理大破舰船",
             "立体强袭修理中破舰船",
             "立体强袭开始出征"
@@ -180,6 +190,7 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭前进"
         ],
         "focus": "开始出征"
@@ -190,6 +201,7 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭开始战斗",
             "立体强袭阵型"
         ],
@@ -201,6 +213,7 @@
         "action": "Click",
         "green_mask": true,
         "next": [
+            "[JumpBack]重新连接",
             "退出立体强袭2"
         ]
     },
@@ -214,6 +227,7 @@
         "template": "开始战斗.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭阵型"
         ],
         "focus": "开始战斗"
@@ -232,6 +246,7 @@
         "action": "Click",
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭追击",
             "立体强袭点击继续"
         ],
@@ -244,6 +259,7 @@
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭点击继续"
         ],
         "focus": "追击"
@@ -254,6 +270,7 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭退出2",
             "立体强袭再点继续"
         ],
@@ -263,6 +280,7 @@
         "action": "Click",
         "target": "立体强袭点击继续",
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭退出2",
             "立体强袭再点继续"
         ]
@@ -272,6 +290,7 @@
         "template": "活动退出2.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭确认",
             "立体强袭退出2"
         ]
@@ -281,6 +300,7 @@
         "template": "活动确认.png",
         "action": "Click",
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭无限战斗",
             "无动作结束"
         ],
@@ -289,6 +309,7 @@
     "立体强袭无限战斗": {
         "post_wait_freezes": 0,
         "next": [
+            "[JumpBack]重新连接",
             "立体强袭开始"
         ]
     }
