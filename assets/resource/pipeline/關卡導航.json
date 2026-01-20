@@ -2,7 +2,7 @@
     "开始出征": {
         "next": [
             "[JumpBack]重新连接",
-            "出征领取奖励",
+            "[JumpBack]领取奖励",
             "出征",
             "导航前",
             "退出出征",
@@ -11,7 +11,7 @@
     },
     "退出出征": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "roi": [
             7,
             5,
@@ -25,40 +25,9 @@
             "开始出征"
         ]
     },
-    "出征领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认出征领取奖励",
-            "出征领奖舰船"
-        ]
-    },
-    "确认出征领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "post_delay": 5000,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "点击出征"
-        ]
-    },
-    "出征领奖舰船": {
-        "action": "Click",
-        "target": "出征领取奖励",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认出征领取奖励",
-            "点击出征"
-        ]
-    },
     "点击出征": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -69,7 +38,7 @@
     },
     "出征": {
         "recognition": "TemplateMatch",
-        "template": "出征1.png",
+        "template": "战斗/出征1.png",
         "action": "Click",
         "threshold": 0.9,
         "next": [

@@ -23,7 +23,7 @@
     },
     "开始退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "roi": [
             7,
             5,
@@ -142,7 +142,7 @@
     },
     "进入游戏前": {
         "recognition": "TemplateMatch",
-        "template": "进入游戏.png",
+        "template": "通用/进入游戏.png",
         "timeout": 300000,
         "post_delay": 5000,
         "next": [
@@ -153,7 +153,7 @@
     },
     "进入游戏": {
         "recognition": "TemplateMatch",
-        "template": "进入游戏.png",
+        "template": "通用/进入游戏.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -166,7 +166,7 @@
     },
     "主界面": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -176,7 +176,7 @@
     },
     "退出主界面": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 2000,
@@ -190,7 +190,7 @@
     },
     "退出公告": {
         "recognition": "TemplateMatch",
-        "template": "退出公告.png",
+        "template": "通用/退出公告.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -203,7 +203,7 @@
     },
     "登录奖励": {
         "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
+        "template": "通用/领取奖励.png",
         "action": "Click",
         "post_delay": 3000,
         "next": [
@@ -227,7 +227,7 @@
     },
     "确认领取登录奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认.png",
+        "template": "通用/确认.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -237,7 +237,7 @@
     },
     "小长春的赠礼": {
         "recognition": "TemplateMatch",
-        "template": "立即领取.png",
+        "template": "通用/立即领取.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -246,7 +246,7 @@
     },
     "确认领取小长春的赠礼": {
         "recognition": "TemplateMatch",
-        "template": "确认.png",
+        "template": "通用/确认.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -255,7 +255,7 @@
     },
     "关闭小长春的赠礼": {
         "recognition": "TemplateMatch",
-        "template": "关闭谢礼.png",
+        "template": "通用/关闭谢礼.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -265,7 +265,7 @@
     },
     "结束开始唤醒": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "green_mask": true
     }
 }

@@ -2,7 +2,7 @@
     "开始自动战役": {
         "next": [
             "[JumpBack]重新连接",
-            "战役领取奖励",
+            "[JumpBack]领取奖励",
             "点击战役",
             "战役次数",
             "普通难度",
@@ -11,40 +11,9 @@
             "自动战役"
         ]
     },
-    "战役领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认战役领取奖励",
-            "战役领奖舰船"
-        ]
-    },
-    "战役领奖舰船": {
-        "action": "Click",
-        "target": "战役领取奖励",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认战役领取奖励",
-            "开始自动战役"
-        ]
-    },
-    "确认战役领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "开始自动战役"
-        ]
-    },
     "自动战役": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -57,7 +26,7 @@
     },
     "点击战役": {
         "recognition": "TemplateMatch",
-        "template": "战役.png",
+        "template": "战斗/战役.png",
         "action": "Click",
         "threshold": 0.9,
         "next": [
@@ -69,7 +38,7 @@
     },
     "困难难度": {
         "recognition": "TemplateMatch",
-        "template": "困难难度.png",
+        "template": "战斗/困难难度.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -79,7 +48,7 @@
     },
     "普通难度": {
         "recognition": "TemplateMatch",
-        "template": "普通难度.png",
+        "template": "战斗/普通难度.png",
         "next": [
             "[JumpBack]重新连接",
             "战役次数",
@@ -121,7 +90,7 @@
     },
     "战役确认": {
         "recognition": "TemplateMatch",
-        "template": "对号.png",
+        "template": "战斗/对号.png",
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -246,7 +215,7 @@
     },
     "战役开始出征": {
         "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "template": "战斗/开始出征.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
@@ -261,7 +230,7 @@
     },
     "战役开始战斗": {
         "recognition": "TemplateMatch",
-        "template": "开始战斗.png",
+        "template": "战斗/开始战斗.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
@@ -337,7 +306,7 @@
     },
     "退出战役": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "roi": [
             7,
             5,
@@ -353,7 +322,7 @@
     },
     "回到战役界面": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "green_mask": true
     }
 }

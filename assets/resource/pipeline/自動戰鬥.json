@@ -12,6 +12,7 @@
             "[JumpBack]重新连接",
             "点击远征",
             "无限战斗",
+            "[JumpBack]退出",
             "无动作结束"
         ]
     },
@@ -40,7 +41,7 @@
     },
     "确认进入关卡": {
         "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "template": "战斗/开始出征.png",
         "next": [
             "[JumpBack]重新连接",
             "启用军阶buff",
@@ -167,7 +168,7 @@
     },
     "退出buff": {
         "recognition": "TemplateMatch",
-        "template": "退出buff.png",
+        "template": "战斗/退出buff.png",
         "roi": [
             18,
             13,
@@ -218,7 +219,7 @@
     },
     "战斗自动补给": {
         "recognition": "TemplateMatch",
-        "template": "对号.png",
+        "template": "战斗/对号.png",
         "inverse": true,
         "action": "Click",
         "target": [
@@ -371,7 +372,7 @@
     },
     "战斗开始出征": {
         "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "template": "战斗/开始出征.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
@@ -398,7 +399,7 @@
     },
     "战斗船舱满": {
         "recognition": "TemplateMatch",
-        "template": "关闭船舱满提醒.png",
+        "template": "战斗/关闭船舱满提醒.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -412,21 +413,23 @@
     },
     "战斗船舱满退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]退出",
             "任务结束"
         ]
     },
     "战斗退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]退出",
             "任务结束"
         ]
     },
@@ -565,7 +568,7 @@
     },
     "战斗继续退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -575,7 +578,7 @@
     },
     "战斗舰队补给": {
         "recognition": "TemplateMatch",
-        "template": "舰队补给.png",
+        "template": "战斗/舰队补给.png",
         "next": [
             "[JumpBack]重新连接",
             "战斗大破检测",
@@ -584,7 +587,7 @@
     },
     "战斗回港": {
         "recognition": "TemplateMatch",
-        "template": "回港.png",
+        "template": "战斗/回港.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -595,7 +598,7 @@
     },
     "战斗大破回港": {
         "recognition": "TemplateMatch",
-        "template": "大破回港.png",
+        "template": "战斗/大破回港.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -606,7 +609,7 @@
     },
     "战斗大破检测": {
         "recognition": "TemplateMatch",
-        "template": "大破提醒.png",
+        "template": "战斗/大破提醒.png",
         "next": [
             "[JumpBack]重新连接",
             "战斗回港"
@@ -615,7 +618,7 @@
     },
     "战斗前进": {
         "recognition": "TemplateMatch",
-        "template": "前进.png",
+        "template": "战斗/前进.png",
         "action": "Click",
         "timeout": 300000,
         "post_wait_freezes": 0,
@@ -702,7 +705,7 @@
     },
     "战斗舰队补给2": {
         "recognition": "TemplateMatch",
-        "template": "舰队补给.png",
+        "template": "战斗/舰队补给.png",
         "next": [
             "[JumpBack]重新连接",
             "战斗大破检测",
@@ -711,7 +714,7 @@
     },
     "战斗前进2": {
         "recognition": "TemplateMatch",
-        "template": "前进.png",
+        "template": "战斗/前进.png",
         "action": "Click",
         "timeout": 300000,
         "post_wait_freezes": 0,
@@ -798,7 +801,7 @@
     },
     "战斗舰队补给3": {
         "recognition": "TemplateMatch",
-        "template": "舰队补给.png",
+        "template": "战斗/舰队补给.png",
         "next": [
             "[JumpBack]重新连接",
             "战斗大破检测",
@@ -807,7 +810,7 @@
     },
     "战斗前进3": {
         "recognition": "TemplateMatch",
-        "template": "前进.png",
+        "template": "战斗/前进.png",
         "action": "Click",
         "timeout": 300000,
         "post_wait_freezes": 0,
@@ -894,7 +897,7 @@
     },
     "战斗舰队补给4": {
         "recognition": "TemplateMatch",
-        "template": "舰队补给.png",
+        "template": "战斗/舰队补给.png",
         "next": [
             "[JumpBack]重新连接",
             "战斗大破检测",
@@ -903,7 +906,7 @@
     },
     "战斗前进4": {
         "recognition": "TemplateMatch",
-        "template": "前进.png",
+        "template": "战斗/前进.png",
         "action": "Click",
         "timeout": 300000,
         "post_wait_freezes": 0,
@@ -990,47 +993,16 @@
     },
     "战斗舰队补给5": {
         "recognition": "TemplateMatch",
-        "template": "舰队补给.png",
+        "template": "战斗/舰队补给.png",
         "next": [
             "[JumpBack]重新连接",
             "战斗大破检测",
             "战斗前进4"
         ]
     },
-    "拆船前领奖": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认拆船领取奖励",
-            "拆船前领奖舰船"
-        ]
-    },
-    "拆船前领奖舰船": {
-        "action": "Click",
-        "target": "拆船前领奖",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认拆船领取奖励",
-            "战斗船舱满尝试拆船"
-        ]
-    },
-    "确认拆船领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗船舱满尝试拆船"
-        ]
-    },
     "战斗船舱满尝试拆船": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "green_mask": true,
         "target": [
@@ -1041,7 +1013,7 @@
         ],
         "next": [
             "[JumpBack]重新连接",
-            "拆船前领奖",
+            "[JumpBack]领取奖励",
             "拆船点击建造",
             "战斗船舱满尝试拆船"
         ]
@@ -1099,7 +1071,7 @@
     },
     "拆船点击添加": {
         "recognition": "TemplateMatch",
-        "template": "添加舰船.png",
+        "template": "战斗/添加舰船.png",
         "roi": [
             18,
             111,
@@ -1183,7 +1155,7 @@
     },
     "拆船结束退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "green_mask": true,
         "action": "Click",
         "roi": [
@@ -1199,7 +1171,7 @@
     },
     "拆船结束退出2": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "green_mask": true,
         "roi": [
             13,
@@ -1211,7 +1183,7 @@
         "post_delay": 3000,
         "next": [
             "[JumpBack]重新连接",
-            "结束领取奖励3",
+            "[JumpBack]领取奖励",
             "点击船坞",
             "关闭游戏"
         ]

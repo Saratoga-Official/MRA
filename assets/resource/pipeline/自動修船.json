@@ -1,7 +1,7 @@
 {
     "自动修船": {
         "recognition": "TemplateMatch",
-        "template": "修理舰船.png",
+        "template": "通用/修理舰船.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "post_delay": 1000,
@@ -12,7 +12,7 @@
     },
     "选择修理舰船": {
         "recognition": "TemplateMatch",
-        "template": "选择舰船.png",
+        "template": "通用/选择舰船.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -24,7 +24,7 @@
     },
     "快速修理": {
         "recognition": "TemplateMatch",
-        "template": "快速修理.png",
+        "template": "通用/快速修理.png",
         "action": "Click",
         "target": [
             591,
@@ -95,7 +95,7 @@
     },
     "退出修理": {
         "recognition": "TemplateMatch",
-        "template": "退出修理.png",
+        "template": "通用/退出修理.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "post_delay": 1000,
@@ -107,12 +107,12 @@
     },
     "退出浴场": {
         "recognition": "TemplateMatch",
-        "template": "退出浴场.png",
+        "template": "通用/退出浴场.png",
         "action": "Click"
     },
     "自动入浴": {
         "recognition": "TemplateMatch",
-        "template": "修理舰船.png",
+        "template": "通用/修理舰船.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "post_delay": 1000,
@@ -123,7 +123,7 @@
     },
     "选择入浴舰船": {
         "recognition": "TemplateMatch",
-        "template": "选择舰船.png",
+        "template": "通用/选择舰船.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -132,7 +132,7 @@
     },
     "全部入浴": {
         "recognition": "TemplateMatch",
-        "template": "全部入浴.png",
+        "template": "通用/全部入浴.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",

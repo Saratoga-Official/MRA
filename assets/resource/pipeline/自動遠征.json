@@ -6,70 +6,9 @@
             "自动收远征"
         ]
     },
-    "远征领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认远征领取奖励",
-            "远征领奖舰船"
-        ]
-    },
-    "远征领奖舰船": {
-        "action": "Click",
-        "target": "远征领取奖励",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认远征领取奖励",
-            "无动作结束"
-        ]
-    },
-    "确认远征领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "无动作结束"
-        ]
-    },
-    "远征领取奖励2": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认远征领取奖励2",
-            "远征领奖舰船2"
-        ]
-    },
-    "远征领奖舰船2": {
-        "action": "Click",
-        "target": "远征领取奖励2",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认远征领取奖励2",
-            "点击出征2"
-        ]
-    },
-    "确认远征领取奖励2": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "点击出征2"
-        ]
-    },
     "点击出征2": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,
@@ -82,7 +21,7 @@
     },
     "点击出征3": {
         "recognition": "TemplateMatch",
-        "template": "出征1.png",
+        "template": "战斗/出征1.png",
         "action": "Click",
         "threshold": [
             0.9
@@ -108,7 +47,7 @@
     },
     "自动收远征": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "green_mask": true,
@@ -122,7 +61,7 @@
     "点击远征": {
         "recognition": "TemplateMatch",
         "template": [
-            "远征.png"
+            "通用/远征.png"
         ],
         "threshold": [
             0.9
@@ -137,7 +76,7 @@
     },
     "远征收获奖励": {
         "recognition": "TemplateMatch",
-        "template": "远征收获奖励.png",
+        "template": "通用/远征收获奖励.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
@@ -147,7 +86,7 @@
     },
     "继续远征": {
         "recognition": "TemplateMatch",
-        "template": "远征继续.png",
+        "template": "通用/远征继续.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
@@ -157,7 +96,7 @@
     },
     "确认远征": {
         "recognition": "TemplateMatch",
-        "template": "远征确认.png",
+        "template": "通用/远征确认.png",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
@@ -168,7 +107,7 @@
     },
     "退出远征": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "roi": [
             7,
             5,
@@ -181,33 +120,33 @@
         "next": [
             "[JumpBack]重新连接",
             "退出远征",
-            "远征领取奖励",
+            "[JumpBack]领取奖励",
             "自动收远征",
             "无动作结束"
         ]
     },
     "退出远征1": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,
         "next": [
             "[JumpBack]重新连接",
             "退出远征1",
-            "远征领取奖励",
+            "[JumpBack]领取奖励",
             "无动作结束"
         ]
     },
     "退出远征2": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
             "退出远征2",
-            "远征领取奖励2",
+            "[JumpBack]领取奖励",
             "点击出征2"
         ]
     },

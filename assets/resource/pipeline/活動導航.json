@@ -1,0 +1,318 @@
+{
+    "进入活动": {
+        "next": [
+            "[JumpBack]重新连接",
+            "进入关卡"
+        ]
+    },
+    "活动导航": {
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "一级导航",
+            "二级导航",
+            "三级导航",
+            "进入关卡",
+            "[JumpBack]退出"
+        ]
+    },
+    "一级导航": {
+        "recognition": "TemplateMatch",
+        "template": "活动导航/导航1.png",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]点错了检测",
+            "二级导航"
+        ],
+        "focus": "使用模板路径:resource/image/活动导航/导航1.png"
+    },
+    "二级导航": {
+        "recognition": "TemplateMatch",
+        "template": "活动导航/导航2.png",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]答题检测",
+            "进入关卡",
+            "二级导航",
+            "[JumpBack]退出"
+        ],
+        "focus": "使用模板路径:resource/image/活动导航/导航2.png"
+    },
+    "三级导航": {
+        "recognition": "TemplateMatch",
+        "template": "活动导航/导航3.png",
+        "action": "Click",
+        "post_delay": 2000,
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "进入关卡"
+        ],
+        "focus": "使用模板路径:resource/image/活动导航/导航3.png"
+    },
+    "点错了检测": {
+        "recognition": "OCR",
+        "expected": "是否跳转前往预定界面",
+        "roi": [
+            494,
+            256,
+            294,
+            77
+        ],
+        "post_delay": 2000,
+        "next": [
+            "[JumpBack]重新连接",
+            "点错了取消"
+        ]
+    },
+    "点错了取消": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "roi": [
+            728,
+            380,
+            130,
+            54
+        ]
+    },
+    "答题检测": {
+        "recognition": "OCR",
+        "expected": "是否进行答题",
+        "roi": [
+            538,
+            266,
+            192,
+            52
+        ],
+        "post_delay": 2000,
+        "next": [
+            "[JumpBack]重新连接",
+            "答题确认",
+            "答题取消"
+        ]
+    },
+    "答题确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "roi": [
+            411,
+            356,
+            145,
+            104
+        ],
+        "enabled": false,
+        "post_delay": 2000,
+        "next": [
+            "[JumpBack]重新连接",
+            "检查题目"
+        ]
+    },
+    "答题取消": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "roi": [
+            740,
+            381,
+            110,
+            55
+        ]
+    },
+    "检查题目": {
+        "next": [
+            "[JumpBack]重新连接",
+            "选择A",
+            "选择B",
+            "选择C",
+            "选择D"
+        ]
+    },
+    "选择A": {
+        "recognition": "OCR",
+        "expected": [
+            "A"
+        ],
+        "roi": [
+            58,
+            311,
+            253,
+            70
+        ],
+        "action": "Click",
+        "target_offset": [
+            50,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "选择确认",
+            "正确答案",
+            "无动作结束"
+        ]
+    },
+    "选择B": {
+        "recognition": "OCR",
+        "expected": [
+            "B"
+        ],
+        "roi": [
+            101,
+            384,
+            178,
+            65
+        ],
+        "action": "Click",
+        "target_offset": [
+            50,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "选择确认",
+            "正确答案",
+            "无动作结束"
+        ]
+    },
+    "选择C": {
+        "recognition": "OCR",
+        "expected": [
+            "C"
+        ],
+        "roi": [
+            71,
+            455,
+            196,
+            65
+        ],
+        "action": "Click",
+        "target_offset": [
+            50,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "选择确认",
+            "正确答案",
+            "无动作结束"
+        ]
+    },
+    "选择D": {
+        "recognition": "OCR",
+        "expected": [
+            "D"
+        ],
+        "roi": [
+            115,
+            516,
+            151,
+            80
+        ],
+        "action": "Click",
+        "target_offset": [
+            50,
+            0,
+            0,
+            0
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "选择确认",
+            "正确答案",
+            "无动作结束"
+        ]
+    },
+    "选择确认": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "roi": [
+            1065,
+            647,
+            153,
+            62
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "无脑取消",
+            "选择确认1",
+            "正确答案",
+            "无动作结束"
+        ]
+    },
+    "选择确认1": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "检查题目"
+        ]
+    },
+    "正确答案": {
+        "recognition": "OCR",
+        "expected": [
+            "正确答案"
+        ],
+        "roi": [
+            901,
+            308,
+            303,
+            277
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "选择下一题",
+            "无动作结束"
+        ]
+    },
+    "选择下一题": {
+        "recognition": "OCR",
+        "expected": [
+            "下一题"
+        ],
+        "roi": [
+            1065,
+            647,
+            153,
+            62
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "检查题目"
+        ]
+    },
+    "无脑取消": {
+        "recognition": "OCR",
+        "expected": [
+            "取消"
+        ],
+        "roi": [
+            721,
+            382,
+            145,
+            51
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "检查题目"
+        ]
+    }
+}

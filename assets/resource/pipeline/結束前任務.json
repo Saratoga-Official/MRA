@@ -3,7 +3,7 @@
         "post_delay": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "结束领取奖励",
+            "[JumpBack]领取奖励",
             "结束前退出",
             "点击任务",
             "战斗船舱满尝试拆船",
@@ -13,7 +13,7 @@
     },
     "结束前退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "roi": [
             7,
             5,
@@ -27,40 +27,9 @@
             "收尾工作"
         ]
     },
-    "结束领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认结束领取奖励",
-            "结束领奖舰船"
-        ]
-    },
-    "结束领奖舰船": {
-        "action": "Click",
-        "target": "结束领取奖励",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认结束领取奖励",
-            "收尾工作"
-        ]
-    },
-    "确认结束领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "收尾工作"
-        ]
-    },
     "点击任务": {
         "recognition": "TemplateMatch",
-        "template": "任务.png",
+        "template": "通用/任务.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -70,7 +39,7 @@
     },
     "全部领取": {
         "recognition": "TemplateMatch",
-        "template": "全部领取.png",
+        "template": "通用/全部领取.png",
         "action": "Click",
         "post_delay": 3000,
         "next": [
@@ -81,7 +50,7 @@
     },
     "确认全部领取奖励": {
         "recognition": "TemplateMatch",
-        "template": "确认.png",
+        "template": "通用/确认.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -90,88 +59,20 @@
     },
     "退出任务": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "post_delay": 3000,
         "next": [
             "[JumpBack]重新连接",
-            "结束领取奖励2",
-            "点击船坞",
-            "关闭游戏"
-        ]
-    },
-    "结束领取奖励2": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认结束领取奖励2",
-            "结束领奖舰船2"
-        ]
-    },
-    "结束领奖舰船2": {
-        "action": "Click",
-        "target": "结束领取奖励2",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认结束领取奖励2",
-            "战斗船舱满尝试拆船",
-            "点击船坞",
-            "关闭游戏"
-        ]
-    },
-    "确认结束领取奖励2": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗船舱满尝试拆船",
-            "点击船坞",
-            "关闭游戏"
-        ]
-    },
-    "结束领取奖励3": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认结束领取奖励3",
-            "结束领奖舰船3"
-        ]
-    },
-    "结束领奖舰船3": {
-        "action": "Click",
-        "target": "结束领取奖励3",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认结束领取奖励3",
-            "点击船坞",
-            "关闭游戏"
-        ]
-    },
-    "确认结束领取奖励3": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
             "点击船坞",
             "关闭游戏"
         ]
     },
     "点击船坞": {
         "recognition": "TemplateMatch",
-        "template": "船坞.png",
+        "template": "通用/船坞.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -180,7 +81,7 @@
     },
     "退出船坞": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "post_delay": 3000,

@@ -1,7 +1,7 @@
 {
     "狗粮1-1": {
         "recognition": "TemplateMatch",
-        "template": "1-1.png",
+        "template": "战斗/1-1.png",
         "action": "Click",
         "target": [
             1000,
@@ -18,7 +18,7 @@
     },
     "狗粮编队": {
         "recognition": "TemplateMatch",
-        "template": "4队.png",
+        "template": "战斗/4队.png",
         "order_by": "Score",
         "threshold": 0.95,
         "action": "Click",
@@ -30,7 +30,7 @@
     },
     "狗粮自动补给": {
         "recognition": "TemplateMatch",
-        "template": "对号.png",
+        "template": "战斗/对号.png",
         "action": "Click",
         "target": [
             56,
@@ -68,7 +68,7 @@
     },
     "点离队": {
         "recognition": "TemplateMatch",
-        "template": "离队.png",
+        "template": "战斗/离队.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -77,7 +77,7 @@
     },
     "点星星": {
         "recognition": "TemplateMatch",
-        "template": "星星.png",
+        "template": "战斗/星星.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -193,7 +193,7 @@
     },
     "狗粮编队检测": {
         "recognition": "TemplateMatch",
-        "template": "狗粮编队检测.png",
+        "template": "战斗/狗粮编队检测.png",
         "post_wait_freezes": 0,
         "order_by": "Score",
         "threshold": 0.95,
@@ -205,7 +205,7 @@
     },
     "狗粮编队检测2": {
         "recognition": "TemplateMatch",
-        "template": "添加舰船.png",
+        "template": "战斗/添加舰船.png",
         "inverse": true,
         "roi": [
             26,
@@ -273,7 +273,7 @@
     },
     "点星星2": {
         "recognition": "TemplateMatch",
-        "template": "星星.png",
+        "template": "战斗/星星.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -393,7 +393,7 @@
     },
     "狗粮不满足出征要求": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
@@ -403,7 +403,7 @@
     },
     "狗粮开始出征": {
         "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "template": "战斗/开始出征.png",
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
@@ -417,7 +417,7 @@
     },
     "狗粮船舱满": {
         "recognition": "TemplateMatch",
-        "template": "关闭船舱满提醒.png",
+        "template": "战斗/关闭船舱满提醒.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "next": [
@@ -428,7 +428,7 @@
     },
     "退出狗粮": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 0,
@@ -439,7 +439,7 @@
     },
     "狗粮开始战斗": {
         "recognition": "TemplateMatch",
-        "template": "开始战斗.png",
+        "template": "战斗/开始战斗.png",
         "action": "Click",
         "timeout": 90000,
         "post_wait_freezes": 0,
@@ -451,7 +451,7 @@
     },
     "狗粮追击": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "timeout": 90000,
         "next": [
@@ -486,7 +486,7 @@
     },
     "狗粮回港": {
         "recognition": "TemplateMatch",
-        "template": "回港.png",
+        "template": "战斗/回港.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -495,7 +495,7 @@
     },
     "狗粮大破回港": {
         "recognition": "TemplateMatch",
-        "template": "大破回港.png",
+        "template": "战斗/大破回港.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",

@@ -34,37 +34,48 @@
         "action": "Click",
         "focus": "[color:red]网络断开[/color]"
     },
+    "退出": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "通用/退出.png",
+            "通用/退出公告.png",
+            "战斗/活动退出.png",
+            "战斗/活动退出2.png"
+        ],
+        "action": "Click",
+        "post_delay": 3000
+    },
     "战斗追击": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
     "战斗追击2": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
     "战斗追击3": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
     "战斗追击4": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
     "战斗追击5": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
@@ -106,8 +117,39 @@
     },
     "随便选一个": {
         "recognition": "TemplateMatch",
-        "template": "选择战况.png",
+        "template": "战斗/选择战况.png",
         "post_wait_freezes": 0,
         "action": "Click"
+    },
+    "领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "通用/领取奖励.png",
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "[JumpBack]重新连接",
+            "确认领取奖励",
+            "领奖舰船"
+        ]
+    },
+    "确认领取奖励": {
+        "recognition": "TemplateMatch",
+        "template": "通用/确认.png",
+        "post_delay": 5000,
+        "action": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "无动作结束"
+        ]
+    },
+    "领奖舰船": {
+        "action": "Click",
+        "target": "领取奖励",
+        "post_delay": 5000,
+        "next": [
+            "[JumpBack]重新连接",
+            "确认领取奖励",
+            "无动作结束"
+        ]
     }
 }

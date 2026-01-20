@@ -43,9 +43,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -91,7 +91,7 @@
     },
     "战备舰队获取确定": {
         "recognition": "TemplateMatch",
-        "template": "战备舰队获取确定.png",
+        "template": "决战/战备舰队获取确定.png",
         "action": "Click"
     },
     "决战招募识别2": {
@@ -125,9 +125,9 @@
             33
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -199,9 +199,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -270,9 +270,9 @@
             32
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -383,9 +383,9 @@
     "决战寻找+11": {
         "recognition": "TemplateMatch",
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "roi": [
             250,
@@ -412,9 +412,9 @@
     "决战寻找+12": {
         "recognition": "TemplateMatch",
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "roi": [
             410,
@@ -440,9 +440,9 @@
     "决战寻找+13": {
         "recognition": "TemplateMatch",
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "roi": [
             571,
@@ -467,9 +467,9 @@
     "决战寻找+14": {
         "recognition": "TemplateMatch",
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "roi": [
             732,
@@ -551,9 +551,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -596,9 +596,9 @@
             33
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -621,9 +621,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -650,9 +650,9 @@
             33
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -697,9 +697,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -722,9 +722,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -767,9 +767,9 @@
             32
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "inverse": true,
         "action": "Click",
@@ -792,9 +792,9 @@
             32
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -856,9 +856,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -915,9 +915,9 @@
             33
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -972,9 +972,9 @@
             35
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -1027,9 +1027,9 @@
             32
         ],
         "template": [
-            "+1.png",
-            "+2.png",
-            "+3.png"
+            "决战/+1.png",
+            "决战/+2.png",
+            "决战/+3.png"
         ],
         "action": "Click",
         "target": [
@@ -1116,7 +1116,7 @@
     },
     "决战招募确定": {
         "recognition": "TemplateMatch",
-        "template": "战备舰队获取确定.png",
+        "template": "决战/战备舰队获取确定.png",
         "action": "Click"
     }
 }

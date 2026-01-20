@@ -4,7 +4,7 @@
             "[JumpBack]重新连接",
             "处于建造界面",
             "退出建造",
-            "建造前领奖",
+            "[JumpBack]领取奖励",
             "建造进入菜单"
         ]
     },
@@ -29,40 +29,9 @@
             "无动作结束"
         ]
     },
-    "建造前领奖": {
-        "recognition": "TemplateMatch",
-        "template": "领取奖励.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认建造领取奖励",
-            "建造前领奖舰船"
-        ]
-    },
-    "建造前领奖舰船": {
-        "action": "Click",
-        "target": "建造前领奖",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "确认建造领取奖励",
-            "开始自动建造"
-        ]
-    },
-    "确认建造领取奖励": {
-        "recognition": "TemplateMatch",
-        "template": "确认.png",
-        "action": "Click",
-        "post_delay": 5000,
-        "next": [
-            "[JumpBack]重新连接",
-            "开始自动建造"
-        ]
-    },
     "建造进入菜单": {
         "recognition": "TemplateMatch",
-        "template": "出征2.png",
+        "template": "通用/出征2.png",
         "action": "Click",
         "green_mask": true,
         "target": [
@@ -78,7 +47,7 @@
     },
     "退出建造": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "roi": [
             7,
             5,
@@ -161,7 +130,7 @@
     },
     "建造结束退出": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "green_mask": true,
         "action": "Click",
         "roi": [
@@ -177,7 +146,7 @@
     },
     "建造结束退出2": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "green_mask": true,
         "roi": [
             13,
@@ -267,7 +236,7 @@
     },
     "建造燃料1": {
         "recognition": "TemplateMatch",
-        "template": "5.png",
+        "template": "建造/5.png",
         "roi": [
             253,
             254,
@@ -308,7 +277,7 @@
     },
     "建造燃料2": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             325,
             252,
@@ -348,7 +317,7 @@
     },
     "建造燃料3": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             409,
             253,
@@ -387,7 +356,7 @@
     },
     "建造弹药1": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             744,
             254,
@@ -425,7 +394,7 @@
     },
     "建造弹药2": {
         "recognition": "TemplateMatch",
-        "template": "3.png",
+        "template": "建造/3.png",
         "roi": [
             818,
             256,
@@ -462,7 +431,7 @@
     },
     "建造弹药3": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             903,
             252,
@@ -498,7 +467,7 @@
     },
     "建造钢材1": {
         "recognition": "TemplateMatch",
-        "template": "6.png",
+        "template": "建造/6.png",
         "roi": [
             254,
             549,
@@ -533,7 +502,7 @@
     },
     "建造钢材2": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             327,
             548,
@@ -567,7 +536,7 @@
     },
     "建造钢材3": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             409,
             547,
@@ -600,7 +569,7 @@
     },
     "建造铝材1": {
         "recognition": "TemplateMatch",
-        "template": "3.png",
+        "template": "建造/3.png",
         "roi": [
             747,
             544,
@@ -632,7 +601,7 @@
     },
     "建造铝材2": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             819,
             546,
@@ -663,7 +632,7 @@
     },
     "建造铝材3": {
         "recognition": "TemplateMatch",
-        "template": "0.png",
+        "template": "建造/0.png",
         "roi": [
             906,
             549,

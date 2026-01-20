@@ -9,7 +9,7 @@
     },
     "立体强袭紧急情况": {
         "recognition": "TemplateMatch",
-        "template": "活动紧急情况.png",
+        "template": "战斗/活动紧急情况.png",
         "action": "Click",
         "post_wait_freezes": 0,
         "post_delay": 1000,
@@ -21,7 +21,7 @@
     },
     "立体强袭不处理": {
         "recognition": "TemplateMatch",
-        "template": "活动不处理.png",
+        "template": "战斗/活动不处理.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -52,7 +52,7 @@
     },
     "立体强袭自动补给": {
         "recognition": "TemplateMatch",
-        "template": "对号.png",
+        "template": "战斗/对号.png",
         "inverse": true,
         "action": "Click",
         "target": [
@@ -186,7 +186,7 @@
     },
     "立体强袭开始出征": {
         "recognition": "TemplateMatch",
-        "template": "开始出征.png",
+        "template": "战斗/开始出征.png",
         "action": "Click",
         "post_delay": 3000,
         "next": [
@@ -197,7 +197,7 @@
     },
     "立体强袭前进": {
         "recognition": "TemplateMatch",
-        "template": "活动前进.png",
+        "template": "战斗/活动前进.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -209,22 +209,18 @@
     },
     "退出立体强袭": {
         "recognition": "TemplateMatch",
-        "template": "退出.png",
+        "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
-            "退出立体强袭2"
+            "[JumpBack]退出",
+            "无动作结束"
         ]
-    },
-    "退出立体强袭2": {
-        "recognition": "TemplateMatch",
-        "template": "活动退出.png",
-        "action": "Click"
     },
     "立体强袭开始战斗": {
         "recognition": "TemplateMatch",
-        "template": "开始战斗.png",
+        "template": "战斗/开始战斗.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -254,7 +250,7 @@
     },
     "立体强袭追击": {
         "recognition": "TemplateMatch",
-        "template": "追击.png",
+        "template": "战斗/追击.png",
         "action": "Click",
         "post_wait_freezes": 5000,
         "timeout": 90000,
@@ -266,7 +262,7 @@
     },
     "立体强袭点击继续": {
         "recognition": "TemplateMatch",
-        "template": "点击继续.png",
+        "template": "战斗/点击继续.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [
@@ -287,7 +283,7 @@
     },
     "立体强袭退出2": {
         "recognition": "TemplateMatch",
-        "template": "活动退出2.png",
+        "template": "战斗/活动退出2.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -297,11 +293,12 @@
     },
     "立体强袭确认": {
         "recognition": "TemplateMatch",
-        "template": "活动确认.png",
+        "template": "战斗/活动确认.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
             "立体强袭无限战斗",
+            "[JumpBack]退出",
             "无动作结束"
         ],
         "focus": "退出"
