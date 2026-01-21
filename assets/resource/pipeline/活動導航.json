@@ -17,6 +17,8 @@
         "recognition": "TemplateMatch",
         "template": "活动导航/导航1.png",
         "action": "Click",
+        "post_wait_freezes": 500,
+        "rate_limit": 500,
         "next": [
             "[JumpBack]重新连接",
             "点错了检测",
@@ -59,6 +61,8 @@
             294,
             77
         ],
+        "rate_limit": 500,
+        "post_wait_freezes": 500,
         "next": [
             "[JumpBack]重新连接",
             "点错了取消"
