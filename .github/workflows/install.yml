@@ -128,6 +128,8 @@ jobs:
           python -m pip install -r ./requirements.txt
           python ./install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
           cd ..
+          mv install/MFAAvalonia.exe install/MRA.exe
+          cp logo.ico install
 
       - uses: actions/upload-artifact@v4
         with:
