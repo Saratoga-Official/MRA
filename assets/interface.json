@@ -2,9 +2,9 @@
     "interface_version": 2,
     "name": "MRA",
     "version": "DEBUG_VERSION",
-    "icon": "/logo.ico",
+    "icon": "{PROJECT_DIR}/Assets/logo.ico",
     "contact": "QQ群457094182",
-    "license": "/LICENSE",
+    "license": "{PROJECT_DIR}/LICENSE",
     "github": "https://github.com/Saratoga-Official/MRA",
     "url": "https://github.com/Saratoga-Official/MRA",
     "custom_title": "MRA",
@@ -123,7 +123,7 @@
             }
         },
         {
-            "name": "自动决战E6",
+            "name": "自动决战",
             "entry": "开始自动决战",
             "default_check": false,
             "repeatable": true,
@@ -138,6 +138,7 @@
                 "<br>[color:red]⑧由于决战逻辑过于复杂，尽量不要中途停止任务，否则下次开始任务时可能会卡住，如果需要中途停止最好在等MRA（或者手动操作）打完其中一关boss，领取舰船奖励之后停止，下次开启任务会自动继续打第二关或第三关[/color]"
             ],
             "option": [
+                "决战选择关卡",
                 "第一关指定开局潜艇",
                 "第二关指定开局潜艇",
                 "决战打完次数",
@@ -263,7 +264,7 @@
             "repeatable": true,
             "doc": [
                 "[color:red]若使用自定义导航，将鼠标移动到自定义导航旁的问号查看说明[/color]",
-                "<br>[color:red]若不使用自定义导航，需在出击准备按钮前开始[/color]",
+                "<br>[color:red]若不使用自定义导航，须在出击准备按钮前开始[/color]",
                 "<br>[color:red]立体强袭关卡须在紧急情况前开始，仅支持打第一个点[/color]",
                 "<br>[color:red]自动答题需要在答题界面开始，无脑选择选项，不追求答对[/color]"
             ],
@@ -1850,6 +1851,173 @@
                 }
             ]
         },
+        "决战选择关卡": {
+            "cases": [
+                {
+                    "name": "E6",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "E5",
+                    "pipeline_override": {
+                        "识别决战关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "识别决战点",
+                                "[JumpBack]决战沉默战士E6",
+                                "[JumpBack]决战沉默战士E4",
+                                "[JumpBack]决战沉默战士E3",
+                                "[JumpBack]决战沉默战士E2",
+                                "[JumpBack]决战沉默战士E1"
+                            ]
+                        },
+                        "识别决战点": {
+                            "expected": "猎火鸡"
+                        },
+                        "决战沉默战士E6-1": {
+                            "template": "决战/E5-1.png",
+                            "roi": [
+                                404,
+                                56,
+                                235,
+                                243
+                            ]
+                        },
+                        "进入沉默战士决战E6-1": {
+                            "template": "决战/E5-1.png",
+                            "roi": [
+                                404,
+                                56,
+                                235,
+                                243
+                            ]
+                        },
+                        "决战沉默战士E6-23": {
+                            "roi": [
+                                830,
+                                117,
+                                283,
+                                267
+                            ]
+                        },
+                        "决战沉默战士E6-2": {
+                            "roi": [
+                                830,
+                                117,
+                                283,
+                                267
+                            ]
+                        },
+                        "决战沉默战士E6-22": {
+                            "roi": [
+                                830,
+                                117,
+                                283,
+                                267
+                            ]
+                        },
+                        "决战沉默战士E6-3": {
+                            "roi": [
+                                555,
+                                327,
+                                266,
+                                246
+                            ]
+                        },
+                        "进入沉默战士决战E6-3": {
+                            "roi": [
+                                555,
+                                327,
+                                266,
+                                246
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "E4",
+                    "pipeline_override": {
+                        "识别决战关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "识别决战点",
+                                "[JumpBack]决战沉默战士E6",
+                                "[JumpBack]决战沉默战士E5上",
+                                "[JumpBack]决战沉默战士E3",
+                                "[JumpBack]决战沉默战士E2",
+                                "[JumpBack]决战沉默战士E1"
+                            ]
+                        },
+                        "识别决战点": {
+                            "expected": "反攻"
+                        },
+                        "决战沉默战士E6-1": {
+                            "template": "决战/E4-1.png",
+                            "roi": [
+                                352,
+                                95,
+                                234,
+                                219
+                            ]
+                        },
+                        "进入沉默战士决战E6-1": {
+                            "template": "决战/E4-1.png",
+                            "roi": [
+                                352,
+                                95,
+                                234,
+                                219
+                            ]
+                        },
+                        "决战沉默战士E6-23": {
+                            "template": "决战/E6-1.png",
+                            "roi": [
+                                636,
+                                248,
+                                223,
+                                230
+                            ]
+                        },
+                        "决战沉默战士E6-2": {
+                            "template": "决战/E6-1.png",
+                            "roi": [
+                                636,
+                                248,
+                                223,
+                                230
+                            ]
+                        },
+                        "决战沉默战士E6-22": {
+                            "template": "决战/E6-1.png",
+                            "roi": [
+                                636,
+                                248,
+                                223,
+                                230
+                            ]
+                        },
+                        "决战沉默战士E6-3": {
+                            "template": "决战/E4-3.png",
+                            "roi": [
+                                867,
+                                161,
+                                228,
+                                238
+                            ]
+                        },
+                        "进入沉默战士决战E6-3": {
+                            "template": "决战/E4-3.png",
+                            "roi": [
+                                867,
+                                161,
+                                228,
+                                238
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "第一关指定开局潜艇": {
             "type": "switch",
             "cases": [
@@ -3127,15 +3295,15 @@
                     ]
                 },
                 {
-                    "name": "模板",
-                    "pipeline_override": {}
-                },
-                {
                     "name": "坐标",
                     "pipeline_override": {},
                     "option": [
                         "关卡坐标识别"
                     ]
+                },
+                {
+                    "name": "模板",
+                    "pipeline_override": {}
                 }
             ]
         },
