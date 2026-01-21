@@ -18,14 +18,12 @@ MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控�
   <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
   <img alt="commit" src="https://img.shields.io/github/commit-activity/m/Saratoga-Official/MRA">
   <img alt="stars" src="https://img.shields.io/github/stars/Saratoga-Official/MRA?style=social">
-  <a href="https://mirrorchyan.com/zh/projects" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a>
+  <a href="https://mirrorchyan.com/zh/projects?rid=MaaJR" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a>
 </p>
 
 <div align="center">
 
-本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
-
-本项目自v2.4.0版本起采用 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 作为gui界面
+本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 和 **[MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)** 强力驱动！
 
 本项目项目已接入 **[Mirror酱](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/Mirror酱.md)** 资源更新方式
 
