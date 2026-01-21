@@ -6,12 +6,11 @@
         ]
     },
     "活动导航": {
-        "timeout": 600000,
+        "timeout": 900000,
         "rate_limit": 0,
         "post_wait_freezes": 0,
         "next": [
-            "一级导航",
-            "[JumpBack]退出"
+            "一级导航"
         ]
     },
     "一级导航": {
@@ -69,6 +68,7 @@
         "recognition": "OCR",
         "expected": "取消",
         "action": "Click",
+        "timeout": 900000,
         "rate_limit": 0,
         "post_wait_freezes": 0,
         "roi": [

@@ -3068,6 +3068,7 @@
                             "next": [
                                 "[JumpBack]重新连接",
                                 "[JumpBack]领取奖励",
+                                "[JumpBack]退出",
                                 "活动导航"
                             ]
                         },
@@ -3144,13 +3145,8 @@
                             "next": [
                                 "[JumpBack]重新连接",
                                 "[JumpBack]领取奖励",
+                                "[JumpBack]退出",
                                 "活动导航"
-                            ]
-                        },
-                        "活动导航": {
-                            "next": [
-                                "一级导航",
-                                "[JumpBack]退出"
                             ]
                         },
                         "二级导航": {
