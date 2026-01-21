@@ -101,8 +101,6 @@ jobs:
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup command executed for MFAAvalonia."
-          mv install/MFAAvalonia.exe install/MRA.exe
-          cp logo.ico install
 
       - name: Remove built-in runtime in MFA
         if: matrix.os != 'android'
