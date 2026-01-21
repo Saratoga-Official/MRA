@@ -117,6 +117,42 @@ jobs:
               mkdir -p install
               rsync -av --ignore-existing MFA/ install/
               echo "MFA files copied successfully."
+              
+              # 根据不同平台重命名文件
+              if [[ "${{ matrix.os }}" == "win" ]]; then
+                # Windows 平台重命名
+                if [ -f "install/MFAAvalonia.exe" ]; then
+                  mv install/MFAAvalonia.exe install/MRA.exe
+                  echo "Renamed MFAAvalonia.exe to MRA.exe"
+                else
+                  echo "Warning: MFAAvalonia.exe not found for Windows"
+                fi
+              elif [[ "${{ matrix.os }}" == "macos" ]]; then
+                # macOS 平台重命名
+                if [ -f "install/MFAAvalonia" ]; then
+                  mv install/MFAAvalonia install/MRA
+                  echo "Renamed MFAAvalonia to MRA"
+                elif [ -d "install/MFAAvalonia.app" ]; then
+                  mv install/MFAAvalonia.app install/MRA.app
+                  echo "Renamed MFAAvalonia.app to MRA.app"
+                else
+                  echo "Warning: MFAAvalonia executable not found for macOS"
+                fi
+              elif [[ "${{ matrix.os }}" == "linux" ]]; then
+                # Linux 平台重命名
+                if [ -f "install/MFAAvalonia" ]; then
+                  mv install/MFAAvalonia install/MRA
+                  echo "Renamed MFAAvalonia to MRA"
+                else
+                  echo "Warning: MFAAvalonia executable not found for Linux"
+                fi
+              fi
+              
+              # 复制图标文件
+              if [ -f "logo.ico" ]; then
+                cp logo.ico install
+                echo "Copied logo.ico to install directory"
+              fi
             else
               echo "MFA directory not found, skipping copy."
             fi
@@ -128,8 +164,6 @@ jobs:
           python -m pip install -r ./requirements.txt
           python ./install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
           cd ..
-          mv install/MFAAvalonia.exe install/MRA.exe
-          cp logo.ico install
 
       - uses: actions/upload-artifact@v4
         with:
