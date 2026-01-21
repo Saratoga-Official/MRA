@@ -153,6 +153,11 @@ jobs:
                 cp logo.ico install/Assets/logo.ico
                 echo "Copied logo.ico to install directory"
               fi
+
+              if [ -f "docs/zh_cn/自定义导航.md" ]; then
+                cp docs/zh_cn/自定义导航.md install
+                echo "Copied 自定义导航.md to install directory"
+              fi
             else
               echo "MFA directory not found, skipping copy."
             fi

@@ -262,12 +262,9 @@
             "default_check": false,
             "repeatable": true,
             "doc": [
-                "[color:red]固定导航更新很麻烦，但考虑到活动导航需求较大，增加了自定义导航功能[/color]",
-                "<br>[color:red]①需先用模拟器自带的截图功能，截取活动入口和关卡入口界面[/color]",
-                "<br>[color:red]②使用电脑自带的画图（或其他合适工具）将截图裁剪合适大小（不要太大），分别命名为导航1.png，导航2.png[/color]",
-                "<br>[color:red]③将图片覆盖resource/image/活动导航中的同名文件后重启MRA，导航3作为备用视情况开启，导航顺序为123顺序导航[/color]",
-                "<br>[color:red]若不使用自定义导航，需在出击准备（立体强袭为紧急情况）按钮前开始[/color]",
-                "<br>[color:red]立体强袭关卡仅支持打第一个点[/color]",
+                "[color:red]若使用自定义导航，将鼠标移动到自定义导航旁的问号查看说明[/color]",
+                "<br>[color:red]若不使用自定义导航，需在出击准备按钮前开始[/color]",
+                "<br>[color:red]立体强袭关卡须在紧急情况前开始，仅支持打第一个点[/color]",
                 "<br>[color:red]自动答题需要在答题界面开始，无脑选择选项，不追求答对[/color]"
             ],
             "option": [
@@ -3026,7 +3023,6 @@
                         }
                     },
                     "option": [
-                        "立体强袭自定义导航",
                         "立体强袭阵型",
                         "立体强袭无限次数",
                         "立体强袭大破/中破舰船处理",
@@ -3047,7 +3043,7 @@
         },
         "使用自定义导航": {
             "type": "select",
-            "description": "使用前必须在resource/image/活动导航中添加截图作为模板",
+            "description": "{PROJECT_DIR}/自定义导航.md",
             "cases": [
                 {
                     "name": "no",
@@ -3075,46 +3071,134 @@
                         "拆船结束退出": {
                             "next": [
                                 "[JumpBack]重新连接",
-                                "一级导航",
+                                "活动入口导航",
                                 "[JumpBack]退出"
                             ]
                         }
                     },
                     "option": [
-                        "启用导航3",
+                        "活动入口识别",
+                        "关卡入口识别",
                         "启用自动答题"
                     ]
                 }
             ]
         },
-        "启用导航3": {
-            "type": "select",
+        "活动入口识别": {
             "cases": [
                 {
-                    "name": "no",
-                    "pipeline_override": {}
+                    "name": "OCR",
+                    "pipeline_override": {},
+                    "option": [
+                        "活动入口名称"
+                    ]
                 },
                 {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "二级导航": {
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "[JumpBack]答题检测",
-                                "三级导航",
-                                "二级导航",
-                                "[JumpBack]退出"
-                            ]
-                        },
-                        "三级导航": {
-                            "enabled": true
-                        }
-                    }
+                    "name": "模板",
+                    "pipeline_override": {}
                 }
             ]
         },
+        "活动入口名称": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "活动入口识别名称",
+                    "default": "纵横大洋",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "活动入口导航": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{活动入口识别名称}"
+                    ]
+                }
+            }
+        },
+        "关卡入口识别": {
+            "cases": [
+                {
+                    "name": "OCR",
+                    "pipeline_override": {},
+                    "option": [
+                        "关卡入口名称"
+                    ]
+                },
+                {
+                    "name": "模板",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "坐标",
+                    "pipeline_override": {},
+                    "option": [
+                        "关卡坐标识别"
+                    ]
+                }
+            ]
+        },
+        "关卡入口名称": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "关卡入口识别名称",
+                    "default": "激战旋涡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "关卡入口导航": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{关卡入口识别名称}"
+                    ]
+                }
+            }
+        },
+        "关卡坐标识别": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "关卡界面标题",
+                    "description": "位于关卡入口界面上方的文字",
+                    "default": "纵横大洋",
+                    "pipeline_type": "string"
+                },
+                {
+                    "name": "关卡入口坐标X",
+                    "default": "200",
+                    "pipeline_type": "int"
+                },
+                {
+                    "name": "关卡入口坐标Y",
+                    "default": "200",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "关卡入口导航": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{关卡界面标题}"
+                    ],
+                    "roi": [
+                        90,
+                        2,
+                        1176,
+                        207
+                    ],
+                    "target": [
+                        "{关卡入口坐标X}",
+                        "{关卡入口坐标Y}"
+                    ]
+                }
+            }
+        },
         "启用自动答题": {
             "type": "select",
+            "description": "导航到关卡界面弹窗是否答题时自动进入答题",
             "cases": [
                 {
                     "name": "no",
@@ -3125,63 +3209,6 @@
                     "pipeline_override": {
                         "答题确认": {
                             "enabled": true
-                        }
-                    }
-                }
-            ]
-        },
-        "立体强袭自定义导航": {
-            "type": "select",
-            "description": "使用前必须在resource/image/活动导航中添加截图作为模板",
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "进入立体强袭": {
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "[JumpBack]领取奖励",
-                                "[JumpBack]退出",
-                                "活动导航"
-                            ]
-                        },
-                        "二级导航": {
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "[JumpBack]答题检测",
-                                "二级导航",
-                                "三级导航",
-                                "立体强袭紧急情况",
-                                "[JumpBack]退出"
-                            ]
-                        }
-                    },
-                    "option": [
-                        "立体强袭启用导航3"
-                    ]
-                }
-            ]
-        },
-        "立体强袭启用导航3": {
-            "type": "select",
-            "cases": [
-                {
-                    "name": "no",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "yes",
-                    "pipeline_override": {
-                        "三级导航": {
-                            "enabled": true,
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "立体强袭紧急情况"
-                            ]
                         }
                     }
                 }

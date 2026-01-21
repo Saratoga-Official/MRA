@@ -10,47 +10,41 @@
         "rate_limit": 0,
         "post_wait_freezes": 0,
         "next": [
-            "一级导航"
+            "活动入口导航"
         ]
     },
-    "一级导航": {
+    "活动入口导航": {
         "recognition": "TemplateMatch",
-        "template": "活动导航/导航1.png",
+        "template": "活动导航/活动入口.png",
         "action": "Click",
+        "roi": [
+            1083,
+            195,
+            191,
+            317
+        ],
         "post_wait_freezes": 500,
         "rate_limit": 500,
         "next": [
             "[JumpBack]重新连接",
             "点错了检测",
-            "二级导航"
+            "关卡入口导航"
         ],
-        "focus": "使用模板路径:resource/image/活动导航/导航1.png"
+        "focus": "活动入口导航"
     },
-    "二级导航": {
+    "关卡入口导航": {
         "recognition": "TemplateMatch",
-        "template": "活动导航/导航2.png",
+        "template": "活动导航/关卡入口.png",
         "action": "Click",
         "post_delay": 2000,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]答题检测",
             "进入关卡",
-            "二级导航",
+            "关卡入口导航",
             "[JumpBack]退出"
         ],
-        "focus": "使用模板路径:resource/image/活动导航/导航2.png"
-    },
-    "三级导航": {
-        "recognition": "TemplateMatch",
-        "template": "活动导航/导航3.png",
-        "action": "Click",
-        "post_delay": 2000,
-        "enabled": false,
-        "next": [
-            "[JumpBack]重新连接",
-            "进入关卡"
-        ],
-        "focus": "使用模板路径:resource/image/活动导航/导航3.png"
+        "focus": "关卡入口导航"
     },
     "点错了检测": {
         "recognition": "OCR",
@@ -82,7 +76,7 @@
             54
         ],
         "next": [
-            "一级导航"
+            "活动入口导航"
         ]
     },
     "答题检测": {
