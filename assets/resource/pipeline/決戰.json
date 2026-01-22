@@ -2576,9 +2576,24 @@
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面BOSS2",
+            "[JumpBack]决战使用紫貂技能2",
             "[JumpBack]决战进入编队"
         ],
         "focus": "识别到BOSS点"
+    },
+    "决战使用紫貂技能2": {
+        "recognition": "TemplateMatch",
+        "template": "决战/紫貂技能.png",
+        "order_by": "Score",
+        "threshold": 0.95,
+        "roi": [
+            228,
+            587,
+            114,
+            114
+        ],
+        "action": "Click",
+        "focus": "使用紫貂技能"
     },
     "决战进入编队界面BOSS2": {
         "recognition": "OCR",
