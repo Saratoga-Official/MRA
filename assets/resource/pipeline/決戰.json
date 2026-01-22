@@ -478,7 +478,7 @@
             "决战检查编队",
             "决战解装"
         ],
-        "focus": "进入沉默战士决战E6"
+        "focus": "进入第一关"
     },
     "决战检查编队": {
         "recognition": "TemplateMatch",
@@ -724,9 +724,9 @@
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面",
-            "决战识别boss点",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]决战招募识别",
+            "决战识别boss点",
             "[JumpBack]决战检测紫貂技能",
             "[JumpBack]决战检测经验将满",
             "[JumpBack]决战进入编队"
@@ -1576,9 +1576,9 @@
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面2",
-            "决战识别boss点2",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]关闭招募",
+            "决战识别boss点2",
             "[JumpBack]决战检测等级小于9",
             "[JumpBack]决战进入编队"
         ],
@@ -1604,15 +1604,22 @@
     },
     "决战识别boss点": {
         "recognition": "TemplateMatch",
-        "template": "决战/决战J1.png",
+        "template": [
+            "决战/boss1.png",
+            "决战/boss2.png"
+        ],
+        "roi": [
+            922,
+            28,
+            318,
+            481
+        ],
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面BOSS",
-            "[JumpBack]决战请选择前进点",
-            "[JumpBack]决战招募识别",
             "[JumpBack]决战检测等级小于9",
             "[JumpBack]决战进入编队"
         ],
@@ -1620,15 +1627,22 @@
     },
     "决战识别boss点2": {
         "recognition": "TemplateMatch",
-        "template": "决战/决战J1.png",
+        "template": [
+            "决战/boss1.png",
+            "决战/boss2.png"
+        ],
+        "roi": [
+            922,
+            28,
+            318,
+            481
+        ],
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面BOSS",
-            "[JumpBack]决战请选择前进点",
-            "[JumpBack]关闭招募",
             "[JumpBack]决战检测等级小于9",
             "[JumpBack]决战进入编队"
         ],
@@ -2151,7 +2165,7 @@
         "on_error": [
             "决战解装"
         ],
-        "focus": "进入E6-2"
+        "focus": "进入第二关"
     },
     "决战沉默战士E6-22": {
         "recognition": "TemplateMatch",
@@ -2172,7 +2186,7 @@
             "决战决策3",
             "决战解装"
         ],
-        "focus": "进入E6-2"
+        "focus": "进入第二关"
     },
     "决战前进点A1": {
         "recognition": "OCR",
@@ -2284,9 +2298,9 @@
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面3",
-            "决战识别boss点3",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]决战招募",
+            "决战识别boss点3",
             "[JumpBack]决战检测紫貂技能2",
             "[JumpBack]决战检测等级",
             "[JumpBack]决战进入编队"
@@ -2546,15 +2560,22 @@
     },
     "决战识别boss点3": {
         "recognition": "TemplateMatch",
-        "template": "决战/决战J1.png",
+        "template": [
+            "决战/boss1.png",
+            "决战/boss2.png"
+        ],
+        "roi": [
+            922,
+            28,
+            318,
+            481
+        ],
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面BOSS2",
-            "[JumpBack]决战请选择前进点",
-            "[JumpBack]决战招募",
             "[JumpBack]决战进入编队"
         ],
         "focus": "识别到BOSS点"
@@ -2859,7 +2880,7 @@
         "on_error": [
             "决战解装"
         ],
-        "focus": "进入E6-3"
+        "focus": "进入第三关"
     },
     "决战决策4": {
         "recognition": "TemplateMatch",
@@ -2868,9 +2889,9 @@
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面4",
-            "决战识别boss点4",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]决战招募",
+            "决战识别boss点4",
             "[JumpBack]决战进入编队"
         ],
         "on_error": [
@@ -3036,15 +3057,22 @@
     },
     "决战识别boss点4": {
         "recognition": "TemplateMatch",
-        "template": "决战/决战J1.png",
+        "template": [
+            "决战/boss1.png",
+            "决战/boss2.png"
+        ],
+        "roi": [
+            922,
+            28,
+            318,
+            481
+        ],
         "timeout": 120000,
         "order_by": "Score",
         "threshold": 0.95,
         "next": [
             "[JumpBack]重新连接",
             "决战进入编队界面BOSS3",
-            "[JumpBack]决战请选择前进点",
-            "[JumpBack]决战招募",
             "[JumpBack]决战使用奇尔沙治技能",
             "[JumpBack]决战进入编队"
         ],
