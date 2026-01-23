@@ -4,7 +4,7 @@
     "version": "DEBUG_VERSION",
     "icon": "{PROJECT_DIR}/Assets/logo.ico",
     "contact": "QQ群457094182",
-    "welcome": "{PROJECT_DIR}/Announcement",
+    "welcome": "{PROJECT_DIR}/Announcement.md",
     "license": "{PROJECT_DIR}/LICENSE",
     "github": "https://github.com/Saratoga-Official/MRA",
     "url": "https://github.com/Saratoga-Official/MRA",
