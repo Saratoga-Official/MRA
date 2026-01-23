@@ -154,9 +154,15 @@ jobs:
                 echo "Copied logo.ico to install directory"
               fi
 
-              if [ -f "docs/zh_cn/自定义导航.md" ]; then
-                cp docs/zh_cn/自定义导航.md install
-                echo "Copied 自定义导航.md to install directory"
+              if [ -d "docs/zh_cn" ]; then
+                mkdir -p install/docs
+                cp -r docs/zh_cn/. install/docs/
+                echo "Copied docs/zh_cn directory to install/docs"
+              fi
+
+              if [ -f "Announcement.md" ]; then
+                cp Announcement.md install
+                echo "Copied Announcement.md to install directory"
               fi
             else
               echo "MFA directory not found, skipping copy."

@@ -4,6 +4,7 @@
     "version": "DEBUG_VERSION",
     "icon": "{PROJECT_DIR}/Assets/logo.ico",
     "contact": "QQ群457094182",
+    "welcome": "{PROJECT_DIR}/Announcement",
     "license": "{PROJECT_DIR}/LICENSE",
     "github": "https://github.com/Saratoga-Official/MRA",
     "url": "https://github.com/Saratoga-Official/MRA",
@@ -34,7 +35,7 @@
                 "用于打开游戏，领取登录奖励等",
                 "<br>[color:red]请将本任务放在所有任务之前[/color]",
                 "<br>[color:red]切换区服不可选择非当前大区的区服[/color]",
-                "<br>如果需要切换大区或切换账号请使用多开模拟器"
+                "<br>如果需要切换大区或切换账号请使用模拟器的多开功能"
             ],
             "option": [
                 "切换区服"
@@ -3211,7 +3212,7 @@
         },
         "使用自定义导航": {
             "type": "select",
-            "description": "{PROJECT_DIR}/自定义导航.md",
+            "description": "{PROJECT_DIR}/docs/自定义导航.md",
             "cases": [
                 {
                     "name": "no",
