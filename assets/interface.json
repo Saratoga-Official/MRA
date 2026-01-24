@@ -3161,6 +3161,7 @@
                             "next": [
                                 "[JumpBack]重新连接",
                                 "无限战斗",
+                                "[JumpBack]活动退出",
                                 "[JumpBack]退出",
                                 "无动作结束"
                             ]

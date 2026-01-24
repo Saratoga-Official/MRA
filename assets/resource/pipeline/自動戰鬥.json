@@ -403,24 +403,13 @@
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
-            "战斗船舱满退出"
+            "战斗退出"
         ],
         "on_error": [
             "战斗船舱满",
             "任务出错"
         ],
         "focus": "[color:red]船舱已满[/color]"
-    },
-    "战斗船舱满退出": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "action": "Click",
-        "green_mask": true,
-        "next": [
-            "[JumpBack]重新连接",
-            "[JumpBack]退出",
-            "任务结束"
-        ]
     },
     "战斗退出": {
         "recognition": "TemplateMatch",
@@ -429,8 +418,20 @@
         "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]活动退出",
             "[JumpBack]退出",
             "任务结束"
+        ]
+    },
+    "活动退出": {
+        "recognition": "TemplateMatch",
+        "template": "战斗/活动关闭.png",
+        "action": "Click",
+        "roi": [
+            1208,
+            49,
+            49,
+            50
         ]
     },
     "战斗索敌成功": {
