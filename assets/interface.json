@@ -114,6 +114,12 @@
                 "退出远征1": {
                     "template": "战斗/出征1.png",
                     "green_mask": false,
+                    "roi": [
+                        144,
+                        0,
+                        174,
+                        71
+                    ],
                     "next": [
                         "[JumpBack]重新连接",
                         "无限战斗",
@@ -250,6 +256,12 @@
                 "退出远征1": {
                     "template": "战斗/出征1.png",
                     "green_mask": false,
+                    "roi": [
+                        144,
+                        0,
+                        174,
+                        71
+                    ],
                     "next": [
                         "[JumpBack]重新连接",
                         "狗粮回到关卡"
