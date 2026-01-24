@@ -11,10 +11,15 @@
         ]
     },
     "自动决战": {
-        "recognition": "TemplateMatch",
-        "template": "通用/出征2.png",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
         "action": "Click",
-        "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
             "点击决战"

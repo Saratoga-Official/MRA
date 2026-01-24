@@ -7,10 +7,15 @@
         ]
     },
     "点击出征2": {
-        "recognition": "TemplateMatch",
-        "template": "通用/出征2.png",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
         "action": "Click",
-        "green_mask": true,
         "post_wait_freezes": 1000,
         "next": [
             "[JumpBack]重新连接",
@@ -21,7 +26,7 @@
     },
     "点击出征3": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "action": "Click",
         "threshold": [
             0.9
@@ -46,11 +51,16 @@
         ]
     },
     "自动收远征": {
-        "recognition": "TemplateMatch",
-        "template": "通用/出征2.png",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
         "action": "Click",
         "post_wait_freezes": 1000,
-        "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
             "点击远征",

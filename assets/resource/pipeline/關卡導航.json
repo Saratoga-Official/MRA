@@ -26,10 +26,15 @@
         ]
     },
     "点击出征": {
-        "recognition": "TemplateMatch",
-        "template": "通用/出征2.png",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
         "action": "Click",
-        "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
             "出征",
@@ -38,9 +43,15 @@
     },
     "出征": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "action": "Click",
         "threshold": 0.9,
+        "roi": [
+            144,
+            0,
+            174,
+            71
+        ],
         "next": [
             "[JumpBack]重新连接",
             "开始导航"

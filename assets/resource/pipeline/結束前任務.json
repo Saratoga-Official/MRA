@@ -28,8 +28,14 @@
         ]
     },
     "点击任务": {
-        "recognition": "TemplateMatch",
-        "template": "通用/任务.png",
+        "recognition": "OCR",
+        "expected": "任务",
+        "roi": [
+            877,
+            664,
+            57,
+            32
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -71,8 +77,14 @@
         ]
     },
     "点击船坞": {
-        "recognition": "TemplateMatch",
-        "template": "通用/船坞.png",
+        "recognition": "OCR",
+        "expected": "船坞",
+        "roi": [
+            1021,
+            664,
+            60,
+            30
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",

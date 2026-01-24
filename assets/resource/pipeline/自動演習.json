@@ -24,10 +24,15 @@
         ]
     },
     "自动演习": {
-        "recognition": "TemplateMatch",
-        "template": "通用/出征2.png",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
         "action": "Click",
-        "green_mask": true,
         "next": [
             "[JumpBack]重新连接",
             "点击演习"
@@ -284,7 +289,7 @@
     },
     "演习结束": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑"
@@ -588,7 +593,7 @@
     },
     "演习结束1": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑1"
@@ -749,7 +754,7 @@
     },
     "演习结束2": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑2"
@@ -910,7 +915,7 @@
     },
     "演习结束3": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑3"
@@ -1088,7 +1093,7 @@
     },
     "演习结束4": {
         "recognition": "TemplateMatch",
-        "template": "战斗/出征1.png",
+        "template": "战斗/出征.png",
         "next": [
             "[JumpBack]重新连接",
             "演习退出"

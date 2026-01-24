@@ -1001,10 +1001,15 @@
         ]
     },
     "战斗船舱满尝试拆船": {
-        "recognition": "TemplateMatch",
-        "template": "通用/出征2.png",
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
         "action": "Click",
-        "green_mask": true,
         "target": [
             45,
             630,

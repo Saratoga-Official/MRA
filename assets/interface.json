@@ -112,7 +112,7 @@
             ],
             "pipeline_override": {
                 "退出远征1": {
-                    "template": "战斗/出征1.png",
+                    "template": "战斗/出征.png",
                     "green_mask": false,
                     "roi": [
                         144,
@@ -254,7 +254,7 @@
                     ]
                 },
                 "退出远征1": {
-                    "template": "战斗/出征1.png",
+                    "template": "战斗/出征.png",
                     "green_mask": false,
                     "roi": [
                         144,
