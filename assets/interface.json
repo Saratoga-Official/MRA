@@ -88,7 +88,6 @@
             "name": "自动出征",
             "entry": "开始出征",
             "default_check": false,
-            "repeatable": true,
             "doc": [
                 "[color:red]①需提前编好队，满足带路条件，再开始[/color]",
                 "<br>②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航",
@@ -273,7 +272,6 @@
             "name": "刷活动",
             "entry": "进入活动",
             "default_check": false,
-            "repeatable": true,
             "doc": [
                 "[color:red]若使用自定义导航，将鼠标移动到自定义导航旁的问号查看说明[/color]",
                 "<br>[color:red]若不使用自定义导航，须在出击准备按钮前开始[/color]",
@@ -998,11 +996,10 @@
             "cases": [
                 {
                     "name": "关闭",
-                    "pipeline_override": {
-                        "无限战斗": {
-                            "enabled": false
-                        }
-                    }
+                    "pipeline_override": {},
+                    "option": [
+                        "战斗指定次数"
+                    ]
                 },
                 {
                     "name": "直到捞船达到上限停止",
@@ -1045,6 +1042,21 @@
                     }
                 }
             ]
+        },
+        "战斗指定次数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "战斗指定次数",
+                    "default": "1",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "开始导航": {
+                    "max_hit": "{战斗指定次数}"
+                }
+            }
         },
         "门口SL目标1": {
             "cases": [
@@ -3125,11 +3137,10 @@
             "cases": [
                 {
                     "name": "关闭",
-                    "pipeline_override": {
-                        "无限战斗": {
-                            "enabled": false
-                        }
-                    }
+                    "pipeline_override": {},
+                    "option": [
+                        "活动指定次数"
+                    ]
                 },
                 {
                     "name": "开启",
@@ -3144,6 +3155,21 @@
                     }
                 }
             ]
+        },
+        "活动指定次数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "活动指定次数",
+                    "default": "1",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "进入关卡": {
+                    "max_hit": "{活动指定次数}"
+                }
+            }
         },
         "活动选择模式": {
             "cases": [
@@ -3160,16 +3186,16 @@
                             ],
                             "next": [
                                 "[JumpBack]重新连接",
-                                "无限战斗",
-                                "[JumpBack]活动退出",
-                                "[JumpBack]退出",
-                                "无动作结束"
+                                "无限战斗"
                             ]
                         },
                         "无限战斗": {
                             "next": [
                                 "[JumpBack]重新连接",
-                                "进入关卡"
+                                "进入关卡",
+                                "[JumpBack]活动退出",
+                                "[JumpBack]退出",
+                                "无动作结束"
                             ]
                         },
                         "进入关卡": {
@@ -3183,10 +3209,6 @@
                             "next": [
                                 "[JumpBack]重新连接",
                                 "确认进入关卡"
-                            ],
-                            "on_error": [
-                                "进入关卡",
-                                "任务出错"
                             ]
                         }
                     },
