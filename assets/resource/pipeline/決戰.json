@@ -905,7 +905,8 @@
         "recognition": "TemplateMatch",
         "template": "决战/决战编队.png",
         "action": "Click",
-        "focus": "结束战前决策，进入编队"
+        "focus": "结束战前决策，进入编队",
+        "post_wait_freezes": 2000
     },
     "决战进入编队界面": {
         "recognition": "OCR",
