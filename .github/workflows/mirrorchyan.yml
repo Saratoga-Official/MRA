@@ -2,6 +2,12 @@ name: mirrorchyan
 
 on:
   workflow_dispatch:
+    inputs:
+        tag:
+            default: ''
+            required: false
+#   release:
+#     types: [released]
 
 jobs:
   mirrorchyan:
@@ -18,6 +24,7 @@ jobs:
           filetype: latest-release
           filename: "MRA-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
           mirrorchyan_rid: MaaJR
+          tag: ${{ inputs.tag }}
 
           owner: Saratoga-Official
           repo: MRA
@@ -36,6 +43,7 @@ jobs:
           filename: "MRA-win-x86_64-*.zip"
           pick_files: '["resource", "interface.json"]'
           mirrorchyan_rid: MaaJR
+          tag: ${{ inputs.tag }}
 
           owner: Saratoga-Official
           repo: MRA
