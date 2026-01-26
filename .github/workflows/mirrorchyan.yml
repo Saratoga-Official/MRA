@@ -35,7 +35,6 @@ jobs:
           filetype: latest-release
           filename: "MRA-win-x86_64-*.zip"
           pick_files: '["resource", "interface.json"]'
-          exclude_files: '["resource/model/ocr/**"]'
           mirrorchyan_rid: MaaJR
 
           owner: Saratoga-Official
