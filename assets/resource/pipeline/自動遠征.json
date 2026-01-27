@@ -77,7 +77,8 @@
             0.9
         ],
         "post_wait_freezes": 1000,
-        "action": "Click",
+        "action": "Custom",
+        "custom_action": "CustomClick",
         "next": [
             "[JumpBack]重新连接",
             "远征收获奖励",

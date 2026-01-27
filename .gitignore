@@ -452,3 +452,5 @@ tools/ImageCropper/**/*.png
 
 config
 debug
+deps/**
+venv/**
