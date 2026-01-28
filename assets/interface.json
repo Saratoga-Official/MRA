@@ -6,11 +6,8 @@
     "contact": "QQ群457094182",
     "license": "{PROJECT_DIR}/LICENSE",
     "github": "https://github.com/Saratoga-Official/MRA",
-    "url": "https://github.com/Saratoga-Official/MRA",
     "custom_title": "MRA",
     "mirrorchyan_rid": "MaaJR",
-    "default_controller": "adb",
-    "lock_controller": true,
     "controller": [
         {
             "name": "安卓端",
@@ -110,7 +107,7 @@
                 "战斗节点"
             ],
             "pipeline_override": {
-                "退出远征1": {
+                "退出远征": {
                     "template": "战斗/出征.png",
                     "green_mask": false,
                     "roi": [
@@ -252,7 +249,7 @@
                         "导航前"
                     ]
                 },
-                "退出远征1": {
+                "退出远征": {
                     "template": "战斗/出征.png",
                     "green_mask": false,
                     "roi": [
@@ -583,31 +580,30 @@
                 {
                     "name": "yes",
                     "pipeline_override": {
-                        "自动收远征": {
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "点击远征",
-                                "远征收获奖励",
-                                "退出远征2"
-                            ]
-                        },
-                        "点击远征": {
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "远征收获奖励",
-                                "退出远征2"
-                            ]
-                        },
-                        "确认远征": {
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "远征收获奖励",
-                                "退出远征2"
-                            ]
+                        "等待模式退出远征": {
+                            "enabled": true
                         }
-                    }
+                    },
+                    "option": [
+                        "远征检查等待时间(ms)"
+                    ]
                 }
             ]
+        },
+        "远征检查等待时间(ms)": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "远征检查等待时间(ms)",
+                    "default": "60000",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "远征等待模式": {
+                    "post_delay": "{远征检查等待时间(ms)}"
+                }
+            }
         },
         "自动导航章节": {
             "cases": [
@@ -3290,6 +3286,7 @@
             ]
         },
         "活动入口识别": {
+            "type": "select",
             "cases": [
                 {
                     "name": "OCR",

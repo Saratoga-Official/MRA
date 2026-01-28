@@ -42,6 +42,7 @@
             "战斗/活动退出.png",
             "战斗/活动退出2.png"
         ],
+        "green_mask": true,
         "action": "Click",
         "post_delay": 3000
     },
