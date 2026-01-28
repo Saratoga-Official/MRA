@@ -906,7 +906,16 @@
         "template": "决战/决战编队.png",
         "action": "Click",
         "focus": "结束战前决策，进入编队",
-        "post_wait_freezes": 2000
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]决战进入编队等待",
+            "无动作结束"
+        ]
+    },
+    "决战进入编队等待": {
+        "recognition": "TemplateMatch",
+        "template": "决战/决战编队.png",
+        "post_wait_freezes": 0
     },
     "决战进入编队界面": {
         "recognition": "OCR",
@@ -940,12 +949,18 @@
         ],
         "focus": "切换自动补给"
     },
+    "决战添加舰船等待": {
+        "recognition": "TemplateMatch",
+        "template": "战斗/添加舰船.png",
+        "post_wait_freezes": 0
+    },
     "决战添加舰船": {
         "recognition": "TemplateMatch",
         "template": "战斗/添加舰船.png",
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]决战添加舰船等待",
             "决战优先添加",
             "决战次级添加",
             "决战退出添加"
@@ -1676,6 +1691,7 @@
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]决战添加舰船等待",
             "决战优先添加BOSS",
             "决战次级添加BOSS",
             "决战退出添加BOSS"
@@ -2409,6 +2425,7 @@
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]决战添加舰船等待",
             "决战添加舰船3"
         ],
         "focus": "检查添加舰船"
