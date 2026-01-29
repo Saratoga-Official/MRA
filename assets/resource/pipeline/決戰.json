@@ -1017,6 +1017,12 @@
             "M-296"
         ],
         "action": "Click",
+        "target_offset": [
+            2,
+            0,
+            0,
+            0
+        ],
         "next": [
             "[JumpBack]重新连接",
             "决战添加舰船",
@@ -1746,6 +1752,12 @@
             "M-296"
         ],
         "action": "Click",
+        "target_offset": [
+            2,
+            0,
+            0,
+            0
+        ],
         "next": [
             "[JumpBack]重新连接",
             "决战添加舰船BOSS",
@@ -2454,6 +2466,12 @@
             "U"
         ],
         "action": "Click",
+        "target_offset": [
+            2,
+            0,
+            0,
+            0
+        ],
         "next": [
             "[JumpBack]重新连接",
             "决战大破检测3",
