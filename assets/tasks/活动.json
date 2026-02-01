@@ -103,7 +103,7 @@
         },
         "使用自定义导航": {
             "type": "select",
-            "description": "{PROJECT_DIR}/docs/自定义导航.md",
+            "description": "./docs/自定义导航.md",
             "cases": [
                 {
                     "name": "no",
