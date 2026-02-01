@@ -1,0 +1,420 @@
+{
+    "task": [
+        {
+            "name": "自动造船",
+            "entry": "开始自动建造",
+            "default_check": false,
+            "repeatable": true,
+            "doc": [
+                "[color:red]①请确保自己满足所选造船所需资源和道具足够，否则该功能会无法进行[/color]",
+                "<br>②目前给出的公式选项资源数量都是根据常用的几个造船公式给的，选沿用上次就是对应资源沿用你上次建造数量",
+                "<br>③可使用重复次数来指定建造次数，但未勾选使用快速建造工具最多只能造满空位",
+                "<br>④造满空位和使用快建工具一同勾选将会视情况执行其中之一，若勾选了批量建造则造满空位失效",
+                "<br>⑤本功能会自动收取所有已完成建造的船",
+                "<br>⑥最后祝各位都能出货(｡･ω･｡)ﾉ♡"
+            ],
+            "option": [
+                "燃料",
+                "弹药",
+                "钢材",
+                "铝材",
+                "造满空位",
+                "若无空位使用快速建造工具",
+                "使用批量建造十连",
+                "建造船舱满拆船（危险功能）"
+            ]
+        }
+    ],
+    "option": {
+        "燃料": {
+            "cases": [
+                {
+                    "name": "沿用上次",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "enabled": false
+                        },
+                        "建造燃料2": {
+                            "enabled": false
+                        },
+                        "建造燃料3": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "500",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "400",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/4.png"
+                        }
+                    }
+                },
+                {
+                    "name": "301",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/3.png"
+                        },
+                        "建造燃料3": {
+                            "template": "建造/1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "200",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/2.png"
+                        }
+                    }
+                },
+                {
+                    "name": "120",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/1.png"
+                        },
+                        "建造燃料2": {
+                            "template": "建造/2.png"
+                        }
+                    }
+                },
+                {
+                    "name": "90",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造燃料2": {
+                            "template": "建造/9.png"
+                        }
+                    }
+                },
+                {
+                    "name": "60",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造燃料2": {
+                            "template": "建造/6.png"
+                        }
+                    }
+                },
+                {
+                    "name": "50",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造燃料2": {
+                            "template": "建造/5.png"
+                        }
+                    }
+                },
+                {
+                    "name": "30",
+                    "pipeline_override": {
+                        "建造燃料1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造燃料2": {
+                            "template": "建造/3.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "弹药": {
+            "cases": [
+                {
+                    "name": "沿用上次",
+                    "pipeline_override": {
+                        "建造弹药1": {
+                            "enabled": false
+                        },
+                        "建造弹药2": {
+                            "enabled": false
+                        },
+                        "建造弹药3": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "300",
+                    "pipeline_override": {
+                        "建造弹药1": {
+                            "template": "建造/3.png"
+                        },
+                        "建造弹药2": {
+                            "template": "建造/0.png"
+                        }
+                    }
+                },
+                {
+                    "name": "130",
+                    "pipeline_override": {
+                        "建造弹药1": {
+                            "template": "建造/1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "30",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "钢材": {
+            "cases": [
+                {
+                    "name": "沿用上次",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "enabled": false
+                        },
+                        "建造钢材2": {
+                            "enabled": false
+                        },
+                        "建造钢材3": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "600",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "500",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/5.png"
+                        }
+                    }
+                },
+                {
+                    "name": "301",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/3.png"
+                        },
+                        "建造钢材3": {
+                            "template": "建造/1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "200",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/2.png"
+                        }
+                    }
+                },
+                {
+                    "name": "120",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/1.png"
+                        },
+                        "建造钢材2": {
+                            "template": "建造/2.png"
+                        }
+                    }
+                },
+                {
+                    "name": "100",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "90",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造钢材2": {
+                            "template": "建造/9.png"
+                        }
+                    }
+                },
+                {
+                    "name": "60",
+                    "pipeline_override": {
+                        "建造钢材1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造钢材2": {
+                            "template": "建造/6.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "铝材": {
+            "cases": [
+                {
+                    "name": "沿用上次",
+                    "pipeline_override": {
+                        "建造铝材1": {
+                            "enabled": false
+                        },
+                        "建造铝材2": {
+                            "enabled": false
+                        },
+                        "建造铝材3": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "300",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "201",
+                    "pipeline_override": {
+                        "建造铝材1": {
+                            "template": "建造/2.png"
+                        },
+                        "建造铝材3": {
+                            "template": "建造/1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "200",
+                    "pipeline_override": {
+                        "建造铝材1": {
+                            "template": "建造/2.png"
+                        }
+                    }
+                },
+                {
+                    "name": "101",
+                    "pipeline_override": {
+                        "建造铝材1": {
+                            "template": "建造/1.png"
+                        },
+                        "建造铝材3": {
+                            "template": "建造/1.png"
+                        }
+                    }
+                },
+                {
+                    "name": "30",
+                    "pipeline_override": {
+                        "建造铝材1": {
+                            "template": "建造/0.png"
+                        },
+                        "建造铝材2": {
+                            "template": "建造/3.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "造满空位": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "点击建造按钮": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "点击开始建造",
+                                "无动作结束"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "若无空位使用快速建造工具": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "点击快速建造": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "使用批量建造十连": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "点击批量建造按钮": {
+                            "enabled": true
+                        },
+                        "点击建造按钮": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "建造船舱满拆船（危险功能）": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "建造解装": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "拆船点击添加"
+                            ]
+                        },
+                        "拆船结束退出": {
+                            "template": "建造/建造.png",
+                            "green_mask": false,
+                            "roi": [
+                                178,
+                                8,
+                                111,
+                                49
+                            ],
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "处于建造界面"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

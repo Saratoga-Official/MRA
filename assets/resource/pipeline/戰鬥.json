@@ -1,39 +1,58 @@
 {
     "回到关卡了": {
-        "recognition": "OCR",
-        "expected": "第[一|二|三|四|五|六|七|八|九]章",
-        "roi": [
-            44,
-            369,
-            105,
-            52
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "检查远征",
-            "无限战斗",
-            "无动作结束"
-        ]
-    },
-    "无限战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "第[一|二|三|四|五|六|七|八|九]章",
+                "roi": [
+                    44,
+                    369,
+                    105,
+                    52
+                ]
+            }
+        },
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "开始导航",
+            "无限战斗检测",
+            "[JumpBack]领取奖励",
             "[JumpBack]退出",
             "无动作结束"
         ]
     },
+    "无限战斗检测": {
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗次数",
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
+            "无动作结束"
+        ]
+    },
+    "战斗次数": {
+        "post_wait_freezes": 0,
+        "next": [
+            "检查远征",
+            "开始导航"
+        ]
+    },
     "进入关卡": {
-        "recognition": "OCR",
-        "expected": "\\d+-1",
-        "roi": [
-            870,
-            105,
-            308,
-            63
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "\\d+-1",
+                "roi": [
+                    870,
+                    105,
+                    308,
+                    63
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "确认进入关卡",
@@ -41,14 +60,18 @@
         ]
     },
     "确认进入关卡": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
-            "[JumpBack]重新连接",
-            "启用军阶buff",
-            "战斗编队",
-            "战斗自动补给",
             "战斗检测等级",
+            "[JumpBack]启用军阶buff",
+            "[JumpBack]战斗编队",
+            "[JumpBack]战斗自动补给",
             "战斗修理检测大破",
             "战斗修理检测中破",
             "战斗开始出征"
@@ -56,24 +79,30 @@
         "focus": "进入关卡"
     },
     "启用军阶buff": {
-        "recognition": "ColorMatch",
-        "roi": [
-            817,
-            91,
-            58,
-            56
-        ],
-        "lower": [
-            31,
-            86,
-            143
-        ],
-        "upper": [
-            39,
-            149,
-            253
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    817,
+                    91,
+                    58,
+                    56
+                ],
+                "lower": [
+                    31,
+                    86,
+                    143
+                ],
+                "upper": [
+                    39,
+                    149,
+                    253
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "识别当前BUFF",
@@ -82,70 +111,84 @@
         "focus": "选择军阶buff"
     },
     "识别当前BUFF": {
-        "recognition": "OCR",
-        "expected": [
-            "千伪之王",
-            "伪造情报",
-            "截取情报"
-        ],
-        "roi": [
-            978,
-            154,
-            193,
-            40
-        ],
-        "action": "Click",
-        "target": [
-            970,
-            339,
-            77,
-            39
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "千伪之王",
+                    "伪造情报",
+                    "截取情报"
+                ],
+                "roi": [
+                    978,
+                    154,
+                    193,
+                    40
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    970,
+                    339,
+                    77,
+                    39
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "退出当前BUFF"
         ]
     },
     "退出当前BUFF": {
-        "action": "Click",
-        "target": "识别当前BUFF",
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗编队",
-            "战斗自动补给",
-            "战斗修理检测大破",
-            "战斗修理检测中破",
-            "战斗开始出征"
-        ]
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "识别当前BUFF"
+            }
+        }
     },
     "更换BUFF": {
-        "action": "Click",
-        "target": [
-            862,
-            184,
-            80,
-            96
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    862,
+                    184,
+                    80,
+                    96
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "点击buff"
         ]
     },
     "点击buff": {
-        "recognition": "OCR",
-        "expected": [
-            "千伪之王",
-            "伪造情报",
-            "截取情报"
-        ],
-        "order_by": "Vertical",
-        "roi": [
-            567,
-            84,
-            647,
-            603
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "千伪之王",
+                    "伪造情报",
+                    "截取情报"
+                ],
+                "order_by": "Vertical",
+                "roi": [
+                    567,
+                    84,
+                    647,
+                    603
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "点击上阵buff",
@@ -153,162 +196,194 @@
         ]
     },
     "点击上阵buff": {
-        "recognition": "OCR",
-        "expected": "上阵",
-        "roi": [
-            236,
-            639,
-            91,
-            42
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "上阵",
+                "roi": [
+                    236,
+                    639,
+                    91,
+                    42
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "退出buff"
         ]
     },
     "退出buff": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/退出buff.png",
-        "roi": [
-            18,
-            13,
-            46,
-            46
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/退出buff.png",
+                "roi": [
+                    18,
+                    13,
+                    46,
+                    46
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "识别当前BUFF"
         ]
     },
     "战斗编队": {
-        "recognition": "ColorMatch",
-        "roi": [
-            70,
-            92,
-            150,
-            46
-        ],
-        "lower": [
-            16,
-            133,
-            228
-        ],
-        "upper": [
-            16,
-            133,
-            228
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    70,
+                    92,
+                    150,
+                    46
+                ],
+                "lower": [
+                    16,
+                    133,
+                    228
+                ],
+                "upper": [
+                    16,
+                    133,
+                    228
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    70,
+                    92,
+                    150,
+                    46
+                ]
+            }
+        },
         "inverse": true,
-        "target": [
-            70,
-            92,
-            150,
-            46
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗自动补给",
-            "战斗检测等级",
-            "战斗修理检测大破",
-            "战斗修理检测中破",
-            "战斗开始出征"
-        ],
         "focus": "切换编队"
     },
     "战斗自动补给": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/对号.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    56,
+                    661,
+                    21,
+                    22
+                ]
+            }
+        },
         "inverse": true,
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗自动补给",
-            "战斗检测等级",
-            "战斗修理检测大破",
-            "战斗修理检测中破",
-            "战斗开始出征"
-        ],
         "focus": "切换自动补给"
     },
     "战斗检测等级": {
-        "recognition": "OCR",
-        "expected": "110",
-        "roi": [
-            88,
-            408,
-            31,
-            15
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "110",
+                "roi": [
+                    88,
+                    408,
+                    31,
+                    15
+                ]
+            }
+        },
         "next": [
-            "[JumpBack]重新连接",
             "战斗退出"
         ],
+        "post_wait_freezes": 0,
         "enabled": false,
         "focus": "[color:red]检测到旗舰等级已满[/color]"
     },
     "战斗修理检测大破": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            225,
-            86,
-            32
-        ],
-        "upper": [
-            229,
-            106,
-            57
-        ],
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    225,
+                    86,
+                    32
+                ],
+                "upper": [
+                    229,
+                    106,
+                    57
+                ],
+                "connected": true
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "战斗快速修理"
         ],
-        "connected": true,
         "focus": "[color:red]检测到大破舰船[/color]"
     },
     "战斗修理检测中破": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            233,
-            172,
-            25
-        ],
-        "upper": [
-            237,
-            182,
-            52
-        ],
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    233,
+                    172,
+                    25
+                ],
+                "upper": [
+                    237,
+                    182,
+                    52
+                ],
+                "connected": true
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "战斗快速修理"
         ],
-        "connected": true,
         "focus": "[color:red]检测到中破舰船[/color]"
     },
     "战斗快速修理": {
-        "recognition": "OCR",
-        "expected": "快速修理",
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "快速修理"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战斗修理大破舰船",
@@ -316,26 +391,32 @@
         ]
     },
     "战斗修理大破舰船": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            225,
-            86,
-            32
-        ],
-        "upper": [
-            229,
-            106,
-            57
-        ],
-        "action": "Click",
-        "connected": true,
-        "post_delay": 1000,
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    225,
+                    86,
+                    32
+                ],
+                "upper": [
+                    229,
+                    106,
+                    57
+                ],
+                "connected": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
             "战斗修理大破舰船",
@@ -344,26 +425,32 @@
         ]
     },
     "战斗修理中破舰船": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            233,
-            172,
-            25
-        ],
-        "upper": [
-            237,
-            182,
-            52
-        ],
-        "action": "Click",
-        "connected": true,
-        "post_delay": 1000,
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    233,
+                    172,
+                    25
+                ],
+                "upper": [
+                    237,
+                    182,
+                    52
+                ],
+                "connected": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
             "战斗修理大破舰船",
@@ -372,36 +459,211 @@
         ]
     },
     "战斗开始出征": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
             "战斗船舱满",
-            "战斗开始出征",
-            "进入战斗"
+            "进入战斗节点1"
+        ],
+        "focus": "开始出征"
+    },
+    "节点1凹节点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "\\d+-\\d+"
+                ],
+                "roi": [
+                    516,
+                    7,
+                    332,
+                    64
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1检测概率",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点1检测概率": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1检测节点",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
         ]
     },
-    "进入战斗": {
+    "节点1检测节点": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
-            "[JumpBack]重新连接",
-            "战斗索敌成功",
-            "战斗阵型",
-            "战斗点击继续",
+            "节点1凹节点2",
+            "进入战斗节点1"
+        ],
+        "focus": "凹节点成功"
+    },
+    "节点1凹节点2": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1检测概率2",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "enabled": false,
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点1检测概率2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1检测节点2",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
+        ]
+    },
+    "节点1检测节点2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "进入战斗节点1"
+        ],
+        "focus": "凹节点成功"
+    },
+    "凹节点失败": {
+        "post_wait_freezes": 0,
+        "timeout": 30000,
+        "next": [
+            "战斗SL",
+            "大退检测",
+            "[JumpBack]点击加速"
+        ],
+        "focus": "凹节点失败"
+    },
+    "进入战斗节点1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "\\d+-\\d+"
+                ],
+                "roi": [
+                    516,
+                    7,
+                    332,
+                    64
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1索敌成功",
+            "[JumpBack]节点1阵型",
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击"
+            "[JumpBack]节点1追击",
+            "节点1点击继续",
+            "[JumpBack]处于战斗中"
         ],
-        "timeout": 300000,
-        "focus": "开始出征"
+        "timeout": 30000
     },
     "战斗船舱满": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/关闭船舱满提醒.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/关闭船舱满提醒.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战斗退出"
@@ -413,10 +675,16 @@
         "focus": "[color:red]船舱已满[/color]"
     },
     "战斗退出": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "action": "Click",
-        "green_mask": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]活动退出",
@@ -425,172 +693,360 @@
         ]
     },
     "活动退出": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/活动关闭.png",
-        "action": "Click",
-        "roi": [
-            1208,
-            49,
-            49,
-            50
-        ]
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/活动关闭.png",
+                "roi": [
+                    1208,
+                    49,
+                    49,
+                    50
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
-    "战斗索敌成功": {
-        "recognition": "OCR",
-        "expected": "开始战斗",
-        "roi": [
-            1039,
-            621,
-            229,
-            89
+    "节点1索敌成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "开始战斗",
+                "roi": [
+                    1039,
+                    621,
+                    229,
+                    89
+                ]
+            }
+        },
+        "next": [
+            "节点1识别目标舰种1",
+            "节点1识别目标舰种2",
+            "节点1远程打击",
+            "节点1战术迂回检测",
+            "节点1战斗开始"
         ],
+        "focus": "索敌成功"
+    },
+    "节点1远程打击": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
         "next": [
             "[JumpBack]重新连接",
-            "战斗识别SL目标1",
-            "战斗识别SL目标2",
-            "战斗开始"
+            "节点1战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点1战术迂回检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1迂回错误",
+            "节点1战术迂回"
         ]
     },
-    "战斗识别SL目标1": {
-        "recognition": "OCR",
-        "expected": "雷巡",
-        "roi": [
-            42,
-            182,
-            452,
-            299
+    "节点1战术迂回": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1战术迂回成功",
+            "节点1战术迂回失败"
         ],
+        "focus": "执行战术迂回"
+    },
+    "节点1迂回错误": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "任务出错"
+        ],
+        "focus": "[color:red]检测到节点2相关设置未设置，无法使用迂回[/color]"
+    },
+    "节点1战术迂回成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "预测",
+                    "索敌",
+                    "成功"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2凹节点",
+            "进入战斗节点2"
+        ],
+        "focus": "战术迂回成功"
+    },
+    "节点1战术迂回失败": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同航",
+                    "反航",
+                    "优势",
+                    "劣势",
+                    "纵阵",
+                    "轮型阵",
+                    "梯形阵",
+                    "单横阵"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]节点1阵型",
+            "节点1点击继续",
+            "[JumpBack]节点1追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
+        ],
+        "focus": "[color:red]迂回失败[/color]"
+    },
+    "节点1识别目标舰种1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "雷巡",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点1远程打击2",
+            "节点1战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "识别到SL目标"
+        "focus": "识别到目标舰种"
     },
-    "战斗识别SL目标2": {
-        "recognition": "OCR",
-        "expected": "轻母",
-        "roi": [
-            42,
-            182,
-            452,
-            299
-        ],
+    "节点1识别目标舰种2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "轻母",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
         "next": [
-            "[JumpBack]重新连接",
+            "节点1远程打击2",
+            "节点1战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "识别到SL目标"
+        "focus": "识别到目标舰种"
     },
-    "战斗SL": {
-        "recognition": "OCR",
-        "expected": "撤退",
-        "roi": [
-            844,
-            627,
-            192,
-            87
-        ],
-        "action": "Click",
+    "节点1远程打击2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
         "next": [
             "[JumpBack]重新连接",
-            "进入关卡"
-        ]
-    },
-    "战斗开始": {
-        "recognition": "OCR",
-        "expected": "开始战斗",
-        "roi": [
-            1039,
-            621,
-            229,
-            89
+            "节点1战斗开始"
         ],
-        "action": "Click",
-        "timeout": 300000,
+        "focus": "执行远程打击"
+    },
+    "节点1战术迂回检测2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点1迂回错误",
+            "节点1战术迂回"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点1战斗开始": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点1索敌成功"
+            }
+        },
+        "timeout": 30000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "战斗阵型",
-            "战斗点击继续",
-            "[JumpBack]战斗追击"
+            "[JumpBack]节点1阵型",
+            "节点1点击继续",
+            "[JumpBack]节点1追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
         ],
         "focus": "战斗开始"
     },
-    "战斗阵型": {
-        "recognition": "OCR",
-        "expected": [
-            "单横阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 300000,
+    "节点1阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "单横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗点击继续",
-            "[JumpBack]战斗追击"
-        ],
         "focus": "选择预设阵型"
     },
-    "战斗点击继续": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
+    "节点1点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗再点继续"
+            "节点1再点继续"
         ],
         "focus": "战斗结束"
     },
-    "战斗再点继续": {
-        "action": "Click",
-        "target": "战斗点击继续",
+    "节点1再点继续": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点1点击继续",
+                "target_offset": [
+                    0,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗舰队补给",
+            "节点1战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
-            "战斗再点继续"
-        ],
-        "on_error": [
-            "战斗继续退出",
-            "任务出错"
+            "节点1再点继续"
         ]
     },
-    "战斗继续退出": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "action": "Click",
-        "green_mask": true,
+    "节点1战斗舰队补给": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/舰队补给.png"
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
-            "[JumpBack]重新连接",
-            "回到关卡了"
-        ]
-    },
-    "战斗舰队补给": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/舰队补给.png",
-        "next": [
-            "[JumpBack]重新连接",
             "战斗大破检测",
-            "战斗前进"
+            "节点1前进"
         ]
     },
     "战斗回港": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/回港.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/回港.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "回到关卡了",
@@ -599,9 +1055,15 @@
         "focus": "回港"
     },
     "战斗大破回港": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/大破回港.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/大破回港.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "回到关卡了",
@@ -610,396 +1072,1670 @@
         "focus": "[color:red]大破回港[/color]"
     },
     "战斗大破检测": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/大破提醒.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/大破提醒.png"
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
-            "[JumpBack]重新连接",
             "战斗回港"
         ],
         "focus": "[color:red]检测到大破提醒[/color]"
     },
-    "战斗前进": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/前进.png",
-        "action": "Click",
-        "timeout": 300000,
+    "节点1前进": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/前进.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
-            "战斗开始2",
-            "战斗阵型2",
-            "战斗点击继续2",
-            "战斗前进",
-            "[JumpBack]点击确认",
-            "[JumpBack]点击加速",
-            "[JumpBack]选择战况",
-            "[JumpBack]战斗追击2"
+            "节点2凹节点",
+            "进入战斗节点2"
         ],
         "focus": "前进"
     },
-    "战斗开始2": {
-        "recognition": "OCR",
-        "expected": "开始战斗",
-        "roi": [
-            1039,
-            621,
-            229,
-            89
-        ],
-        "action": "Click",
-        "timeout": 300000,
+    "节点2凹节点": {
         "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "enabled": false,
         "next": [
-            "[JumpBack]重新连接",
-            "战斗阵型2",
-            "战斗点击继续2",
-            "[JumpBack]战斗追击2"
+            "节点2检测概率",
+            "[JumpBack]点击确认"
         ],
-        "focus": "战斗开始"
+        "on_error": [
+            "凹节点失败"
+        ],
+        "timeout": 30000,
+        "focus": "尝试凹节点"
     },
-    "战斗阵型2": {
-        "recognition": "OCR",
-        "expected": [
-            "单横阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 300000,
+    "节点2检测概率": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
-            "[JumpBack]重新连接",
-            "战斗点击继续2",
-            "[JumpBack]战斗追击2"
-        ],
-        "focus": "选择预设阵型"
-    },
-    "战斗点击继续2": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗再点继续2"
-        ],
-        "focus": "战斗结束"
-    },
-    "战斗再点继续2": {
-        "action": "Click",
-        "target": "战斗点击继续2",
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗舰队补给2",
-            "战斗大破回港",
-            "回到关卡了",
-            "战斗再点继续2"
+            "节点2检测节点",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
         ]
     },
-    "战斗舰队补给2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/舰队补给.png",
+    "节点2检测节点": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
-            "[JumpBack]重新连接",
-            "战斗大破检测",
-            "战斗前进2"
+            "节点2凹节点2",
+            "进入战斗节点2"
+        ],
+        "focus": "凹节点成功"
+    },
+    "节点2凹节点2": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2检测概率2",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "enabled": false,
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点2检测概率2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2检测节点2",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
         ]
     },
-    "战斗前进2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/前进.png",
-        "action": "Click",
-        "timeout": 300000,
+    "节点2检测节点2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
-            "[JumpBack]重新连接",
-            "战斗开始3",
-            "战斗阵型3",
-            "战斗点击继续3",
-            "战斗前进2",
+            "进入战斗节点2"
+        ],
+        "focus": "凹节点成功"
+    },
+    "进入战斗节点2": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2索敌成功",
+            "[JumpBack]节点2阵型",
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击3"
+            "[JumpBack]节点2追击",
+            "节点2点击继续",
+            "[JumpBack]处于战斗中"
         ],
-        "focus": "前进"
+        "timeout": 30000
     },
-    "战斗开始3": {
-        "recognition": "OCR",
-        "expected": "开始战斗",
-        "roi": [
-            1039,
-            621,
-            229,
-            89
+    "节点2索敌成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "开始战斗",
+                "roi": [
+                    1039,
+                    621,
+                    229,
+                    89
+                ]
+            }
+        },
+        "next": [
+            "节点2识别目标舰种1",
+            "节点2识别目标舰种2",
+            "节点2远程打击",
+            "节点2战术迂回检测",
+            "节点2战斗开始"
         ],
-        "action": "Click",
-        "timeout": 300000,
+        "focus": "索敌成功"
+    },
+    "节点2远程打击": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "节点2战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点2战术迂回检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2迂回错误",
+            "节点2战术迂回"
+        ]
+    },
+    "节点2战术迂回": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2战术迂回成功",
+            "节点2战术迂回失败"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点2迂回错误": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "任务出错"
+        ],
+        "focus": "[color:red]检测到节点3相关设置未设置，无法使用迂回[/color]"
+    },
+    "节点2战术迂回成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "预测",
+                    "索敌",
+                    "成功"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3凹节点",
+            "进入战斗节点3"
+        ],
+        "focus": "战术迂回成功"
+    },
+    "节点2战术迂回失败": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同航",
+                    "反航",
+                    "优势",
+                    "劣势",
+                    "纵阵",
+                    "轮型阵",
+                    "梯形阵",
+                    "单横阵"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]节点2阵型",
+            "节点2点击继续",
+            "[JumpBack]节点2追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
+        ],
+        "focus": "[color:red]迂回失败[/color]"
+    },
+    "节点2识别目标舰种1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "雷巡",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点2远程打击2",
+            "节点2战术迂回检测2",
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点2识别目标舰种2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "轻母",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点2远程打击2",
+            "节点2战术迂回检测2",
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点2远程打击2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "节点2战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点2战术迂回检测2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点2迂回错误",
+            "节点2战术迂回"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点2战斗开始": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点2索敌成功"
+            }
+        },
+        "timeout": 30000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "战斗阵型3",
-            "战斗点击继续3",
-            "[JumpBack]战斗追击3"
+            "[JumpBack]节点2阵型",
+            "节点2点击继续",
+            "[JumpBack]节点2追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
         ],
         "focus": "战斗开始"
     },
-    "战斗阵型3": {
-        "recognition": "OCR",
-        "expected": [
-            "单横阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 300000,
+    "节点2阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "单横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗点击继续3",
-            "[JumpBack]战斗追击3"
-        ],
         "focus": "选择预设阵型"
     },
-    "战斗点击继续3": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
+    "节点2点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗再点继续3"
+            "节点2再点继续"
         ],
         "focus": "战斗结束"
     },
-    "战斗再点继续3": {
-        "action": "Click",
-        "target": "战斗点击继续3",
+    "节点2再点继续": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点2点击继续",
+                "target_offset": [
+                    0,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗舰队补给3",
+            "节点2战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
-            "战斗再点继续3"
+            "节点2再点继续"
         ]
     },
-    "战斗舰队补给3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/舰队补给.png",
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗大破检测",
-            "战斗前进3"
-        ]
-    },
-    "战斗前进3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/前进.png",
-        "action": "Click",
-        "timeout": 300000,
+    "节点2战斗舰队补给": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/舰队补给.png"
+            }
+        },
         "post_wait_freezes": 0,
         "next": [
+            "战斗大破检测",
+            "节点2前进"
+        ]
+    },
+    "节点2前进": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/前进.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
             "[JumpBack]重新连接",
-            "战斗开始4",
-            "战斗阵型4",
-            "战斗点击继续4",
-            "战斗前进3",
+            "节点3凹节点",
+            "进入战斗节点3"
+        ],
+        "focus": "前进"
+    },
+    "节点3凹节点": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "enabled": false,
+        "next": [
+            "节点3检测概率",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点3检测概率": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3检测节点",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
+        ]
+    },
+    "节点3检测节点": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3凹节点2",
+            "进入战斗节点3"
+        ],
+        "focus": "凹节点成功"
+    },
+    "节点3凹节点2": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3检测概率2",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "enabled": false,
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点3检测概率2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3检测节点2",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
+        ]
+    },
+    "节点3检测节点2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "进入战斗节点3"
+        ],
+        "focus": "凹节点成功"
+    },
+    "进入战斗节点3": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3索敌成功",
+            "[JumpBack]节点3阵型",
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击4"
+            "[JumpBack]节点3追击",
+            "节点3点击继续",
+            "[JumpBack]处于战斗中"
         ],
-        "focus": "前进"
+        "timeout": 30000
     },
-    "战斗开始4": {
-        "recognition": "OCR",
-        "expected": "开始战斗",
-        "roi": [
-            1039,
-            621,
-            229,
-            89
+    "节点3索敌成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "开始战斗",
+                "roi": [
+                    1039,
+                    621,
+                    229,
+                    89
+                ]
+            }
+        },
+        "next": [
+            "节点3识别目标舰种1",
+            "节点3识别目标舰种2",
+            "节点3远程打击",
+            "节点3战术迂回检测",
+            "节点3战斗开始"
         ],
-        "action": "Click",
-        "timeout": 300000,
+        "focus": "索敌成功"
+    },
+    "节点3远程打击": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "节点3战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点3战术迂回检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3迂回错误",
+            "节点3战术迂回"
+        ]
+    },
+    "节点3战术迂回": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3战术迂回成功",
+            "节点3战术迂回失败"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点3迂回错误": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "任务出错"
+        ],
+        "focus": "[color:red]检测到节点4相关设置未设置，无法使用迂回[/color]"
+    },
+    "节点3战术迂回成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "预测",
+                    "索敌",
+                    "成功"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4凹节点",
+            "进入战斗节点4"
+        ],
+        "focus": "战术迂回成功"
+    },
+    "节点3战术迂回失败": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同航",
+                    "反航",
+                    "优势",
+                    "劣势",
+                    "纵阵",
+                    "轮型阵",
+                    "梯形阵",
+                    "单横阵"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]节点3阵型",
+            "节点3点击继续",
+            "[JumpBack]节点3追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
+        ],
+        "focus": "[color:red]迂回失败[/color]"
+    },
+    "节点3识别目标舰种1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "雷巡",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点3远程打击2",
+            "节点3战术迂回检测2",
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点3识别目标舰种2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "轻母",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点3远程打击2",
+            "节点3战术迂回检测2",
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点3远程打击2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "节点3战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点3战术迂回检测2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点3迂回错误",
+            "节点3战术迂回"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点3战斗开始": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点3索敌成功"
+            }
+        },
+        "timeout": 30000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "战斗阵型4",
-            "战斗点击继续4",
-            "[JumpBack]战斗追击4"
+            "[JumpBack]节点3阵型",
+            "节点3点击继续",
+            "[JumpBack]节点3追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
         ],
         "focus": "战斗开始"
     },
-    "战斗阵型4": {
-        "recognition": "OCR",
-        "expected": [
-            "单横阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 300000,
+    "节点3阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "单横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗点击继续4",
-            "[JumpBack]战斗追击4"
-        ],
         "focus": "选择预设阵型"
     },
-    "战斗点击继续4": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
+    "节点3点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗再点继续4"
+            "节点3再点继续"
         ],
         "focus": "战斗结束"
     },
-    "战斗再点继续4": {
-        "action": "Click",
-        "target": "战斗点击继续4",
+    "节点3再点继续": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点3点击继续",
+                "target_offset": [
+                    0,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗舰队补给4",
+            "节点3战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
-            "战斗再点继续4"
+            "节点3再点继续"
         ]
     },
-    "战斗舰队补给4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/舰队补给.png",
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗大破检测",
-            "战斗前进4"
-        ]
-    },
-    "战斗前进4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/前进.png",
-        "action": "Click",
-        "timeout": 300000,
+    "节点3战斗舰队补给": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/舰队补给.png"
+            }
+        },
         "post_wait_freezes": 0,
         "next": [
+            "战斗大破检测",
+            "节点3前进"
+        ]
+    },
+    "节点3前进": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/前进.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
             "[JumpBack]重新连接",
-            "战斗开始5",
-            "战斗阵型5",
-            "战斗点击继续5",
-            "战斗前进4",
+            "节点4凹节点",
+            "进入战斗节点4"
+        ],
+        "focus": "前进"
+    },
+    "节点4凹节点": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "enabled": false,
+        "next": [
+            "节点4检测概率",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点4检测概率": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4检测节点",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
+        ]
+    },
+    "节点4检测节点": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4凹节点2",
+            "进入战斗节点4"
+        ],
+        "focus": "凹节点成功"
+    },
+    "节点4凹节点2": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4检测概率2",
+            "[JumpBack]点击确认"
+        ],
+        "on_error": [
+            "凹节点失败"
+        ],
+        "enabled": false,
+        "timeout": 30000,
+        "focus": "尝试凹节点"
+    },
+    "节点4检测概率2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4检测节点2",
+            "[JumpBack]凹节点检测概率",
+            "凹节点失败"
+        ]
+    },
+    "节点4检测节点2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/节点.png",
+                "threshold": 0.95,
+                "roi": [
+                    304,
+                    285,
+                    59,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "进入战斗节点4"
+        ],
+        "focus": "凹节点成功"
+    },
+    "进入战斗节点4": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4索敌成功",
+            "[JumpBack]节点4阵型",
             "[JumpBack]点击确认",
             "[JumpBack]点击加速",
             "[JumpBack]选择战况",
-            "[JumpBack]战斗追击5"
+            "[JumpBack]节点4追击",
+            "节点4点击继续",
+            "[JumpBack]处于战斗中"
         ],
-        "focus": "前进"
+        "timeout": 30000
     },
-    "战斗开始5": {
-        "recognition": "OCR",
-        "expected": "开始战斗",
-        "roi": [
-            1039,
-            621,
-            229,
-            89
+    "节点4索敌成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "开始战斗",
+                "roi": [
+                    1039,
+                    621,
+                    229,
+                    89
+                ]
+            }
+        },
+        "next": [
+            "节点4识别目标舰种1",
+            "节点4识别目标舰种2",
+            "节点4远程打击",
+            "节点4战术迂回检测",
+            "节点4战斗开始"
         ],
-        "action": "Click",
-        "timeout": 300000,
+        "focus": "索敌成功"
+    },
+    "节点4远程打击": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "节点4战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点4战术迂回检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4迂回错误",
+            "节点4战术迂回"
+        ]
+    },
+    "节点4战术迂回": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4战术迂回成功",
+            "节点4战术迂回失败"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点4迂回错误": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "任务出错"
+        ],
+        "focus": "[color:red]检测到节点5相关设置未设置，无法使用迂回[/color]"
+    },
+    "节点4战术迂回成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "预测",
+                    "索敌",
+                    "成功"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "进入战斗节点5"
+        ],
+        "focus": "战术迂回成功"
+    },
+    "节点4战术迂回失败": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同航",
+                    "反航",
+                    "优势",
+                    "劣势",
+                    "纵阵",
+                    "轮型阵",
+                    "梯形阵",
+                    "单横阵"
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]节点4阵型",
+            "节点4点击继续",
+            "[JumpBack]节点4追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
+        ],
+        "focus": "[color:red]迂回失败[/color]"
+    },
+    "节点4识别目标舰种1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "雷巡",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点4远程打击2",
+            "节点4战术迂回检测2",
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点4识别目标舰种2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "轻母",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "节点4远程打击2",
+            "节点4战术迂回检测2",
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点4远程打击2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "节点4战斗开始"
+        ],
+        "focus": "执行远程打击"
+    },
+    "节点4战术迂回检测2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "战术迂回",
+                "roi": [
+                    454,
+                    623,
+                    393,
+                    86
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点4迂回错误",
+            "节点4战术迂回"
+        ],
+        "focus": "执行战术迂回"
+    },
+    "节点4战斗开始": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点4索敌成功"
+            }
+        },
+        "timeout": 30000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "战斗阵型5",
-            "战斗点击继续5",
-            "[JumpBack]战斗追击5"
+            "[JumpBack]节点4阵型",
+            "节点4点击继续",
+            "[JumpBack]节点4追击",
+            "[JumpBack]远程打击确认",
+            "[JumpBack]处于战斗中"
         ],
         "focus": "战斗开始"
     },
-    "战斗阵型5": {
-        "recognition": "OCR",
-        "expected": [
-            "单横阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 300000,
+    "节点4阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "单横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "战斗点击继续5",
-            "[JumpBack]战斗追击5"
-        ],
         "focus": "选择预设阵型"
     },
-    "战斗点击继续5": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
+    "节点4点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗再点继续5"
+            "节点4再点继续"
         ],
         "focus": "战斗结束"
     },
-    "战斗再点继续5": {
-        "action": "Click",
-        "target": "战斗点击继续5",
+    "节点4再点继续": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点4点击继续",
+                "target_offset": [
+                    0,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
-            "战斗舰队补给5",
+            "节点4战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
-            "战斗再点继续5"
+            "节点4再点继续"
         ]
     },
-    "战斗舰队补给5": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/舰队补给.png",
+    "节点4战斗舰队补给": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/舰队补给.png"
+            }
+        },
+        "post_wait_freezes": 0,
+        "next": [
+            "战斗大破检测",
+            "节点4前进"
+        ]
+    },
+    "节点4前进": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/前进.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
-            "战斗大破检测",
-            "战斗前进4"
+            "进入战斗节点5"
+        ],
+        "focus": "前进"
+    },
+    "进入战斗节点5": {
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
+        "next": [
+            "节点5索敌成功",
+            "[JumpBack]节点5阵型",
+            "[JumpBack]点击确认",
+            "[JumpBack]点击加速",
+            "[JumpBack]选择战况",
+            "[JumpBack]节点5追击",
+            "节点5点击继续",
+            "[JumpBack]处于战斗中"
+        ],
+        "timeout": 30000
+    },
+    "节点5索敌成功": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "开始战斗",
+                "roi": [
+                    1039,
+                    621,
+                    229,
+                    89
+                ]
+            }
+        },
+        "next": [
+            "节点5识别目标舰种1",
+            "节点5识别目标舰种2",
+            "节点5战斗开始"
+        ],
+        "focus": "索敌成功"
+    },
+    "节点5识别目标舰种1": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "雷巡",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点5识别目标舰种2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "轻母",
+                "roi": [
+                    42,
+                    182,
+                    452,
+                    299
+                ]
+            }
+        },
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "next": [
+            "战斗SL"
+        ],
+        "focus": "识别到目标舰种"
+    },
+    "节点5战斗开始": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点5索敌成功"
+            }
+        },
+        "timeout": 30000,
+        "post_wait_freezes": 0,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]节点5阵型",
+            "节点5点击继续",
+            "[JumpBack]节点5追击",
+            "[JumpBack]处于战斗中"
+        ],
+        "focus": "战斗开始"
+    },
+    "节点5阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "单横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点5点击继续": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "节点5再点继续"
+        ],
+        "focus": "战斗结束"
+    },
+    "节点5再点继续": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "节点5点击继续",
+                "target_offset": [
+                    0,
+                    10,
+                    0,
+                    0
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "节点5战斗舰队补给",
+            "战斗大破回港",
+            "回到关卡了",
+            "节点5再点继续"
+        ]
+    },
+    "节点5战斗舰队补给": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/舰队补给.png"
+            }
+        },
+        "post_wait_freezes": 0,
+        "next": [
+            "[JumpBack]重新连接",
+            "战斗回港"
         ]
     },
     "战斗船舱满尝试拆船": {

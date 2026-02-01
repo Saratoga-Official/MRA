@@ -1,0 +1,460 @@
+{
+    "task": [
+        {
+            "name": "刷活动",
+            "entry": "进入活动",
+            "default_check": false,
+            "doc": [
+                "[color:red]若使用自定义导航，将鼠标移动到自定义导航旁的问号查看说明[/color]",
+                "<br>[color:red]若不使用自定义导航，须在出击准备按钮前开始[/color]",
+                "<br>[color:red]立体强袭关卡须在紧急情况前开始，仅支持打第一个点[/color]",
+                "<br>[color:red]自动答题需要在答题界面开始，无脑选择选项，不追求答对[/color]"
+            ],
+            "option": [
+                "活动选择模式"
+            ],
+            "pipeline_override": {
+                "结束开始唤醒": {
+                    "next": [
+                        "进入活动"
+                    ]
+                }
+            }
+        }
+    ],
+    "option": {
+        "活动选择模式": {
+            "cases": [
+                {
+                    "name": "常规活动",
+                    "pipeline_override": {
+                        "回到关卡了": {
+                            "expected": "出击准备",
+                            "roi": [
+                                980,
+                                581,
+                                254,
+                                75
+                            ],
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗次数",
+                                "[JumpBack]活动退出",
+                                "[JumpBack]退出",
+                                "无动作结束"
+                            ]
+                        },
+                        "战斗次数": {
+                            "next": [
+                                "进入关卡"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "出击准备",
+                            "roi": [
+                                980,
+                                581,
+                                254,
+                                75
+                            ],
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "确认进入关卡"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "使用自定义导航",
+                        "战斗编队",
+                        "活动无限次数",
+                        "战斗大破/中破舰船处理",
+                        "船舱满自动拆船（危险功能）",
+                        "战斗使用军阶buff",
+                        "战斗节点"
+                    ]
+                },
+                {
+                    "name": "立体强袭",
+                    "pipeline_override": {
+                        "进入活动": {
+                            "next": [
+                                "立体强袭开始"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "立体强袭阵型",
+                        "立体强袭无限次数",
+                        "立体强袭大破/中破舰船处理",
+                        "立体强袭允许追击"
+                    ]
+                },
+                {
+                    "name": "自动答题",
+                    "pipeline_override": {
+                        "进入活动": {
+                            "next": [
+                                "检查题目"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "使用自定义导航": {
+            "type": "select",
+            "description": "{PROJECT_DIR}/docs/自定义导航.md",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "拆船结束退出": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "[JumpBack]退出",
+                                "无动作结束"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "进入活动": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "[JumpBack]领取奖励",
+                                "[JumpBack]退出",
+                                "活动导航"
+                            ]
+                        },
+                        "拆船结束退出": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "活动入口导航",
+                                "[JumpBack]退出"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "活动入口识别",
+                        "关卡入口识别",
+                        "启用自动答题"
+                    ]
+                }
+            ]
+        },
+        "活动入口识别": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "OCR",
+                    "pipeline_override": {},
+                    "option": [
+                        "活动入口名称"
+                    ]
+                },
+                {
+                    "name": "模板",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "活动入口名称": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "活动入口识别名称",
+                    "default": "纵横大洋",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "活动入口导航": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{活动入口识别名称}"
+                    ]
+                }
+            }
+        },
+        "关卡入口识别": {
+            "cases": [
+                {
+                    "name": "OCR",
+                    "pipeline_override": {},
+                    "option": [
+                        "关卡入口名称"
+                    ]
+                },
+                {
+                    "name": "坐标",
+                    "pipeline_override": {},
+                    "option": [
+                        "关卡坐标识别"
+                    ]
+                },
+                {
+                    "name": "模板",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "关卡入口名称": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "关卡入口识别名称",
+                    "default": "激战旋涡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "关卡入口导航": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{关卡入口识别名称}"
+                    ]
+                }
+            }
+        },
+        "关卡坐标识别": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "关卡界面标题",
+                    "description": "位于关卡入口界面上方的文字",
+                    "default": "纵横大洋",
+                    "pipeline_type": "string"
+                },
+                {
+                    "name": "关卡入口坐标X",
+                    "default": "200",
+                    "pipeline_type": "int"
+                },
+                {
+                    "name": "关卡入口坐标Y",
+                    "default": "200",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "关卡入口导航": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{关卡界面标题}"
+                    ],
+                    "roi": [
+                        90,
+                        2,
+                        1176,
+                        207
+                    ],
+                    "target": [
+                        "{关卡入口坐标X}",
+                        "{关卡入口坐标Y}"
+                    ]
+                }
+            }
+        },
+        "启用自动答题": {
+            "type": "select",
+            "description": "导航到关卡界面弹窗是否答题时自动进入答题",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "答题确认": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "活动无限次数": {
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {},
+                    "option": [
+                        "活动指定次数"
+                    ]
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "直到旗舰满级后停止",
+                    "pipeline_override": {
+                        "战斗检测等级": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "活动指定次数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "活动指定次数",
+                    "default": "1",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "战斗次数": {
+                    "max_hit": "{活动指定次数}"
+                }
+            }
+        },
+        "立体强袭阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "立体强袭阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "立体强袭无限次数": {
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {
+                        "立体强袭无限战斗": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "开启",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "旗舰等级满级时终止任务",
+                    "pipeline_override": {
+                        "立体强袭检测等级": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "立体强袭大破/中破舰船处理": {
+            "cases": [
+                {
+                    "name": "存在大破修大破",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "enabled": false
+                        },
+                        "立体强袭修理中破舰船": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "存在大破修中/大破",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "存在中破修中/大破",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "存在大破终止战斗",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "enabled": false
+                        },
+                        "立体强袭修理检测大破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "退出立体强袭"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "存在中破终止战斗",
+                    "pipeline_override": {
+                        "立体强袭修理检测中破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "退出立体强袭"
+                            ]
+                        },
+                        "立体强袭修理检测大破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "退出立体强袭"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "立体强袭允许追击": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "立体强袭追击": {
+                            "template": "战斗/放弃.png"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

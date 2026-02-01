@@ -150,7 +150,7 @@ jobs:
               
               # 复制图标文件
               if [ -f "logo.ico" ]; then
-                cp logo.ico install/Assets/logo.ico
+                cp logo.ico Install
                 echo "Copied logo.ico to install directory"
               fi
 

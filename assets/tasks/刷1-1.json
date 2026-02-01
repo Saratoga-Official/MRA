@@ -1,0 +1,141 @@
+{
+    "task": [
+        {
+            "name": "无消耗刷1-1",
+            "entry": "开始出征",
+            "default_check": false,
+            "repeatable": true,
+            "doc": [
+                "[color:red]①会自动编队编入最近获得的船，不能和其他编队混用[/color]",
+                "<br>[color:red]②确保船舱想保留的船均锁好才可使用自动拆船[/color]",
+                "<br>③本功能会在战斗结束后自动收发远征"
+            ],
+            "option": [
+                "1-1编队",
+                "1-1无限次数",
+                "刷满船舱后自动拆船（危险功能）"
+            ],
+            "pipeline_override": {
+                "开始导航": {
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "第一章",
+                        "[JumpBack]9到8",
+                        "[JumpBack]8到7",
+                        "[JumpBack]7到6",
+                        "[JumpBack]6到5",
+                        "[JumpBack]5到4",
+                        "[JumpBack]4到3",
+                        "[JumpBack]3到2",
+                        "[JumpBack]2到1"
+                    ]
+                },
+                "找关卡": {
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "狗粮1-1",
+                        "[JumpBack]X-2左",
+                        "[JumpBack]X-3左",
+                        "[JumpBack]X-4左",
+                        "[JumpBack]X-5左",
+                        "[JumpBack]X-6"
+                    ]
+                },
+                "开始出征": {
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "狗粮1-1",
+                        "出征",
+                        "导航前",
+                        "点击出征",
+                        "[JumpBack]退出"
+                    ]
+                },
+                "退出远征": {
+                    "template": "战斗/出征.png",
+                    "green_mask": false,
+                    "roi": [
+                        144,
+                        0,
+                        174,
+                        71
+                    ],
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "狗粮回到关卡"
+                    ]
+                }
+            }
+        }
+    ],
+    "option": {
+        "1-1编队": {
+            "cases": [
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "狗粮编队": {
+                            "template": "战斗/2队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "狗粮编队": {
+                            "template": "战斗/3队.png"
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "狗粮编队": {
+                            "template": "战斗/4队.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "1-1无限次数": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "狗粮继续": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "刷满船舱后自动拆船（危险功能）": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "狗粮船舱满": {
+                            "recognition": "OCR",
+                            "expected": "解装",
+                            "post_delay": 5000,
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "拆船点击添加"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

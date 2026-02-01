@@ -1,0 +1,102 @@
+{
+    "task": [
+        {
+            "name": "结束前任务",
+            "entry": "收尾工作",
+            "default_check": false,
+            "doc": [
+                "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]"
+            ],
+            "option": [
+                "自动入浴",
+                "自动领取任务奖励",
+                "自动拆船（危险功能）",
+                "结束后关闭游戏"
+            ],
+            "pipeline_override": {
+                "退出浴场": {
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "退出船坞"
+                    ]
+                },
+                "拆船结束退出": {
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "拆船结束退出2"
+                    ]
+                }
+            }
+        }
+    ],
+    "option": {
+        "自动入浴": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "点击船坞": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动领取任务奖励": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "点击任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动拆船（危险功能）": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "战斗船舱满尝试拆船": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "结束后关闭游戏": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "关闭游戏": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                }
+            ]
+        }
+    }
+}

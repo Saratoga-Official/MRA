@@ -1,0 +1,96 @@
+{
+    "task": [
+        {
+            "name": "开始前任务",
+            "entry": "开始唤醒",
+            "default_check": true,
+            "doc": [
+                "用于打开游戏，领取登录奖励等",
+                "<br>[color:red]请将本任务放在所有任务之前[/color]",
+                "<br>[color:red]切换区服不可选择非当前大区的区服[/color]",
+                "<br>如果需要切换大区或切换账号请使用模拟器的多开功能"
+            ],
+            "option": [
+                "切换区服"
+            ]
+        }
+    ],
+    "option": {
+        "切换区服": {
+            "cases": [
+                {
+                    "name": "不切换",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "全平台-胡德",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "全平台-俾斯麦",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "俾斯麦",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "俾斯麦"
+                        }
+                    }
+                },
+                {
+                    "name": "全平台-昆西",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "昆西",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "昆西"
+                        }
+                    }
+                },
+                {
+                    "name": "全平台-长春",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "长春",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "长春"
+                        }
+                    }
+                },
+                {
+                    "name": "IOS-列克星敦",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "列克星敦",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "列克星敦"
+                        }
+                    }
+                },
+                {
+                    "name": "IOS-维内托",
+                    "pipeline_override": {
+                        "更换区服": {
+                            "expected": "维内托",
+                            "enabled": true
+                        },
+                        "选择区服": {
+                            "expected": "维内托"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

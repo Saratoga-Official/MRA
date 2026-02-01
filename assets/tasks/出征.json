@@ -1,0 +1,2975 @@
+{
+    "task": [
+        {
+            "name": "自动出征",
+            "entry": "开始出征",
+            "default_check": false,
+            "doc": [
+                "[color:red]①需提前编好队，满足带路条件，再开始[/color]",
+                "<br>②自动导航章节/关卡，选择你要打的章节和关卡号可以自动导航到你指定的关卡，选择当前/上次就是不导航",
+                "<br>③门口SL目标，选择后出门点检测到敌方目标舰种就会SL，如果索敌不了无法SL",
+                "<br>[color:red]④自动拆船，确保船舱想保留的船均锁好才可使用[/color]",
+                "<br>⑤本功能会在战斗结束后自动收发远征",
+                "<br>⑥战斗点位，设置几点就打到几点，并按该节点所选阵型和夜战追击设置操作",
+                "<br>⑦追击设置中潜艇用智能追击属于测试功能，会检测敌方是否存在潜艇打不到的敌人从而决定是否进行夜战追击（敌方五号位会被挡住检测不到）"
+            ],
+            "option": [
+                "自动导航章节",
+                "自动导航关卡",
+                "战斗编队",
+                "战斗无限次数",
+                "战斗大破/中破舰船处理",
+                "船舱满自动拆船（危险功能）",
+                "战斗使用军阶buff",
+                "战斗节点"
+            ],
+            "pipeline_override": {
+                "退出远征": {
+                    "template": "战斗/出征.png",
+                    "green_mask": false,
+                    "roi": [
+                        144,
+                        0,
+                        174,
+                        71
+                    ],
+                    "next": [
+                        "[JumpBack]重新连接",
+                        "开始导航"
+                    ]
+                },
+                "结束开始唤醒": {
+                    "next": [
+                        "重新点击出征"
+                    ]
+                }
+            }
+        }
+    ],
+    "option": {
+        "自动导航章节": {
+            "cases": [
+                {
+                    "name": "当前/上次",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "找关卡"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第一章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第一章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]4到3",
+                                "[JumpBack]3到2",
+                                "[JumpBack]2到1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第二章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第二章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]4到3",
+                                "[JumpBack]3到2",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第三章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第三章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]4到3",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第四章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第四章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]5到4",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第五章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第五章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]6到5",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第六章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第六章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]7到6",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第七章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第七章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]8到7",
+                                "[JumpBack]6到7",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第八章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第八章",
+                                "[JumpBack]9到8",
+                                "[JumpBack]7到8",
+                                "[JumpBack]6到7",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第九章",
+                    "pipeline_override": {
+                        "开始导航": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "第九章",
+                                "[JumpBack]8到9",
+                                "[JumpBack]7到8",
+                                "[JumpBack]6到7",
+                                "[JumpBack]5到6",
+                                "[JumpBack]4到5",
+                                "[JumpBack]3到4",
+                                "[JumpBack]2到3",
+                                "[JumpBack]1到2"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "自动导航关卡": {
+            "cases": [
+                {
+                    "name": "当前/上次",
+                    "pipeline_override": {
+                        "进入关卡": {
+                            "expected": "\\d+-\\d+"
+                        },
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第一关",
+                    "pipeline_override": {
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡",
+                                "[JumpBack]X-2左",
+                                "[JumpBack]X-3左",
+                                "[JumpBack]X-4左",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "\\d+-1"
+                        }
+                    }
+                },
+                {
+                    "name": "第二关",
+                    "pipeline_override": {
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-3左",
+                                "[JumpBack]X-4左",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "\\d+-2"
+                        }
+                    }
+                },
+                {
+                    "name": "第三关",
+                    "pipeline_override": {
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-4左",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "\\d+-3"
+                        }
+                    }
+                },
+                {
+                    "name": "第四关",
+                    "pipeline_override": {
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-3右",
+                                "[JumpBack]X-5左",
+                                "[JumpBack]X-6"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "\\d+-4"
+                        }
+                    }
+                },
+                {
+                    "name": "第五关",
+                    "pipeline_override": {
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-3右",
+                                "[JumpBack]X-4右",
+                                "[JumpBack]X-6"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "\\d+-5"
+                        }
+                    }
+                },
+                {
+                    "name": "第六关",
+                    "pipeline_override": {
+                        "找关卡": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "进入关卡",
+                                "[JumpBack]X-1",
+                                "[JumpBack]X-2右",
+                                "[JumpBack]X-3右",
+                                "[JumpBack]X-4右",
+                                "[JumpBack]X-5右"
+                            ]
+                        },
+                        "进入关卡": {
+                            "expected": "\\d+-6"
+                        }
+                    }
+                }
+            ]
+        },
+        "战斗编队": {
+            "cases": [
+                {
+                    "name": "第一编队",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "第二编队",
+                    "pipeline_override": {
+                        "战斗编队": {
+                            "roi": [
+                                227,
+                                94,
+                                153,
+                                44
+                            ],
+                            "target": [
+                                227,
+                                94,
+                                153,
+                                44
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第三编队",
+                    "pipeline_override": {
+                        "战斗编队": {
+                            "roi": [
+                                384,
+                                94,
+                                152,
+                                44
+                            ],
+                            "target": [
+                                384,
+                                94,
+                                152,
+                                44
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "第四编队",
+                    "pipeline_override": {
+                        "战斗编队": {
+                            "roi": [
+                                544,
+                                94,
+                                150,
+                                44
+                            ],
+                            "target": [
+                                544,
+                                94,
+                                150,
+                                44
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战斗无限次数": {
+            "cases": [
+                {
+                    "name": "关闭",
+                    "pipeline_override": {},
+                    "option": [
+                        "战斗指定次数"
+                    ]
+                },
+                {
+                    "name": "直到捞船达到上限停止",
+                    "pipeline_override": {
+                        "无限战斗检测": {
+                            "recognition": "OCR",
+                            "expected": "^500/500$",
+                            "roi": [
+                                1153,
+                                19,
+                                89,
+                                30
+                            ],
+                            "inverse": true,
+                            "focus": "已达500捞船上限"
+                        }
+                    }
+                },
+                {
+                    "name": "直到战利品刷满后停止",
+                    "pipeline_override": {
+                        "无限战斗检测": {
+                            "recognition": "OCR",
+                            "expected": "^50/50$",
+                            "roi": [
+                                1021,
+                                19,
+                                80,
+                                29
+                            ],
+                            "inverse": true,
+                            "focus": "已达50战利品上限"
+                        }
+                    }
+                },
+                {
+                    "name": "直到旗舰满级后停止",
+                    "pipeline_override": {
+                        "战斗检测等级": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "战斗指定次数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "战斗指定次数",
+                    "default": "1",
+                    "pipeline_type": "int"
+                }
+            ],
+            "pipeline_override": {
+                "战斗次数": {
+                    "max_hit": "{战斗指定次数}"
+                }
+            }
+        },
+        "战斗大破/中破舰船处理": {
+            "cases": [
+                {
+                    "name": "存在大破修大破",
+                    "pipeline_override": {
+                        "战斗修理检测中破": {
+                            "enabled": false
+                        },
+                        "战斗修理中破舰船": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "存在大破修中/大破",
+                    "pipeline_override": {
+                        "战斗修理检测中破": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "存在中破修中/大破",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "存在大破终止战斗",
+                    "pipeline_override": {
+                        "战斗修理检测中破": {
+                            "enabled": false
+                        },
+                        "战斗修理检测大破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗退出"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "存在中破终止战斗",
+                    "pipeline_override": {
+                        "战斗修理检测中破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗退出"
+                            ]
+                        },
+                        "战斗修理检测大破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗退出"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "船舱满自动拆船（危险功能）": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "战斗船舱满": {
+                            "recognition": "OCR",
+                            "expected": "解装",
+                            "post_delay": 5000,
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "拆船点击添加"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战斗使用军阶buff": {
+            "cases": [
+                {
+                    "name": "不使用",
+                    "pipeline_override": {
+                        "启用军阶buff": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "战利品加成",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "经验加成",
+                    "pipeline_override": {
+                        "识别当前BUFF": {
+                            "expected": [
+                                "艾拉督战",
+                                "教官指导",
+                                "初级模拟"
+                            ]
+                        },
+                        "点击buff": {
+                            "expected": [
+                                "艾拉督战",
+                                "教官指导",
+                                "初级模拟"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "打捞加成",
+                    "pipeline_override": {
+                        "识别当前BUFF": {
+                            "expected": [
+                                "幸运之星",
+                                "奇迹",
+                                "敏锐的直觉"
+                            ]
+                        },
+                        "点击buff": {
+                            "expected": [
+                                "幸运之星",
+                                "奇迹",
+                                "敏锐的直觉"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "好感度加成",
+                    "pipeline_override": {
+                        "识别当前BUFF": {
+                            "expected": [
+                                "涨工资了",
+                                "长官的决意",
+                                "提督的鼓励"
+                            ]
+                        },
+                        "点击buff": {
+                            "expected": [
+                                "涨工资了",
+                                "长官的决意",
+                                "提督的鼓励"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "伤害加成",
+                    "pipeline_override": {
+                        "识别当前BUFF": {
+                            "expected": [
+                                "公正的决斗",
+                                "狭路相逢",
+                                "艾拉之力"
+                            ]
+                        },
+                        "点击buff": {
+                            "expected": [
+                                "公正的决斗",
+                                "狭路相逢",
+                                "艾拉之力"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "学院加成",
+                    "pipeline_override": {
+                        "识别当前BUFF": {
+                            "expected": [
+                                "五年出征",
+                                "三年演习"
+                            ]
+                        },
+                        "点击buff": {
+                            "expected": [
+                                "五年出征",
+                                "三年演习"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战斗节点": {
+            "description": "只计算所有可能进入战斗的节点",
+            "cases": [
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "节点1战斗舰队补给": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗回港"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "节点1凹节点",
+                        "节点1索敌失败重开",
+                        "节点1检测目标舰种",
+                        "节点1阵型",
+                        "节点1追击"
+                    ]
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "节点2战斗舰队补给": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗回港"
+                            ]
+                        },
+                        "节点1迂回错误": {
+                            "enabled": false
+                        }
+                    },
+                    "option": [
+                        "节点1凹节点",
+                        "节点1索敌失败重开",
+                        "节点1检测目标舰种",
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2凹节点",
+                        "节点2索敌失败重开",
+                        "节点2检测目标舰种",
+                        "节点2阵型",
+                        "节点2追击"
+                    ]
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "节点3战斗舰队补给": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗回港"
+                            ]
+                        },
+                        "节点1迂回错误": {
+                            "enabled": false
+                        },
+                        "节点2迂回错误": {
+                            "enabled": false
+                        }
+                    },
+                    "option": [
+                        "节点1凹节点",
+                        "节点1索敌失败重开",
+                        "节点1检测目标舰种",
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2凹节点",
+                        "节点2索敌失败重开",
+                        "节点2检测目标舰种",
+                        "节点2阵型",
+                        "节点2追击",
+                        "节点3凹节点",
+                        "节点3索敌失败重开",
+                        "节点3检测目标舰种",
+                        "节点3阵型",
+                        "节点3追击"
+                    ]
+                },
+                {
+                    "name": "4",
+                    "pipeline_override": {
+                        "节点4战斗舰队补给": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗回港"
+                            ]
+                        },
+                        "节点1迂回错误": {
+                            "enabled": false
+                        },
+                        "节点2迂回错误": {
+                            "enabled": false
+                        },
+                        "节点3迂回错误": {
+                            "enabled": false
+                        }
+                    },
+                    "option": [
+                        "节点1凹节点",
+                        "节点1索敌失败重开",
+                        "节点1检测目标舰种",
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2凹节点",
+                        "节点2索敌失败重开",
+                        "节点2检测目标舰种",
+                        "节点2阵型",
+                        "节点2追击",
+                        "节点3凹节点",
+                        "节点3索敌失败重开",
+                        "节点3检测目标舰种",
+                        "节点3阵型",
+                        "节点3追击",
+                        "节点4凹节点",
+                        "节点4索敌失败重开",
+                        "节点4检测目标舰种",
+                        "节点4阵型",
+                        "节点4追击"
+                    ]
+                },
+                {
+                    "name": "5",
+                    "pipeline_override": {
+                        "节点1迂回错误": {
+                            "enabled": false
+                        },
+                        "节点2迂回错误": {
+                            "enabled": false
+                        },
+                        "节点3迂回错误": {
+                            "enabled": false
+                        },
+                        "节点4迂回错误": {
+                            "enabled": false
+                        }
+                    },
+                    "option": [
+                        "节点1凹节点",
+                        "节点1索敌失败重开",
+                        "节点1检测目标舰种",
+                        "节点1阵型",
+                        "节点1追击",
+                        "节点2凹节点",
+                        "节点2索敌失败重开",
+                        "节点2检测目标舰种",
+                        "节点2阵型",
+                        "节点2追击",
+                        "节点3凹节点",
+                        "节点3索敌失败重开",
+                        "节点3检测目标舰种",
+                        "节点3阵型",
+                        "节点3追击",
+                        "节点4凹节点",
+                        "节点4索敌失败重开",
+                        "节点4检测目标舰种",
+                        "节点4阵型",
+                        "节点4追击",
+                        "节点5索敌失败重开",
+                        "节点5检测目标舰种",
+                        "节点5阵型",
+                        "节点5追击"
+                    ]
+                }
+            ]
+        },
+        "节点1凹节点": {
+            "type": "select",
+            "description": "需要编队不满足任何带路条件<br>凹不到撤退，撤退不了直接重启游戏",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "战斗开始出征": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗船舱满",
+                                "节点1凹节点"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "节点1凹节点位置",
+                        "节点1安全点凹节点"
+                    ]
+                }
+            ]
+        },
+        "节点1凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点1检测节点": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点1检测节点": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点1检测节点": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点1检测节点": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1安全点凹节点": {
+            "type": "select",
+            "description": "当指定的节点是安全点时，凹安全点的下一个节点使用",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点1凹节点2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点1安全点凹节点位置"
+                    ]
+                }
+            ]
+        },
+        "节点1安全点凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点1检测节点2": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点1检测节点2": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点1检测节点2": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点1检测节点2": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1索敌失败重开": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "进入战斗节点1": {
+                            "next": [
+                                "节点1索敌成功",
+                                "[JumpBack]大退检测",
+                                "[JumpBack]点击确认",
+                                "[JumpBack]点击加速",
+                                "[JumpBack]选择战况"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1检测目标舰种": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {},
+                    "option": [
+                        "节点1索敌后操作"
+                    ]
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点1识别目标舰种1": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点1检测目标名",
+                        "节点1反向检测目标",
+                        "节点1检测目标舰种2",
+                        "节点1检测目标后操作"
+                    ]
+                }
+            ]
+        },
+        "节点1索敌后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "无",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点1战术迂回检测": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点1迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点1远程打击": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1迂回失败后操作": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "继续打",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "重开游戏",
+                    "pipeline_override": {
+                        "节点1战术迂回失败": {
+                            "action": {
+                                "type": "StopApp",
+                                "param": {
+                                    "package": "com.huanmeng.zhanjian2"
+                                }
+                            },
+                            "next": [
+                                "开始唤醒"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1检测目标名": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点1检测目标名",
+                    "default": "雷巡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点1识别目标舰种1": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点1检测目标名}"
+                    ]
+                }
+            }
+        },
+        "节点1检测目标后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "SL",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点1战术迂回检测2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点1迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点1远程打击2": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1反向检测目标": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点1识别目标舰种1": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1检测目标舰种2": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点1识别目标舰种2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点1检测目标名2",
+                        "节点1反向检测目标2"
+                    ]
+                }
+            ]
+        },
+        "节点1检测目标名2": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点1检测目标名2",
+                    "default": "轻母",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点1识别目标舰种2": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点1检测目标名2}"
+                    ]
+                }
+            }
+        },
+        "节点1反向检测目标2": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点1识别目标舰种2": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2凹节点": {
+            "type": "select",
+            "description": "凹不到撤退，撤退不了直接重启游戏",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点2凹节点": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点2凹节点位置",
+                        "节点2安全点凹节点"
+                    ]
+                }
+            ]
+        },
+        "节点2凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点2检测节点": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点2检测节点": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点2检测节点": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点2检测节点": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2安全点凹节点": {
+            "type": "select",
+            "description": "当指定的节点是安全点时，凹安全点的下一个节点使用",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点2凹节点2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点2安全点凹节点位置"
+                    ]
+                }
+            ]
+        },
+        "节点2安全点凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点2检测节点2": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点2检测节点2": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点2检测节点2": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点2检测节点2": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2索敌失败重开": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "进入战斗节点2": {
+                            "next": [
+                                "节点2索敌成功",
+                                "[JumpBack]大退检测",
+                                "[JumpBack]点击确认",
+                                "[JumpBack]点击加速",
+                                "[JumpBack]选择战况"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2检测目标舰种": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {},
+                    "option": [
+                        "节点2索敌后操作"
+                    ]
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点2识别目标舰种1": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点2检测目标名",
+                        "节点2反向检测目标",
+                        "节点2检测目标舰种2",
+                        "节点2检测目标后操作"
+                    ]
+                }
+            ]
+        },
+        "节点2索敌后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "无",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点2战术迂回检测": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点2迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点2远程打击": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2迂回失败后操作": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "继续打",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "重开游戏",
+                    "pipeline_override": {
+                        "节点2战术迂回失败": {
+                            "action": {
+                                "type": "StopApp",
+                                "param": {
+                                    "package": "com.huanmeng.zhanjian2"
+                                }
+                            },
+                            "next": [
+                                "开始唤醒"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2检测目标名": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点2检测目标名",
+                    "default": "雷巡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点2识别目标舰种1": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点2检测目标名}"
+                    ]
+                }
+            }
+        },
+        "节点2检测目标后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "SL",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点2战术迂回检测2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点2迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点2远程打击2": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2反向检测目标": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点2识别目标舰种1": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2检测目标舰种2": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点2识别目标舰种2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点2检测目标名2",
+                        "节点2反向检测目标2"
+                    ]
+                }
+            ]
+        },
+        "节点2检测目标名2": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点2检测目标名2",
+                    "default": "轻母",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点2识别目标舰种2": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点2检测目标名2}"
+                    ]
+                }
+            }
+        },
+        "节点2反向检测目标2": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点2识别目标舰种2": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3凹节点": {
+            "type": "select",
+            "description": "凹不到撤退，撤退不了直接重启游戏",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点3凹节点": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点3凹节点位置",
+                        "节点3安全点凹节点"
+                    ]
+                }
+            ]
+        },
+        "节点3凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点3检测节点": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点3检测节点": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点3检测节点": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点3检测节点": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3安全点凹节点": {
+            "type": "select",
+            "description": "当指定的节点是安全点时，凹安全点的下一个节点使用",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点3凹节点2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点3安全点凹节点位置"
+                    ]
+                }
+            ]
+        },
+        "节点3安全点凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点3检测节点2": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点3检测节点2": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点3检测节点2": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点3检测节点2": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3索敌失败重开": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "进入战斗节点3": {
+                            "next": [
+                                "节点3索敌成功",
+                                "[JumpBack]大退检测",
+                                "[JumpBack]点击确认",
+                                "[JumpBack]点击加速",
+                                "[JumpBack]选择战况"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3检测目标舰种": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {},
+                    "option": [
+                        "节点3索敌后操作"
+                    ]
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点3识别目标舰种1": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点3检测目标名",
+                        "节点3反向检测目标",
+                        "节点3检测目标舰种2",
+                        "节点3检测目标后操作"
+                    ]
+                }
+            ]
+        },
+        "节点3索敌后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "无",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点3战术迂回检测": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点3迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点3远程打击": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3迂回失败后操作": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "继续打",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "重开游戏",
+                    "pipeline_override": {
+                        "节点3战术迂回失败": {
+                            "action": {
+                                "type": "StopApp",
+                                "param": {
+                                    "package": "com.huanmeng.zhanjian2"
+                                }
+                            },
+                            "next": [
+                                "开始唤醒"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3检测目标名": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点3检测目标名",
+                    "default": "雷巡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点3识别目标舰种1": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点3检测目标名}"
+                    ]
+                }
+            }
+        },
+        "节点3检测目标后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "SL",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点3战术迂回检测2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点3迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点3远程打击2": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3反向检测目标": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点3识别目标舰种1": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3检测目标舰种2": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点3识别目标舰种2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点3检测目标名2",
+                        "节点3反向检测目标2"
+                    ]
+                }
+            ]
+        },
+        "节点3检测目标名2": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点3检测目标名2",
+                    "default": "轻母",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点3识别目标舰种2": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点3检测目标名2}"
+                    ]
+                }
+            }
+        },
+        "节点3反向检测目标2": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点3识别目标舰种2": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4凹节点": {
+            "type": "select",
+            "description": "凹不到撤退，撤退不了直接重启游戏",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点4凹节点": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点4凹节点位置",
+                        "节点4安全点凹节点"
+                    ]
+                }
+            ]
+        },
+        "节点4凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点4检测节点": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点4检测节点": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点4检测节点": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点4检测节点": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4安全点凹节点": {
+            "type": "select",
+            "description": "当指定的节点是安全点时，凹安全点的下一个节点使用",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点4凹节点2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点4安全点凹节点位置"
+                    ]
+                }
+            ]
+        },
+        "节点4安全点凹节点位置": {
+            "type": "select",
+            "description": "前面数代表一共几个点，后面数代表第几个点",
+            "cases": [
+                {
+                    "name": "2-1",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "2-2",
+                    "pipeline_override": {
+                        "节点4检测节点2": {
+                            "roi": [
+                                811,
+                                284,
+                                65,
+                                61
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "pipeline_override": {
+                        "节点4检测节点2": {
+                            "roi": [
+                                219,
+                                286,
+                                60,
+                                57
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "pipeline_override": {
+                        "节点4检测节点2": {
+                            "roi": [
+                                556,
+                                284,
+                                64,
+                                63
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "pipeline_override": {
+                        "节点4检测节点2": {
+                            "roi": [
+                                895,
+                                283,
+                                65,
+                                63
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4索敌失败重开": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "进入战斗节点4": {
+                            "next": [
+                                "节点4索敌成功",
+                                "[JumpBack]大退检测",
+                                "[JumpBack]点击确认",
+                                "[JumpBack]点击加速",
+                                "[JumpBack]选择战况"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4检测目标舰种": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {},
+                    "option": [
+                        "节点4索敌后操作"
+                    ]
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点4识别目标舰种1": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点4检测目标名",
+                        "节点4反向检测目标",
+                        "节点4检测目标舰种2",
+                        "节点4检测目标后操作"
+                    ]
+                }
+            ]
+        },
+        "节点4索敌后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "无",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点4战术迂回检测": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点4迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点4远程打击": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4迂回失败后操作": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "继续打",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "重开游戏",
+                    "pipeline_override": {
+                        "节点4战术迂回失败": {
+                            "action": {
+                                "type": "StopApp",
+                                "param": {
+                                    "package": "com.huanmeng.zhanjian2"
+                                }
+                            },
+                            "next": [
+                                "开始唤醒"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4检测目标名": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点4检测目标名",
+                    "default": "雷巡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点4识别目标舰种1": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点4检测目标名}"
+                    ]
+                }
+            }
+        },
+        "节点4检测目标后操作": {
+            "description": "若选择迂回，必须设置下一节点相关设置",
+            "type": "select",
+            "cases": [
+                {
+                    "name": "SL",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "迂回",
+                    "pipeline_override": {
+                        "节点4战术迂回检测2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点4迂回失败后操作"
+                    ]
+                },
+                {
+                    "name": "远程打击",
+                    "pipeline_override": {
+                        "节点4远程打击2": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4反向检测目标": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点4识别目标舰种1": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4检测目标舰种2": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点4识别目标舰种2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点4检测目标名2",
+                        "节点4反向检测目标2"
+                    ]
+                }
+            ]
+        },
+        "节点4检测目标名2": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点4检测目标名2",
+                    "default": "轻母",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点4识别目标舰种2": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点4检测目标名2}"
+                    ]
+                }
+            }
+        },
+        "节点4反向检测目标2": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点4识别目标舰种2": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5索敌失败重开": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "进入战斗节点5": {
+                            "next": [
+                                "节点5索敌成功",
+                                "[JumpBack]大退检测",
+                                "[JumpBack]点击确认",
+                                "[JumpBack]点击加速",
+                                "[JumpBack]选择战况"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5检测目标舰种": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点5识别目标舰种1": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点5检测目标名",
+                        "节点5反向检测目标",
+                        "节点5检测目标舰种2",
+                        "节点5检测目标后操作"
+                    ]
+                }
+            ]
+        },
+        "节点5检测目标名": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点5检测目标名",
+                    "default": "雷巡",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点5识别目标舰种1": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点5检测目标名}"
+                    ]
+                }
+            }
+        },
+        "节点5检测目标后操作": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "SL",
+                    "pipeline_override": {}
+                }
+            ]
+        },
+        "节点5反向检测目标": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点5识别目标舰种1": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5检测目标舰种2": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点5识别目标舰种2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "节点5检测目标名2",
+                        "节点5反向检测目标2"
+                    ]
+                }
+            ]
+        },
+        "节点5检测目标名2": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "节点5检测目标名2",
+                    "default": "轻母",
+                    "pipeline_type": "string"
+                }
+            ],
+            "pipeline_override": {
+                "节点5识别目标舰种2": {
+                    "recognition": "OCR",
+                    "expected": [
+                        "{节点5检测目标名2}"
+                    ]
+                }
+            }
+        },
+        "节点5反向检测目标2": {
+            "type": "select",
+            "description": "如果没检测到目标舰种，执行操作",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "节点5识别目标舰种2": {
+                            "inverse": true
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "节点1阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "节点1阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "节点1阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "节点1阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "节点1阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "节点2阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "节点2阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "节点2阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "节点2阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "节点2阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "节点3阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "节点3阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "节点3阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "节点3阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "节点3阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "节点4阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "节点4阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "节点4阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "节点4阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "节点4阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "节点5阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "节点5阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "节点5阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "节点5阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "节点5阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点1追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "节点1追击": {
+                            "template": "战斗/放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "节点1追击": {
+                            "action": "DoNothing",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点2追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "节点2追击": {
+                            "template": "战斗/放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "节点2追击": {
+                            "action": "DoNothing",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点3追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "节点3追击": {
+                            "template": "战斗/放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "节点3追击": {
+                            "action": "DoNothing",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点4追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "节点4追击": {
+                            "template": "战斗/放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "节点4追击": {
+                            "action": "DoNothing",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        },
+        "节点5追击": {
+            "cases": [
+                {
+                    "name": "夜战追击",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "不夜战追击",
+                    "pipeline_override": {
+                        "节点5追击": {
+                            "template": "战斗/放弃.png"
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇用智能追击(测试功能)",
+                    "pipeline_override": {
+                        "节点5追击": {
+                            "action": "DoNothing",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "决战追击检查SS1",
+                                "决战追击检查SS2",
+                                "决战追击检查SS3",
+                                "决战追击检查SS4",
+                                "决战追击检查SS5",
+                                "决战追击点击"
+                            ],
+                            "post_wait_freezes": 0,
+                            "focus": "检测是否追击"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

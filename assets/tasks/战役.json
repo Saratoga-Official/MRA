@@ -1,0 +1,235 @@
+{
+    "task": [
+        {
+            "name": "自动战役",
+            "entry": "开始自动战役",
+            "default_check": false,
+            "repeatable": true,
+            "doc": [
+                "[color:red]①需提前编好队，再开始[/color]",
+                "<br>②不开启战役打完次数将按照重复次数来执行"
+            ],
+            "option": [
+                "战役困难难度",
+                "战役选择关卡",
+                "战役选择阵型",
+                "战役大破/中破舰船处理",
+                "战役打完次数"
+            ]
+        }
+    ],
+    "option": {
+        "战役困难难度": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "普通难度": {
+                            "action": "Click",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战役次数",
+                                "选择战役"
+                            ]
+                        },
+                        "困难难度": {
+                            "action": "DoNothing",
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战役次数",
+                                "选择战役"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战役选择关卡": {
+            "cases": [
+                {
+                    "name": "驱逐改造核心-纳尔维克海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "驱逐改造核心",
+                                "纳尔维克海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "巡洋改造核心-马塔潘角海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "巡洋改造核心",
+                                "马塔潘角海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "战列改造核心-丹麦海峡海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "战列改造核心",
+                                "丹麦海峡海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "航母改造核心-珊瑚海海战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "航母改造核心",
+                                "珊瑚海海战"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "潜艇改造核心-海峡伏击战",
+                    "pipeline_override": {
+                        "选择战役": {
+                            "expected": [
+                                "潜艇改造核心",
+                                "海峡伏击战"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战役选择阵型": {
+            "cases": [
+                {
+                    "name": "单纵阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "expected": "单纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "复纵阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "expected": "复纵阵"
+                        }
+                    }
+                },
+                {
+                    "name": "轮型阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "expected": "轮型阵"
+                        }
+                    }
+                },
+                {
+                    "name": "梯形阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "expected": "梯形阵"
+                        }
+                    }
+                },
+                {
+                    "name": "单横阵",
+                    "pipeline_override": {
+                        "战役阵型": {
+                            "expected": "单横阵"
+                        }
+                    }
+                }
+            ]
+        },
+        "战役大破/中破舰船处理": {
+            "cases": [
+                {
+                    "name": "存在大破修大破",
+                    "pipeline_override": {
+                        "战役修理检测中破": {
+                            "enabled": false
+                        },
+                        "战役修理中破舰船": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "存在大破修中/大破",
+                    "pipeline_override": {
+                        "战役修理检测中破": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "存在中破修中/大破",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "存在大破终止战斗",
+                    "pipeline_override": {
+                        "战役修理检测中破": {
+                            "enabled": false
+                        },
+                        "战役修理检测大破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗退出"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "存在中破终止战斗",
+                    "pipeline_override": {
+                        "战役修理检测中破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗退出"
+                            ]
+                        },
+                        "战役修理检测大破": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗退出"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "战役打完次数": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "no",
+                    "pipeline_override": {
+                        "战役再点继续": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "回到战役界面",
+                                "战役再点继续"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

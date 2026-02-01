@@ -38,10 +38,42 @@
         "next": [
             "[JumpBack]重新连接",
             "出征",
+            "战斗次数"
+        ]
+    },
+    "重新点击出征": {
+        "recognition": "OCR",
+        "expected": "出征",
+        "roi": [
+            1198,
+            661,
+            71,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "重新出征",
             "开始导航"
         ]
     },
     "出征": {
+        "recognition": "TemplateMatch",
+        "template": "战斗/出征.png",
+        "action": "Click",
+        "threshold": 0.9,
+        "roi": [
+            144,
+            0,
+            174,
+            71
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "战斗次数"
+        ]
+    },
+    "重新出征": {
         "recognition": "TemplateMatch",
         "template": "战斗/出征.png",
         "action": "Click",
@@ -68,7 +100,7 @@
         ],
         "next": [
             "[JumpBack]重新连接",
-            "开始导航"
+            "战斗次数"
         ]
     },
     "开始导航": {},

@@ -46,35 +46,35 @@
         "action": "Click",
         "post_delay": 3000
     },
-    "战斗追击": {
+    "节点1追击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
-    "战斗追击2": {
+    "节点2追击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
-    "战斗追击3": {
+    "节点3追击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
-    "战斗追击4": {
+    "节点4追击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
-    "战斗追击5": {
+    "节点5追击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
         "action": "Click",
@@ -104,7 +104,10 @@
     },
     "选择战况": {
         "recognition": "OCR",
-        "expected": "选择战况",
+        "expected": [
+            "选择战况",
+            "选择战況"
+        ],
         "roi": [
             556,
             11,
@@ -152,5 +155,113 @@
             "确认领取奖励",
             "无动作结束"
         ]
+    },
+    "远程打击确认": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "远程打击结果",
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    120
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "处于战斗中": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同航",
+                    "反航",
+                    "优势",
+                    "劣势",
+                    "纵阵",
+                    "轮型阵",
+                    "梯形阵",
+                    "单横阵"
+                ],
+                "roi": [
+                    0,
+                    0,
+                    1280,
+                    120
+                ]
+            }
+        }
+    },
+    "大退检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "同航",
+                    "反航",
+                    "优势",
+                    "劣势",
+                    "纵阵",
+                    "轮型阵",
+                    "梯形阵",
+                    "单横阵"
+                ]
+            }
+        },
+        "action": {
+            "type": "StopApp",
+            "param": {
+                "package": "com.huanmeng.zhanjian2"
+            }
+        },
+        "post_wait_freezes": 0,
+        "post_delay": 1000,
+        "next": [
+            "开始唤醒"
+        ],
+        "focus": "[color:red]退出游戏重开[/color]"
+    },
+    "战斗SL": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "撤退",
+                "roi": [
+                    844,
+                    627,
+                    192,
+                    87
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "检查远征",
+            "进入关卡"
+        ]
+    },
+    "凹节点检测概率": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "概率"
+                ],
+                "roi": [
+                    165,
+                    399,
+                    754,
+                    68
+                ]
+            }
+        },
+        "post_wait_freezes": 0
     }
 }
