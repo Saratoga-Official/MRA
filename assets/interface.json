@@ -25,15 +25,15 @@
     "task": [],
     "option": {},
     "import": [
-        "tasks/开始前任务.json",
-        "tasks/远征.json",
-        "tasks/战役.json",
-        "tasks/演习.json",
-        "tasks/出征.json",
-        "tasks/决战.json",
-        "tasks/造船.json",
-        "tasks/结束前任务.json",
-        "tasks/刷1-1.json",
-        "tasks/活动.json"
+        "resource/tasks/开始前任务.json",
+        "resource/tasks/远征.json",
+        "resource/tasks/战役.json",
+        "resource/tasks/演习.json",
+        "resource/tasks/出征.json",
+        "resource/tasks/决战.json",
+        "resource/tasks/造船.json",
+        "resource/tasks/结束前任务.json",
+        "resource/tasks/刷1-1.json",
+        "resource/tasks/活动.json"
     ]
 }
