@@ -487,6 +487,7 @@
             ]
         },
         "战斗指定次数": {
+            "description": "SL和重开均不计入次数",
             "type": "input",
             "inputs": [
                 {
