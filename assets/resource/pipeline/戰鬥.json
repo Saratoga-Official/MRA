@@ -16,15 +16,21 @@
         "next": [
             "[JumpBack]重新连接",
             "无限战斗检测",
-            "[JumpBack]领取奖励",
-            "[JumpBack]退出",
-            "无动作结束"
+            "无限战斗提示"
         ]
     },
     "无限战斗检测": {
         "post_wait_freezes": 0,
         "next": [
             "战斗次数",
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
+            "无动作结束"
+        ]
+    },
+    "无限战斗提示": {
+        "post_wait_freezes": 0,
+        "next": [
             "[JumpBack]领取奖励",
             "[JumpBack]退出",
             "无动作结束"

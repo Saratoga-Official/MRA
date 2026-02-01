@@ -450,7 +450,9 @@
                                 89,
                                 30
                             ],
-                            "inverse": true,
+                            "inverse": true
+                        },
+                        "无限战斗提示": {
                             "focus": "已达500捞船上限"
                         }
                     }
@@ -467,7 +469,9 @@
                                 80,
                                 29
                             ],
-                            "inverse": true,
+                            "inverse": true
+                        },
+                        "无限战斗提示": {
                             "focus": "已达50战利品上限"
                         }
                     }
