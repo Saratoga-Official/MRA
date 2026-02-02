@@ -114,7 +114,7 @@
                     "name": "单纵阵",
                     "pipeline_override": {
                         "战役阵型": {
-                            "expected": "单纵阵"
+                            "expected": "单纵"
                         }
                     }
                 },
@@ -122,7 +122,7 @@
                     "name": "复纵阵",
                     "pipeline_override": {
                         "战役阵型": {
-                            "expected": "复纵阵"
+                            "expected": "复纵"
                         }
                     }
                 },
@@ -130,7 +130,7 @@
                     "name": "轮型阵",
                     "pipeline_override": {
                         "战役阵型": {
-                            "expected": "轮型阵"
+                            "expected": "轮型"
                         }
                     }
                 },
@@ -138,7 +138,7 @@
                     "name": "梯形阵",
                     "pipeline_override": {
                         "战役阵型": {
-                            "expected": "梯形阵"
+                            "expected": "梯形"
                         }
                     }
                 },
@@ -146,7 +146,7 @@
                     "name": "单横阵",
                     "pipeline_override": {
                         "战役阵型": {
-                            "expected": "单横阵"
+                            "expected": "横阵"
                         }
                     }
                 }
