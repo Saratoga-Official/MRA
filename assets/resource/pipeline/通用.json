@@ -81,6 +81,13 @@
         "post_delay": 3000,
         "post_wait_freezes": 0
     },
+    "节点6追击": {
+        "recognition": "TemplateMatch",
+        "template": "战斗/追击.png",
+        "action": "Click",
+        "post_delay": 3000,
+        "post_wait_freezes": 0
+    },
     "无动作结束": {
         "post_wait_freezes": 0,
         "on_error": []
@@ -251,7 +258,7 @@
             "任务出错"
         ]
     },
-    "凹节点检测概率": {
+    "凹点位检测概率": {
         "recognition": {
             "type": "OCR",
             "param": {
