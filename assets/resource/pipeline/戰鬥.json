@@ -485,19 +485,12 @@
     },
     "节点1凹节点": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "expected": [
-                    "\\d+-\\d+"
-                ],
-                "roi": [
-                    516,
-                    7,
-                    332,
-                    64
-                ]
+                "template": "战斗/开始出征.png"
             }
         },
+        "inverse": true,
         "post_wait_freezes": 0,
         "rate_limit": 0,
         "next": [
@@ -633,19 +626,12 @@
     },
     "进入战斗节点1": {
         "recognition": {
-            "type": "OCR",
+            "type": "TemplateMatch",
             "param": {
-                "expected": [
-                    "\\d+-\\d+"
-                ],
-                "roi": [
-                    516,
-                    7,
-                    332,
-                    64
-                ]
+                "template": "战斗/开始出征.png"
             }
         },
+        "inverse": true,
         "post_wait_freezes": 0,
         "rate_limit": 0,
         "next": [
