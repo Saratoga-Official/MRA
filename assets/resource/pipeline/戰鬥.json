@@ -74,9 +74,9 @@
         },
         "post_wait_freezes": 0,
         "next": [
-            "战斗检测等级",
             "[JumpBack]启用军阶buff",
             "[JumpBack]战斗编队",
+            "战斗检测等级",
             "[JumpBack]战斗自动补给",
             "战斗修理检测大破",
             "战斗修理检测中破",
