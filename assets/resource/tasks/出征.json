@@ -822,6 +822,12 @@
                 {
                     "name": "5",
                     "pipeline_override": {
+                        "节点5战斗舰队补给": {
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "战斗回港"
+                            ]
+                        },
                         "节点1迂回错误": {
                             "enabled": false
                         },
