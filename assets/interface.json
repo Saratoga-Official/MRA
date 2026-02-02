@@ -8,6 +8,7 @@
     "github": "https://github.com/Saratoga-Official/MRA",
     "custom_title": "MRA",
     "mirrorchyan_rid": "MaaJR",
+    "mirrorchyan_multiplatform": true,
     "controller": [
         {
             "name": "安卓端",

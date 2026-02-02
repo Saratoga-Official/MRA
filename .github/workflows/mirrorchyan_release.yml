@@ -15,14 +15,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [win]
-        arch: [x86_64]
+        os: [win, macos, linux]
+        arch: [aarch64, x86_64]
     steps:
       - id: uploading
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: "MRA-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
+          filename: ${{ format('MRA-{0}-{1}-*', matrix.os, matrix.arch) }}
           mirrorchyan_rid: MaaJR
           tag: ${{ inputs.tag }}
 
