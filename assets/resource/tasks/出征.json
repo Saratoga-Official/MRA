@@ -439,6 +439,10 @@
                     ]
                 },
                 {
+                    "name": "开启",
+                    "pipeline_override": {}
+                },
+                {
                     "name": "直到捞船达到上限停止",
                     "pipeline_override": {
                         "无限战斗检测": {
