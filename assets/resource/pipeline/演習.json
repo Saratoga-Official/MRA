@@ -233,7 +233,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -246,7 +246,7 @@
         "template": "战斗/追击.png",
         "action": "Click",
         "post_wait_freezes": 5000,
-        "timeout": 90000,
+        "timeout": 120000,
         "next": [
             "[JumpBack]重新连接",
             "演习点击继续"
@@ -537,7 +537,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -550,7 +550,7 @@
         "template": "战斗/追击.png",
         "action": "Click",
         "post_wait_freezes": 5000,
-        "timeout": 90000,
+        "timeout": 120000,
         "next": [
             "[JumpBack]重新连接",
             "演习点击继续1"
@@ -698,7 +698,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -711,7 +711,7 @@
         "template": "战斗/追击.png",
         "action": "Click",
         "post_wait_freezes": 5000,
-        "timeout": 90000,
+        "timeout": 120000,
         "next": [
             "[JumpBack]重新连接",
             "演习点击继续2"
@@ -859,7 +859,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -872,7 +872,7 @@
         "template": "战斗/追击.png",
         "action": "Click",
         "post_wait_freezes": 5000,
-        "timeout": 90000,
+        "timeout": 120000,
         "next": [
             "[JumpBack]重新连接",
             "演习点击继续3"
@@ -1037,7 +1037,7 @@
             612
         ],
         "action": "Click",
-        "timeout": 90000,
+        "timeout": 120000,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -1050,7 +1050,7 @@
         "template": "战斗/追击.png",
         "action": "Click",
         "post_wait_freezes": 5000,
-        "timeout": 90000,
+        "timeout": 120000,
         "next": [
             "[JumpBack]重新连接",
             "演习点击继续4"
