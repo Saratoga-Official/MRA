@@ -621,7 +621,8 @@
         "next": [
             "战斗SL",
             "大退检测",
-            "[JumpBack]点击加速"
+            "[JumpBack]点击加速",
+            "[JumpBack]选择战况"
         ],
         "focus": "凹点位失败"
     },
