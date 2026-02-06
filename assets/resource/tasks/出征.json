@@ -491,11 +491,11 @@
             ]
         },
         "战斗指定次数": {
-            "description": "撤退和重开均不计入次数",
             "type": "input",
             "inputs": [
                 {
                     "name": "战斗指定次数",
+                    "description": "撤退和重开均不计入次数",
                     "default": "1",
                     "pipeline_type": "int"
                 }
