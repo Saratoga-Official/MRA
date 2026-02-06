@@ -35,16 +35,12 @@
                                 581,
                                 254,
                                 75
-                            ],
-                            "next": [
-                                "[JumpBack]重新连接",
-                                "战斗次数",
-                                "[JumpBack]活动退出",
-                                "[JumpBack]退出",
-                                "无动作结束"
                             ]
                         },
-                        "战斗次数": {
+                        "活动退出": {
+                            "enabled": true
+                        },
+                        "无限战斗检测": {
                             "next": [
                                 "进入关卡"
                             ]
@@ -82,6 +78,7 @@
                     "pipeline_override": {
                         "进入活动": {
                             "next": [
+                                "[JumpBack]重新连接",
                                 "立体强袭开始"
                             ]
                         }
@@ -98,6 +95,7 @@
                     "pipeline_override": {
                         "进入活动": {
                             "next": [
+                                "[JumpBack]重新连接",
                                 "检查题目"
                             ]
                         }

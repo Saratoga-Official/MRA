@@ -15,22 +15,8 @@
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "无限战斗检测",
-            "无限战斗提示"
-        ]
-    },
-    "无限战斗检测": {
-        "post_wait_freezes": 0,
-        "next": [
             "战斗次数",
-            "[JumpBack]领取奖励",
-            "[JumpBack]退出",
-            "无动作结束"
-        ]
-    },
-    "无限战斗提示": {
-        "post_wait_freezes": 0,
-        "next": [
+            "[JumpBack]活动退出",
             "[JumpBack]领取奖励",
             "[JumpBack]退出",
             "无动作结束"
@@ -39,8 +25,23 @@
     "战斗次数": {
         "post_wait_freezes": 0,
         "next": [
+            "无限战斗检测",
+            "无限战斗提示"
+        ]
+    },
+    "无限战斗检测": {
+        "post_wait_freezes": 0,
+        "next": [
             "检查远征",
             "开始导航"
+        ]
+    },
+    "无限战斗提示": {
+        "post_wait_freezes": 0,
+        "next": [
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
+            "无动作结束"
         ]
     },
     "进入关卡": {
@@ -699,7 +700,8 @@
         },
         "action": {
             "type": "Click"
-        }
+        },
+        "enabled": false
     },
     "节点1索敌成功": {
         "recognition": {
