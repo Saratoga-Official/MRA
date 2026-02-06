@@ -32,20 +32,3 @@ jobs:
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           os: ${{ matrix.os }}
           arch: ${{ matrix.arch }}
-
-  mirrorchyan_res:
-    runs-on: macos-latest
-    steps:
-      - id: uploading
-        uses: MirrorChyan/uploading-action@v1
-        with:
-          filetype: latest-release
-          filename: "MRA-win-x86_64-*.zip"
-          pick_files: '["resource", "interface.json"]'
-          mirrorchyan_rid: MaaJR
-          tag: ${{ inputs.tag }}
-
-          owner: Saratoga-Official
-          repo: MRA
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          upload_token: ${{ secrets.MirrorChyanUploadToken }}
