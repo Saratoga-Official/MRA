@@ -477,13 +477,24 @@
         "next": [
             "[JumpBack]重新连接",
             "上次选船",
-            "选择前进点A1"
+            "选择前进点A1",
+            "战备舰队获取"
         ],
         "on_error": [
+            "决战识别boss点",
             "决战检查编队",
             "决战解装"
         ],
         "focus": "进入第一关"
+    },
+    "战备舰队获取": {
+        "recognition": "OCR",
+        "expected": "战备舰队获取",
+        "next": [
+            "[JumpBack]重新连接",
+            "检查开局舰船1",
+            "战备舰队获取刷新"
+        ]
     },
     "决战检查编队": {
         "recognition": "TemplateMatch",
@@ -521,7 +532,8 @@
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
-            "选择前进点A1"
+            "选择前进点A1",
+            "战备舰队获取"
         ],
         "focus": "上次选船确认"
     },
@@ -1605,7 +1617,7 @@
             "决战进入编队界面2",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]关闭招募",
-            "决战识别boss点2",
+            "决战识别boss点",
             "[JumpBack]决战检测等级小于9",
             "[JumpBack]决战进入编队"
         ],
@@ -1630,29 +1642,6 @@
         ]
     },
     "决战识别boss点": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "决战/boss1.png",
-            "决战/boss2.png"
-        ],
-        "roi": [
-            922,
-            28,
-            318,
-            481
-        ],
-        "timeout": 120000,
-        "order_by": "Score",
-        "threshold": 0.95,
-        "next": [
-            "[JumpBack]重新连接",
-            "决战进入编队界面BOSS",
-            "[JumpBack]决战检测等级小于9",
-            "[JumpBack]决战进入编队"
-        ],
-        "focus": "识别到BOSS点"
-    },
-    "决战识别boss点2": {
         "recognition": "TemplateMatch",
         "template": [
             "决战/boss1.png",
@@ -2334,7 +2323,7 @@
             "决战进入编队界面3",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]决战招募",
-            "决战识别boss点3",
+            "决战识别boss点2",
             "[JumpBack]决战检测紫貂技能2",
             "[JumpBack]决战检测等级",
             "[JumpBack]决战进入编队"
@@ -2599,7 +2588,7 @@
             "决战再点继续3"
         ]
     },
-    "决战识别boss点3": {
+    "决战识别boss点2": {
         "recognition": "TemplateMatch",
         "template": [
             "决战/boss1.png",
@@ -2947,7 +2936,7 @@
             "决战进入编队界面4",
             "[JumpBack]决战请选择前进点",
             "[JumpBack]决战招募",
-            "决战识别boss点4",
+            "决战识别boss点3",
             "[JumpBack]决战进入编队"
         ],
         "on_error": [
@@ -3111,7 +3100,7 @@
             "决战再点继续4"
         ]
     },
-    "决战识别boss点4": {
+    "决战识别boss点3": {
         "recognition": "TemplateMatch",
         "template": [
             "决战/boss1.png",
