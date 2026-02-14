@@ -144,6 +144,7 @@
                     },
                     "option": [
                         "活动入口识别",
+                        "活动困难模式",
                         "关卡入口识别",
                         "启用自动答题"
                     ]
@@ -183,6 +184,24 @@
                     ]
                 }
             }
+        },
+        "活动困难模式": {
+            "type": "select",
+            "description": "如果需要选择“困难模式”，请勾选此项",
+            "cases": [
+                {
+                    "name": "no",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "活动困难模式": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
         },
         "关卡入口识别": {
             "cases": [

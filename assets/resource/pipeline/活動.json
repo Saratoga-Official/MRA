@@ -28,15 +28,30 @@
         "next": [
             "[JumpBack]重新连接",
             "点错了检测",
+            "[JumpBack]活动困难模式",
             "关卡入口导航"
         ],
         "focus": "活动入口导航"
+    },
+    "活动困难模式": {
+        "recognition": "TemplateMatch",
+        "template": "战斗/活动困难模式.png",
+        "roi": [
+            0,
+            935,
+            247,
+            96
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "enabled": false,
+        "focus": "切换模式"
     },
     "关卡入口导航": {
         "recognition": "TemplateMatch",
         "template": "活动导航/关卡入口.png",
         "action": "Click",
-        "post_delay": 2000,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]答题检测",
