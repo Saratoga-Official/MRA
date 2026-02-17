@@ -37,10 +37,10 @@
         "recognition": "TemplateMatch",
         "template": "战斗/活动困难模式.png",
         "roi": [
-            0,
-            935,
-            247,
-            96
+            1,
+            616,
+            157,
+            72
         ],
         "action": "Click",
         "post_delay": 1000,
