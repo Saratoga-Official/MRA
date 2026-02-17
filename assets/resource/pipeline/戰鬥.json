@@ -12,7 +12,7 @@
                 ]
             }
         },
-        "post_wait_freezes": 0,
+        "post_wait_freezes": 500,
         "next": [
             "[JumpBack]重新连接",
             "战斗次数",
@@ -40,6 +40,7 @@
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]领取奖励",
+            "[JumpBack]活动退出",
             "[JumpBack]退出",
             "无动作结束"
         ]
@@ -79,6 +80,7 @@
             "[JumpBack]战斗编队",
             "战斗检测等级",
             "[JumpBack]战斗自动补给",
+            "战斗检测无补给",
             "战斗修理检测大破",
             "战斗修理检测中破",
             "战斗开始出征"
@@ -300,6 +302,197 @@
         },
         "inverse": true,
         "focus": "切换自动补给"
+    },
+    "战斗检测无补给": {
+        "recognition": {
+            "type": "Or",
+            "param": {
+                "any_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "param": {
+                            "roi": [
+                                137,
+                                462,
+                                13,
+                                51
+                            ],
+                            "lower": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ],
+                            "upper": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "param": {
+                            "roi": [
+                                286,
+                                461,
+                                13,
+                                52
+                            ],
+                            "lower": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ],
+                            "upper": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "param": {
+                            "roi": [
+                                435,
+                                461,
+                                13,
+                                52
+                            ],
+                            "lower": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ],
+                            "upper": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "param": {
+                            "roi": [
+                                584,
+                                462,
+                                13,
+                                51
+                            ],
+                            "lower": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ],
+                            "upper": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "param": {
+                            "roi": [
+                                733,
+                                461,
+                                13,
+                                52
+                            ],
+                            "lower": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ],
+                            "upper": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ]
+                        }
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "param": {
+                            "roi": [
+                                882,
+                                461,
+                                13,
+                                52
+                            ],
+                            "lower": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ],
+                            "upper": [
+                                [
+                                    160,
+                                    160,
+                                    160
+                                ]
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "next": [
+            "战斗强制自动补给"
+        ],
+        "enabled": false,
+        "focus": "有舰船无补给，强制自动补给"
+    },
+    "战斗强制自动补给": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/对号.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    56,
+                    661,
+                    21,
+                    22
+                ]
+            }
+        },
+        "post_delay": 2000,
+        "next": [
+            "战斗强制自动补给",
+            "战斗修理检测大破",
+            "战斗修理检测中破",
+            "战斗开始出征"
+        ],
+        "inverse": true
     },
     "战斗检测等级": {
         "recognition": {
@@ -1014,8 +1207,10 @@
                 ]
             }
         },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
-            "[JumpBack]重新连接",
+            "500船检测",
             "节点1战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -1030,7 +1225,9 @@
             }
         },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
+            "500船检测",
             "战斗大破检测",
             "节点1前进"
         ]
@@ -1067,10 +1264,10 @@
         },
         "next": [
             "[JumpBack]重新连接",
-            "回到关卡了",
-            "战斗大破回港"
+            "无限战斗检测",
+            "无限战斗提示"
         ],
-        "focus": "[color:red]大破回港[/color]"
+        "focus": "[color:red]强制回港[/color]"
     },
     "战斗大破检测": {
         "recognition": {
@@ -1552,8 +1749,11 @@
                 ]
             }
         },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
+            "500船检测",
             "节点2战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -1568,7 +1768,9 @@
             }
         },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
+            "500船检测",
             "战斗大破检测",
             "节点2前进"
         ]
@@ -2040,8 +2242,11 @@
                 ]
             }
         },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
+            "500船检测",
             "节点3战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -2056,7 +2261,9 @@
             }
         },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
+            "500船检测",
             "战斗大破检测",
             "节点3前进"
         ]
@@ -2528,8 +2735,11 @@
                 ]
             }
         },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
+            "500船检测",
             "节点4战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -2544,7 +2754,9 @@
             }
         },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
+            "500船检测",
             "战斗大破检测",
             "节点4前进"
         ]
@@ -3014,8 +3226,11 @@
                 ]
             }
         },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
+            "500船检测",
             "节点5战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -3030,7 +3245,9 @@
             }
         },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
+            "500船检测",
             "[JumpBack]重新连接",
             "节点5前进"
         ]
@@ -3202,8 +3419,11 @@
                 ]
             }
         },
+        "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
+            "500船检测",
             "节点6战斗舰队补给",
             "战斗大破回港",
             "回到关卡了",
@@ -3218,7 +3438,9 @@
             }
         },
         "post_wait_freezes": 0,
+        "rate_limit": 0,
         "next": [
+            "500船检测",
             "[JumpBack]重新连接",
             "战斗回港"
         ]

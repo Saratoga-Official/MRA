@@ -275,5 +275,44 @@
             }
         },
         "post_wait_freezes": 0
+    },
+    "500船检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "今日已获得500",
+                    "之后将无法获得掉落",
+                    "也无法获得战利品"
+                ]
+            },
+        },
+        "next": [
+            "500船检测回港"
+        ],
+        "enabled": false,
+        "focus": "[color:red]已达500捞船上限[/color]"
+    },
+    "500船检测回港": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/回港.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "[JumpBack]活动退出",
+            "[JumpBack]退出",
+            "无动作结束"
+        ],
+        "on_error": [
+            "500船检测回港",
+            "任务出错"
+        ]
     }
 }
