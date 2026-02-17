@@ -175,7 +175,9 @@
                 {
                     "name": "活动入口识别名称",
                     "default": "纵横大洋",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -233,7 +235,9 @@
                 {
                     "name": "关卡入口识别名称",
                     "default": "激战旋涡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -250,9 +254,11 @@
             "inputs": [
                 {
                     "name": "关卡界面标题",
-                    "description": "位于关卡入口界面上方的文字",
+                    "description": "位于关卡入口界面上方的文字，通常是活动名",
                     "default": "纵横大洋",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 },
                 {
                     "name": "关卡入口坐标X",

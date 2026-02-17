@@ -1211,7 +1211,9 @@
                 {
                     "name": "节点1检测目标名",
                     "default": "雷巡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -1297,7 +1299,9 @@
                 {
                     "name": "节点1检测目标名2",
                     "default": "轻母",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -1613,7 +1617,9 @@
                 {
                     "name": "节点2检测目标名",
                     "default": "雷巡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -1699,7 +1705,9 @@
                 {
                     "name": "节点2检测目标名2",
                     "default": "轻母",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -2015,7 +2023,9 @@
                 {
                     "name": "节点3检测目标名",
                     "default": "雷巡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -2101,7 +2111,9 @@
                 {
                     "name": "节点3检测目标名2",
                     "default": "轻母",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -2417,7 +2429,9 @@
                 {
                     "name": "节点4检测目标名",
                     "default": "雷巡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -2503,7 +2517,9 @@
                 {
                     "name": "节点4检测目标名2",
                     "default": "轻母",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -2819,7 +2835,9 @@
                 {
                     "name": "节点5检测目标名",
                     "default": "雷巡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -2905,7 +2923,9 @@
                 {
                     "name": "节点5检测目标名2",
                     "default": "轻母",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -3010,7 +3030,9 @@
                 {
                     "name": "节点6检测目标名",
                     "default": "雷巡",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -3076,7 +3098,9 @@
                 {
                     "name": "节点6检测目标名2",
                     "default": "轻母",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
