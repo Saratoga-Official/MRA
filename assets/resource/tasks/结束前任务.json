@@ -23,6 +23,7 @@
                 "拆船结束退出": {
                     "next": [
                         "[JumpBack]重新连接",
+                        "[JumpBack]领取奖励",
                         "拆船结束退出2"
                     ]
                 }
@@ -70,7 +71,7 @@
                 {
                     "name": "no",
                     "pipeline_override": {
-                        "战斗船舱满尝试拆船": {
+                        "开始拆船": {
                             "enabled": false
                         }
                     }
