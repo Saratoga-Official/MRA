@@ -245,12 +245,16 @@
                 {
                     "name": "潜艇名1",
                     "default": "U-47",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 },
                 {
                     "name": "潜艇名2",
                     "default": "鹦鹉螺",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
@@ -295,7 +299,9 @@
                 {
                     "name": "潜艇名3",
                     "default": "U-1206",
-                    "pipeline_type": "string"
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {

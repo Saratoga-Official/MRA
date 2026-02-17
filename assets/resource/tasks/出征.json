@@ -497,7 +497,9 @@
                     "name": "战斗指定次数",
                     "description": "撤退和重开均不计入次数",
                     "default": "1",
-                    "pipeline_type": "int"
+                    "pipeline_type": "int",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
                 }
             ],
             "pipeline_override": {
