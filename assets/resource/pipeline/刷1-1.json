@@ -475,8 +475,18 @@
         ]
     },
     "狗粮再点继续": {
-        "action": "Click",
-        "target": "狗粮点击继续",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "狗粮点击继续",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "狗粮大破回港",

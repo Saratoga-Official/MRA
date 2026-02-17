@@ -273,8 +273,18 @@
         "focus": "战斗结束"
     },
     "立体强袭再点继续": {
-        "action": "Click",
-        "target": "立体强袭点击继续",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "立体强袭点击继续",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "立体强袭退出2",

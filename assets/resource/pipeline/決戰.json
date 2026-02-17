@@ -1429,8 +1429,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续": {
-        "action": "Click",
-        "target": "决战点击继续",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战决策1",
@@ -1600,8 +1610,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续2": {
-        "action": "Click",
-        "target": "决战点击继续2",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续2",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战决策2",
@@ -2039,8 +2059,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续BOSS": {
-        "action": "Click",
-        "target": "决战点击继续BOSS",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续BOSS",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战确认通关",
@@ -2064,8 +2094,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续BOSS2": {
-        "action": "Click",
-        "target": "决战点击继续BOSS2",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续BOSS2",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战确认通关2",
@@ -2580,8 +2620,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续3": {
-        "action": "Click",
-        "target": "决战点击继续3",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续3",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战决策3",
@@ -2759,8 +2809,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续BOSS3": {
-        "action": "Click",
-        "target": "决战点击继续BOSS3",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续BOSS3",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战确认通关3",
@@ -3091,8 +3151,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续4": {
-        "action": "Click",
-        "target": "决战点击继续4",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续4",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战决策4",
@@ -3270,8 +3340,18 @@
         "focus": "战斗结束"
     },
     "决战再点继续BOSS4": {
-        "action": "Click",
-        "target": "决战点击继续BOSS4",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "决战点击继续BOSS4",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战确认通关4",

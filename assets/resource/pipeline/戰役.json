@@ -282,8 +282,18 @@
         ]
     },
     "战役再点继续": {
-        "action": "Click",
-        "target": "战役点击继续",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "战役点击继续",
+                "target_offset": [
+                    0,
+                    30,
+                    0,
+                    0
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役次数",
