@@ -5,6 +5,7 @@
     "icon": "./logo.ico",
     "contact": "QQ群457094182",
     "license": "./LICENSE",
+    "welcome": "./resource/announcement/Announcement.md",
     "github": "https://github.com/Saratoga-Official/MRA",
     "custom_title": "MRA",
     "mirrorchyan_rid": "MaaJR",

@@ -4,11 +4,7 @@
             "name": "自动战役",
             "entry": "开始自动战役",
             "default_check": false,
-            "repeatable": true,
-            "doc": [
-                "[color:red]①需提前编好队，再开始[/color]",
-                "<br>②不开启战役打完次数将按照重复次数来执行"
-            ],
+            "description": "[color:red]①需提前编好队，再开始[/color]",
             "option": [
                 "战役困难难度",
                 "战役选择关卡",
@@ -20,14 +16,14 @@
     ],
     "option": {
         "战役困难难度": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "普通难度": {
                             "action": "Click",
@@ -211,14 +207,14 @@
             ]
         },
         "战役打完次数": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "战役再点继续": {
                             "next": [
@@ -227,9 +223,29 @@
                                 "战役再点继续"
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "战役次数"
+                    ]
                 }
             ]
+        },
+        "战役次数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "战役次数",
+                    "default": "1",
+                    "pipeline_type": "int",
+                    "verify": "^[1-9][0-9]*$",
+                    "pattern_msg": "必须为正整数"
+                }
+            ],
+            "pipeline_override": {
+                "开始自动战役": {
+                    "max_hit": "{战役次数}"
+                }
+            }
         }
     }
 }

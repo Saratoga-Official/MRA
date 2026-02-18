@@ -74,6 +74,7 @@ jobs:
         with:
           submodules: true
 
+      # 下载 MaaFramework（所有变体都需要）
       - name: Download MaaFramework
         uses: robinraju/release-downloader@v1
         with:
@@ -83,6 +84,7 @@ jobs:
           out-file-path: "deps"
           extract: true
 
+      # 下载 MFAAvalonia（GUI 版本，Android 不支持）
       - name: Download MFAAvalonia
         if: matrix.os != 'android'
         id: download_mfa
@@ -107,74 +109,125 @@ jobs:
         shell: bash
         run: |
           rm -rf MFA/runtimes
-      
-      - name: Install
+
+      # 下载 MXU（替代 UI，Android 不支持，Linux 仅 x86_64）
+      - name: Download MXU
+        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        id: download_mxu
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MistEO/MXU
+          fileName: "MXU-${{ matrix.os }}-${{ matrix.arch }}*"
+          latest: true
+          out-file-path: "MXU"
+          extract: true
+
+      - name: Clean up MXU archive
+        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
         shell: bash
         run: |
-          if [[ "${{ matrix.os }}" != "android" ]]; then
-            if [ -d "MFA" ]; then
-              echo "Copying MFA files to install directory..."
-              mkdir -p install
-              rsync -av --ignore-existing MFA/ install/
-              echo "MFA files copied successfully."
-              
-              # 根据不同平台重命名文件
-              if [[ "${{ matrix.os }}" == "win" ]]; then
-                # Windows 平台重命名
-                if [ -f "install/MFAAvalonia.exe" ]; then
-                  mv install/MFAAvalonia.exe install/MRA.exe
-                  echo "Renamed MFAAvalonia.exe to MRA.exe"
-                else
-                  echo "Warning: MFAAvalonia.exe not found for Windows"
-                fi
-              elif [[ "${{ matrix.os }}" == "macos" ]]; then
-                # macOS 平台重命名
-                if [ -f "install/MFAAvalonia" ]; then
-                  mv install/MFAAvalonia install/MRA
-                  echo "Renamed MFAAvalonia to MRA"
-                elif [ -d "install/MFAAvalonia.app" ]; then
-                  mv install/MFAAvalonia.app install/MRA.app
-                  echo "Renamed MFAAvalonia.app to MRA.app"
-                else
-                  echo "Warning: MFAAvalonia executable not found for macOS"
-                fi
-              elif [[ "${{ matrix.os }}" == "linux" ]]; then
-                # Linux 平台重命名
-                if [ -f "install/MFAAvalonia" ]; then
-                  mv install/MFAAvalonia install/MRA
-                  echo "Renamed MFAAvalonia to MRA"
-                else
-                  echo "Warning: MFAAvalonia executable not found for Linux"
-                fi
-              fi
-              
-              # 复制图标文件
-              if [ -f "logo.ico" ]; then
-                cp logo.ico install/logo.ico
-                echo "Copied logo.ico to install directory"
-              fi
+          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mxu.outputs.downloaded_files)[0] }}"
+          rm -f "${ARCHIVE_FILE_PATH}"
+          echo "Archive cleanup command executed for MXU."
 
-              if [ -d "docs/zh_cn" ]; then
-                mkdir -p install/docs
-                cp -r docs/zh_cn/. install/docs/
-                echo "Copied docs/zh_cn directory to install/docs"
+      # 安装 jsonc 依赖（脚本2需要）
+      - name: Install jsonc dependency
+        run: pip install json-with-comments
+
+      # 生成主版本（MFAA 版本）到 install 目录
+      - name: Install main version (MFAA)
+        run: |
+          python ./tools/install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
+          # 复制 MFA 文件到 install 目录（重命名可执行文件）
+          if [[ "${{ matrix.os }}" != "android" && -d "MFA" ]]; then
+            echo "Copying MFA files to install directory..."
+            mkdir -p install
+            rsync -av --ignore-existing MFA/ install/
+            
+            if [[ "${{ matrix.os }}" == "win" ]]; then
+              if [ -f "install/MFAAvalonia.exe" ]; then
+                mv install/MFAAvalonia.exe install/MRA.exe
               fi
-            else
-              echo "MFA directory not found, skipping copy."
+            elif [[ "${{ matrix.os }}" == "macos" ]]; then
+              if [ -f "install/MFAAvalonia" ]; then
+                mv install/MFAAvalonia install/MRA
+              elif [ -d "install/MFAAvalonia.app" ]; then
+                mv install/MFAAvalonia.app install/MRA.app
+              fi
+            elif [[ "${{ matrix.os }}" == "linux" ]]; then
+              if [ -f "install/MFAAvalonia" ]; then
+                mv install/MFAAvalonia install/MRA
+              fi
             fi
-          else
-            echo "Skipping copy MFA for Android."
+            
+            # 复制图标
+            if [ -f "logo.ico" ]; then
+              cp logo.ico install/logo.ico
+            fi
+            # 复制文档
+            if [ -d "docs/zh_cn" ]; then
+              mkdir -p install/docs
+              cp -r docs/zh_cn/. install/docs/
+            fi
           fi
 
-          cd tools/
-          python -m pip install -r ./requirements.txt
-          python ./install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
-          cd ..
+      # 生成 CLI 版本到 install-cli 目录
+      - name: Install CLI version
+        run: |
+          python ./tools/install_cli.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
+          # 可选：复制文档到 CLI 版本（如果需要）
+          if [ -d "docs/zh_cn" ]; then
+            mkdir -p install-cli/docs
+            cp -r docs/zh_cn/. install-cli/docs/
+          fi
+          if [ -f "logo.ico" ]; then
+            cp logo.ico install-cli/logo.ico
+          fi
+
+      # 生成 MXU 版本到 install-mxu 目录
+      - name: Install MXU version
+        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        run: |
+          python ./tools/install_mxu.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
+          # 复制 MXU 可执行文件到 install-mxu 并重命名为 MRA
+          if [ -d "MXU" ]; then
+            mkdir -p install-mxu
+            if [[ "${{ matrix.os }}" == "win" ]]; then
+              if [ -f "MXU/mxu.exe" ]; then
+                cp MXU/mxu.exe install-mxu/MRA.exe
+              fi
+            else
+              if [ -f "MXU/mxu" ]; then
+                cp MXU/mxu install-mxu/MRA
+                chmod +x install-mxu/MRA
+              fi
+            fi
+            # 复制图标和文档
+            if [ -f "logo.ico" ]; then
+              cp logo.ico install-mxu/logo.ico
+            fi
+            if [ -d "docs/zh_cn" ]; then
+              mkdir -p install-mxu/docs
+              cp -r docs/zh_cn/. install-mxu/docs/
+            fi
+          fi
+
+      # 上传三个不同的 artifact
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MRA-${{ matrix.os }}-${{ matrix.arch }}-MFAA
+          path: "install"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MRA-${{ matrix.os }}-${{ matrix.arch }}
-          path: "install"
+          name: MRA-${{ matrix.os }}-${{ matrix.arch }}-PiCLI
+          path: "install-cli"
+
+      - uses: actions/upload-artifact@v4
+        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        with:
+          name: MRA-${{ matrix.os }}-${{ matrix.arch }}-MXU
+          path: "install-mxu"
 
   changelog:
     name: Generate changelog
@@ -193,8 +246,6 @@ jobs:
         id: git-cliff
         with:
           config: .github/cliff.toml
-          # 正式版：使用 tag-pattern 只匹配正式版标签，包含所有从上一个正式版以来的提交
-          # 预发布版：正常生成，只包含从上一个标签以来的提交
           args: >-
             -vv --latest --strip header
             ${{ needs.meta.outputs.is_prerelease == 'false' && '--tag-pattern "^v[0-9]+\\.[0-9]+\\.[0-9]+$"' || '' }}
@@ -216,7 +267,14 @@ jobs:
           for f in *; do
             (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
-          
+      - uses: softprops/action-gh-release@v2.2.2
+        with:
+          files: assets/*.zip
+          tag_name: ${{ needs.meta.outputs.tag }}
+          body: ${{ needs.changelog.outputs.release_body }}
+          draft: false
+          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
+
       - uses: softprops/action-gh-release@v2
         with:
           files: assets/*

@@ -4,10 +4,7 @@
             "name": "自动远征",
             "entry": "开始自动远征",
             "default_check": false,
-            "doc": [
-                "开启远征等待模式会在程序关闭前无限等待收发远征",
-                "<br>现在可结合定时执行功能实现定点收远征"
-            ],
+            "description": "开启远征等待模式会在程序关闭前无限等待收发远征<br>可结合定时执行功能实现定点收远征",
             "option": [
                 "远征等待模式"
             ]
@@ -15,14 +12,14 @@
     ],
     "option": {
         "远征等待模式": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "等待模式退出远征": {
                             "enabled": true
@@ -41,8 +38,8 @@
                     "name": "远征检查等待时间(ms)",
                     "default": "60000",
                     "pipeline_type": "int",
-                    "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "verify": "^[1-9][0-9]*$",
+                    "pattern_msg": "必须为正整数"
                 }
             ],
             "pipeline_override": {

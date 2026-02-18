@@ -4,23 +4,13 @@
             "name": "自动造船",
             "entry": "开始自动建造",
             "default_check": false,
-            "repeatable": true,
-            "doc": [
-                "[color:red]①请确保自己满足所选造船所需资源和道具足够，否则该功能会无法进行[/color]",
-                "<br>②目前给出的公式选项资源数量都是根据常用的几个造船公式给的，选沿用上次就是对应资源沿用你上次建造数量",
-                "<br>③可使用重复次数来指定建造次数，但未勾选使用快速建造工具最多只能造满空位",
-                "<br>④造满空位和使用快建工具一同勾选将会视情况执行其中之一，若勾选了批量建造则造满空位失效",
-                "<br>⑤本功能会自动收取所有已完成建造的船",
-                "<br>⑥最后祝各位都能出货(｡･ω･｡)ﾉ♡"
-            ],
+            "description": "./docs/造船.md",
             "option": [
                 "燃料",
                 "弹药",
                 "钢材",
                 "铝材",
                 "造满空位",
-                "若无空位使用快速建造工具",
-                "使用批量建造十连",
                 "建造船舱满拆船（危险功能）"
             ]
         }
@@ -325,19 +315,27 @@
             ]
         },
         "造满空位": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
-                    "pipeline_override": {}
+                    "name": "No",
+                    "pipeline_override": {},
+                    "option": [
+                        "建造次数",
+                        "若无空位使用快速建造工具",
+                        "使用批量建造十连"
+                    ]
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "点击建造按钮": {
+                            "post_wait_freezes": 3000,
                             "next": [
                                 "[JumpBack]重新连接",
                                 "点击开始建造",
+                                "[JumpBack]领取奖励",
+                                "[JumpBack]退出",
                                 "无动作结束"
                             ]
                         }
@@ -345,15 +343,32 @@
                 }
             ]
         },
+        "建造次数": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "建造次数",
+                    "default": "1",
+                    "pipeline_type": "int",
+                    "verify": "^[1-9][0-9]*$",
+                    "pattern_msg": "必须为正整数"
+                }
+            ],
+            "pipeline_override": {
+                "开始自动建造": {
+                    "max_hit": "{建造次数}"
+                }
+            }
+        },
         "若无空位使用快速建造工具": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "点击快速建造": {
                             "enabled": true
@@ -363,14 +378,14 @@
             ]
         },
         "使用批量建造十连": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "点击批量建造按钮": {
                             "enabled": true
@@ -383,14 +398,14 @@
             ]
         },
         "建造船舱满拆船（危险功能）": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "建造解装": {
                             "next": [

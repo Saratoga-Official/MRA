@@ -4,12 +4,7 @@
             "name": "刷活动",
             "entry": "进入活动",
             "default_check": false,
-            "doc": [
-                "[color:red]若使用自定义导航，将鼠标移动到自定义导航旁的问号查看说明[/color]",
-                "<br>[color:red]若不使用自定义导航，须在出击准备按钮前开始，并且拆船或重开游戏后会自动结束任务[/color]",
-                "<br>[color:red]立体强袭关卡须在紧急情况前开始，仅支持打第一个点[/color]",
-                "<br>[color:red]自动答题需要在答题界面开始，无脑选择选项，不追求答对[/color]"
-            ],
+            "description": "./docs/刷活动.md",
             "option": [
                 "活动选择模式"
             ],
@@ -106,11 +101,11 @@
             ]
         },
         "使用自定义导航": {
-            "type": "select",
+            "type": "switch",
             "description": "./docs/自定义导航.md",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "拆船结束退出": {
                             "next": [
@@ -126,7 +121,7 @@
                     }
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "进入活动": {
                             "next": [
@@ -155,7 +150,6 @@
             ]
         },
         "活动入口识别": {
-            "type": "select",
             "cases": [
                 {
                     "name": "OCR",
@@ -191,15 +185,15 @@
             }
         },
         "活动困难模式": {
-            "type": "select",
+            "type": "switch",
             "description": "如果需要选择“困难模式”，请勾选此项",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "活动困难模式": {
                             "enabled": true
@@ -265,15 +259,15 @@
                     "name": "关卡入口坐标X",
                     "default": "200",
                     "pipeline_type": "int",
-                    "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "verify": "^[1-9][0-9]*$",
+                    "pattern_msg": "必须为正整数"
                 },
                 {
                     "name": "关卡入口坐标Y",
                     "default": "200",
                     "pipeline_type": "int",
-                    "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "verify": "^[1-9][0-9]*$",
+                    "pattern_msg": "必须为正整数"
                 }
             ],
             "pipeline_override": {
@@ -296,15 +290,15 @@
             }
         },
         "启用自动答题": {
-            "type": "select",
+            "type": "switch",
             "description": "导航到关卡界面弹窗是否答题时自动进入答题",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {
                         "答题确认": {
                             "enabled": true
@@ -353,8 +347,8 @@
                     "description": "撤退和重开均不计入次数",
                     "default": "1",
                     "pipeline_type": "int",
-                    "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "verify": "^[1-9][0-9]*$",
+                    "pattern_msg": "必须为正整数"
                 }
             ],
             "pipeline_override": {
@@ -409,14 +403,6 @@
         },
         "立体强袭无限次数": {
             "cases": [
-                {
-                    "name": "关闭",
-                    "pipeline_override": {
-                        "立体强袭无限战斗": {
-                            "enabled": false
-                        }
-                    }
-                },
                 {
                     "name": "开启",
                     "pipeline_override": {}
@@ -490,14 +476,14 @@
             ]
         },
         "立体强袭允许追击": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "立体强袭追击": {
                             "template": "战斗/放弃.png"

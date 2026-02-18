@@ -7,7 +7,7 @@
             "战役次数",
             "普通难度",
             "困难难度",
-            "退出战役",
+            "[JumpBack]退出战役",
             "自动战役"
         ]
     },
@@ -330,15 +330,18 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_delay": 1000,
-        "next": [
-            "[JumpBack]重新连接",
-            "开始自动战役"
-        ]
+        "post_delay": 1000
     },
     "回到战役界面": {
         "recognition": "TemplateMatch",
         "template": "通用/退出.png",
-        "green_mask": true
+        "green_mask": true,
+        "next": [
+            "[JumpBack]重新连接",
+            "开始自动战役",
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
+            "无动作结束"
+        ]
     }
 }

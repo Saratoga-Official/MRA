@@ -4,12 +4,7 @@
             "name": "开始前任务",
             "entry": "开始唤醒",
             "default_check": true,
-            "doc": [
-                "用于打开游戏，领取登录奖励等",
-                "<br>[color:red]请将本任务放在所有任务之前[/color]",
-                "<br>[color:red]切换区服不可选择非当前大区的区服[/color]",
-                "<br>如果需要切换大区或切换账号请使用模拟器的多开功能"
-            ],
+            "description": "用于打开游戏，领取登录奖励等<br>[color:red]请将本任务放在所有任务之前[/color]",
             "option": [
                 "切换区服"
             ]
@@ -17,6 +12,7 @@
     ],
     "option": {
         "切换区服": {
+            "description": "[color:red]切换区服不可选择非当前大区的区服[/color]<br>如果需要切换大区或切换账号请使用模拟器的多开功能",
             "cases": [
                 {
                     "name": "不切换",

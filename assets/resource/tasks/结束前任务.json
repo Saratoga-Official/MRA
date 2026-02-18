@@ -4,9 +4,7 @@
             "name": "结束前任务",
             "entry": "收尾工作",
             "default_check": false,
-            "doc": [
-                "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]"
-            ],
+            "description": "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]",
             "option": [
                 "自动入浴",
                 "自动领取任务奖励",
@@ -32,14 +30,14 @@
     ],
     "option": {
         "自动入浴": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "点击船坞": {
                             "enabled": false
@@ -49,14 +47,14 @@
             ]
         },
         "自动领取任务奖励": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "点击任务": {
                             "enabled": false
@@ -66,10 +64,10 @@
             ]
         },
         "自动拆船（危险功能）": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "开始拆船": {
                             "enabled": false
@@ -77,16 +75,16 @@
                     }
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 }
             ]
         },
         "结束后关闭游戏": {
-            "type": "select",
+            "type": "switch",
             "cases": [
                 {
-                    "name": "no",
+                    "name": "No",
                     "pipeline_override": {
                         "关闭游戏": {
                             "action": "DoNothing"
@@ -94,7 +92,7 @@
                     }
                 },
                 {
-                    "name": "yes",
+                    "name": "Yes",
                     "pipeline_override": {}
                 }
             ]

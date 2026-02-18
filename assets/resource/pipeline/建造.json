@@ -3,8 +3,8 @@
         "next": [
             "[JumpBack]重新连接",
             "处于建造界面",
-            "退出建造",
             "[JumpBack]领取奖励",
+            "[JumpBack]退出建造",
             "建造进入菜单"
         ]
     },
@@ -61,11 +61,7 @@
         ],
         "green_mask": true,
         "post_delay": 1000,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "开始自动建造"
-        ]
+        "action": "Click"
     },
     "点击建造": {
         "recognition": "OCR",
@@ -165,6 +161,8 @@
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
             "任务结束"
         ]
     },
@@ -745,6 +743,9 @@
         ],
         "next": [
             "[JumpBack]重新连接",
+            "开始自动建造",
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
             "无动作结束"
         ]
     },
@@ -760,6 +761,9 @@
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
+            "开始自动建造",
+            "[JumpBack]领取奖励",
+            "[JumpBack]退出",
             "无动作结束"
         ],
         "focus": "开始建造"

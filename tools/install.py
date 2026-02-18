@@ -13,14 +13,13 @@ except ModuleNotFoundError as e:
     ) from e
 
 from configure import configure_ocr_model
-
+from generate_manifest_cache import generate_manifest_cache   # 新增导入
 
 working_dir = Path(__file__).parent.parent.resolve()
-install_path = working_dir / Path("install")
+install_path = working_dir / "install"
 version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
 
-# the first parameter is self name
-if sys.argv.__len__() < 4:
+if len(sys.argv) < 4:
     print("Usage: python install.py <version> <os> <arch>")
     print("Example: python install.py v1.0.0 win x86_64")
     sys.exit(1)
@@ -98,9 +97,7 @@ def install_deps():
         )
 
 
-
 def install_resource():
-
     configure_ocr_model()
 
     shutil.copytree(
@@ -117,6 +114,8 @@ def install_resource():
         interface = jsonc.load(f)
 
     interface["version"] = version
+    # 新增：定制标题
+    interface["title"] = f"MRA {version}"
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         jsonc.dump(interface, f, ensure_ascii=False, indent=4)
@@ -141,10 +140,23 @@ def install_agent():
     )
 
 
+def install_manifest_cache():
+    """生成初始 manifest 缓存，加速用户首次启动"""
+    config_dir = install_path / "config"
+    success = generate_manifest_cache(config_dir)
+    if success:
+        print("Manifest cache generated successfully.")
+    else:
+        print(
+            "Warning: Manifest cache generation failed, users will do full check on first run."
+        )
+
+
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
     install_agent()
+    install_manifest_cache()   # 新增缓存生成
 
     print(f"Install to {install_path} successfully.")
