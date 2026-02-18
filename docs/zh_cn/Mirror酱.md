@@ -25,7 +25,7 @@ Mirror酱是一个第三方应用分发平台，让开源应用的更新更简�
 
 ## 使用Mirror酱自动更新
 
-MRA使用的GUI [MFAAvalonia](https://github.com/SweetSmellFox/MFAAvalonia)拥有通过 Mirror酱 更新 UI 以及资源的功能，在更新设置界面处设置Mirror酱资源下载源和token便可。
+MRA使用的GUI [MFAAvalonia](https://github.com/MaaXYZ/MFAAvalonia)拥有通过 Mirror酱 更新 UI 以及资源的功能，在更新设置界面处设置Mirror酱资源下载源和token便可。
 
 ## 使用Mirror酱下载全量包
 
