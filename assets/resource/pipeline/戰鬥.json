@@ -309,153 +309,141 @@
             "param": {
                 "any_of": [
                     {
-                        "recognition": "ColorMatch",
-                        "param": {
-                            "roi": [
-                                137,
-                                462,
-                                13,
-                                51
-                            ],
-                            "lower": [
-                                [
-                                    160,
-                                    160,
-                                    160
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    137,
+                                    462,
+                                    13,
+                                    51
+                                ],
+                                "lower": [
+                                    150,
+                                    150,
+                                    150
+                                ],
+                                "upper": [
+                                    170,
+                                    170,
+                                    170
                                 ]
-                            ],
-                            "upper": [
-                                [
-                                    160,
-                                    160,
-                                    160
-                                ]
-                            ]
+                            }
                         }
                     },
                     {
-                        "recognition": "ColorMatch",
-                        "param": {
-                            "roi": [
-                                286,
-                                461,
-                                13,
-                                52
-                            ],
-                            "lower": [
-                                [
-                                    160,
-                                    160,
-                                    160
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    286,
+                                    461,
+                                    13,
+                                    52
+                                ],
+                                "lower": [
+                                    150,
+                                    150,
+                                    150
+                                ],
+                                "upper": [
+                                    170,
+                                    170,
+                                    170
                                 ]
-                            ],
-                            "upper": [
-                                [
-                                    160,
-                                    160,
-                                    160
-                                ]
-                            ]
+                            }
                         }
                     },
                     {
-                        "recognition": "ColorMatch",
-                        "param": {
-                            "roi": [
-                                435,
-                                461,
-                                13,
-                                52
-                            ],
-                            "lower": [
-                                [
-                                    160,
-                                    160,
-                                    160
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    435,
+                                    461,
+                                    13,
+                                    52
+                                ],
+                                "lower": [
+                                    150,
+                                    150,
+                                    150
+                                ],
+                                "upper": [
+                                    170,
+                                    170,
+                                    170
                                 ]
-                            ],
-                            "upper": [
-                                [
-                                    160,
-                                    160,
-                                    160
-                                ]
-                            ]
+                            }
                         }
                     },
                     {
-                        "recognition": "ColorMatch",
-                        "param": {
-                            "roi": [
-                                584,
-                                462,
-                                13,
-                                51
-                            ],
-                            "lower": [
-                                [
-                                    160,
-                                    160,
-                                    160
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    584,
+                                    462,
+                                    13,
+                                    51
+                                ],
+                                "lower": [
+                                    150,
+                                    150,
+                                    150
+                                ],
+                                "upper": [
+                                    170,
+                                    170,
+                                    170
                                 ]
-                            ],
-                            "upper": [
-                                [
-                                    160,
-                                    160,
-                                    160
-                                ]
-                            ]
+                            }
                         }
                     },
                     {
-                        "recognition": "ColorMatch",
-                        "param": {
-                            "roi": [
-                                733,
-                                461,
-                                13,
-                                52
-                            ],
-                            "lower": [
-                                [
-                                    160,
-                                    160,
-                                    160
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    733,
+                                    461,
+                                    13,
+                                    52
+                                ],
+                                "lower": [
+                                    150,
+                                    150,
+                                    150
+                                ],
+                                "upper": [
+                                    170,
+                                    170,
+                                    170
                                 ]
-                            ],
-                            "upper": [
-                                [
-                                    160,
-                                    160,
-                                    160
-                                ]
-                            ]
+                            }
                         }
                     },
                     {
-                        "recognition": "ColorMatch",
-                        "param": {
-                            "roi": [
-                                882,
-                                461,
-                                13,
-                                52
-                            ],
-                            "lower": [
-                                [
-                                    160,
-                                    160,
-                                    160
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    882,
+                                    461,
+                                    13,
+                                    52
+                                ],
+                                "lower": [
+                                    150,
+                                    150,
+                                    150
+                                ],
+                                "upper": [
+                                    170,
+                                    170,
+                                    170
                                 ]
-                            ],
-                            "upper": [
-                                [
-                                    160,
-                                    160,
-                                    160
-                                ]
-                            ]
+                            }
                         }
                     }
                 ]
