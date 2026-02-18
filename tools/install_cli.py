@@ -48,7 +48,7 @@ def install_resource():
         dirs_exist_ok=True,
     )
     shutil.copy2(
-        working_dir / "assets" / "interface_cli.json",
+        working_dir / "assets" / "interface.json",
         install_path / "interface.json",
     )
 
