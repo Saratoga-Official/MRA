@@ -60,6 +60,7 @@
             705
         ],
         "green_mask": true,
+        "post_delay": 1000,
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -137,6 +138,7 @@
         "recognition": "TemplateMatch",
         "template": "通用/退出.png",
         "green_mask": true,
+        "post_delay": 1000,
         "action": "Click",
         "roi": [
             7,
@@ -153,6 +155,7 @@
         "recognition": "TemplateMatch",
         "template": "通用/退出.png",
         "green_mask": true,
+        "post_delay": 1000,
         "roi": [
             13,
             627,

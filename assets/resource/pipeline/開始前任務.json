@@ -32,6 +32,7 @@
         ],
         "action": "Click",
         "green_mask": true,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
             "打开游戏"

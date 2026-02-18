@@ -92,7 +92,8 @@
         "recognition": "TemplateMatch",
         "template": "通用/退出.png",
         "action": "Click",
-        "green_mask": true
+        "green_mask": true,
+        "post_delay": 1000
     },
     "演习挑战": {
         "recognition": "TemplateMatch",
@@ -1110,6 +1111,7 @@
         ],
         "action": "Click",
         "green_mask": true,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
             "开始自动演习"

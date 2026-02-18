@@ -212,6 +212,7 @@
         "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]退出",

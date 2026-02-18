@@ -19,6 +19,7 @@
             705
         ],
         "green_mask": true,
+        "post_delay": 1000,
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",

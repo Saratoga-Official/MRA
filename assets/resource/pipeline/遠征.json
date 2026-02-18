@@ -3,8 +3,8 @@
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "[JumpBack]退出",
             "[JumpBack]领取奖励",
+            "[JumpBack]退出",
             "自动收远征"
         ]
     },
@@ -153,10 +153,11 @@
         "action": {
             "type": "Click"
         },
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
-            "[JumpBack]退出",
             "[JumpBack]领取奖励",
+            "[JumpBack]退出",
             "无动作结束"
         ]
     },
@@ -174,10 +175,11 @@
             "type": "Click"
         },
         "enabled": false,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
-            "[JumpBack]退出",
             "[JumpBack]领取奖励",
+            "[JumpBack]退出",
             "等待模式点击出征"
         ]
     },
