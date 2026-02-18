@@ -2,61 +2,49 @@ from pathlib import Path
 
 import shutil
 import sys
+import json
+import os
 
-try:
-    import jsonc
-except ModuleNotFoundError as e:
-    raise ImportError(
-        "Missing dependency 'json-with-comments' (imported as 'jsonc').\n"
-        f"Install it with:\n  {sys.executable} -m pip install json-with-comments\n"
-        "Or add it to your project's requirements."
-    ) from e
+script_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(script_dir)
 
 from configure import configure_ocr_model
-from generate_manifest_cache import generate_manifest_cache   # 新增导入
 
 working_dir = Path(__file__).parent.parent.resolve()
 install_path = working_dir / "install"
-version = len(sys.argv) > 1 and sys.argv[1] or "v0.0.1"
 
 if len(sys.argv) < 4:
     print("Usage: python install.py <version> <os> <arch>")
-    print("Example: python install.py v1.0.0 win x86_64")
+    print("Example: python install.py v1.2.3 win x86_64")
     sys.exit(1)
 
+version = sys.argv[1]
 os_name = sys.argv[2]
 arch = sys.argv[3]
 
 
 def get_dotnet_platform_tag():
-    """自动检测当前平台并返回对应的dotnet平台标签"""
+    """根据 os 和 arch 返回 dotnet 平台标签"""
     if os_name == "win" and arch == "x86_64":
-        platform_tag = "win-x64"
+        return "win-x64"
     elif os_name == "win" and arch == "aarch64":
-        platform_tag = "win-arm64"
+        return "win-arm64"
     elif os_name == "macos" and arch == "x86_64":
-        platform_tag = "osx-x64"
+        return "osx-x64"
     elif os_name == "macos" and arch == "aarch64":
-        platform_tag = "osx-arm64"
+        return "osx-arm64"
     elif os_name == "linux" and arch == "x86_64":
-        platform_tag = "linux-x64"
+        return "linux-x64"
     elif os_name == "linux" and arch == "aarch64":
-        platform_tag = "linux-arm64"
+        return "linux-arm64"
     else:
         print("Unsupported OS or architecture.")
-        print("available parameters:")
-        print("version: e.g., v1.0.0")
-        print("os: [win, macos, linux, android]")
-        print("arch: [aarch64, x86_64]")
         sys.exit(1)
-
-    return platform_tag
 
 
 def install_deps():
     if not (working_dir / "deps" / "bin").exists():
-        print('Please download the MaaFramework to "deps" first.')
-        print('请先下载 MaaFramework 到 "deps"。')
+        print('请先下载 MaaFramework 到 "deps" 目录')
         sys.exit(1)
 
     if os_name == "android":
@@ -71,9 +59,10 @@ def install_deps():
             dirs_exist_ok=True,
         )
     else:
+        platform_tag = get_dotnet_platform_tag()
         shutil.copytree(
             working_dir / "deps" / "bin",
-            install_path / "runtimes" / get_dotnet_platform_tag() / "native",
+            install_path / "runtimes" / platform_tag / "native",
             ignore=shutil.ignore_patterns(
                 "*MaaDbgControlUnit*",
                 "*MaaThriftControlUnit*",
@@ -92,7 +81,7 @@ def install_deps():
         )
         shutil.copytree(
             working_dir / "deps" / "bin" / "plugins",
-            install_path / "plugins" / get_dotnet_platform_tag(),
+            install_path / "plugins" / platform_tag,
             dirs_exist_ok=True,
         )
 
@@ -111,52 +100,22 @@ def install_resource():
     )
 
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
-        interface = jsonc.load(f)
+        interface = json.load(f)
 
     interface["version"] = version
-    # 新增：定制标题
-    interface["title"] = f"MRA {version}"
+    interface["title"] = f"MRA {version} | 舰R小助手"
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
-        jsonc.dump(interface, f, ensure_ascii=False, indent=4)
+        json.dump(interface, f, ensure_ascii=False, indent=4)
 
 
 def install_chores():
-    shutil.copy2(
-        working_dir / "README.md",
-        install_path,
-    )
-    shutil.copy2(
-        working_dir / "LICENSE",
-        install_path,
-    )
-
-
-def install_agent():
-    shutil.copytree(
-        working_dir / "agent",
-        install_path / "agent",
-        dirs_exist_ok=True,
-    )
-
-
-def install_manifest_cache():
-    """生成初始 manifest 缓存，加速用户首次启动"""
-    config_dir = install_path / "config"
-    success = generate_manifest_cache(config_dir)
-    if success:
-        print("Manifest cache generated successfully.")
-    else:
-        print(
-            "Warning: Manifest cache generation failed, users will do full check on first run."
-        )
+    shutil.copy2(working_dir / "README.md", install_path)
+    shutil.copy2(working_dir / "LICENSE", install_path)
 
 
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
-    install_agent()
-    install_manifest_cache()   # 新增缓存生成
-
     print(f"Install to {install_path} successfully.")
