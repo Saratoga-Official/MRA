@@ -10,7 +10,8 @@ sys.path.append(script_dir)
 
 from configure import configure_ocr_model
 
-working_dir = Path(__file__).parent.parent.parent
+# 修正：指向仓库根目录
+working_dir = Path(__file__).parent.parent.resolve()
 install_path = working_dir / "install-mxu"
 
 if len(sys.argv) < 4:

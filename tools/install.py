@@ -24,7 +24,6 @@ arch = sys.argv[3]
 
 
 def get_dotnet_platform_tag():
-    """根据 os 和 arch 返回 dotnet 平台标签"""
     if os_name == "win" and arch == "x86_64":
         return "win-x64"
     elif os_name == "win" and arch == "aarch64":
