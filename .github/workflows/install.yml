@@ -19,6 +19,11 @@ on:
       - "**.py"
   workflow_dispatch:
 
+# 添加权限声明，确保 GITHUB_TOKEN 能正常访问 API
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   meta:
     runs-on: ubuntu-latest
@@ -76,25 +81,27 @@ jobs:
 
       # 下载 MaaFramework（所有变体都需要）
       - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.10  # 更新到最新版本
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
           latest: true
           out-file-path: "deps"
           extract: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # 下载 MFAAvalonia（GUI 版本，Android 不支持）
       - name: Download MFAAvalonia
         if: matrix.os != 'android'
         id: download_mfa
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.10
         with:
           repository: MaaXYZ/MFAAvalonia
           fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
           latest: true
           out-file-path: "MFA"
           extract: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean up MFAAvalonia archive
         if: matrix.os != 'android'
@@ -114,13 +121,14 @@ jobs:
       - name: Download MXU
         if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
         id: download_mxu
-        uses: robinraju/release-downloader@v1
+        uses: robinraju/release-downloader@v1.10
         with:
           repository: MistEO/MXU
           fileName: "MXU-${{ matrix.os }}-${{ matrix.arch }}*"
           latest: true
           out-file-path: "MXU"
           extract: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean up MXU archive
         if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
@@ -130,7 +138,6 @@ jobs:
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup command executed for MXU."
 
-      # 安装 jsonc 依赖（脚本2需要）
       - name: Install jsonc dependency
         run: pip install json-with-comments
 
@@ -270,14 +277,6 @@ jobs:
       - uses: softprops/action-gh-release@v2.2.2
         with:
           files: assets/*.zip
-          tag_name: ${{ needs.meta.outputs.tag }}
-          body: ${{ needs.changelog.outputs.release_body }}
-          draft: false
-          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
-
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
           draft: false
