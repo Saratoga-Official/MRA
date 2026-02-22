@@ -19,10 +19,10 @@ on:
       - "**.py"
   workflow_dispatch:
 
-# 添加权限声明，确保 GITHUB_TOKEN 能正常访问 API
 permissions:
-  contents: read
-  actions: read
+  contents: write
+  actions: write
+  packages: write
 
 jobs:
   meta:
