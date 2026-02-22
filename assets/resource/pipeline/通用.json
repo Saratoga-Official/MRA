@@ -46,6 +46,577 @@
         "action": "Click",
         "post_delay": 3000
     },
+    "节点1阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点1阵型锚点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点1锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点1阵型锚点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点1锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点2阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点2阵型锚点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点2锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点2阵型锚点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点2锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点3阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点3阵型锚点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点3锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点3阵型锚点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点3锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点4阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点4阵型锚点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点4锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点4阵型锚点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点4锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点5阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点5阵型锚点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点5锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点5阵型锚点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点5锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点6阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点6阵型锚点": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点6锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点6阵型锚点2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "横阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点6锚点阵型": ""
+        },
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
+    "节点1识别阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "纵阵",
+                    "轮型",
+                    "梯形",
+                    "横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]最终阵型",
+            "[Anchor]节点1锚点阵型",
+            "节点1阵型",
+            "无动作结束"
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 1000
+    },
+    "节点2识别阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "纵阵",
+                    "轮型",
+                    "梯形",
+                    "横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]最终阵型",
+            "[Anchor]节点2锚点阵型",
+            "节点2阵型",
+            "无动作结束"
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 1000
+    },
+    "节点3识别阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "纵阵",
+                    "轮型",
+                    "梯形",
+                    "横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]最终阵型",
+            "[Anchor]节点3锚点阵型",
+            "节点3阵型",
+            "无动作结束"
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 1000
+    },
+    "节点4识别阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "纵阵",
+                    "轮型",
+                    "梯形",
+                    "横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]最终阵型",
+            "[Anchor]节点4锚点阵型",
+            "节点4阵型",
+            "无动作结束"
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 1000
+    },
+    "节点5识别阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "纵阵",
+                    "轮型",
+                    "梯形",
+                    "横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]最终阵型",
+            "[Anchor]节点5锚点阵型",
+            "节点5阵型",
+            "无动作结束"
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 1000
+    },
+    "节点6识别阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "纵阵",
+                    "轮型",
+                    "梯形",
+                    "横阵"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "next": [
+            "[Anchor]最终阵型",
+            "[Anchor]节点6锚点阵型",
+            "节点6阵型",
+            "无动作结束"
+        ],
+        "post_wait_freezes": 0,
+        "post_delay": 1000
+    },
+    "最终阵型": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "梯形"
+                ],
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "anchor": {
+            "节点1锚点阵型": "",
+            "节点2锚点阵型": "",
+            "节点3锚点阵型": "",
+            "节点4锚点阵型": "",
+            "节点5锚点阵型": "",
+            "节点6锚点阵型": "",
+            "最终阵型": ""
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "focus": "选择预设阵型"
+    },
     "节点1追击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
@@ -191,9 +762,9 @@
                     "优势",
                     "劣势",
                     "纵阵",
-                    "轮型阵",
-                    "梯形阵",
-                    "单横阵"
+                    "轮型",
+                    "梯形",
+                    "横阵"
                 ],
                 "roi": [
                     0,
@@ -214,9 +785,9 @@
                     "优势",
                     "劣势",
                     "纵阵",
-                    "轮型阵",
-                    "梯形阵",
-                    "单横阵"
+                    "轮型",
+                    "梯形",
+                    "横阵"
                 ]
             }
         },
@@ -248,6 +819,15 @@
         },
         "action": {
             "type": "Click"
+        },
+        "anchor": {
+            "节点1锚点阵型": "",
+            "节点2锚点阵型": "",
+            "节点3锚点阵型": "",
+            "节点4锚点阵型": "",
+            "节点5锚点阵型": "",
+            "节点6锚点阵型": "",
+            "最终阵型": ""
         },
         "next": [
             "[JumpBack]重新连接",
@@ -289,6 +869,13 @@
         },
         "next": [
             "500船检测回港"
+        ],
+        "on_error": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "[JumpBack]活动退出",
+            "[JumpBack]退出",
+            "无动作结束"
         ],
         "enabled": false,
         "focus": "[color:red]已达500捞船上限[/color]"
