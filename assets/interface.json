@@ -7,7 +7,7 @@
     "license": "./LICENSE",
     "welcome": "./resource/announcement/Announcement.md",
     "github": "https://github.com/Saratoga-Official/MRA",
-    "custom_title": "MRA",
+    "title": "MRA DEBUG_VERSION | 舰R小助手",
     "mirrorchyan_rid": "MaaJR",
     "mirrorchyan_multiplatform": true,
     "controller": [

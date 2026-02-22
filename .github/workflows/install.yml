@@ -143,6 +143,7 @@ jobs:
 
       # 生成主版本（MFAA 版本）到 install 目录
       - name: Install main version (MFAA)
+        if: matrix.os != 'android'
         run: |
           python ./tools/install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
           # 复制 MFA 文件到 install 目录（重命名可执行文件）
@@ -221,6 +222,7 @@ jobs:
 
       # 上传三个不同的 artifact
       - uses: actions/upload-artifact@v4
+        if: matrix.os != 'android'
         with:
           name: MRA-${{ matrix.os }}-${{ matrix.arch }}-MFAA
           path: "install"
