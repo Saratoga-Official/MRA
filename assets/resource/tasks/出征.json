@@ -4,7 +4,7 @@
             "name": "自动出征",
             "entry": "开始出征",
             "default_check": false,
-            "description": "[color:red]需提前编好队，满足带路条件，再开始[/color]<br>本功能执行过程中会自动收发远征",
+            "description": "<span style=\"color: red;\">需提前编好队，满足带路条件，再开始</span><br>本功能执行过程中会自动收发远征",
             "option": [
                 "选择章节",
                 "选择关卡",
@@ -426,7 +426,9 @@
                             "inverse": true
                         },
                         "无限战斗提示": {
-                            "focus": "已达500捞船上限"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "<span style=\"color: red;\">已达500捞船上限</span>"
+                            }
                         },
                         "500船检测": {
                             "enabled": true
@@ -448,7 +450,9 @@
                             "inverse": true
                         },
                         "无限战斗提示": {
-                            "focus": "已达50战利品上限"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "<span style=\"color: red;\">已达50战利品上限</span>"
+                            }
                         }
                     }
                 },
@@ -5704,7 +5708,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点1检测是否追击"
+                            }
                         },
                         "节点2追击": {
                             "action": "DoNothing",
@@ -5718,7 +5724,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点2检测是否追击"
+                            }
                         },
                         "节点3追击": {
                             "action": "DoNothing",
@@ -5732,7 +5740,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点3检测是否追击"
+                            }
                         },
                         "节点4追击": {
                             "action": "DoNothing",
@@ -5746,7 +5756,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点4检测是否追击"
+                            }
                         },
                         "节点5追击": {
                             "action": "DoNothing",
@@ -5760,7 +5772,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点5检测是否追击"
+                            }
                         },
                         "节点6追击": {
                             "action": "DoNothing",
@@ -5774,7 +5788,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点6检测是否追击"
+                            }
                         }
                     }
                 }
@@ -5810,7 +5826,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点1检测是否追击"
+                            }
                         }
                     }
                 }
@@ -5846,7 +5864,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点2检测是否追击"
+                            }
                         }
                     }
                 }
@@ -5882,7 +5902,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点3检测是否追击"
+                            }
                         }
                     }
                 }
@@ -5918,7 +5940,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点4检测是否追击"
+                            }
                         }
                     }
                 }
@@ -5954,7 +5978,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点5检测是否追击"
+                            }
                         }
                     }
                 }
@@ -5990,7 +6016,9 @@
                                 "决战追击点击"
                             ],
                             "post_wait_freezes": 0,
-                            "focus": "检测是否追击"
+                            "focus": {
+                                "Node.Recognition.Succeeded": "节点6检测是否追击"
+                            }
                         }
                     }
                 }

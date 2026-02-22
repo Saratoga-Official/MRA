@@ -4,7 +4,7 @@
             "name": "结束前任务",
             "entry": "收尾工作",
             "default_check": false,
-            "description": "[color:red]请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励[/color]",
+            "description": "<span style=\"color: red;\">请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励</span>",
             "option": [
                 "自动入浴",
                 "自动领取任务奖励",

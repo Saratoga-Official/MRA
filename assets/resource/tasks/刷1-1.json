@@ -4,7 +4,7 @@
             "name": "无消耗刷1-1",
             "entry": "开始出征",
             "default_check": false,
-            "description": "[color:red]①会自动编队编入最近获得的船，不能和其他编队混用[/color]<br>③本功能会在战斗结束后自动收发远征",
+            "description": "<span style=\"color: red;\">①会自动编队编入最近获得的船，不能和其他编队混用</span><br>③本功能会在战斗结束后自动收发远征",
             "option": [
                 "1-1编队",
                 "1-1无限次数",

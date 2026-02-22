@@ -305,7 +305,9 @@
             "演习刷新失败1",
             "演习向上滑"
         ],
-        "focus": "[color:red]放弃本次演习（共一次）[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共一次）</span>"
+        }
     },
     "演习刷新失败1": {
         "recognition": "TemplateMatch",
@@ -356,7 +358,9 @@
             "演习刷新失败2",
             "演习向上滑"
         ],
-        "focus": "[color:red]放弃本次演习（共两次）[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共两次）</span>"
+        }
     },
     "演习刷新失败2": {
         "recognition": "TemplateMatch",
@@ -407,7 +411,9 @@
             "演习刷新失败3",
             "演习向上滑"
         ],
-        "focus": "[color:red]放弃本次演习（共三次）[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共三次）</span>"
+        }
     },
     "演习刷新失败3": {
         "recognition": "TemplateMatch",
@@ -457,7 +463,9 @@
             "[JumpBack]重新连接",
             "演习向上滑"
         ],
-        "focus": "[color:red]放弃本次演习（共四次）[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共四次）</span>"
+        }
     },
     "演习开始挑战1": {
         "recognition": "TemplateMatch",

@@ -20,7 +20,9 @@
         "action": "StopTask",
         "on_error": [],
         "post_wait_freezes": 0,
-        "focus": "[color:red]任务出错[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">{name}</span>"
+        }
     },
     "重新连接": {
         "recognition": "OCR",
@@ -32,7 +34,9 @@
             48
         ],
         "action": "Click",
-        "focus": "[color:red]网络断开[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">网络断开</span>"
+        }
     },
     "退出": {
         "recognition": "TemplateMatch",
@@ -63,7 +67,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1选择预设阵型"
+        }
     },
     "节点1阵型锚点": {
         "recognition": {
@@ -85,7 +91,9 @@
             "节点1锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1选择替换阵型"
+        }
     },
     "节点1阵型锚点2": {
         "recognition": {
@@ -107,7 +115,9 @@
             "节点1锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1选择替换阵型"
+        }
     },
     "节点2阵型": {
         "recognition": {
@@ -126,7 +136,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2选择预设阵型"
+        }
     },
     "节点2阵型锚点": {
         "recognition": {
@@ -148,7 +160,9 @@
             "节点2锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2选择替换阵型"
+        }
     },
     "节点2阵型锚点2": {
         "recognition": {
@@ -170,7 +184,9 @@
             "节点2锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2选择替换阵型"
+        }
     },
     "节点3阵型": {
         "recognition": {
@@ -189,7 +205,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3选择预设阵型"
+        }
     },
     "节点3阵型锚点": {
         "recognition": {
@@ -211,7 +229,9 @@
             "节点3锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3选择替换阵型"
+        }
     },
     "节点3阵型锚点2": {
         "recognition": {
@@ -233,7 +253,9 @@
             "节点3锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3选择替换阵型"
+        }
     },
     "节点4阵型": {
         "recognition": {
@@ -252,7 +274,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4选择预设阵型"
+        }
     },
     "节点4阵型锚点": {
         "recognition": {
@@ -274,7 +298,9 @@
             "节点4锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4选择替换阵型"
+        }
     },
     "节点4阵型锚点2": {
         "recognition": {
@@ -296,7 +322,9 @@
             "节点4锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4选择替换阵型"
+        }
     },
     "节点5阵型": {
         "recognition": {
@@ -315,7 +343,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5选择预设阵型"
+        }
     },
     "节点5阵型锚点": {
         "recognition": {
@@ -337,7 +367,9 @@
             "节点5锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5选择替换阵型"
+        }
     },
     "节点5阵型锚点2": {
         "recognition": {
@@ -359,7 +391,9 @@
             "节点5锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5选择替换阵型"
+        }
     },
     "节点6阵型": {
         "recognition": {
@@ -378,7 +412,9 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点6选择预设阵型"
+        }
     },
     "节点6阵型锚点": {
         "recognition": {
@@ -400,7 +436,9 @@
             "节点6锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点6选择替换阵型"
+        }
     },
     "节点6阵型锚点2": {
         "recognition": {
@@ -422,7 +460,9 @@
             "节点6锚点阵型": ""
         },
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点6选择替换阵型"
+        }
     },
     "节点1识别阵型": {
         "recognition": {
@@ -615,7 +655,9 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
-        "focus": "选择预设阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "最终节点选择梯形阵"
+        }
     },
     "节点1追击": {
         "recognition": "TemplateMatch",
@@ -802,7 +844,9 @@
         "next": [
             "开始唤醒"
         ],
-        "focus": "[color:red]退出游戏重开[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">退出游戏重开</span>"
+        }
     },
     "战斗SL": {
         "recognition": {
@@ -878,7 +922,9 @@
             "无动作结束"
         ],
         "enabled": false,
-        "focus": "[color:red]已达500捞船上限[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">已达500捞船上限</span>"
+        }
     },
     "500船检测回港": {
         "recognition": {

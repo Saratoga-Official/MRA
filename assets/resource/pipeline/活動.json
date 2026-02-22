@@ -31,7 +31,9 @@
             "[JumpBack]活动困难模式",
             "关卡入口导航"
         ],
-        "focus": "活动入口导航"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "活动困难模式": {
         "recognition": "TemplateMatch",
@@ -45,7 +47,9 @@
         "action": "Click",
         "post_delay": 1000,
         "enabled": false,
-        "focus": "切换模式"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换模式"
+        }
     },
     "关卡入口导航": {
         "recognition": "TemplateMatch",
@@ -59,7 +63,9 @@
             "关卡入口导航",
             "[JumpBack]退出"
         ],
-        "focus": "关卡入口导航"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "点错了检测": {
         "recognition": "OCR",
@@ -334,7 +340,9 @@
             "无动作结束"
         ],
         "enabled": false,
-        "focus": "[color:red]检测到未启用自定义导航，结束任务[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到未启用自定义导航，结束任务</span>"
+        }
     },
     "活动未检测到出击准备按钮": {
         "next": [
@@ -344,6 +352,8 @@
             "无动作结束"
         ],
         "enabled": false,
-        "focus": "[color:red]未检测到出击准备按钮，无法继续任务[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">未检测到出击准备按钮，无法继续任务</span>"
+        }
     }
 }

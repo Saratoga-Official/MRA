@@ -139,7 +139,9 @@
         "on_error": [
             "无动作结束"
         ],
-        "focus": "[color:red]未识别到所选服务器，请检查当前大区是否为服务器对应大区[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">未识别到所选服务器，请检查当前大区是否为服务器对应大区</span>"
+        }
     },
     "进入游戏前": {
         "recognition": "TemplateMatch",

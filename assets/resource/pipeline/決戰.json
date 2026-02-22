@@ -273,7 +273,9 @@
             "[JumpBack]重新连接",
             "任务结束"
         ],
-        "focus": "决战次数已耗尽"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "决战沉默战士E6-1": {
         "recognition": "TemplateMatch",
@@ -288,7 +290,9 @@
             "[JumpBack]重新连接",
             "检查副官"
         ],
-        "focus": "进入决战沉默战士"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入决战沉默战士"
+        }
     },
     "检查副官": {
         "action": "Click",
@@ -303,7 +307,9 @@
             "紫貂",
             "副官翻页"
         ],
-        "focus": "检查副官"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "副官翻页": {
         "recognition": "TemplateMatch",
@@ -320,7 +326,9 @@
             "紫貂",
             "副官翻页"
         ],
-        "focus": "寻找副官"
+        "focus": {
+            "Node.Recognition.Succeeded": "寻找副官"
+        }
     },
     "紫貂": {
         "recognition": "OCR",
@@ -351,7 +359,9 @@
             "[JumpBack]重新连接",
             "进入沉默战士决战E6-1"
         ],
-        "focus": "副官替换"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "副官关闭": {
         "recognition": "TemplateMatch",
@@ -381,7 +391,9 @@
             "[JumpBack]重新连接",
             "检查副官1"
         ],
-        "focus": "进入决战沉默战士"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入决战沉默战士"
+        }
     },
     "检查副官1": {
         "action": "Click",
@@ -396,7 +408,9 @@
             "紫貂1",
             "副官翻页1"
         ],
-        "focus": "检查副官"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查副官"
+        }
     },
     "副官翻页1": {
         "recognition": "TemplateMatch",
@@ -413,7 +427,9 @@
             "紫貂1",
             "副官翻页1"
         ],
-        "focus": "寻找副官"
+        "focus": {
+            "Node.Recognition.Succeeded": "寻找副官"
+        }
     },
     "紫貂1": {
         "recognition": "OCR",
@@ -444,7 +460,9 @@
             "[JumpBack]重新连接",
             "决战沉默战士E6-22"
         ],
-        "focus": "副官替换"
+        "focus": {
+            "Node.Recognition.Succeeded": "副官替换"
+        }
     },
     "副官关闭1": {
         "recognition": "TemplateMatch",
@@ -482,7 +500,9 @@
             "决战检查编队",
             "决战解装"
         ],
-        "focus": "进入第一关"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入第一关"
+        }
     },
     "战备舰队获取": {
         "recognition": "OCR",
@@ -521,7 +541,9 @@
             "[JumpBack]重新连接",
             "上次选船确认"
         ],
-        "focus": "点击上次选船"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击上次选船"
+        }
     },
     "上次选船确认": {
         "recognition": "TemplateMatch",
@@ -532,7 +554,9 @@
             "选择前进点A1",
             "战备舰队获取"
         ],
-        "focus": "上次选船确认"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "选择前进点A1": {
         "recognition": "OCR",
@@ -548,7 +572,9 @@
             "[JumpBack]重新连接",
             "前进点确认A1"
         ],
-        "focus": "选择前进点"
+        "focus": {
+            "Node.Recognition.Succeeded": "选择前进点"
+        }
     },
     "前进点确认A1": {
         "recognition": "TemplateMatch",
@@ -559,7 +585,9 @@
             "检查开局舰船1",
             "战备舰队获取刷新"
         ],
-        "focus": "确认前进点"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认前进点"
+        }
     },
     "检查开局舰船1": {
         "recognition": "OCR",
@@ -579,7 +607,9 @@
             "战备舰队获取刷新",
             "放弃重开"
         ],
-        "focus": "检查到开局舰船1"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查到开局舰船1"
+        }
     },
     "检查开局舰船2": {
         "recognition": "OCR",
@@ -591,7 +621,9 @@
             "[JumpBack]重新连接",
             "初始确定"
         ],
-        "focus": "检查到开局舰船2"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查到开局舰船2"
+        }
     },
     "战备舰队获取刷新": {
         "recognition": "ColorMatch",
@@ -617,7 +649,9 @@
             "检查开局舰船1",
             "放弃重开"
         ],
-        "focus": "刷新初始"
+        "focus": {
+            "Node.Recognition.Succeeded": "刷新初始"
+        }
     },
     "放弃重开": {
         "action": "Click",
@@ -632,7 +666,9 @@
             "放弃确定",
             "放弃重开"
         ],
-        "focus": "开始SL开局"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始SL开局"
+        }
     },
     "放弃确定": {
         "recognition": "TemplateMatch",
@@ -669,7 +705,9 @@
             "[JumpBack]重新连接",
             "决战决策1"
         ],
-        "focus": "确定选择初始舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "确定选择初始舰船"
+        }
     },
     "哈巴库克技能": {
         "recognition": "TemplateMatch",
@@ -745,7 +783,9 @@
             "[JumpBack]决战检测经验将满",
             "[JumpBack]决战进入编队"
         ],
-        "focus": "战前决策"
+        "focus": {
+            "Node.Recognition.Succeeded": "战前决策"
+        }
     },
     "决战请选择前进点": {
         "recognition": "OCR",
@@ -777,13 +817,17 @@
             "[JumpBack]重新连接",
             "决战确认前进点"
         ],
-        "focus": "选择前进点"
+        "focus": {
+            "Node.Recognition.Succeeded": "选择前进点"
+        }
     },
     "决战确认前进点": {
         "recognition": "TemplateMatch",
         "template": "决战/前进点确认.png",
         "action": "Click",
-        "focus": "确认选择前进点"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认选择前进点"
+        }
     },
     "决战检测紫貂技能": {
         "recognition": "TemplateMatch",
@@ -816,7 +860,9 @@
             "[JumpBack]重新连接",
             "决战使用紫貂技能"
         ],
-        "focus": "检查到紫貂技能可用"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查到紫貂技能可用"
+        }
     },
     "决战使用紫貂技能": {
         "recognition": "TemplateMatch",
@@ -832,7 +878,9 @@
             "[JumpBack]重新连接",
             "使用紫貂技能后购买经验"
         ],
-        "focus": "使用紫貂技能"
+        "focus": {
+            "Node.Recognition.Succeeded": "使用紫貂技能"
+        }
     },
     "使用紫貂技能后购买经验": {
         "recognition": "OCR",
@@ -848,7 +896,9 @@
             "[JumpBack]重新连接",
             "使用紫貂技能后购买经验1"
         ],
-        "focus": "购买经验值"
+        "focus": {
+            "Node.Recognition.Succeeded": "购买经验值"
+        }
     },
     "使用紫貂技能后购买经验1": {
         "recognition": "OCR",
@@ -860,7 +910,9 @@
             108,
             39
         ],
-        "focus": "购买经验值"
+        "focus": {
+            "Node.Recognition.Succeeded": "购买经验值"
+        }
     },
     "决战检测经验将满": {
         "recognition": "OCR",
@@ -896,7 +948,9 @@
             "[JumpBack]重新连接",
             "决战购买经验值"
         ],
-        "focus": "检查到可购买经验值"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查到可购买经验值"
+        }
     },
     "决战购买经验值": {
         "recognition": "OCR",
@@ -908,13 +962,17 @@
             108,
             39
         ],
-        "focus": "购买经验值"
+        "focus": {
+            "Node.Recognition.Succeeded": "购买经验值"
+        }
     },
     "决战进入编队": {
         "recognition": "TemplateMatch",
         "template": "决战/决战编队.png",
         "action": "Click",
-        "focus": "结束战前决策，进入编队",
+        "focus": {
+            "Node.Recognition.Succeeded": "结束战前决策，进入编队"
+        },
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]决战进入编队等待",
@@ -956,7 +1014,9 @@
             "[JumpBack]重新连接",
             "决战添加舰船"
         ],
-        "focus": "切换自动补给"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换自动补给"
+        }
     },
     "决战添加舰船等待": {
         "recognition": "TemplateMatch",
@@ -974,7 +1034,9 @@
             "决战次级添加",
             "决战退出添加"
         ],
-        "focus": "检查添加舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查添加舰船"
+        }
     },
     "决战优先添加": {
         "recognition": "OCR",
@@ -1075,7 +1137,9 @@
             "决战快速修理"
         ],
         "connected": true,
-        "focus": "检测到大破舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到大破舰船"
+        }
     },
     "决战快速修理": {
         "recognition": "OCR",
@@ -1125,14 +1189,18 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战开始战斗": {
         "recognition": "TemplateMatch",
         "template": "战斗/开始战斗.png",
         "action": "Click",
         "post_wait_freezes": 0,
-        "focus": "点击开始战斗"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击开始战斗"
+        }
     },
     "决战阵型": {
         "recognition": "OCR",
@@ -1153,7 +1221,9 @@
             "决战点击继续",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战追击": {
         "recognition": "TemplateMatch",
@@ -1168,7 +1238,9 @@
             "决战追击点击"
         ],
         "post_wait_freezes": 0,
-        "focus": "检测是否追击"
+        "focus": {
+            "Node.Recognition.Succeeded": "检测是否追击"
+        }
     },
     "决战追击检查SS1": {
         "recognition": "OCR",
@@ -1192,7 +1264,9 @@
             "决战追击检查其他船5",
             "决战追击放弃"
         ],
-        "focus": "尝试检测潜艇"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇"
+        }
     },
     "决战追击检查SS2": {
         "recognition": "OCR",
@@ -1216,7 +1290,9 @@
             "决战追击检查其他船5",
             "决战追击放弃"
         ],
-        "focus": "尝试检测潜艇"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇"
+        }
     },
     "决战追击检查SS3": {
         "recognition": "OCR",
@@ -1240,7 +1316,9 @@
             "决战追击检查其他船5",
             "决战追击放弃"
         ],
-        "focus": "尝试检测潜艇"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇"
+        }
     },
     "决战追击检查SS4": {
         "recognition": "OCR",
@@ -1264,7 +1342,9 @@
             "决战追击检查其他船5",
             "决战追击放弃"
         ],
-        "focus": "尝试检测潜艇"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇"
+        }
     },
     "决战追击检查SS5": {
         "recognition": "OCR",
@@ -1288,7 +1368,9 @@
             "决战追击检查其他船5",
             "决战追击放弃"
         ],
-        "focus": "尝试检测潜艇"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇"
+        }
     },
     "决战追击检查其他船1": {
         "recognition": "OCR",
@@ -1309,7 +1391,9 @@
             "[JumpBack]重新连接",
             "决战追击点击"
         ],
-        "focus": "尝试检测潜艇外敌舰"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇外敌舰"
+        }
     },
     "决战追击检查其他船2": {
         "recognition": "OCR",
@@ -1330,7 +1414,9 @@
             "[JumpBack]重新连接",
             "决战追击点击"
         ],
-        "focus": "尝试检测潜艇外敌舰"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇外敌舰"
+        }
     },
     "决战追击检查其他船3": {
         "recognition": "OCR",
@@ -1351,7 +1437,9 @@
             "[JumpBack]重新连接",
             "决战追击点击"
         ],
-        "focus": "尝试检测潜艇外敌舰"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇外敌舰"
+        }
     },
     "决战追击检查其他船4": {
         "recognition": "OCR",
@@ -1372,7 +1460,9 @@
             "[JumpBack]重新连接",
             "决战追击点击"
         ],
-        "focus": "尝试检测潜艇外敌舰"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇外敌舰"
+        }
     },
     "决战追击检查其他船5": {
         "recognition": "OCR",
@@ -1393,21 +1483,27 @@
             "[JumpBack]重新连接",
             "决战追击点击"
         ],
-        "focus": "尝试检测潜艇外敌舰"
+        "focus": {
+            "Node.Recognition.Succeeded": "尝试检测潜艇外敌舰"
+        }
     },
     "决战追击点击": {
         "recognition": "TemplateMatch",
         "template": "战斗/追击.png",
         "action": "Click",
         "post_delay": 5000,
-        "focus": "允许追击"
+        "focus": {
+            "Node.Recognition.Succeeded": "允许追击"
+        }
     },
     "决战追击放弃": {
         "recognition": "TemplateMatch",
         "template": "战斗/放弃.png",
         "action": "Click",
         "post_delay": 5000,
-        "focus": "放弃追击"
+        "focus": {
+            "Node.Recognition.Succeeded": "放弃追击"
+        }
     },
     "决战点击继续": {
         "recognition": "OCR",
@@ -1423,7 +1519,9 @@
             "[JumpBack]重新连接",
             "决战再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续": {
         "action": {
@@ -1458,7 +1556,9 @@
             "[JumpBack]重新连接",
             "决战进入编队界面2"
         ],
-        "focus": "切换招募策略"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换招募策略"
+        }
     },
     "决战进入编队界面2": {
         "recognition": "OCR",
@@ -1492,7 +1592,9 @@
             "决战大破检测2",
             "决战开始出征2"
         ],
-        "focus": "切换自动补给"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换自动补给"
+        }
     },
     "决战大破检测2": {
         "recognition": "ColorMatch",
@@ -1517,7 +1619,9 @@
             "决战快速修理2"
         ],
         "connected": true,
-        "focus": "检测到大破舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到大破舰船"
+        }
     },
     "决战快速修理2": {
         "recognition": "OCR",
@@ -1567,7 +1671,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战阵型2": {
         "recognition": "OCR",
@@ -1588,7 +1694,9 @@
             "决战点击继续2",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战点击继续2": {
         "recognition": "OCR",
@@ -1604,7 +1712,9 @@
             "[JumpBack]重新连接",
             "决战再点继续2"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续2": {
         "action": {
@@ -1641,7 +1751,9 @@
         "on_error": [
             "决战确认通关2"
         ],
-        "focus": "战前决策"
+        "focus": {
+            "Node.Recognition.Succeeded": "战前决策"
+        }
     },
     "决战检测等级小于9": {
         "recognition": "OCR",
@@ -1679,7 +1791,9 @@
             "[JumpBack]决战检测等级小于9",
             "[JumpBack]决战进入编队"
         ],
-        "focus": "识别到BOSS点"
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到BOSS点"
+        }
     },
     "决战进入编队界面BOSS": {
         "recognition": "OCR",
@@ -1708,7 +1822,9 @@
             "决战次级添加BOSS",
             "决战退出添加BOSS"
         ],
-        "focus": "检查添加舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查添加舰船"
+        }
     },
     "决战优先添加BOSS": {
         "recognition": "OCR",
@@ -1824,7 +1940,9 @@
             "[JumpBack]重新连接",
             "决战异常报错退出"
         ],
-        "focus": "[color:red]检查舰船数小于5，无法执行后续策略[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检查舰船数小于5，无法执行后续策略</span>"
+        }
     },
     "决战异常报错退出": {
         "recognition": "TemplateMatch",
@@ -1914,7 +2032,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战快速修理BOSS2": {
         "recognition": "OCR",
@@ -1994,7 +2114,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战阵型BOSS": {
         "recognition": "OCR",
@@ -2015,7 +2137,9 @@
             "决战点击继续BOSS",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战阵型BOSS2": {
         "recognition": "OCR",
@@ -2037,7 +2161,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战点击继续BOSS": {
         "recognition": "OCR",
@@ -2053,7 +2179,9 @@
             "[JumpBack]重新连接",
             "决战再点继续BOSS"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续BOSS": {
         "action": {
@@ -2088,7 +2216,9 @@
             "[JumpBack]重新连接",
             "决战再点继续BOSS2"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续BOSS2": {
         "action": {
@@ -2123,7 +2253,9 @@
             "[JumpBack]重新连接",
             "决战点击确认通关"
         ],
-        "focus": "确认通关"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认通关"
+        }
     },
     "决战确认通关2": {
         "recognition": "OCR",
@@ -2139,7 +2271,9 @@
             "[JumpBack]重新连接",
             "决战点击确认通关2"
         ],
-        "focus": "确认通关"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认通关"
+        }
     },
     "决战点击确认通关": {
         "recognition": "OCR",
@@ -2225,7 +2359,9 @@
         "on_error": [
             "决战解装"
         ],
-        "focus": "进入第二关"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入第二关"
+        }
     },
     "决战沉默战士E6-22": {
         "recognition": "TemplateMatch",
@@ -2246,7 +2382,9 @@
             "决战决策3",
             "决战解装"
         ],
-        "focus": "进入第二关"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入第二关"
+        }
     },
     "决战前进点A1": {
         "recognition": "OCR",
@@ -2262,13 +2400,17 @@
             "[JumpBack]重新连接",
             "决战确认A1"
         ],
-        "focus": "选择前进点"
+        "focus": {
+            "Node.Recognition.Succeeded": "选择前进点"
+        }
     },
     "决战确认A1": {
         "recognition": "TemplateMatch",
         "template": "决战/前进点确认.png",
         "action": "Click",
-        "focus": "确认前进点"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认前进点"
+        }
     },
     "决战E6-2凹开局": {
         "recognition": "OCR",
@@ -2368,7 +2510,9 @@
         "on_error": [
             "决战确认通关3"
         ],
-        "focus": "战前决策"
+        "focus": {
+            "Node.Recognition.Succeeded": "战前决策"
+        }
     },
     "决战检测紫貂技能2": {
         "recognition": "TemplateMatch",
@@ -2400,7 +2544,9 @@
         ],
         "action": "Click",
         "target": "决战检测紫貂技能2",
-        "focus": "使用紫貂技能"
+        "focus": {
+            "Node.Recognition.Succeeded": "使用紫貂技能"
+        }
     },
     "决战检测等级": {
         "recognition": "OCR",
@@ -2455,7 +2601,9 @@
             "决战大破检测3",
             "决战开始出征3"
         ],
-        "focus": "切换自动补给"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换自动补给"
+        }
     },
     "决战添加舰船2": {
         "recognition": "TemplateMatch",
@@ -2466,7 +2614,9 @@
             "[JumpBack]决战添加舰船等待",
             "决战添加舰船3"
         ],
-        "focus": "检查添加舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检查添加舰船"
+        }
     },
     "决战添加舰船3": {
         "recognition": "OCR",
@@ -2527,7 +2677,9 @@
             "决战快速修理3"
         ],
         "connected": true,
-        "focus": "检测到大破舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到大破舰船"
+        }
     },
     "决战快速修理3": {
         "recognition": "OCR",
@@ -2577,7 +2729,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战阵型3": {
         "recognition": "OCR",
@@ -2598,7 +2752,9 @@
             "决战点击继续3",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战点击继续3": {
         "recognition": "OCR",
@@ -2614,7 +2770,9 @@
             "[JumpBack]重新连接",
             "决战再点继续3"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续3": {
         "action": {
@@ -2656,7 +2814,9 @@
             "[JumpBack]决战使用紫貂技能2",
             "[JumpBack]决战进入编队"
         ],
-        "focus": "识别到BOSS点"
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到BOSS点"
+        }
     },
     "决战使用紫貂技能2": {
         "recognition": "TemplateMatch",
@@ -2670,7 +2830,9 @@
             114
         ],
         "action": "Click",
-        "focus": "使用紫貂技能"
+        "focus": {
+            "Node.Recognition.Succeeded": "使用紫貂技能"
+        }
     },
     "决战进入编队界面BOSS2": {
         "recognition": "OCR",
@@ -2765,7 +2927,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战阵型BOSS3": {
         "recognition": "OCR",
@@ -2787,7 +2951,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战点击继续BOSS3": {
         "recognition": "OCR",
@@ -2803,7 +2969,9 @@
             "[JumpBack]重新连接",
             "决战再点继续BOSS3"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续BOSS3": {
         "action": {
@@ -2838,7 +3006,9 @@
             "[JumpBack]重新连接",
             "决战点击确认通关3"
         ],
-        "focus": "确认通关"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认通关"
+        }
     },
     "决战点击确认通关3": {
         "recognition": "OCR",
@@ -2900,7 +3070,9 @@
             "奇尔沙治",
             "副官翻页2"
         ],
-        "focus": "更换副官"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "副官翻页2": {
         "recognition": "TemplateMatch",
@@ -2917,7 +3089,9 @@
             "奇尔沙治",
             "副官翻页2"
         ],
-        "focus": "寻找副官"
+        "focus": {
+            "Node.Recognition.Succeeded": "寻找副官"
+        }
     },
     "奇尔沙治": {
         "recognition": "OCR",
@@ -2948,7 +3122,9 @@
             "[JumpBack]重新连接",
             "进入沉默战士决战E6-3"
         ],
-        "focus": "副官替换"
+        "focus": {
+            "Node.Recognition.Succeeded": "副官替换"
+        }
     },
     "副官关闭2": {
         "recognition": "TemplateMatch",
@@ -2982,7 +3158,9 @@
         "on_error": [
             "决战解装"
         ],
-        "focus": "进入第三关"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入第三关"
+        }
     },
     "决战决策4": {
         "recognition": "TemplateMatch",
@@ -2999,7 +3177,9 @@
         "on_error": [
             "决战确认通关4"
         ],
-        "focus": "战前决策"
+        "focus": {
+            "Node.Recognition.Succeeded": "战前决策"
+        }
     },
     "决战进入编队界面4": {
         "recognition": "OCR",
@@ -3033,7 +3213,9 @@
             "决战大破检测4",
             "决战开始出征4"
         ],
-        "focus": "切换自动补给"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换自动补给"
+        }
     },
     "决战大破检测4": {
         "recognition": "ColorMatch",
@@ -3058,7 +3240,9 @@
             "决战快速修理4"
         ],
         "connected": true,
-        "focus": "检测到大破舰船"
+        "focus": {
+            "Node.Recognition.Succeeded": "检测到大破舰船"
+        }
     },
     "决战快速修理4": {
         "recognition": "OCR",
@@ -3108,7 +3292,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战阵型4": {
         "recognition": "OCR",
@@ -3129,7 +3315,9 @@
             "决战点击继续4",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战点击继续4": {
         "recognition": "OCR",
@@ -3145,7 +3333,9 @@
             "[JumpBack]重新连接",
             "决战再点继续4"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续4": {
         "action": {
@@ -3188,7 +3378,9 @@
             "[JumpBack]决战使用奇尔沙治技能",
             "[JumpBack]决战进入编队"
         ],
-        "focus": "识别到BOSS点"
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到BOSS点"
+        }
     },
     "决战使用奇尔沙治技能": {
         "recognition": "TemplateMatch",
@@ -3296,7 +3488,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "决战阵型BOSS4": {
         "recognition": "OCR",
@@ -3318,7 +3512,9 @@
             "[JumpBack]决战开始战斗",
             "[JumpBack]决战追击"
         ],
-        "focus": "点击梯形阵"
+        "focus": {
+            "Node.Recognition.Succeeded": "点击梯形阵"
+        }
     },
     "决战点击继续BOSS4": {
         "recognition": "OCR",
@@ -3334,7 +3530,9 @@
             "[JumpBack]重新连接",
             "决战再点继续BOSS4"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "决战再点继续BOSS4": {
         "action": {
@@ -3369,7 +3567,9 @@
             "[JumpBack]重新连接",
             "决战点击确认通关4"
         ],
-        "focus": "确认通关"
+        "focus": {
+            "Node.Recognition.Succeeded": "确认通关"
+        }
     },
     "决战点击确认通关4": {
         "recognition": "OCR",
@@ -3430,7 +3630,9 @@
             "[JumpBack]重新连接",
             "决战船舱满退出"
         ],
-        "focus": "[color:red]船舱已满[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+        }
     },
     "决战船舱满退出": {
         "recognition": "TemplateMatch",

@@ -108,7 +108,9 @@
             "战斗修理检测中破",
             "战斗开始出征"
         ],
-        "focus": "进入关卡"
+        "focus": {
+            "Node.Recognition.Succeeded": "进入关卡"
+        }
     },
     "启用军阶buff": {
         "recognition": {
@@ -140,7 +142,9 @@
             "识别当前BUFF",
             "更换BUFF"
         ],
-        "focus": "选择军阶buff"
+        "focus": {
+            "Node.Recognition.Succeeded": "选择军阶buff"
+        }
     },
     "识别当前BUFF": {
         "recognition": {
@@ -303,7 +307,9 @@
             }
         },
         "inverse": true,
-        "focus": "切换编队"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换编队"
+        }
     },
     "战斗自动补给": {
         "recognition": {
@@ -324,7 +330,9 @@
             }
         },
         "inverse": true,
-        "focus": "切换自动补给"
+        "focus": {
+            "Node.Recognition.Succeeded": "切换自动补给"
+        }
     },
     "战斗检测无补给": {
         "recognition": {
@@ -476,7 +484,9 @@
             "战斗强制自动补给"
         ],
         "enabled": false,
-        "focus": "有舰船无补给，强制自动补给"
+        "focus": {
+            "Node.Recognition.Succeeded": "有舰船无补给，强制自动补给"
+        }
     },
     "战斗强制自动补给": {
         "recognition": {
@@ -523,7 +533,9 @@
         ],
         "post_wait_freezes": 0,
         "enabled": false,
-        "focus": "[color:red]检测到旗舰等级已满[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到旗舰等级已满</span>"
+        }
     },
     "战斗修理检测大破": {
         "recognition": {
@@ -553,7 +565,9 @@
             "[JumpBack]重新连接",
             "战斗快速修理"
         ],
-        "focus": "[color:red]检测到大破舰船[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破舰船</span>"
+        }
     },
     "战斗修理检测中破": {
         "recognition": {
@@ -583,7 +597,9 @@
             "[JumpBack]重新连接",
             "战斗快速修理"
         ],
-        "focus": "[color:red]检测到中破舰船[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到中破舰船</span>"
+        }
     },
     "战斗快速修理": {
         "recognition": {
@@ -690,7 +706,9 @@
             "战斗开始出征",
             "任务出错"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "战斗船舱满": {
         "recognition": {
@@ -710,7 +728,9 @@
             "战斗船舱满",
             "任务出错"
         ],
-        "focus": "[color:red]船舱已满[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+        }
     },
     "战斗退出": {
         "recognition": {
@@ -767,7 +787,9 @@
             "凹点位失败"
         ],
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1尝试凹点位"
+        }
     },
     "节点1检测概率": {
         "recognition": {
@@ -816,7 +838,9 @@
             "节点1凹点位2",
             "进入战斗节点1"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1凹点位成功"
+        }
     },
     "节点1凹点位2": {
         "post_wait_freezes": 0,
@@ -830,7 +854,9 @@
         ],
         "enabled": false,
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1尝试凹点位"
+        }
     },
     "节点1检测概率2": {
         "recognition": {
@@ -878,7 +904,9 @@
         "next": [
             "进入战斗节点1"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1凹点位成功"
+        }
     },
     "凹点位失败": {
         "post_wait_freezes": 0,
@@ -889,7 +917,9 @@
             "[JumpBack]点击加速",
             "[JumpBack]选择战况"
         ],
-        "focus": "凹点位失败"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "进入战斗节点1": {
         "recognition": {
@@ -933,7 +963,9 @@
             "节点1战术迂回检测",
             "节点1战斗开始"
         ],
-        "focus": "索敌成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点1远程打击": {
         "recognition": {
@@ -956,7 +988,9 @@
             "[JumpBack]重新连接",
             "节点1战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1执行远程打击"
+        }
     },
     "节点1战术迂回检测": {
         "recognition": {
@@ -1001,7 +1035,9 @@
             "节点1战术迂回成功",
             "节点1战术迂回失败"
         ],
-        "focus": "执行战术迂回"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1执行战术迂回"
+        }
     },
     "节点1迂回错误": {
         "post_wait_freezes": 0,
@@ -1009,7 +1045,9 @@
         "next": [
             "任务出错"
         ],
-        "focus": "[color:red]检测到节点2相关设置未设置，无法使用迂回[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点2相关设置未设置，无法使用迂回</span>"
+        }
     },
     "节点1战术迂回成功": {
         "recognition": {
@@ -1031,7 +1069,9 @@
             "节点2凹点位",
             "进入战斗节点2"
         ],
-        "focus": "战术迂回成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点1战术迂回失败": {
         "recognition": {
@@ -1059,7 +1099,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "[color:red]迂回失败[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点1迂回失败</span>"
+        }
     },
     "节点1识别目标舰种1": {
         "recognition": {
@@ -1081,7 +1123,9 @@
             "节点1战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1检测目标舰种"
+        }
     },
     "节点1识别目标舰种2": {
         "recognition": {
@@ -1103,7 +1147,9 @@
             "节点1战术迂回检测3",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1检测目标舰种"
+        }
     },
     "节点1远程打击2": {
         "recognition": {
@@ -1126,7 +1172,9 @@
             "[JumpBack]重新连接",
             "节点1战斗开始"
         ],
-        "focus": "节点1执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1执行远程打击"
+        }
     },
     "节点1战术迂回检测2": {
         "recognition": {
@@ -1170,7 +1218,9 @@
             "[JumpBack]重新连接",
             "节点1战斗开始"
         ],
-        "focus": "节点1执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1执行远程打击"
+        }
     },
     "节点1战术迂回检测3": {
         "recognition": {
@@ -1210,7 +1260,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "战斗开始"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点1点击继续": {
         "recognition": {
@@ -1232,7 +1284,9 @@
             "[JumpBack]重新连接",
             "节点1再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点1战斗结束"
+        }
     },
     "节点1再点继续": {
         "action": {
@@ -1292,7 +1346,9 @@
             "战斗回港",
             "任务出错"
         ],
-        "focus": "回港"
+        "focus": {
+            "Node.Recognition.Succeeded": "回港"
+        }
     },
     "战斗大破回港": {
         "recognition": {
@@ -1309,7 +1365,9 @@
             "无限战斗检测",
             "无限战斗提示"
         ],
-        "focus": "[color:red]强制回港[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">强制回港</span>"
+        }
     },
     "战斗大破检测": {
         "recognition": {
@@ -1322,7 +1380,9 @@
         "next": [
             "战斗回港"
         ],
-        "focus": "[color:red]检测到大破提醒[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破提醒</span>"
+        }
     },
     "节点1前进": {
         "recognition": {
@@ -1341,7 +1401,9 @@
             "节点2凹点位",
             "进入战斗节点2"
         ],
-        "focus": "前进"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点2凹点位": {
         "post_wait_freezes": 0,
@@ -1355,7 +1417,9 @@
             "凹点位失败"
         ],
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2尝试凹点位"
+        }
     },
     "节点2检测概率": {
         "recognition": {
@@ -1404,7 +1468,9 @@
             "节点2凹点位2",
             "进入战斗节点2"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2凹点位成功"
+        }
     },
     "节点2凹点位2": {
         "post_wait_freezes": 0,
@@ -1418,7 +1484,9 @@
         ],
         "enabled": false,
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2尝试凹点位"
+        }
     },
     "节点2检测概率2": {
         "recognition": {
@@ -1466,7 +1534,9 @@
         "next": [
             "进入战斗节点2"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2凹点位成功"
+        }
     },
     "进入战斗节点2": {
         "post_wait_freezes": 0,
@@ -1503,7 +1573,9 @@
             "节点2战术迂回检测",
             "节点2战斗开始"
         ],
-        "focus": "索敌成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点2远程打击": {
         "recognition": {
@@ -1526,7 +1598,9 @@
             "[JumpBack]重新连接",
             "节点2战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2执行远程打击"
+        }
     },
     "节点2战术迂回检测": {
         "recognition": {
@@ -1571,7 +1645,9 @@
             "节点2战术迂回成功",
             "节点2战术迂回失败"
         ],
-        "focus": "执行战术迂回"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2执行战术迂回"
+        }
     },
     "节点2迂回错误": {
         "post_wait_freezes": 0,
@@ -1579,7 +1655,9 @@
         "next": [
             "任务出错"
         ],
-        "focus": "[color:red]检测到节点3相关设置未设置，无法使用迂回[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点3相关设置未设置，无法使用迂回</span>"
+        }
     },
     "节点2战术迂回成功": {
         "recognition": {
@@ -1601,7 +1679,9 @@
             "节点3凹点位",
             "进入战斗节点3"
         ],
-        "focus": "战术迂回成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点2战术迂回失败": {
         "recognition": {
@@ -1629,7 +1709,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "[color:red]迂回失败[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点2迂回失败</span>"
+        }
     },
     "节点2识别目标舰种1": {
         "recognition": {
@@ -1651,7 +1733,9 @@
             "节点2战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2检测目标舰种"
+        }
     },
     "节点2识别目标舰种2": {
         "recognition": {
@@ -1673,7 +1757,9 @@
             "节点2战术迂回检测3",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2检测目标舰种"
+        }
     },
     "节点2远程打击2": {
         "recognition": {
@@ -1696,7 +1782,9 @@
             "[JumpBack]重新连接",
             "节点2战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2执行远程打击"
+        }
     },
     "节点2战术迂回检测2": {
         "recognition": {
@@ -1740,7 +1828,9 @@
             "[JumpBack]重新连接",
             "节点2战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2执行远程打击"
+        }
     },
     "节点2战术迂回检测3": {
         "recognition": {
@@ -1780,7 +1870,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "战斗开始"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点2点击继续": {
         "recognition": {
@@ -1802,7 +1894,9 @@
             "[JumpBack]重新连接",
             "节点2再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点2战斗结束"
+        }
     },
     "节点2再点继续": {
         "action": {
@@ -1861,7 +1955,9 @@
             "节点3凹点位",
             "进入战斗节点3"
         ],
-        "focus": "前进"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点3凹点位": {
         "post_wait_freezes": 0,
@@ -1875,7 +1971,9 @@
             "凹点位失败"
         ],
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3尝试凹点位"
+        }
     },
     "节点3检测概率": {
         "recognition": {
@@ -1924,7 +2022,9 @@
             "节点3凹点位2",
             "进入战斗节点3"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3凹点位成功"
+        }
     },
     "节点3凹点位2": {
         "post_wait_freezes": 0,
@@ -1938,7 +2038,9 @@
         ],
         "enabled": false,
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3尝试凹点位"
+        }
     },
     "节点3检测概率2": {
         "recognition": {
@@ -1986,7 +2088,9 @@
         "next": [
             "进入战斗节点3"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3凹点位成功"
+        }
     },
     "进入战斗节点3": {
         "post_wait_freezes": 0,
@@ -2023,7 +2127,9 @@
             "节点3战术迂回检测",
             "节点3战斗开始"
         ],
-        "focus": "索敌成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点3远程打击": {
         "recognition": {
@@ -2046,7 +2152,9 @@
             "[JumpBack]重新连接",
             "节点3战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3执行远程打击"
+        }
     },
     "节点3战术迂回检测": {
         "recognition": {
@@ -2091,7 +2199,9 @@
             "节点3战术迂回成功",
             "节点3战术迂回失败"
         ],
-        "focus": "执行战术迂回"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3执行战术迂回"
+        }
     },
     "节点3迂回错误": {
         "post_wait_freezes": 0,
@@ -2099,7 +2209,9 @@
         "next": [
             "任务出错"
         ],
-        "focus": "[color:red]检测到节点4相关设置未设置，无法使用迂回[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点4相关设置未设置，无法使用迂回</span>"
+        }
     },
     "节点3战术迂回成功": {
         "recognition": {
@@ -2121,7 +2233,9 @@
             "节点4凹点位",
             "进入战斗节点4"
         ],
-        "focus": "战术迂回成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点3战术迂回失败": {
         "recognition": {
@@ -2149,7 +2263,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "[color:red]迂回失败[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点3迂回失败</span>"
+        }
     },
     "节点3识别目标舰种1": {
         "recognition": {
@@ -2171,7 +2287,9 @@
             "节点3战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3检测目标舰种"
+        }
     },
     "节点3识别目标舰种2": {
         "recognition": {
@@ -2193,7 +2311,9 @@
             "节点3战术迂回检测3",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3检测目标舰种"
+        }
     },
     "节点3远程打击2": {
         "recognition": {
@@ -2216,7 +2336,9 @@
             "[JumpBack]重新连接",
             "节点3战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3执行远程打击"
+        }
     },
     "节点3战术迂回检测2": {
         "recognition": {
@@ -2260,7 +2382,9 @@
             "[JumpBack]重新连接",
             "节点3战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3执行远程打击"
+        }
     },
     "节点3战术迂回检测3": {
         "recognition": {
@@ -2300,7 +2424,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "战斗开始"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点3点击继续": {
         "recognition": {
@@ -2322,7 +2448,9 @@
             "[JumpBack]重新连接",
             "节点3再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点3战斗结束"
+        }
     },
     "节点3再点继续": {
         "action": {
@@ -2381,7 +2509,9 @@
             "节点4凹点位",
             "进入战斗节点4"
         ],
-        "focus": "前进"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点4凹点位": {
         "post_wait_freezes": 0,
@@ -2395,7 +2525,9 @@
             "凹点位失败"
         ],
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4尝试凹点位"
+        }
     },
     "节点4检测概率": {
         "recognition": {
@@ -2444,7 +2576,9 @@
             "节点4凹点位2",
             "进入战斗节点4"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4凹点位成功"
+        }
     },
     "节点4凹点位2": {
         "post_wait_freezes": 0,
@@ -2458,7 +2592,9 @@
         ],
         "enabled": false,
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4尝试凹点位"
+        }
     },
     "节点4检测概率2": {
         "recognition": {
@@ -2506,7 +2642,9 @@
         "next": [
             "进入战斗节点4"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4凹点位成功"
+        }
     },
     "进入战斗节点4": {
         "post_wait_freezes": 0,
@@ -2543,7 +2681,9 @@
             "节点4战术迂回检测",
             "节点4战斗开始"
         ],
-        "focus": "索敌成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点4远程打击": {
         "recognition": {
@@ -2566,7 +2706,9 @@
             "[JumpBack]重新连接",
             "节点4战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4执行远程打击"
+        }
     },
     "节点4战术迂回检测": {
         "recognition": {
@@ -2611,7 +2753,9 @@
             "节点4战术迂回成功",
             "节点4战术迂回失败"
         ],
-        "focus": "执行战术迂回"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4执行战术迂回"
+        }
     },
     "节点4迂回错误": {
         "post_wait_freezes": 0,
@@ -2619,7 +2763,9 @@
         "next": [
             "任务出错"
         ],
-        "focus": "[color:red]检测到节点5相关设置未设置，无法使用迂回[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点5相关设置未设置，无法使用迂回</span>"
+        }
     },
     "节点4战术迂回成功": {
         "recognition": {
@@ -2641,7 +2787,9 @@
             "节点5凹点位",
             "进入战斗节点5"
         ],
-        "focus": "战术迂回成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点4战术迂回失败": {
         "recognition": {
@@ -2669,7 +2817,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "[color:red]迂回失败[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点4迂回失败</span>"
+        }
     },
     "节点4识别目标舰种1": {
         "recognition": {
@@ -2691,7 +2841,9 @@
             "节点4战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4检测目标舰种"
+        }
     },
     "节点4识别目标舰种2": {
         "recognition": {
@@ -2713,7 +2865,9 @@
             "节点4战术迂回检测3",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4检测目标舰种"
+        }
     },
     "节点4远程打击2": {
         "recognition": {
@@ -2736,7 +2890,9 @@
             "[JumpBack]重新连接",
             "节点4战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4执行远程打击"
+        }
     },
     "节点4战术迂回检测2": {
         "recognition": {
@@ -2780,7 +2936,9 @@
             "[JumpBack]重新连接",
             "节点4战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4执行远程打击"
+        }
     },
     "节点4战术迂回检测3": {
         "recognition": {
@@ -2820,7 +2978,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "战斗开始"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点4点击继续": {
         "recognition": {
@@ -2842,7 +3002,9 @@
             "[JumpBack]重新连接",
             "节点4再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点4战斗结束"
+        }
     },
     "节点4再点继续": {
         "action": {
@@ -2901,7 +3063,9 @@
             "节点5凹点位",
             "进入战斗节点5"
         ],
-        "focus": "前进"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点5凹点位": {
         "post_wait_freezes": 0,
@@ -2915,7 +3079,9 @@
             "凹点位失败"
         ],
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5尝试凹点位"
+        }
     },
     "节点5检测概率": {
         "recognition": {
@@ -2964,7 +3130,9 @@
             "节点5凹点位2",
             "进入战斗节点5"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5凹点位成功"
+        }
     },
     "节点5凹点位2": {
         "post_wait_freezes": 0,
@@ -2978,7 +3146,9 @@
         ],
         "enabled": false,
         "timeout": 30000,
-        "focus": "尝试凹点位"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5尝试凹点位"
+        }
     },
     "节点5检测概率2": {
         "recognition": {
@@ -3026,7 +3196,9 @@
         "next": [
             "进入战斗节点5"
         ],
-        "focus": "凹点位成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5凹点位成功"
+        }
     },
     "进入战斗节点5": {
         "post_wait_freezes": 0,
@@ -3063,7 +3235,9 @@
             "节点5战术迂回检测",
             "节点5战斗开始"
         ],
-        "focus": "索敌成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点5远程打击": {
         "recognition": {
@@ -3086,7 +3260,9 @@
             "[JumpBack]重新连接",
             "节点5战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5执行远程打击"
+        }
     },
     "节点5战术迂回检测": {
         "recognition": {
@@ -3131,7 +3307,9 @@
             "节点5战术迂回成功",
             "节点5战术迂回失败"
         ],
-        "focus": "执行战术迂回"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5执行战术迂回"
+        }
     },
     "节点5迂回错误": {
         "post_wait_freezes": 0,
@@ -3139,7 +3317,9 @@
         "next": [
             "任务出错"
         ],
-        "focus": "[color:red]检测到节点6相关设置未设置，无法使用迂回[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点6相关设置未设置，无法使用迂回</span>"
+        }
     },
     "节点5战术迂回成功": {
         "recognition": {
@@ -3160,7 +3340,9 @@
         "next": [
             "进入战斗节点6"
         ],
-        "focus": "战术迂回成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点5战术迂回失败": {
         "recognition": {
@@ -3188,7 +3370,9 @@
             "[JumpBack]远程打击确认",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "[color:red]迂回失败[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点5迂回失败</span>"
+        }
     },
     "节点5识别目标舰种1": {
         "recognition": {
@@ -3210,7 +3394,9 @@
             "节点5战术迂回检测2",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5检测目标舰种"
+        }
     },
     "节点5识别目标舰种2": {
         "recognition": {
@@ -3232,7 +3418,9 @@
             "节点5战术迂回检测3",
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5检测目标舰种"
+        }
     },
     "节点5远程打击2": {
         "recognition": {
@@ -3255,7 +3443,9 @@
             "[JumpBack]重新连接",
             "节点5战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5执行远程打击"
+        }
     },
     "节点5战术迂回检测2": {
         "recognition": {
@@ -3299,7 +3489,9 @@
             "[JumpBack]重新连接",
             "节点5战斗开始"
         ],
-        "focus": "执行远程打击"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5执行远程打击"
+        }
     },
     "节点5战术迂回检测3": {
         "recognition": {
@@ -3338,7 +3530,9 @@
             "[JumpBack]节点5追击",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "战斗开始"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点5点击继续": {
         "recognition": {
@@ -3360,7 +3554,9 @@
             "[JumpBack]重新连接",
             "节点5再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点5战斗结束"
+        }
     },
     "节点5再点继续": {
         "action": {
@@ -3418,7 +3614,9 @@
             "[JumpBack]重新连接",
             "进入战斗节点6"
         ],
-        "focus": "前进"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "进入战斗节点6": {
         "post_wait_freezes": 0,
@@ -3453,7 +3651,9 @@
             "节点6识别目标舰种2",
             "节点6战斗开始"
         ],
-        "focus": "索敌成功"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点6识别目标舰种1": {
         "recognition": {
@@ -3473,7 +3673,9 @@
         "next": [
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点6检测目标舰种"
+        }
     },
     "节点6识别目标舰种2": {
         "recognition": {
@@ -3493,7 +3695,9 @@
         "next": [
             "战斗SL"
         ],
-        "focus": "检测目标舰种"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点6检测目标舰种"
+        }
     },
     "节点6战斗开始": {
         "action": {
@@ -3511,7 +3715,9 @@
             "[JumpBack]节点6追击",
             "[JumpBack]处于战斗中"
         ],
-        "focus": "战斗开始"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "节点6点击继续": {
         "recognition": {
@@ -3533,7 +3739,9 @@
             "[JumpBack]重新连接",
             "节点6再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "节点6战斗结束"
+        }
     },
     "节点6再点继续": {
         "action": {

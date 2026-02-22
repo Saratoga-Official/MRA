@@ -4,7 +4,7 @@
             "name": "自动战役",
             "entry": "开始自动战役",
             "default_check": false,
-            "description": "[color:red]①需提前编好队，再开始[/color]",
+            "description": "<span style=\"color: red;\">①需提前编好队，再开始</span>",
             "option": [
                 "战役困难难度",
                 "战役选择关卡",

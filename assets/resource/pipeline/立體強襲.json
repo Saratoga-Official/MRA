@@ -17,7 +17,9 @@
             "[JumpBack]重新连接",
             "立体强袭不处理"
         ],
-        "focus": "紧急情况"
+        "focus": {
+            "Node.Recognition.Succeeded": "紧急情况"
+        }
     },
     "立体强袭不处理": {
         "recognition": "TemplateMatch",
@@ -32,7 +34,9 @@
             "立体强袭修理检测中破",
             "立体强袭开始出征"
         ],
-        "focus": "不处理"
+        "focus": {
+            "Node.Recognition.Succeeded": "不处理"
+        }
     },
     "立体强袭检测等级": {
         "recognition": "OCR",
@@ -48,7 +52,9 @@
             "退出立体强袭"
         ],
         "enabled": false,
-        "focus": "[color:red]检测到旗舰等级已满[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到旗舰等级已满</span>"
+        }
     },
     "立体强袭自动补给": {
         "recognition": "TemplateMatch",
@@ -93,7 +99,9 @@
             "立体强袭快速修理"
         ],
         "connected": true,
-        "focus": "[color:red]检测到大破舰船[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破舰船</span>"
+        }
     },
     "立体强袭修理检测中破": {
         "recognition": "ColorMatch",
@@ -118,7 +126,9 @@
             "立体强袭快速修理"
         ],
         "connected": true,
-        "focus": "[color:red]检测到中破舰船[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到中破舰船</span>"
+        }
     },
     "立体强袭快速修理": {
         "recognition": "OCR",
@@ -193,7 +203,9 @@
             "[JumpBack]重新连接",
             "立体强袭前进"
         ],
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "立体强袭前进": {
         "recognition": "TemplateMatch",
@@ -205,7 +217,9 @@
             "立体强袭开始战斗",
             "立体强袭阵型"
         ],
-        "focus": "前进"
+        "focus": {
+            "Node.Recognition.Succeeded": "前进"
+        }
     },
     "退出立体强袭": {
         "recognition": "TemplateMatch",
@@ -227,7 +241,9 @@
             "[JumpBack]重新连接",
             "立体强袭阵型"
         ],
-        "focus": "开始战斗"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始战斗"
+        }
     },
     "立体强袭阵型": {
         "recognition": "OCR",
@@ -247,7 +263,9 @@
             "立体强袭追击",
             "立体强袭点击继续"
         ],
-        "focus": "选择阵型"
+        "focus": {
+            "Node.Recognition.Succeeded": "选择阵型"
+        }
     },
     "立体强袭追击": {
         "recognition": "TemplateMatch",
@@ -259,7 +277,9 @@
             "[JumpBack]重新连接",
             "立体强袭点击继续"
         ],
-        "focus": "追击"
+        "focus": {
+            "Node.Recognition.Succeeded": "追击"
+        }
     },
     "立体强袭点击继续": {
         "recognition": "TemplateMatch",
@@ -271,7 +291,9 @@
             "立体强袭退出2",
             "立体强袭再点继续"
         ],
-        "focus": "战斗结束"
+        "focus": {
+            "Node.Recognition.Succeeded": "战斗结束"
+        }
     },
     "立体强袭再点继续": {
         "action": {
@@ -312,7 +334,9 @@
             "[JumpBack]退出",
             "无动作结束"
         ],
-        "focus": "退出"
+        "focus": {
+            "Node.Recognition.Succeeded": "退出"
+        }
     },
     "立体强袭无限战斗": {
         "post_wait_freezes": 0,

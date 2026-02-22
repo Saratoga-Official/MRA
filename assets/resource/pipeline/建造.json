@@ -111,7 +111,9 @@
             "建造解装",
             "建造获得舰船"
         ],
-        "focus": "点击建造完成"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "建造解装": {
         "recognition": "OCR",
@@ -127,7 +129,9 @@
             "[JumpBack]重新连接",
             "建造结束退出"
         ],
-        "focus": "[color:red]船舱已满[/color]",
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+        },
         "enabled": false
     },
     "建造结束退出": {
@@ -195,7 +199,9 @@
             "[JumpBack]重新连接",
             "建造调整公式"
         ],
-        "focus": "点击开始建造"
+        "focus": {
+            "Node.Recognition.Succeeded": "{name}"
+        }
     },
     "点击快速建造": {
         "recognition": "OCR",
@@ -212,7 +218,9 @@
             "点击建造完成"
         ],
         "enabled": false,
-        "focus": "使用快速建造工具"
+        "focus": {
+            "Node.Recognition.Succeeded": "使用快速建造工具"
+        }
     },
     "建造调整公式": {
         "recognition": "OCR",
@@ -682,7 +690,9 @@
             "批量建造MAX"
         ],
         "enabled": false,
-        "focus": "开始批量建造"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始批量建造"
+        }
     },
     "批量建造MAX": {
         "recognition": "OCR",
@@ -766,6 +776,8 @@
             "[JumpBack]退出",
             "无动作结束"
         ],
-        "focus": "开始建造"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始建造"
+        }
     }
 }

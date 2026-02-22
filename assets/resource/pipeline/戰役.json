@@ -127,7 +127,9 @@
             "战役快速修理"
         ],
         "connected": true,
-        "focus": "[color:red]检测到大破舰船[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破舰船</span>"
+        }
     },
     "战役修理检测中破": {
         "recognition": "ColorMatch",
@@ -152,7 +154,9 @@
             "战役快速修理"
         ],
         "connected": true,
-        "focus": "[color:red]检测到中破舰船[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到中破舰船</span>"
+        }
     },
     "战役快速修理": {
         "recognition": "OCR",
@@ -231,7 +235,9 @@
             "[JumpBack]节点1追击"
         ],
         "timeout": 60000,
-        "focus": "开始出征"
+        "focus": {
+            "Node.Recognition.Succeeded": "开始出征"
+        }
     },
     "战役开始战斗": {
         "recognition": "TemplateMatch",
@@ -317,7 +323,9 @@
             "[JumpBack]重新连接",
             "任务结束"
         ],
-        "focus": "[color:red]战役次数已达上限[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">战役次数已达上限</span>"
+        }
     },
     "退出战役": {
         "recognition": "TemplateMatch",

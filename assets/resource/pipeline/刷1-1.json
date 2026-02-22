@@ -364,7 +364,9 @@
             "[JumpBack]重新连接",
             "狗粮不满足出征要求"
         ],
-        "focus": "[color:red]新获得舰船不满足出征要求，结束任务[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">新获得舰船不满足出征要求，结束任务</span>"
+        }
     },
     "换人大破检测2": {
         "recognition": "ColorMatch",
@@ -389,7 +391,9 @@
             "[JumpBack]重新连接",
             "狗粮不满足出征要求"
         ],
-        "focus": "[color:red]新获得舰船不满足出征要求，结束任务[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">新获得舰船不满足出征要求，结束任务</span>"
+        }
     },
     "狗粮不满足出征要求": {
         "recognition": "TemplateMatch",
@@ -425,7 +429,9 @@
             "[JumpBack]重新连接",
             "退出狗粮"
         ],
-        "focus": "[color:red]船舱已满[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+        }
     },
     "退出狗粮": {
         "recognition": "TemplateMatch",
@@ -550,6 +556,8 @@
             "[JumpBack]重新连接",
             "任务结束"
         ],
-        "focus": "[color:red]今日捞船已达上限[/color]"
+        "focus": {
+            "Node.Recognition.Succeeded": "<span style=\"color: red;\">今日捞船已达上限</span>"
+        }
     }
 }
