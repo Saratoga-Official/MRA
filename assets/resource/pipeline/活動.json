@@ -15,7 +15,7 @@
     },
     "活动入口导航": {
         "recognition": "TemplateMatch",
-        "template": "活动导航/活动入口.png",
+        "template": "活动导航/{活动入口模板名称}.png",
         "action": "Click",
         "roi": [
             1083,
@@ -53,7 +53,7 @@
     },
     "关卡入口导航": {
         "recognition": "TemplateMatch",
-        "template": "活动导航/关卡入口.png",
+        "template": "活动导航/{关卡入口模板名称}.png",
         "action": "Click",
         "post_delay": 1000,
         "next": [

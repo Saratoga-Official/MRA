@@ -166,7 +166,10 @@
                 },
                 {
                     "name": "模板",
-                    "pipeline_override": {}
+                    "pipeline_override": {},
+                    "option": [
+                        "活动入口模板"
+                    ]
                 }
             ]
         },
@@ -187,6 +190,40 @@
                     "expected": [
                         "{活动入口识别名称}"
                     ]
+                }
+            }
+        },
+        "活动入口模板": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "活动入口模板名称",
+                    "default": "{活动入口模板名称}",
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
+                }
+            ],
+            "pipeline_override": {
+                "活动入口导航": {
+                    "template": "活动导航/{活动入口模板名称}.png"
+                }
+            }
+        },
+        "关卡入口模板": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "关卡入口模板名称",
+                    "default": "{关卡入口模板名称}",
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
+                }
+            ],
+            "pipeline_override": {
+                "关卡入口导航": {
+                    "template": "活动导航/{关卡入口模板名称}.png"
                 }
             }
         },
@@ -226,7 +263,10 @@
                 },
                 {
                     "name": "模板",
-                    "pipeline_override": {}
+                    "pipeline_override": {},
+                    "option": [
+                        "关卡入口模板"
+                    ]
                 }
             ]
         },
