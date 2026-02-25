@@ -64,7 +64,7 @@ def install_resource():
 
     interface["version"] = version
     interface["title"] = f"MRA {version} | 舰R小助手"
-    # interface["mirrorchyan_rid"] = "MRA-MXU"
+    interface["mirrorchyan_rid"] = "MaaJR-MXU"
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         json.dump(interface, f, ensure_ascii=False, indent=4)
