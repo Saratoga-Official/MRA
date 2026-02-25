@@ -3,15 +3,19 @@ name: mirrorchyan
 on:
   workflow_dispatch:
     inputs:
-        tag:
-            default: ''
-            required: false
+      tag:
+        default: ''
+        required: false
 #   release:
 #     types: [released]
 
 jobs:
-  mirrorchyan:
-    runs-on: macos-latest
+  mirrorchyan_mfa:
+    runs-on: ubuntu-latest
+    # Mirror酱为第三方分发服务，新项目默认关闭
+    # 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
+    # https://mirrorchyan.com/
+    if: ${{ github.repository_owner == 'Saratoga-Official' }}
     strategy:
       fail-fast: false
       matrix:
@@ -22,8 +26,36 @@ jobs:
         uses: MirrorChyan/uploading-action@v1
         with:
           filetype: latest-release
-          filename: ${{ format('MRA-{0}-{1}-*', matrix.os, matrix.arch) }}
+          filename: ${{ format('MRA-{0}-{1}-MFAA*', matrix.os, matrix.arch) }}
           mirrorchyan_rid: MaaJR
+          tag: ${{ inputs.tag }}
+
+          owner: Saratoga-Official
+          repo: MRA
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+          os: ${{ matrix.os }}
+          arch: ${{ matrix.arch }}
+
+  mirrorchyan_mxu:
+    runs-on: ubuntu-latest
+    # Mirror酱为第三方分发服务，新项目默认关闭
+    # 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
+    # https://mirrorchyan.com/
+    if: ${{ github.repository_owner == 'Saratoga-Official' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [win, macos, linux]
+        arch: [aarch64, x86_64]
+    steps:
+      - id: uploading
+        uses: MirrorChyan/uploading-action@v1
+        if: ${{ matrix.os != 'linux' || matrix.arch != 'aarch64' }}
+        with:
+          filetype: latest-release
+          filename: ${{ format('MRA-{0}-{1}-MXU*', matrix.os, matrix.arch) }}
+          mirrorchyan_rid: MaaJR-MXU
           tag: ${{ inputs.tag }}
 
           owner: Saratoga-Official
