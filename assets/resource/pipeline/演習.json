@@ -307,7 +307,13 @@
             "演习向上滑"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共一次）</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">放弃本次演习（共一次）</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "演习刷新失败1": {
@@ -360,7 +366,13 @@
             "演习向上滑"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共两次）</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">放弃本次演习（共两次）</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "演习刷新失败2": {
@@ -413,7 +425,13 @@
             "演习向上滑"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共三次）</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">放弃本次演习（共三次）</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "演习刷新失败3": {
@@ -465,7 +483,13 @@
             "演习向上滑"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">放弃本次演习（共四次）</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">放弃本次演习（共四次）</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "演习开始挑战1": {

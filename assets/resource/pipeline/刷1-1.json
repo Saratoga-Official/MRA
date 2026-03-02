@@ -365,7 +365,14 @@
             "狗粮不满足出征要求"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">新获得舰船不满足出征要求，结束任务</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">新获得舰船不满足出征要求，结束任务</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "dialog"
+                ]
+            }
         }
     },
     "换人大破检测2": {
@@ -392,7 +399,14 @@
             "狗粮不满足出征要求"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">新获得舰船不满足出征要求，结束任务</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">新获得舰船不满足出征要求，结束任务</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "dialog"
+                ]
+            }
         }
     },
     "狗粮不满足出征要求": {
@@ -430,7 +444,14 @@
             "退出狗粮"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">船舱已满</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "退出狗粮": {
@@ -557,7 +578,14 @@
             "任务结束"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">今日捞船已达上限</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">今日捞船已达上限</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     }
 }

@@ -53,7 +53,14 @@
         ],
         "enabled": false,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到旗舰等级已满</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到旗舰等级已满</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "立体强袭自动补给": {
@@ -100,7 +107,13 @@
         ],
         "connected": true,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破舰船</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到大破舰船</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "立体强袭修理检测中破": {
@@ -127,7 +140,13 @@
         ],
         "connected": true,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到中破舰船</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到中破舰船</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "立体强袭快速修理": {

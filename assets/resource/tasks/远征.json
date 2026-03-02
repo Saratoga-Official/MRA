@@ -6,7 +6,8 @@
             "default_check": false,
             "description": "开启远征等待模式会在程序关闭前无限等待收发远征<br>可结合定时执行功能实现定点收远征",
             "option": [
-                "远征等待模式"
+                "远征等待模式",
+                "强制启动远征"
             ]
         }
     ],
@@ -16,10 +17,7 @@
             "cases": [
                 {
                     "name": "No",
-                    "pipeline_override": {},
-                    "option": [
-                        "强制启动远征"
-                    ]
+                    "pipeline_override": {}
                 },
                 {
                     "name": "Yes",

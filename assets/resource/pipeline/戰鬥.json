@@ -14,6 +14,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
+            "500船检测",
             "[JumpBack]重新连接",
             "战斗次数",
             "[JumpBack]活动退出",
@@ -43,6 +44,7 @@
         },
         "post_wait_freezes": 500,
         "next": [
+            "500船检测",
             "[JumpBack]重新连接",
             "战斗次数",
             "[JumpBack]活动退出",
@@ -54,25 +56,75 @@
     "战斗次数": {
         "post_wait_freezes": 0,
         "next": [
-            "无限战斗检测",
-            "无限战斗提示"
-        ]
-    },
-    "无限战斗检测": {
-        "post_wait_freezes": 0,
-        "next": [
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
             "检查远征",
             "开始导航"
         ]
     },
-    "无限战斗提示": {
+    "无限战斗捞船检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "^500/500$",
+                "roi": [
+                    1153,
+                    19,
+                    89,
+                    30
+                ]
+            }
+        },
+        "enabled": false,
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]领取奖励",
             "[JumpBack]活动退出",
             "[JumpBack]退出",
             "无动作结束"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">已达500捞船上限</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
+        }
+    },
+    "无限战斗胖次检测": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "^50/50$",
+                "roi": [
+                    1021,
+                    19,
+                    80,
+                    29
+                ]
+            }
+        },
+        "enabled": false,
+        "post_wait_freezes": 0,
+        "next": [
+            "[JumpBack]领取奖励",
+            "[JumpBack]活动退出",
+            "[JumpBack]退出",
+            "无动作结束"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">已达50战利品上限</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
+        }
     },
     "进入关卡": {
         "recognition": {
@@ -540,7 +592,14 @@
         "post_wait_freezes": 0,
         "enabled": false,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到旗舰等级已满</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到旗舰等级已满</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "战斗修理检测大破": {
@@ -572,7 +631,13 @@
             "战斗快速修理"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破舰船</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到大破舰船</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "战斗修理检测中破": {
@@ -604,7 +669,13 @@
             "战斗快速修理"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到中破舰船</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到中破舰船</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "战斗快速修理": {
@@ -735,7 +806,14 @@
             "任务出错"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">船舱已满</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "战斗退出": {
@@ -1052,7 +1130,14 @@
             "任务出错"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点2相关设置未设置，无法使用迂回</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到节点2相关设置未设置，无法使用迂回</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "节点1战术迂回成功": {
@@ -1106,7 +1191,13 @@
             "[JumpBack]处于战斗中"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点1迂回失败</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">节点1迂回失败</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "节点1识别目标舰种1": {
@@ -1367,12 +1458,21 @@
             "type": "Click"
         },
         "next": [
+            "500船检测",
             "[JumpBack]重新连接",
-            "无限战斗检测",
-            "无限战斗提示"
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">强制回港</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">强制回港</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "战斗大破检测": {
@@ -1387,7 +1487,13 @@
             "战斗回港"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破提醒</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到大破提醒</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "节点1前进": {
@@ -1662,7 +1768,14 @@
             "任务出错"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点3相关设置未设置，无法使用迂回</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到节点3相关设置未设置，无法使用迂回</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "节点2战术迂回成功": {
@@ -1716,7 +1829,13 @@
             "[JumpBack]处于战斗中"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点2迂回失败</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">节点2迂回失败</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "节点2识别目标舰种1": {
@@ -2216,7 +2335,14 @@
             "任务出错"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点4相关设置未设置，无法使用迂回</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到节点4相关设置未设置，无法使用迂回</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "节点3战术迂回成功": {
@@ -2270,7 +2396,13 @@
             "[JumpBack]处于战斗中"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点3迂回失败</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">节点3迂回失败</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "节点3识别目标舰种1": {
@@ -2770,7 +2902,14 @@
             "任务出错"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点5相关设置未设置，无法使用迂回</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到节点5相关设置未设置，无法使用迂回</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "节点4战术迂回成功": {
@@ -2824,7 +2963,13 @@
             "[JumpBack]处于战斗中"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点4迂回失败</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">节点4迂回失败</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "节点4识别目标舰种1": {
@@ -3324,7 +3469,14 @@
             "任务出错"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到节点6相关设置未设置，无法使用迂回</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到节点6相关设置未设置，无法使用迂回</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "节点5战术迂回成功": {
@@ -3377,7 +3529,13 @@
             "[JumpBack]处于战斗中"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">节点5迂回失败</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">节点5迂回失败</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "节点5识别目标舰种1": {
@@ -3964,8 +4122,10 @@
             "[JumpBack]领取奖励",
             "拆船点击出征",
             "拆船点击出征2",
-            "无限战斗检测",
-            "无限战斗提示"
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
         ]
     },
     "拆船点击出征": {
@@ -3982,8 +4142,10 @@
             "[JumpBack]重新连接",
             "拆船点击出征2",
             "拆船点击出征",
-            "无限战斗检测",
-            "无限战斗提示"
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
         ]
     },
     "拆船点击出征2": {
@@ -3999,8 +4161,10 @@
         ],
         "next": [
             "[JumpBack]重新连接",
-            "无限战斗检测",
-            "无限战斗提示"
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
         ]
     },
     "拆船结束退出2": {

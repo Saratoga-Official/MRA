@@ -130,7 +130,14 @@
             "建造结束退出"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">船舱已满</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         },
         "enabled": false
     },

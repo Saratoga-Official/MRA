@@ -129,7 +129,13 @@
         ],
         "connected": true,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到大破舰船</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到大破舰船</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "战役修理检测中破": {
@@ -156,7 +162,13 @@
         ],
         "connected": true,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检测到中破舰船</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到中破舰船</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "战役快速修理": {
@@ -325,7 +337,14 @@
             "任务结束"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">战役次数已达上限</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">战役次数已达上限</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "退出战役": {

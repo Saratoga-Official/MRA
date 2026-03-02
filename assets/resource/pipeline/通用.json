@@ -21,7 +21,14 @@
         "on_error": [],
         "post_wait_freezes": 0,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">{name}</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">{name}</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "modal"
+                ]
+            }
         }
     },
     "重新连接": {
@@ -35,7 +42,14 @@
         ],
         "action": "Click",
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">网络断开</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">网络断开</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "退出": {
@@ -483,7 +497,6 @@
             }
         },
         "next": [
-            "[Anchor]最终阵型",
             "[Anchor]节点1锚点阵型",
             "节点1阵型",
             "无动作结束"
@@ -510,7 +523,6 @@
             }
         },
         "next": [
-            "[Anchor]最终阵型",
             "[Anchor]节点2锚点阵型",
             "节点2阵型",
             "无动作结束"
@@ -537,7 +549,6 @@
             }
         },
         "next": [
-            "[Anchor]最终阵型",
             "[Anchor]节点3锚点阵型",
             "节点3阵型",
             "无动作结束"
@@ -564,7 +575,6 @@
             }
         },
         "next": [
-            "[Anchor]最终阵型",
             "[Anchor]节点4锚点阵型",
             "节点4阵型",
             "无动作结束"
@@ -591,7 +601,6 @@
             }
         },
         "next": [
-            "[Anchor]最终阵型",
             "[Anchor]节点5锚点阵型",
             "节点5阵型",
             "无动作结束"
@@ -618,46 +627,12 @@
             }
         },
         "next": [
-            "[Anchor]最终阵型",
             "[Anchor]节点6锚点阵型",
             "节点6阵型",
             "无动作结束"
         ],
         "post_wait_freezes": 0,
         "post_delay": 1000
-    },
-    "最终阵型": {
-        "recognition": {
-            "type": "OCR",
-            "param": {
-                "expected": [
-                    "梯形"
-                ],
-                "roi": [
-                    702,
-                    99,
-                    560,
-                    612
-                ]
-            }
-        },
-        "action": {
-            "type": "Click"
-        },
-        "anchor": {
-            "节点1锚点阵型": "",
-            "节点2锚点阵型": "",
-            "节点3锚点阵型": "",
-            "节点4锚点阵型": "",
-            "节点5锚点阵型": "",
-            "节点6锚点阵型": "",
-            "最终阵型": ""
-        },
-        "enabled": false,
-        "post_wait_freezes": 0,
-        "focus": {
-            "Node.Recognition.Succeeded": "最终节点选择梯形阵"
-        }
     },
     "节点1追击": {
         "recognition": "TemplateMatch",
@@ -845,7 +820,13 @@
             "开始唤醒"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">退出游戏重开</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">退出游戏重开</span>",
+                "display": [
+                    "log",
+                    "toast"
+                ]
+            }
         }
     },
     "战斗SL": {
@@ -870,13 +851,14 @@
             "节点3锚点阵型": "",
             "节点4锚点阵型": "",
             "节点5锚点阵型": "",
-            "节点6锚点阵型": "",
-            "最终阵型": ""
+            "节点6锚点阵型": ""
         },
         "next": [
             "[JumpBack]重新连接",
-            "无限战斗检测",
-            "无限战斗提示"
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
         ],
         "on_error": [
             "战斗SL",
@@ -909,12 +891,10 @@
                     "之后将无法获得掉落",
                     "也无法获得战利品"
                 ]
-            },
+            }
         },
         "next": [
-            "500船检测回港"
-        ],
-        "on_error": [
+            "500船检测回港",
             "[JumpBack]重新连接",
             "[JumpBack]领取奖励",
             "[JumpBack]活动退出",
@@ -923,14 +903,24 @@
         ],
         "enabled": false,
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">已达500捞船上限</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">已达500捞船上限</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "500船检测回港": {
         "recognition": {
             "type": "TemplateMatch",
             "param": {
-                "template": "战斗/回港.png"
+                "template": [
+                    "战斗/回港.png",
+                    "战斗/大破回港.png"
+                ]
             }
         },
         "action": {

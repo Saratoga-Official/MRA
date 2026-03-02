@@ -234,7 +234,7 @@
             "inputs": [
                 {
                     "name": "潜艇名1",
-                    "default": "U-47",
+                    "default": "U-",
                     "pipeline_type": "string",
                     "verify": ".+",
                     "pattern_msg": "不能为空"

@@ -141,7 +141,14 @@
             "无动作结束"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">未识别到所选服务器，请检查当前大区是否为服务器对应大区</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">未识别到所选服务器，请检查当前大区是否为服务器对应大区</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "进入游戏前": {

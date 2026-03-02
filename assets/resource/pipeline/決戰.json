@@ -1968,7 +1968,14 @@
             "决战异常报错退出"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">检查舰船数小于5，无法执行后续策略</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检查舰船数小于5，无法执行后续策略</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "dialog"
+                ]
+            }
         }
     },
     "决战异常报错退出": {
@@ -3658,7 +3665,14 @@
             "决战船舱满退出"
         ],
         "focus": {
-            "Node.Recognition.Succeeded": "<span style=\"color: red;\">船舱已满</span>"
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">船舱已满</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
         }
     },
     "决战船舱满退出": {
