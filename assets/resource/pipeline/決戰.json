@@ -1092,7 +1092,7 @@
         "target_offset": [
             5,
             0,
-            0,
+            -10,
             0
         ],
         "next": [
@@ -1108,6 +1108,19 @@
         "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
+        "next": [
+            "[JumpBack]重新连接",
+            "决战退出添加保险",
+            "决战退出添加"
+        ]
+    },
+    "决战退出添加保险": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战切换策略",
@@ -1878,7 +1891,7 @@
         "target_offset": [
             5,
             0,
-            0,
+            -10,
             0
         ],
         "next": [
@@ -1892,6 +1905,19 @@
         "template": "通用/退出.png",
         "action": "Click",
         "green_mask": true,
+        "next": [
+            "[JumpBack]重新连接",
+            "决战退出添加BOSS保险",
+            "决战退出添加BOSS"
+        ]
+    },
+    "决战退出添加BOSS保险": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战检查舰船BOSS",
@@ -2646,7 +2672,7 @@
         "target_offset": [
             5,
             0,
-            0,
+            -10,
             0
         ],
         "next": [
