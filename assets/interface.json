@@ -128,7 +128,7 @@
                     }
                 },
                 {
-                    "name": "简易自动出征",
+                    "name": "自动出征Lite",
                     "label": "战利品9-2",
                     "enabled": false,
                     "option": {

@@ -1,7 +1,7 @@
 {
     "task": [
         {
-            "name": "简易自动出征",
+            "name": "自动出征Lite",
             "entry": "开始出征",
             "default_check": false,
             "description": "<span style=\"color: red;\">需提前编好队，满足带路条件，再开始</span><br>本功能执行过程中会自动收发远征",
