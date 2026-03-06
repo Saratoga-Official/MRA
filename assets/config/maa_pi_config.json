@@ -1,8 +1,5 @@
 {
-    "controller": {
-        "name": "安卓端",
-        "type": "Adb"
-    },
+    "controller": "安卓端",
     "resource": "国服",
     "task": [],
     "adb": {

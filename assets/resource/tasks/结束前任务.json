@@ -76,7 +76,10 @@
                 },
                 {
                     "name": "Yes",
-                    "pipeline_override": {}
+                    "pipeline_override": {},
+                    "option": [
+                        "拆船保留装备"
+                    ]
                 }
             ]
         },

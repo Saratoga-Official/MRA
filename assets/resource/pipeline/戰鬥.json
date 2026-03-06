@@ -3948,21 +3948,29 @@
         ]
     },
     "开始拆船": {
-        "recognition": "OCR",
-        "expected": "出征",
-        "roi": [
-            1198,
-            661,
-            71,
-            38
-        ],
-        "action": "Click",
-        "target": [
-            45,
-            630,
-            38,
-            28
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    45,
+                    630,
+                    38,
+                    28
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]领取奖励",
@@ -3971,151 +3979,232 @@
         ]
     },
     "拆船点击建造": {
-        "recognition": "OCR",
-        "expected": [
-            "建造"
-        ],
-        "roi": [
-            54,
-            224,
-            70,
-            36
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "建造",
+                "roi": [
+                    54,
+                    224,
+                    70,
+                    36
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "拆船点击建造2"
         ]
     },
     "拆船点击建造2": {
-        "recognition": "OCR",
-        "expected": [
-            "建造"
-        ],
-        "roi": [
-            477,
-            245,
-            87,
-            41
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "建造",
+                "roi": [
+                    477,
+                    245,
+                    87,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "拆船点击解装"
         ]
     },
     "拆船点击解装": {
-        "recognition": "OCR",
-        "expected": [
-            "解装"
-        ],
-        "roi": [
-            360,
-            11,
-            77,
-            42
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "解装",
+                "roi": [
+                    360,
+                    11,
+                    77,
+                    42
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "拆船点击添加"
         ]
     },
     "拆船点击添加": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/添加舰船.png",
-        "roi": [
-            18,
-            111,
-            156,
-            298
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/添加舰船.png",
+                "roi": [
+                    18,
+                    111,
+                    156,
+                    298
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "拆船点击快速选择"
         ]
     },
     "拆船点击快速选择": {
-        "recognition": "OCR",
-        "expected": [
-            "快速选择"
-        ],
-        "roi": [
-            1106,
-            195,
-            121,
-            49
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "快速选择"
+                ],
+                "roi": [
+                    1106,
+                    195,
+                    121,
+                    49
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "拆船点击确定"
         ]
     },
     "拆船点击确定": {
-        "recognition": "OCR",
-        "expected": [
-            "确定"
-        ],
-        "roi": [
-            1124,
-            628,
-            85,
-            44
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确定"
+                ],
+                "roi": [
+                    1124,
+                    628,
+                    85,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
+            "拆船回到解装界面"
+        ]
+    },
+    "拆船回到解装界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "解装"
+                ],
+                "roi": [
+                    1087,
+                    619,
+                    107,
+                    51
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]拆船卸装备",
             "拆船点击解装2"
         ]
     },
+    "拆船卸装备": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/解装卸装备.png",
+                "roi": [
+                    1051,
+                    441,
+                    46,
+                    51
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1061,
+                    453,
+                    26,
+                    26
+                ]
+            }
+        },
+        "inverse": true,
+        "enabled": false
+    },
     "拆船点击解装2": {
-        "recognition": "OCR",
-        "expected": [
-            "解装"
-        ],
-        "roi": [
-            1087,
-            619,
-            107,
-            51
-        ],
-        "action": "Click",
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "拆船回到解装界面"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
-            "拆船点击确认",
+            "[JumpBack]拆船点击确认",
             "拆船结束退出"
         ]
     },
     "拆船点击确认": {
-        "recognition": "OCR",
-        "expected": [
-            "确认"
-        ],
-        "roi": [
-            402,
-            373,
-            169,
-            70
-        ],
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "拆船结束退出"
-        ]
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ],
+                "roi": [
+                    402,
+                    373,
+                    169,
+                    70
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
     "拆船结束退出": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "green_mask": true,
-        "action": "Click",
-        "roi": [
-            7,
-            5,
-            95,
-            705
-        ],
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
@@ -4129,15 +4218,21 @@
         ]
     },
     "拆船点击出征": {
-        "recognition": "OCR",
-        "expected": "出征",
-        "roi": [
-            1198,
-            661,
-            71,
-            38
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "拆船点击出征2",
@@ -4149,16 +4244,22 @@
         ]
     },
     "拆船点击出征2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/出征.png",
-        "action": "Click",
-        "threshold": 0.9,
-        "roi": [
-            144,
-            0,
-            174,
-            71
-        ],
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png",
+                "threshold": 0.9,
+                "roi": [
+                    144,
+                    0,
+                    174,
+                    71
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "无限战斗捞船检测",
@@ -4168,16 +4269,22 @@
         ]
     },
     "拆船结束退出2": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "green_mask": true,
-        "roi": [
-            13,
-            627,
-            74,
-            73
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    13,
+                    627,
+                    74,
+                    73
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_delay": 3000,
         "next": [
             "[JumpBack]重新连接",

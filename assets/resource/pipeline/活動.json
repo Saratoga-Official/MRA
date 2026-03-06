@@ -2,7 +2,21 @@
     "进入活动": {
         "next": [
             "[JumpBack]重新连接",
-            "进入关卡"
+            "战斗次数"
+        ]
+    },
+    "活动不导航": {
+        "recognition": "OCR",
+        "expected": "出击准备",
+        "roi": [
+            980,
+            581,
+            254,
+            75
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "战斗次数"
         ]
     },
     "活动导航": {
@@ -59,10 +73,11 @@
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]答题检测",
-            "进入关卡",
+            "活动不导航",
             "关卡入口导航",
             "[JumpBack]退出"
         ],
+        "enabled": false,
         "focus": {
             "Node.Recognition.Succeeded": "{name}"
         }
