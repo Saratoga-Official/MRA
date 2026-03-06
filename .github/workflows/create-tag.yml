@@ -1,0 +1,56 @@
+name: Create Tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (e.g., v1.2.3, v1.2.3-beta.1)'
+        required: true
+        type: string
+
+permissions:
+  contents: write  # 允许推送标签
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取所有历史，用于检查标签是否已存在
+
+      - name: Validate tag format
+        run: |
+          TAG="${{ github.event.inputs.tag_name }}"
+          if [[ ! "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+.*$ ]]; then
+            echo "❌ Tag must start with 'v' and contain at least three numbers (e.g., v1.2.3)"
+            exit 1
+          fi
+          echo "✅ Tag format is valid."
+
+      - name: Check if tag already exists
+        run: |
+          TAG="${{ github.event.inputs.tag_name }}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "❌ Tag $TAG already exists locally."
+            exit 1
+          fi
+          # 检查远程是否存在（可选，但建议）
+          if git ls-remote --tags origin "$TAG" | grep -q "refs/tags/$TAG"; then
+            echo "❌ Tag $TAG already exists on remote."
+            exit 1
+          fi
+          echo "✅ Tag does not exist."
+
+      - name: Create and push tag
+        run: |
+          TAG="${{ github.event.inputs.tag_name }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "$TAG"
+          git push origin "$TAG"
+          echo "🚀 Tag $TAG created and pushed successfully."
+
+      - name: Done
+        run: echo "The tag will now trigger the 'install' workflow automatically."
