@@ -9,16 +9,18 @@ on:
         type: string
 
 permissions:
-  contents: write  # 允许推送标签
+  contents: read  # 只需要读权限，推送使用 PAT
 
 jobs:
   create-tag:
     runs-on: ubuntu-latest
     steps:
+      # 关键修改：使用 PAT 来 checkout，后续的 push 才能生效
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 获取所有历史，用于检查标签是否已存在
+          fetch-depth: 0
+          token: ${{ secrets.PAT_FOR_TAG }}  # <--- 使用我们刚配置的 secret
 
       - name: Validate tag format
         run: |
@@ -36,14 +38,13 @@ jobs:
             echo "❌ Tag $TAG already exists locally."
             exit 1
           fi
-          # 检查远程是否存在（可选，但建议）
           if git ls-remote --tags origin "$TAG" | grep -q "refs/tags/$TAG"; then
             echo "❌ Tag $TAG already exists on remote."
             exit 1
           fi
           echo "✅ Tag does not exist."
 
-      - name: Create and push tag
+      - name: Create and push tag using PAT
         run: |
           TAG="${{ github.event.inputs.tag_name }}"
           git config user.name "github-actions[bot]"
@@ -53,4 +54,4 @@ jobs:
           echo "🚀 Tag $TAG created and pushed successfully."
 
       - name: Done
-        run: echo "The tag will now trigger the 'install' workflow automatically."
+        run: echo "The tag has been pushed and should trigger the 'install' workflow automatically."
