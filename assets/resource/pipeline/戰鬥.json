@@ -3,7 +3,7 @@
         "recognition": {
             "type": "OCR",
             "param": {
-                "expected": "第[一|二|三|四|五|六|七|八|九]章",
+                "expected": "第[一|二|三|四|五|六|七|八|九|十]章",
                 "roi": [
                     44,
                     369,

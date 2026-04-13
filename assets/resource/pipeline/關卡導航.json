@@ -94,7 +94,7 @@
     },
     "导航前": {
         "recognition": "OCR",
-        "expected": "第[一|二|三|四|五|六|七|八|九]章",
+        "expected": "第[一|二|三|四|五|六|七|八|九|十]章",
         "roi": [
             44,
             369,
@@ -234,6 +234,20 @@
             "找关卡"
         ]
     },
+    "第十章": {
+        "recognition": "OCR",
+        "expected": "第十章",
+        "roi": [
+            44,
+            369,
+            105,
+            52
+        ],
+        "next": [
+            "[JumpBack]重新连接",
+            "找关卡"
+        ]
+    },
     "1到2": {
         "recognition": "OCR",
         "expected": "第二章",
@@ -319,6 +333,28 @@
             457,
             102,
             53
+        ],
+        "action": "Click"
+    },
+    "9到10": {
+        "recognition": "OCR",
+        "expected": "第十章",
+        "roi": [
+            68,
+            457,
+            102,
+            53
+        ],
+        "action": "Click"
+    },
+    "10到9": {
+        "recognition": "OCR",
+        "expected": "第九章",
+        "roi": [
+            77,
+            293,
+            88,
+            40
         ],
         "action": "Click"
     },
