@@ -999,7 +999,9 @@
             "战斗SL",
             "大退检测",
             "[JumpBack]点击加速",
-            "[JumpBack]选择战况"
+            "[JumpBack]选择战况",
+            "回到关卡了",
+            "回到关卡了2"
         ],
         "focus": {
             "Node.Recognition.Succeeded": "{name}"
@@ -1661,7 +1663,9 @@
             "[JumpBack]选择战况",
             "[JumpBack]节点2追击",
             "节点2点击继续",
-            "[JumpBack]处于战斗中"
+            "[JumpBack]处于战斗中",
+            "回到关卡了",
+            "回到关卡了2"
         ],
         "timeout": 30000
     },
@@ -2228,7 +2232,9 @@
             "[JumpBack]选择战况",
             "[JumpBack]节点3追击",
             "节点3点击继续",
-            "[JumpBack]处于战斗中"
+            "[JumpBack]处于战斗中",
+            "回到关卡了",
+            "回到关卡了2"
         ],
         "timeout": 30000
     },
@@ -2795,7 +2801,9 @@
             "[JumpBack]选择战况",
             "[JumpBack]节点4追击",
             "节点4点击继续",
-            "[JumpBack]处于战斗中"
+            "[JumpBack]处于战斗中",
+            "回到关卡了",
+            "回到关卡了2"
         ],
         "timeout": 30000
     },
@@ -3362,7 +3370,9 @@
             "[JumpBack]选择战况",
             "[JumpBack]节点5追击",
             "节点5点击继续",
-            "[JumpBack]处于战斗中"
+            "[JumpBack]处于战斗中",
+            "回到关卡了",
+            "回到关卡了2"
         ],
         "timeout": 30000
     },
@@ -3793,7 +3803,9 @@
             "[JumpBack]选择战况",
             "[JumpBack]节点6追击",
             "节点6点击继续",
-            "[JumpBack]处于战斗中"
+            "[JumpBack]处于战斗中",
+            "回到关卡了",
+            "回到关卡了2"
         ],
         "timeout": 30000
     },
