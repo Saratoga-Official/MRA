@@ -21,7 +21,7 @@
                 "默认迂回节点",
                 "迂回失败后重开",
                 "默认远程打击节点",
-                "索敌后撤退节点",
+                "索敌后撤退",
                 "默认阵型",
                 "第二阵型",
                 "追击模式"
@@ -494,6 +494,14 @@
                     "option": [
                         "旗舰等级"
                     ]
+                },
+                {
+                    "name": "军阶BUFF用完",
+                    "pipeline_override": {
+                        "战斗检测buff": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -666,7 +674,7 @@
             "inputs": [
                 {
                     "name": "战斗指定次数",
-                    "description": "撤退和重开均不计入次数",
+                    "description": "撤退和重开不计入次数（部分选项除外）",
                     "default": "1",
                     "pipeline_type": "int",
                     "verify": "^[1-9][0-9]*$",
@@ -803,13 +811,15 @@
             ]
         },
         "战斗使用军阶buff": {
-            "description": "若已开启军阶buff，此功能失效",
             "cases": [
                 {
                     "name": "不使用",
                     "pipeline_override": {
                         "启用军阶buff": {
                             "enabled": false
+                        },
+                        "关闭军阶buff": {
+                            "enabled": true
                         }
                     }
                 },
@@ -1742,16 +1752,19 @@
                 }
             ]
         },
-        "索敌后撤退节点": {
-            "type": "checkbox",
-            "description": "强制撤退，与检测目标舰种冲突",
+        "索敌后撤退": {
+            "description": "强制撤退，与检测目标舰种冲突（计入战斗次数）",
             "cases": [
+                {
+                    "name": "不使用",
+                    "pipeline_override": {}
+                },
                 {
                     "name": "节点1",
                     "pipeline_override": {
                         "节点1索敌成功": {
                             "next": [
-                                "战斗SL"
+                                "战斗SL记入次数"
                             ]
                         }
                     }
@@ -1761,7 +1774,7 @@
                     "pipeline_override": {
                         "节点2索敌成功": {
                             "next": [
-                                "战斗SL"
+                                "战斗SL记入次数"
                             ]
                         }
                     }
@@ -1771,7 +1784,7 @@
                     "pipeline_override": {
                         "节点3索敌成功": {
                             "next": [
-                                "战斗SL"
+                                "战斗SL记入次数"
                             ]
                         }
                     }
@@ -1781,7 +1794,7 @@
                     "pipeline_override": {
                         "节点4索敌成功": {
                             "next": [
-                                "战斗SL"
+                                "战斗SL记入次数"
                             ]
                         }
                     }
@@ -1791,7 +1804,7 @@
                     "pipeline_override": {
                         "节点5索敌成功": {
                             "next": [
-                                "战斗SL"
+                                "战斗SL记入次数"
                             ]
                         }
                     }
@@ -1801,7 +1814,7 @@
                     "pipeline_override": {
                         "节点6索敌成功": {
                             "next": [
-                                "战斗SL"
+                                "战斗SL记入次数"
                             ]
                         }
                     }
@@ -1851,6 +1864,16 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点1识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "迂回",
@@ -1944,6 +1967,16 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点1识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "迂回",
@@ -2181,6 +2214,16 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点2识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "迂回",
                     "pipeline_override": {
                         "节点2战术迂回检测2": {
@@ -2272,6 +2315,16 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点2识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "迂回",
@@ -2509,6 +2562,16 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点3识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "迂回",
                     "pipeline_override": {
                         "节点3战术迂回检测2": {
@@ -2600,6 +2663,16 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点3识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "迂回",
@@ -2836,6 +2909,16 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点4识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "迂回",
                     "pipeline_override": {
                         "节点4战术迂回检测2": {
@@ -2927,6 +3010,16 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点4识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "迂回",
@@ -3163,6 +3256,16 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点5识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "迂回",
                     "pipeline_override": {
                         "节点5战术迂回检测2": {
@@ -3256,6 +3359,16 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点5识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "迂回",
                     "pipeline_override": {
                         "节点5战术迂回检测3": {
@@ -3346,6 +3459,16 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点6识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "更换阵型",
                     "pipeline_override": {
                         "节点6识别目标舰种1": {
@@ -3407,6 +3530,16 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点6识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "更换阵型",

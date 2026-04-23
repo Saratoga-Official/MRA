@@ -95,6 +95,14 @@
                             "enabled": true
                         }
                     }
+                },
+                {
+                    "name": "军阶BUFF用完",
+                    "pipeline_override": {
+                        "战斗检测buff": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -385,7 +393,6 @@
         },
         "战斗检测目标舰种1": {
             "label": "战斗检测目标舰种",
-            "description": "若设置，将在所有节点生效",
             "type": "switch",
             "cases": [
                 {
@@ -397,32 +404,75 @@
                 },
                 {
                     "name": "Yes",
-                    "pipeline_override": {
-                        "节点1识别目标舰种1": {
-                            "enabled": true
-                        },
-                        "节点2识别目标舰种1": {
-                            "enabled": true
-                        },
-                        "节点3识别目标舰种1": {
-                            "enabled": true
-                        },
-                        "节点4识别目标舰种1": {
-                            "enabled": true
-                        },
-                        "节点5识别目标舰种1": {
-                            "enabled": true
-                        },
-                        "节点6识别目标舰种1": {
-                            "enabled": true
-                        }
-                    },
+                    "pipeline_override": {},
                     "option": [
+                        "战斗检测目标节点",
                         "战斗检测目标名",
                         "战斗反向检测目标",
                         "战斗检测目标后操作",
                         "战斗检测目标舰种2"
                     ]
+                }
+            ]
+        },
+        "战斗检测目标节点": {
+            "type": "checkbox",
+            "default_case": [
+                "节点1",
+                "节点2",
+                "节点3",
+                "节点4",
+                "节点5",
+                "节点6"
+            ],
+            "cases": [
+                {
+                    "name": "节点1",
+                    "pipeline_override": {
+                        "节点1识别目标舰种1": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点2",
+                    "pipeline_override": {
+                        "节点2识别目标舰种1": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点3",
+                    "pipeline_override": {
+                        "节点3识别目标舰种1": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点4",
+                    "pipeline_override": {
+                        "节点4识别目标舰种1": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点5",
+                    "pipeline_override": {
+                        "节点5识别目标舰种1": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点6",
+                    "pipeline_override": {
+                        "节点6识别目标舰种1": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -627,6 +677,41 @@
                     "pipeline_override": {}
                 },
                 {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点1识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点2识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点3识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点4识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点5识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点6识别目标舰种1": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "迂回",
                     "pipeline_override": {
                         "节点1战术迂回检测2": {
@@ -732,31 +817,74 @@
                 },
                 {
                     "name": "Yes",
-                    "pipeline_override": {
-                        "节点1识别目标舰种2": {
-                            "enabled": true
-                        },
-                        "节点2识别目标舰种2": {
-                            "enabled": true
-                        },
-                        "节点3识别目标舰种2": {
-                            "enabled": true
-                        },
-                        "节点4识别目标舰种2": {
-                            "enabled": true
-                        },
-                        "节点5识别目标舰种2": {
-                            "enabled": true
-                        },
-                        "节点6识别目标舰种2": {
-                            "enabled": true
-                        }
-                    },
+                    "pipeline_override": {},
                     "option": [
+                        "战斗检测目标节点2",
                         "战斗检测目标名2",
                         "战斗反向检测目标2",
                         "战斗检测目标后操作2"
                     ]
+                }
+            ]
+        },
+        "战斗检测目标节点2": {
+            "type": "checkbox",
+            "default_case": [
+                "节点1",
+                "节点2",
+                "节点3",
+                "节点4",
+                "节点5",
+                "节点6"
+            ],
+            "cases": [
+                {
+                    "name": "节点1",
+                    "pipeline_override": {
+                        "节点1识别目标舰种2": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点2",
+                    "pipeline_override": {
+                        "节点2识别目标舰种2": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点3",
+                    "pipeline_override": {
+                        "节点3识别目标舰种2": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点4",
+                    "pipeline_override": {
+                        "节点4识别目标舰种2": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点5",
+                    "pipeline_override": {
+                        "节点5识别目标舰种2": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "节点6",
+                    "pipeline_override": {
+                        "节点6识别目标舰种2": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -843,6 +971,41 @@
                 {
                     "name": "撤退",
                     "pipeline_override": {}
+                },
+                {
+                    "name": "撤退（记入战斗次数）",
+                    "pipeline_override": {
+                        "节点1识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点2识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点3识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点4识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点5识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        },
+                        "节点6识别目标舰种2": {
+                            "next": [
+                                "战斗SL记入次数"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "迂回",

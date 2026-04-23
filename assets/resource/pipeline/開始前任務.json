@@ -18,13 +18,18 @@
             "登录奖励",
             "小长春的赠礼",
             "[JumpBack]活动退出",
-            "开始退出",
+            "[JumpBack]开始退出",
             "结束开始唤醒"
         ]
     },
     "开始退出": {
         "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
+        "template": [
+            "通用/退出.png",
+            "通用/退出公告.png",
+            "战斗/活动退出.png",
+            "战斗/活动退出2.png"
+        ],
         "roi": [
             7,
             5,
@@ -33,11 +38,7 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_delay": 1000,
-        "next": [
-            "[JumpBack]重新连接",
-            "打开游戏"
-        ]
+        "post_delay": 1000
     },
     "游戏更新": {
         "recognition": "OCR",

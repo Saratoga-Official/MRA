@@ -3206,6 +3206,7 @@
             "[JumpBack]决战请选择前进点",
             "[JumpBack]决战招募",
             "决战识别boss点3",
+            "[JumpBack]决战检测紫貂技能3",
             "[JumpBack]决战进入编队"
         ],
         "on_error": [
@@ -3213,6 +3214,23 @@
         ],
         "focus": {
             "Node.Recognition.Succeeded": "战前决策"
+        }
+    },
+    "决战检测紫貂技能3": {
+        "recognition": "TemplateMatch",
+        "template": "决战/紫貂技能.png",
+        "order_by": "Score",
+        "threshold": 0.95,
+        "roi": [
+            228,
+            587,
+            114,
+            114
+        ],
+        "action": "Click",
+        "enabled": false,
+        "focus": {
+            "Node.Recognition.Succeeded": "使用紫貂技能"
         }
     },
     "决战进入编队界面4": {

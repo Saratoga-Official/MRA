@@ -64,6 +64,10 @@
                     "enabled": false
                 },
                 {
+                    "name": "自动出征Lite",
+                    "enabled": false
+                },
+                {
                     "name": "自动决战",
                     "enabled": false
                 },

@@ -157,8 +157,10 @@
         },
         "post_wait_freezes": 0,
         "next": [
-            "[JumpBack]启用军阶buff",
             "[JumpBack]战斗编队",
+            "[JumpBack]启用军阶buff",
+            "[JumpBack]关闭军阶buff",
+            "战斗检测buff",
             "战斗检测等级",
             "[JumpBack]战斗自动补给",
             "战斗检测无补给",
@@ -172,23 +174,55 @@
     },
     "启用军阶buff": {
         "recognition": {
-            "type": "ColorMatch",
+            "type": "Or",
             "param": {
-                "roi": [
-                    817,
-                    91,
-                    58,
-                    56
-                ],
-                "lower": [
-                    31,
-                    86,
-                    143
-                ],
-                "upper": [
-                    39,
-                    149,
-                    253
+                "any_of": [
+                    {
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    827,
+                                    99,
+                                    40,
+                                    40
+                                ],
+                                "lower": [
+                                    31,
+                                    86,
+                                    143
+                                ],
+                                "upper": [
+                                    39,
+                                    149,
+                                    253
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "recognition": {
+                            "type": "ColorMatch",
+                            "param": {
+                                "roi": [
+                                    827,
+                                    99,
+                                    40,
+                                    40
+                                ],
+                                "lower": [
+                                    234,
+                                    173,
+                                    41
+                                ],
+                                "upper": [
+                                    244,
+                                    188,
+                                    68
+                                ]
+                            }
+                        }
+                    }
                 ]
             }
         },
@@ -202,7 +236,8 @@
         ],
         "focus": {
             "Node.Recognition.Succeeded": "选择军阶buff"
-        }
+        },
+        "max_hit": 1
     },
     "识别当前BUFF": {
         "recognition": {
@@ -221,16 +256,29 @@
                 ]
             }
         },
-        "action": {
-            "type": "Click",
+        "next": [
+            "[JumpBack]重新连接",
+            "使用当前BUFF",
+            "退出当前BUFF"
+        ]
+    },
+    "使用当前BUFF": {
+        "recognition": {
+            "type": "OCR",
             "param": {
-                "target": [
+                "expected": [
+                    "未启用"
+                ],
+                "roi": [
                     970,
                     339,
                     77,
                     39
                 ]
             }
+        },
+        "action": {
+            "type": "Click"
         },
         "next": [
             "[JumpBack]重新连接",
@@ -241,7 +289,12 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "识别当前BUFF"
+                "target": [
+                    978,
+                    154,
+                    193,
+                    40
+                ]
             }
         }
     },
@@ -330,6 +383,101 @@
             "[JumpBack]重新连接",
             "识别当前BUFF"
         ]
+    },
+    "关闭军阶buff": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    827,
+                    99,
+                    40,
+                    40
+                ],
+                "lower": [
+                    234,
+                    173,
+                    41
+                ],
+                "upper": [
+                    244,
+                    188,
+                    68
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "关闭当前BUFF"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "关闭军阶buff"
+        },
+        "enabled": false
+    },
+    "关闭当前BUFF": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "启用"
+                ],
+                "roi": [
+                    970,
+                    339,
+                    77,
+                    39
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "退出当前BUFF"
+        ]
+    },
+    "战斗检测buff": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    827,
+                    99,
+                    40,
+                    40
+                ],
+                "lower": [
+                    140,
+                    140,
+                    140
+                ],
+                "upper": [
+                    140,
+                    140,
+                    140
+                ]
+            }
+        },
+        "next": [
+            "战斗退出"
+        ],
+        "post_wait_freezes": 0,
+        "enabled": false,
+        "focus": {
+            "Node.Recognition.Succeeded": {
+                "content": "<span style=\"color: red;\">检测到BUFF已用完</span>",
+                "display": [
+                    "log",
+                    "notification",
+                    "toast"
+                ]
+            }
+        }
     },
     "战斗编队": {
         "recognition": {
