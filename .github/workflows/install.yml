@@ -79,13 +79,13 @@ jobs:
         with:
           submodules: true
 
-      # 下载 MaaFramework（所有变体都需要）
+      # 下载 MaaFramework
       - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1.10  # 更新到最新版本
+        uses: robinraju/release-downloader@v1.10
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
-          latest: true
+          tag: 'v5.10.2'
           out-file-path: "deps"
           extract: true
           token: ${{ secrets.GITHUB_TOKEN }}
