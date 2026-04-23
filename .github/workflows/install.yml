@@ -98,7 +98,7 @@ jobs:
         with:
           repository: MaaXYZ/MFAAvalonia
           fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
-          latest: true
+          tag: 'v2.12.0'
           out-file-path: "MFA"
           extract: true
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -125,7 +125,7 @@ jobs:
         with:
           repository: MistEO/MXU
           fileName: "MXU-${{ matrix.os }}-${{ matrix.arch }}*"
-          latest: true
+          tag: 'v2.1.1'
           out-file-path: "MXU"
           extract: true
           token: ${{ secrets.GITHUB_TOKEN }}
