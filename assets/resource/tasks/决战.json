@@ -193,30 +193,30 @@
                     "pipeline_override": {
                         "检查开局舰船1": {
                             "expected": [
-                                "大青花鱼",
-                                "射水鱼",
-                                "U-47",
-                                "U-505",
-                                "U-81",
-                                "U-96",
-                                "U-2540",
-                                "U-1206",
-                                "U-1405"
+                                "^大青花鱼$",
+                                "^射水鱼$",
+                                "^U-47$",
+                                "^U-505$",
+                                "^U-81$",
+                                "^U-96$",
+                                "^U-2540$",
+                                "^U-1206$",
+                                "^U-1405$"
                             ]
                         },
                         "检查开局舰船2": {
                             "expected": [
-                                "M-296",
-                                "鹦鹉螺",
-                                "芬奇",
-                                "鹰",
-                                "K-21",
-                                "潜甲",
-                                "潜乙",
-                                "U-441",
-                                "IIIA",
-                                "lllA",
-                                "伊-201"
+                                "^M-296$",
+                                "^鹦鹉螺$",
+                                "芬奇$",
+                                "^鹰$",
+                                "^K-21$",
+                                "^潜甲$",
+                                "^潜乙$",
+                                "^U-441$",
+                                "^IIIA$",
+                                "^lllA$",
+                                "^伊-201$"
                             ]
                         }
                     }
@@ -238,14 +238,16 @@
                     "default": "U-",
                     "pipeline_type": "string",
                     "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "pattern_msg": "不能为空",
+                    "description": "支持输入正则表达式"
                 },
                 {
                     "name": "潜艇名2",
                     "default": "鹦鹉螺",
                     "pipeline_type": "string",
                     "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "pattern_msg": "不能为空",
+                    "description": "支持输入正则表达式"
                 }
             ],
             "pipeline_override": {
@@ -292,7 +294,8 @@
                     "default": "U-1206",
                     "pipeline_type": "string",
                     "verify": ".+",
-                    "pattern_msg": "不能为空"
+                    "pattern_msg": "不能为空",
+                    "description": "支持输入正则表达式"
                 }
             ],
             "pipeline_override": {
