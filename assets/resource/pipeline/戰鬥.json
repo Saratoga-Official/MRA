@@ -921,6 +921,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -1010,6 +1012,8 @@
         },
         "inverse": true,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1检测概率",
@@ -1039,6 +1043,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1检测节点",
@@ -1065,6 +1071,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1凹点位2",
@@ -1076,6 +1083,8 @@
     },
     "节点1凹点位2": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1检测概率2",
@@ -1106,6 +1115,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1检测节点2",
@@ -1132,6 +1143,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "进入战斗节点1"
@@ -1164,6 +1176,8 @@
         },
         "inverse": true,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1索敌成功",
@@ -1241,6 +1255,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1迂回错误",
@@ -1264,6 +1280,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1战术迂回成功",
@@ -1275,6 +1293,8 @@
     },
     "节点1迂回错误": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "任务出错"
@@ -1305,6 +1325,8 @@
             "节点1锚点阵型": ""
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2凹点位",
@@ -1439,6 +1461,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1迂回错误",
@@ -1485,6 +1509,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点1迂回错误",
@@ -1550,6 +1576,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
@@ -1568,6 +1596,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
@@ -1658,6 +1688,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -1670,6 +1702,8 @@
     },
     "节点2凹点位": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "enabled": false,
         "next": [
@@ -1700,6 +1734,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2检测节点",
@@ -1726,6 +1762,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2凹点位2",
@@ -1737,6 +1774,8 @@
     },
     "节点2凹点位2": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2检测概率2",
@@ -1767,6 +1806,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2检测节点2",
@@ -1793,6 +1834,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "进入战斗节点2"
@@ -1803,6 +1845,8 @@
     },
     "进入战斗节点2": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2索敌成功",
@@ -1882,6 +1926,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2迂回错误",
@@ -1905,6 +1951,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2战术迂回成功",
@@ -1916,6 +1964,8 @@
     },
     "节点2迂回错误": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "任务出错"
@@ -1946,6 +1996,8 @@
             "节点2锚点阵型": ""
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3凹点位",
@@ -2079,6 +2131,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2迂回错误",
@@ -2125,6 +2179,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点2迂回错误",
@@ -2190,6 +2246,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -2209,6 +2267,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
@@ -2227,6 +2287,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -2239,6 +2301,8 @@
     },
     "节点3凹点位": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "enabled": false,
         "next": [
@@ -2269,6 +2333,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3检测节点",
@@ -2295,6 +2361,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3凹点位2",
@@ -2306,6 +2373,8 @@
     },
     "节点3凹点位2": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3检测概率2",
@@ -2336,6 +2405,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3检测节点2",
@@ -2362,6 +2433,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "进入战斗节点3"
@@ -2372,6 +2444,8 @@
     },
     "进入战斗节点3": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3索敌成功",
@@ -2451,6 +2525,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3迂回错误",
@@ -2474,6 +2550,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3战术迂回成功",
@@ -2485,6 +2563,8 @@
     },
     "节点3迂回错误": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "任务出错"
@@ -2515,6 +2595,8 @@
             "节点3锚点阵型": ""
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4凹点位",
@@ -2648,6 +2730,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3迂回错误",
@@ -2694,6 +2778,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点3迂回错误",
@@ -2759,6 +2845,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -2778,6 +2866,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
@@ -2796,6 +2886,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -2808,6 +2900,8 @@
     },
     "节点4凹点位": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "enabled": false,
         "next": [
@@ -2838,6 +2932,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4检测节点",
@@ -2864,6 +2960,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4凹点位2",
@@ -2875,6 +2972,8 @@
     },
     "节点4凹点位2": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4检测概率2",
@@ -2905,6 +3004,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4检测节点2",
@@ -2931,6 +3032,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "进入战斗节点4"
@@ -2941,6 +3043,8 @@
     },
     "进入战斗节点4": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4索敌成功",
@@ -3020,6 +3124,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4迂回错误",
@@ -3043,6 +3149,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4战术迂回成功",
@@ -3054,6 +3162,8 @@
     },
     "节点4迂回错误": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "任务出错"
@@ -3084,6 +3194,8 @@
             "节点4锚点阵型": ""
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5凹点位",
@@ -3217,6 +3329,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4迂回错误",
@@ -3263,6 +3377,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点4迂回错误",
@@ -3328,6 +3444,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -3347,6 +3465,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
@@ -3365,6 +3485,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -3377,6 +3499,8 @@
     },
     "节点5凹点位": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "enabled": false,
         "next": [
@@ -3407,6 +3531,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5检测节点",
@@ -3433,6 +3559,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5凹点位2",
@@ -3444,6 +3571,8 @@
     },
     "节点5凹点位2": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5检测概率2",
@@ -3474,6 +3603,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5检测节点2",
@@ -3500,6 +3631,7 @@
         },
         "post_delay": 500,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
         "rate_limit": 0,
         "next": [
             "进入战斗节点5"
@@ -3510,6 +3642,8 @@
     },
     "进入战斗节点5": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5索敌成功",
@@ -3589,6 +3723,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5迂回错误",
@@ -3612,6 +3748,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5战术迂回成功",
@@ -3623,6 +3761,8 @@
     },
     "节点5迂回错误": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "任务出错"
@@ -3653,6 +3793,8 @@
             "节点5锚点阵型": ""
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "进入战斗节点6"
@@ -3785,6 +3927,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5迂回错误",
@@ -3831,6 +3975,8 @@
         },
         "enabled": false,
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点5迂回错误",
@@ -3895,6 +4041,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -3914,6 +4062,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
@@ -3932,6 +4082,8 @@
             "type": "Click"
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -3943,6 +4095,8 @@
     },
     "进入战斗节点6": {
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "节点6索敌成功",
@@ -4082,6 +4236,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -4101,6 +4257,8 @@
             }
         },
         "post_wait_freezes": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
         "rate_limit": 0,
         "next": [
             "500船检测",
