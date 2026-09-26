@@ -1,5 +1,6 @@
 {
     "开始自动演习": {
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]领取奖励",
@@ -11,58 +12,78 @@
         ]
     },
     "处于演习界面": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习挑战.png",
-        "roi": [
-            978,
-            66,
-            205,
-            585
-        ],
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习挑战.png",
+                "roi": [
+                    978,
+                    66,
+                    205,
+                    585
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑"
         ]
     },
     "自动演习": {
-        "recognition": "OCR",
-        "expected": "出征",
-        "roi": [
-            1198,
-            661,
-            71,
-            38
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "点击演习"
         ]
     },
     "点击演习": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习.png",
-        "action": "Click",
-        "threshold": 0.9,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习.png",
+                "threshold": 0.9
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑"
         ]
     },
     "演习向下滑": {
-        "action": "Swipe",
-        "begin": [
-            1220,
-            500,
-            1,
-            1
-        ],
-        "end": [
-            1220,
-            200,
-            1,
-            1
-        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1220,
+                    500,
+                    1,
+                    1
+                ],
+                "end": [
+                    1220,
+                    200,
+                    1,
+                    1
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习挑战",
@@ -70,19 +91,23 @@
         ]
     },
     "演习向上滑": {
-        "action": "Swipe",
-        "begin": [
-            1220,
-            200,
-            1,
-            1
-        ],
-        "end": [
-            1220,
-            500,
-            1,
-            1
-        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1220,
+                    200,
+                    1,
+                    1
+                ],
+                "end": [
+                    1220,
+                    500,
+                    1,
+                    1
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习挑战2",
@@ -90,24 +115,36 @@
         ]
     },
     "演习退出": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "action": "Click",
-        "green_mask": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_delay": 1000
     },
     "演习挑战": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习挑战.png",
-        "action": "Click",
-        "order_by": "Vertical",
-        "roi": [
-            986,
-            71,
-            202,
-            600
-        ],
-        "index": 0,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习挑战.png",
+                "order_by": "Vertical",
+                "roi": [
+                    986,
+                    71,
+                    202,
+                    600
+                ],
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习识别舰船",
@@ -115,174 +152,231 @@
         ]
     },
     "演习识别舰船": {
-        "recognition": "OCR",
-        "roi": [
-            365,
-            412,
-            790,
-            28
-        ],
-        "expected": [
-            "轻母",
-            "轻巡",
-            "驱逐",
-            "航巡",
-            "防驱",
-            "潜艇",
-            "炮潜"
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    365,
+                    412,
+                    790,
+                    28
+                ],
+                "expected": [
+                    "轻母",
+                    "轻巡",
+                    "驱逐",
+                    "航巡",
+                    "防驱",
+                    "潜艇",
+                    "炮潜"
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新次数",
             "演习刷新"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到刷新目标"
+        }
     },
     "演习刷新次数": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习次数.png",
-        "threshold": 0.9,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习次数.png",
+                "threshold": 0.9
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习关闭"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "无刷新次数"
+        }
     },
     "演习刷新": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习刷新.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习刷新.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习识别舰船",
             "演习开始挑战"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "刷新"
+        }
     },
     "演习开始挑战": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习开始挑战.png",
-        "roi": [
-            991,
-            499,
-            194,
-            59
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习开始挑战.png",
+                "roi": [
+                    991,
+                    499,
+                    194,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习编队",
-            "演习自动补给",
+            "[JumpBack]演习编队",
+            "[JumpBack]演习自动补给",
             "演习开始出征"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "开始挑战"
+        }
     },
     "演习自动补给": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/对号.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    56,
+                    661,
+                    21,
+                    22
+                ]
+            }
+        },
         "inverse": true,
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "演习开始出征"
-        ]
+        "post_delay": 1000,
+        "focus": {
+            "Node.Recognition.Succeeded": "切换自动补给"
+        }
     },
     "演习编队": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/队.png",
-        "order_by": "Score",
-        "threshold": 0.95,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "演习自动补给",
-            "演习开始出征"
-        ]
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/队.png",
+                "order_by": "Score",
+                "threshold": 0.95
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
     "演习开始出征": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
-        "post_wait_freezes": 2000,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
-            "演习开始战斗",
-            "演习阵型"
-        ]
+            "[JumpBack]演习开始战斗",
+            "[JumpBack]演习阵型",
+            "[JumpBack]节点1追击",
+            "演习点击继续",
+            "[JumpBack]处于战斗中"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "开始演习"
+        }
     },
     "演习开始战斗": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始战斗.png",
-        "action": "Click",
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习阵型"
-        ]
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始战斗.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0
     },
     "演习阵型": {
-        "recognition": "OCR",
-        "expected": [
-            "复纵阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 120000,
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习追击",
-            "演习点击继续"
-        ]
-    },
-    "演习追击": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 120000,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习点击继续"
-        ]
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "复纵阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_wait_freezes": 0
     },
     "演习点击继续": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习再点继续"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "演习结算"
+        }
     },
     "演习再点继续": {
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习结束",
@@ -290,17 +384,27 @@
         ]
     },
     "演习结束": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/出征.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑"
         ]
     },
     "演习关闭": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/关闭演习.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/关闭演习.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新失败1",
@@ -310,24 +414,29 @@
             "Node.Recognition.Succeeded": {
                 "content": "<span style=\"color: red;\">放弃本次演习（共一次）</span>",
                 "display": [
-                    "log",
-                    "toast"
+                    "log"
                 ]
             }
         }
     },
     "演习刷新失败1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习挑战.png",
-        "action": "Click",
-        "order_by": "Vertical",
-        "roi": [
-            986,
-            71,
-            202,
-            600
-        ],
-        "index": 1,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习挑战.png",
+                "order_by": "Vertical",
+                "roi": [
+                    986,
+                    71,
+                    202,
+                    600
+                ],
+                "index": 1
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习识别舰船1",
@@ -335,31 +444,44 @@
         ]
     },
     "演习识别舰船1": {
-        "recognition": "OCR",
-        "roi": [
-            365,
-            412,
-            790,
-            28
-        ],
-        "expected": [
-            "轻母",
-            "轻巡",
-            "驱逐",
-            "航巡",
-            "防驱",
-            "潜艇",
-            "炮潜"
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    365,
+                    412,
+                    790,
+                    28
+                ],
+                "expected": [
+                    "轻母",
+                    "轻巡",
+                    "驱逐",
+                    "航巡",
+                    "防驱",
+                    "潜艇",
+                    "炮潜"
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习关闭1"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到刷新目标"
+        }
     },
     "演习关闭1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/关闭演习.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/关闭演习.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新失败2",
@@ -369,24 +491,29 @@
             "Node.Recognition.Succeeded": {
                 "content": "<span style=\"color: red;\">放弃本次演习（共两次）</span>",
                 "display": [
-                    "log",
-                    "toast"
+                    "log"
                 ]
             }
         }
     },
     "演习刷新失败2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习挑战.png",
-        "action": "Click",
-        "order_by": "Vertical",
-        "roi": [
-            986,
-            71,
-            202,
-            600
-        ],
-        "index": 2,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习挑战.png",
+                "order_by": "Vertical",
+                "roi": [
+                    986,
+                    71,
+                    202,
+                    600
+                ],
+                "index": 2
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习识别舰船2",
@@ -394,31 +521,44 @@
         ]
     },
     "演习识别舰船2": {
-        "recognition": "OCR",
-        "roi": [
-            365,
-            412,
-            790,
-            28
-        ],
-        "expected": [
-            "轻母",
-            "轻巡",
-            "驱逐",
-            "航巡",
-            "防驱",
-            "潜艇",
-            "炮潜"
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    365,
+                    412,
+                    790,
+                    28
+                ],
+                "expected": [
+                    "轻母",
+                    "轻巡",
+                    "驱逐",
+                    "航巡",
+                    "防驱",
+                    "潜艇",
+                    "炮潜"
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习关闭2"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到刷新目标"
+        }
     },
     "演习关闭2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/关闭演习.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/关闭演习.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新失败3",
@@ -428,24 +568,29 @@
             "Node.Recognition.Succeeded": {
                 "content": "<span style=\"color: red;\">放弃本次演习（共三次）</span>",
                 "display": [
-                    "log",
-                    "toast"
+                    "log"
                 ]
             }
         }
     },
     "演习刷新失败3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习挑战.png",
-        "action": "Click",
-        "order_by": "Vertical",
-        "roi": [
-            986,
-            71,
-            202,
-            600
-        ],
-        "index": 3,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习挑战.png",
+                "order_by": "Vertical",
+                "roi": [
+                    986,
+                    71,
+                    202,
+                    600
+                ],
+                "index": 3
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习识别舰船3",
@@ -453,31 +598,44 @@
         ]
     },
     "演习识别舰船3": {
-        "recognition": "OCR",
-        "roi": [
-            365,
-            412,
-            790,
-            28
-        ],
-        "expected": [
-            "轻母",
-            "轻巡",
-            "驱逐",
-            "航巡",
-            "防驱",
-            "潜艇",
-            "炮潜"
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    365,
+                    412,
+                    790,
+                    28
+                ],
+                "expected": [
+                    "轻母",
+                    "轻巡",
+                    "驱逐",
+                    "航巡",
+                    "防驱",
+                    "潜艇",
+                    "炮潜"
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习关闭3"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "识别到刷新目标"
+        }
     },
     "演习关闭3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/关闭演习.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/关闭演习.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向上滑"
@@ -486,139 +644,96 @@
             "Node.Recognition.Succeeded": {
                 "content": "<span style=\"color: red;\">放弃本次演习（共四次）</span>",
                 "display": [
-                    "log",
-                    "toast"
+                    "log"
                 ]
             }
         }
     },
     "演习开始挑战1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习开始挑战.png",
-        "roi": [
-            991,
-            499,
-            194,
-            59
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习开始挑战.png",
+                "roi": [
+                    991,
+                    499,
+                    194,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习编队1",
-            "演习自动补给1",
-            "演习开始出征1"
-        ]
-    },
-    "演习自动补给1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
-        "inverse": true,
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "演习开始出征1"
-        ]
-    },
-    "演习编队1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/队.png",
-        "order_by": "Score",
-        "threshold": 0.95,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "演习自动补给1",
+            "[JumpBack]演习编队",
+            "[JumpBack]演习自动补给",
             "演习开始出征1"
         ]
     },
     "演习开始出征1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习开始战斗1",
-            "演习阵型1"
-        ]
-    },
-    "演习开始战斗1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始战斗.png",
-        "action": "Click",
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习阵型1"
-        ]
-    },
-    "演习阵型1": {
-        "recognition": "OCR",
-        "expected": [
-            "复纵阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 120000,
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习追击1",
-            "演习点击继续1"
-        ]
-    },
-    "演习追击1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 120000,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习点击继续1"
+            "[JumpBack]演习开始战斗",
+            "[JumpBack]演习阵型",
+            "演习点击继续1",
+            "[JumpBack]节点1追击",
+            "[JumpBack]处于战斗中"
         ]
     },
     "演习点击继续1": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习再点继续1"
         ]
     },
     "演习再点继续1": {
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习结束1",
@@ -626,27 +741,35 @@
         ]
     },
     "演习结束1": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/出征.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑1"
         ]
     },
     "演习向下滑1": {
-        "action": "Swipe",
-        "begin": [
-            1220,
-            500,
-            1,
-            1
-        ],
-        "end": [
-            1220,
-            200,
-            1,
-            1
-        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1220,
+                    500,
+                    1,
+                    1
+                ],
+                "end": [
+                    1220,
+                    200,
+                    1,
+                    1
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新失败1",
@@ -654,132 +777,90 @@
         ]
     },
     "演习开始挑战2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习开始挑战.png",
-        "roi": [
-            991,
-            499,
-            194,
-            59
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习开始挑战.png",
+                "roi": [
+                    991,
+                    499,
+                    194,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习编队2",
-            "演习自动补给2",
-            "演习开始出征2"
-        ]
-    },
-    "演习自动补给2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
-        "inverse": true,
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "演习开始出征2"
-        ]
-    },
-    "演习编队2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/队.png",
-        "order_by": "Score",
-        "threshold": 0.95,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "演习自动补给2",
+            "[JumpBack]演习编队",
+            "[JumpBack]演习自动补给",
             "演习开始出征2"
         ]
     },
     "演习开始出征2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习开始战斗2",
-            "演习阵型2"
-        ]
-    },
-    "演习开始战斗2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始战斗.png",
-        "action": "Click",
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习阵型2"
-        ]
-    },
-    "演习阵型2": {
-        "recognition": "OCR",
-        "expected": [
-            "复纵阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 120000,
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习追击2",
-            "演习点击继续2"
-        ]
-    },
-    "演习追击2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 120000,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习点击继续2"
+            "[JumpBack]演习开始战斗",
+            "[JumpBack]演习阵型",
+            "演习点击继续2",
+            "[JumpBack]节点1追击",
+            "[JumpBack]处于战斗中"
         ]
     },
     "演习点击继续2": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习再点继续2"
         ]
     },
     "演习再点继续2": {
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习结束2",
@@ -787,27 +868,35 @@
         ]
     },
     "演习结束2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/出征.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑2"
         ]
     },
     "演习向下滑2": {
-        "action": "Swipe",
-        "begin": [
-            1220,
-            500,
-            1,
-            1
-        ],
-        "end": [
-            1220,
-            200,
-            1,
-            1
-        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1220,
+                    500,
+                    1,
+                    1
+                ],
+                "end": [
+                    1220,
+                    200,
+                    1,
+                    1
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新失败2",
@@ -815,132 +904,90 @@
         ]
     },
     "演习开始挑战3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习开始挑战.png",
-        "roi": [
-            991,
-            499,
-            194,
-            59
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习开始挑战.png",
+                "roi": [
+                    991,
+                    499,
+                    194,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习编队3",
-            "演习自动补给3",
-            "演习开始出征3"
-        ]
-    },
-    "演习自动补给3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
-        "inverse": true,
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "演习开始出征3"
-        ]
-    },
-    "演习编队3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/队.png",
-        "order_by": "Score",
-        "threshold": 0.95,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "演习自动补给3",
+            "[JumpBack]演习编队",
+            "[JumpBack]演习自动补给",
             "演习开始出征3"
         ]
     },
     "演习开始出征3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习开始战斗3",
-            "演习阵型3"
-        ]
-    },
-    "演习开始战斗3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始战斗.png",
-        "action": "Click",
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习阵型3"
-        ]
-    },
-    "演习阵型3": {
-        "recognition": "OCR",
-        "expected": [
-            "复纵阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 120000,
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习追击3",
-            "演习点击继续3"
-        ]
-    },
-    "演习追击3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 120000,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习点击继续3"
+            "[JumpBack]演习开始战斗",
+            "[JumpBack]演习阵型",
+            "演习点击继续3",
+            "[JumpBack]节点1追击",
+            "[JumpBack]处于战斗中"
         ]
     },
     "演习点击继续3": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习再点继续3"
         ]
     },
     "演习再点继续3": {
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习结束3",
@@ -948,27 +995,35 @@
         ]
     },
     "演习结束3": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/出征.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习向下滑3"
         ]
     },
     "演习向下滑3": {
-        "action": "Swipe",
-        "begin": [
-            1220,
-            500,
-            1,
-            1
-        ],
-        "end": [
-            1220,
-            200,
-            1,
-            1
-        ],
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    1220,
+                    500,
+                    1,
+                    1
+                ],
+                "end": [
+                    1220,
+                    200,
+                    1,
+                    1
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习刷新失败3",
@@ -976,149 +1031,113 @@
         ]
     },
     "演习挑战2": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习挑战.png",
-        "action": "Click",
-        "order_by": "Vertical",
-        "roi": [
-            982,
-            93,
-            194,
-            109
-        ],
-        "index": 0,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习挑战.png",
+                "order_by": "Vertical",
+                "roi": [
+                    982,
+                    93,
+                    194,
+                    109
+                ],
+                "index": 0
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习开始挑战4"
         ]
     },
     "演习开始挑战4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/演习开始挑战.png",
-        "roi": [
-            991,
-            499,
-            194,
-            59
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/演习开始挑战.png",
+                "roi": [
+                    991,
+                    499,
+                    194,
+                    59
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习编队4",
-            "演习自动补给4",
-            "演习开始出征4"
-        ]
-    },
-    "演习自动补给4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
-        "inverse": true,
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
-        "next": [
-            "[JumpBack]重新连接",
-            "演习开始出征4"
-        ]
-    },
-    "演习编队4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/队.png",
-        "order_by": "Score",
-        "threshold": 0.95,
-        "action": "Click",
-        "next": [
-            "[JumpBack]重新连接",
-            "演习自动补给4",
+            "[JumpBack]演习编队",
+            "[JumpBack]演习自动补给",
             "演习开始出征4"
         ]
     },
     "演习开始出征4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 2000,
         "next": [
             "[JumpBack]重新连接",
-            "演习开始战斗4",
-            "演习阵型4"
-        ]
-    },
-    "演习开始战斗4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始战斗.png",
-        "action": "Click",
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习阵型4"
-        ]
-    },
-    "演习阵型4": {
-        "recognition": "OCR",
-        "expected": [
-            "复纵阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 120000,
-        "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习追击4",
-            "演习点击继续4"
-        ]
-    },
-    "演习追击4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
-        "post_wait_freezes": 5000,
-        "timeout": 120000,
-        "next": [
-            "[JumpBack]重新连接",
-            "演习点击继续4"
+            "[JumpBack]演习开始战斗",
+            "[JumpBack]演习阵型",
+            "演习点击继续4",
+            "[JumpBack]节点1追击",
+            "[JumpBack]处于战斗中"
         ]
     },
     "演习点击继续4": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习再点继续4"
         ]
     },
     "演习再点继续4": {
-        "action": "Click",
-        "target": [
-            1208,
-            140,
-            24,
-            482
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    140,
+                    24,
+                    482
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习结束4",
@@ -1126,24 +1145,34 @@
         ]
     },
     "演习结束4": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/出征.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "演习退出"
         ]
     },
     "退出演习": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "roi": [
-            7,
-            5,
-            95,
-            705
-        ],
-        "action": "Click",
-        "green_mask": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",

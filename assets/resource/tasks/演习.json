@@ -24,18 +24,6 @@
                     "pipeline_override": {
                         "演习编队": {
                             "template": "战斗/2队.png"
-                        },
-                        "演习编队1": {
-                            "template": "战斗/2队.png"
-                        },
-                        "演习编队2": {
-                            "template": "战斗/2队.png"
-                        },
-                        "演习编队3": {
-                            "template": "战斗/2队.png"
-                        },
-                        "演习编队4": {
-                            "template": "战斗/2队.png"
                         }
                     }
                 },
@@ -44,18 +32,6 @@
                     "pipeline_override": {
                         "演习编队": {
                             "template": "战斗/3队.png"
-                        },
-                        "演习编队1": {
-                            "template": "战斗/3队.png"
-                        },
-                        "演习编队2": {
-                            "template": "战斗/3队.png"
-                        },
-                        "演习编队3": {
-                            "template": "战斗/3队.png"
-                        },
-                        "演习编队4": {
-                            "template": "战斗/3队.png"
                         }
                     }
                 },
@@ -63,18 +39,6 @@
                     "name": "第四编队",
                     "pipeline_override": {
                         "演习编队": {
-                            "template": "战斗/4队.png"
-                        },
-                        "演习编队1": {
-                            "template": "战斗/4队.png"
-                        },
-                        "演习编队2": {
-                            "template": "战斗/4队.png"
-                        },
-                        "演习编队3": {
-                            "template": "战斗/4队.png"
-                        },
-                        "演习编队4": {
                             "template": "战斗/4队.png"
                         }
                     }
@@ -88,18 +52,6 @@
                     "pipeline_override": {
                         "演习阵型": {
                             "expected": "单纵"
-                        },
-                        "演习阵型1": {
-                            "expected": "单纵"
-                        },
-                        "演习阵型2": {
-                            "expected": "单纵"
-                        },
-                        "演习阵型3": {
-                            "expected": "单纵"
-                        },
-                        "演习阵型4": {
-                            "expected": "单纵"
                         }
                     }
                 },
@@ -107,18 +59,6 @@
                     "name": "复纵阵",
                     "pipeline_override": {
                         "演习阵型": {
-                            "expected": "复纵"
-                        },
-                        "演习阵型1": {
-                            "expected": "复纵"
-                        },
-                        "演习阵型2": {
-                            "expected": "复纵"
-                        },
-                        "演习阵型3": {
-                            "expected": "复纵"
-                        },
-                        "演习阵型4": {
                             "expected": "复纵"
                         }
                     }
@@ -128,18 +68,6 @@
                     "pipeline_override": {
                         "演习阵型": {
                             "expected": "轮型"
-                        },
-                        "演习阵型1": {
-                            "expected": "轮型"
-                        },
-                        "演习阵型2": {
-                            "expected": "轮型"
-                        },
-                        "演习阵型3": {
-                            "expected": "轮型"
-                        },
-                        "演习阵型4": {
-                            "expected": "轮型"
                         }
                     }
                 },
@@ -148,18 +76,6 @@
                     "pipeline_override": {
                         "演习阵型": {
                             "expected": "梯形"
-                        },
-                        "演习阵型1": {
-                            "expected": "梯形"
-                        },
-                        "演习阵型2": {
-                            "expected": "梯形"
-                        },
-                        "演习阵型3": {
-                            "expected": "梯形"
-                        },
-                        "演习阵型4": {
-                            "expected": "梯形"
                         }
                     }
                 },
@@ -167,18 +83,6 @@
                     "name": "单横阵",
                     "pipeline_override": {
                         "演习阵型": {
-                            "expected": "横阵"
-                        },
-                        "演习阵型1": {
-                            "expected": "横阵"
-                        },
-                        "演习阵型2": {
-                            "expected": "横阵"
-                        },
-                        "演习阵型3": {
-                            "expected": "横阵"
-                        },
-                        "演习阵型4": {
                             "expected": "横阵"
                         }
                     }

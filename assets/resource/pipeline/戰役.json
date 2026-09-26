@@ -1,5 +1,6 @@
 {
     "开始自动战役": {
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]领取奖励",
@@ -13,15 +14,21 @@
         ]
     },
     "自动战役": {
-        "recognition": "OCR",
-        "expected": "出征",
-        "roi": [
-            1198,
-            661,
-            71,
-            38
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "点击战役",
@@ -31,10 +38,16 @@
         ]
     },
     "点击战役": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/战役.png",
-        "action": "Click",
-        "threshold": 0.9,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/战役.png",
+                "threshold": 0.9
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役次数",
@@ -43,9 +56,15 @@
         ]
     },
     "困难难度": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/困难难度.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/困难难度.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役次数",
@@ -53,8 +72,12 @@
         ]
     },
     "普通难度": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/普通难度.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/普通难度.png"
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役次数",
@@ -62,18 +85,24 @@
         ]
     },
     "选择战役": {
-        "recognition": "OCR",
-        "expected": [
-            "驱逐改造核心",
-            "纳尔维克海战"
-        ],
-        "roi": [
-            29,
-            541,
-            1219,
-            89
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "驱逐改造核心",
+                    "纳尔维克海战"
+                ],
+                "roi": [
+                    29,
+                    541,
+                    1219,
+                    89
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役确认",
@@ -81,13 +110,17 @@
         ]
     },
     "战役自动补给": {
-        "action": "Click",
-        "target": [
-            56,
-            661,
-            21,
-            22
-        ],
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    56,
+                    661,
+                    21,
+                    22
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役确认",
@@ -95,8 +128,12 @@
         ]
     },
     "战役确认": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/对号.png",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/对号.png"
+            }
+        },
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
@@ -106,28 +143,32 @@
         ]
     },
     "战役修理检测大破": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            225,
-            86,
-            32
-        ],
-        "upper": [
-            229,
-            106,
-            57
-        ],
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    225,
+                    86,
+                    32
+                ],
+                "upper": [
+                    229,
+                    106,
+                    57
+                ],
+                "connected": true
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役快速修理"
         ],
-        "connected": true,
         "focus": {
             "Node.Recognition.Succeeded": {
                 "content": "<span style=\"color: red;\">检测到大破舰船</span>",
@@ -139,28 +180,32 @@
         }
     },
     "战役修理检测中破": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            233,
-            172,
-            25
-        ],
-        "upper": [
-            237,
-            182,
-            52
-        ],
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    233,
+                    172,
+                    25
+                ],
+                "upper": [
+                    237,
+                    182,
+                    52
+                ],
+                "connected": true
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役快速修理"
         ],
-        "connected": true,
         "focus": {
             "Node.Recognition.Succeeded": {
                 "content": "<span style=\"color: red;\">检测到中破舰船</span>",
@@ -172,9 +217,15 @@
         }
     },
     "战役快速修理": {
-        "recognition": "OCR",
-        "expected": "快速修理",
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "快速修理"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役修理大破舰船",
@@ -182,25 +233,31 @@
         ]
     },
     "战役修理大破舰船": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            225,
-            86,
-            32
-        ],
-        "upper": [
-            229,
-            106,
-            57
-        ],
-        "action": "Click",
-        "connected": true,
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    225,
+                    86,
+                    32
+                ],
+                "upper": [
+                    229,
+                    106,
+                    57
+                ],
+                "connected": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役修理大破舰船",
@@ -209,25 +266,31 @@
         ]
     },
     "战役修理中破舰船": {
-        "recognition": "ColorMatch",
-        "roi": [
-            60,
-            423,
-            888,
-            11
-        ],
-        "lower": [
-            233,
-            172,
-            25
-        ],
-        "upper": [
-            237,
-            182,
-            52
-        ],
-        "action": "Click",
-        "connected": true,
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "roi": [
+                    60,
+                    423,
+                    888,
+                    11
+                ],
+                "lower": [
+                    233,
+                    172,
+                    25
+                ],
+                "upper": [
+                    237,
+                    182,
+                    52
+                ],
+                "connected": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役修理大破舰船",
@@ -236,69 +299,84 @@
         ]
     },
     "战役开始出征": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始出征.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
+        "post_delay": 1000,
         "next": [
             "[JumpBack]重新连接",
-            "战役开始战斗",
-            "战役阵型",
+            "[JumpBack]战役开始战斗",
+            "[JumpBack]战役阵型",
             "战役点击继续",
-            "[JumpBack]节点1追击"
+            "[JumpBack]节点1追击",
+            "[JumpBack]处于战斗中"
         ],
-        "timeout": 60000,
         "focus": {
-            "Node.Recognition.Succeeded": "开始出征"
+            "Node.Recognition.Succeeded": "战役开始"
         }
     },
     "战役开始战斗": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/开始战斗.png",
-        "action": "Click",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始战斗.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "战役阵型",
-            "战役点击继续",
-            "[JumpBack]节点1追击"
-        ],
-        "timeout": 90000
+        "post_delay": 1000
     },
     "战役阵型": {
-        "recognition": "OCR",
-        "expected": [
-            "复纵阵"
-        ],
-        "roi": [
-            702,
-            99,
-            560,
-            612
-        ],
-        "action": "Click",
-        "timeout": 90000,
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "复纵阵",
+                "roi": [
+                    702,
+                    99,
+                    560,
+                    612
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 0,
-        "next": [
-            "[JumpBack]重新连接",
-            "战役点击继续",
-            "[JumpBack]节点1追击"
-        ]
+        "post_delay": 1000
     },
     "战役点击继续": {
-        "recognition": "OCR",
-        "expected": "点击继续",
-        "roi": [
-            957,
-            577,
-            322,
-            142
-        ],
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "点击继续",
+                "roi": [
+                    957,
+                    577,
+                    322,
+                    142
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "next": [
             "[JumpBack]重新连接",
             "战役再点继续"
-        ]
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "战役结算"
+        }
     },
     "战役再点继续": {
         "action": {
@@ -321,17 +399,21 @@
         ]
     },
     "战役次数": {
-        "recognition": "OCR",
-        "expected": [
-            "^0/8$",
-            "^0/12$"
-        ],
-        "roi": [
-            29,
-            541,
-            1219,
-            89
-        ],
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "^0/8$",
+                    "^0/12$"
+                ],
+                "roi": [
+                    29,
+                    541,
+                    1219,
+                    89
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "任务结束"
@@ -348,22 +430,31 @@
         }
     },
     "退出战役": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "roi": [
-            7,
-            5,
-            95,
-            705
-        ],
-        "action": "Click",
-        "green_mask": true,
-        "post_delay": 1000
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ],
+                "green_mask": true
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
     },
     "回到战役界面": {
-        "recognition": "TemplateMatch",
-        "template": "通用/退出.png",
-        "green_mask": true,
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "开始自动战役",
