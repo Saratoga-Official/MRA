@@ -1,0 +1,54 @@
+# MaaFwApp 打包配方 —— 把 MRA 资源打进 Android APK
+#
+# 用法：本文件被 MaaFwApp 通过 local.properties 的 `pi.profile` 读取。
+# 其中的 ${VAR} 由 .github/workflows/android.yml 在 CI 中通过环境变量注入；
+# 若在本地手动出包，请自行 export 下列环境变量（或把 ${...} 直接改成绝对路径）：
+#   MRA_ASSETS_DIR  含 interface.json 的 PI 根目录（本仓库的 assets/，需先跑 configure.py 生成 OCR 模型、
+#                   并把 agent/、LICENSE、logo.png 拷进该目录，详见 android.yml 的 "Stage PI" 步骤）
+#   MRA_AGENT_DIST  build_agent_bundle.py 产出的 agent 运行时目录（含 <abi>/bundle/**）
+#   MRA_APP_ICON    launcher 图标（png/webp，由 logo.ico 转换而来）
+#
+# 字段语义见 MaaFwApp/pi-profile.sample.yaml 与 build-logic 的 BuildProfile.kt。
+
+# PI 根目录（含 interface.json 那一层）
+assets: ${MRA_ASSETS_DIR}
+
+# 进包白名单。写了 include 即整体替换默认值，故这里显式列全 MRA 需要的内容。
+# 注意：agent 载荷（main.py 等）、LICENSE、logo.png 需在打包前拷入 assets/ 根，
+# 因为 include 的相对路径是相对 assets/ 计算的。
+include:
+  - interface.json
+  - resource/**
+  - agent/**
+  - logo.png
+  - LICENSE
+
+exclude: []
+
+# MRA 的 interface.json 声明了 agent，Android 上必须提供对应运行时，否则开始任务会失败。
+# MRA agent 是 Python（agent/main.py），用 bundle 型运行时（内嵌 CPython）。
+# 实际命令 = executable + args + identifier，工作目录为资源解包根，
+# 因此 args 里的 agent/main.py 相对资源根定位，agent/ 已通过 include 进包。
+agent:
+  sourceDir: ${MRA_AGENT_DIST}
+  abi: [arm64-v8a, x86_64]
+  runtimes:
+    # 条数须与 interface.json 的 agent[] 一一对应；MRA 只有一个 agent。
+    - location: bundle
+      executable: bin/python3
+      args: [-u, agent/main.py]
+      env:
+        PYTHONHOME: "{bundle}/prefix"
+        PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+        LD_LIBRARY_PATH: "{bundle}/prefix/lib:{nativeLibs}"
+        MAAFW_BINARY_PATH: "{nativeLibs}"
+
+# Mirror酱在 Android 端暂不支持，这里的 rid 仅作占位/备用；不影响 APK 出包。
+update:
+  mirrorchyanRid: MaaJR
+
+# 应用身份：包名拼成 com.aliothmoon.maafw.mra；图标须 png/webp。
+app:
+  id: mra
+  label: MRA
+  icon: ${MRA_APP_ICON}
