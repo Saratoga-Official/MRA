@@ -65,7 +65,7 @@ jobs:
     needs: meta
     # 按平台使用原生 runner：install_python.py 下载“当前运行平台”的 Python，
     # 必须在目标平台上执行才能得到该平台可用的内嵌解释器。
-    # android 无对应桌面 runner，用 ubuntu 交叉打包（android 不内嵌 Python）。
+    # Android 端不再由本 workflow 交叉打包，改用 MaaFwApp（见 android.yml）。
     runs-on: ${{ matrix.runs-on }}
     env:
       PYTHONUTF8: "1"
@@ -91,12 +91,6 @@ jobs:
           - os: linux
             arch: aarch64
             runs-on: ubuntu-24.04-arm
-          - os: android
-            arch: x86_64
-            runs-on: ubuntu-latest
-          - os: android
-            arch: aarch64
-            runs-on: ubuntu-latest
       fail-fast: false
 
     steps:
@@ -120,7 +114,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download MFAAvalonia
-        if: matrix.os != 'android'
         id: download_mfa
         uses: robinraju/release-downloader@v1.10
         with:
@@ -132,19 +125,17 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean up MFAAvalonia archive
-        if: matrix.os != 'android'
         shell: bash
         run: |
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
 
       - name: Remove built-in runtime in MFA
-        if: matrix.os != 'android'
         shell: bash
         run: rm -rf MFA/runtimes
 
       - name: Download MXU
-        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        if: matrix.os != 'linux' || matrix.arch == 'x86_64'
         id: download_mxu
         uses: robinraju/release-downloader@v1.10
         with:
@@ -156,7 +147,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean up MXU archive
-        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        if: matrix.os != 'linux' || matrix.arch == 'x86_64'
         shell: bash
         run: |
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mxu.outputs.downloaded_files)[0] }}"
@@ -165,9 +156,8 @@ jobs:
       - name: Install jsonc dependency
         run: python -m pip install json-with-comments
 
-      # 构建内嵌 Python 并预装 agent 运行时依赖（android 不内嵌 Python）
+      # 构建内嵌 Python 并预装 agent 运行时依赖
       - name: Build embedded Python for agent
-        if: matrix.os != 'android'
         shell: bash
         run: |
           python ./tools/install_python.py ./python-embed
@@ -179,11 +169,10 @@ jobs:
           "$PY" -m pip install --no-warn-script-location -r ./agent/requirements.txt
 
       - name: Install main version (MFAA)
-        if: matrix.os != 'android'
         shell: bash
         run: |
           python ./tools/install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
-          if [[ "${{ matrix.os }}" != "android" && -d "MFA" ]]; then
+          if [[ -d "MFA" ]]; then
             mkdir -p install
             # rsync 在 Windows runner 的 Git Bash 里不存在，用 cp 代替
             cp -rn MFA/. install/ 2>/dev/null || cp -r MFA/. install/
@@ -206,7 +195,7 @@ jobs:
           if [ -f "logo.ico" ]; then cp logo.ico install-cli/logo.ico; fi
 
       - name: Install MXU version
-        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        if: matrix.os != 'linux' || matrix.arch == 'x86_64'
         shell: bash
         run: |
           python ./tools/install_mxu.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
@@ -222,7 +211,6 @@ jobs:
           fi
 
       - uses: actions/upload-artifact@v4
-        if: matrix.os != 'android'
         with:
           name: MRA-${{ matrix.os }}-${{ matrix.arch }}-MFAA
           path: "install"
@@ -233,7 +221,7 @@ jobs:
           path: "install-cli"
 
       - uses: actions/upload-artifact@v4
-        if: matrix.os != 'android' && (matrix.os != 'linux' || matrix.arch == 'x86_64')
+        if: matrix.os != 'linux' || matrix.arch == 'x86_64'
         with:
           name: MRA-${{ matrix.os }}-${{ matrix.arch }}-MXU
           path: "install-mxu"
