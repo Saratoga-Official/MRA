@@ -25,7 +25,7 @@ MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控�
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** **[MFAAvalonia](https://github.com/MaaXYZ/MFAAvalonia)** 和 **[MXU](https://github.com/MistEO/MXU)** 强力驱动！
 
-安卓端由 **[MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)** 打包驱动！
+安卓端由 **[MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)** 强力驱动！
 
 本项目项目已接入 **[Mirror酱](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/Mirror酱.md)** 资源更新方式
 
