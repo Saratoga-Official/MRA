@@ -63,10 +63,10 @@ jobs:
 
   install:
     needs: meta
-    # 按平台使用原生 runner：install_python.py 下载“当前运行平台”的 Python，
-    # 必须在目标平台上执行才能得到该平台可用的内嵌解释器。
-    # android 无对应桌面 runner，用 ubuntu 交叉打包（android 不内嵌 Python）。
     runs-on: ${{ matrix.runs-on }}
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: utf-8
     strategy:
       matrix:
         include:
@@ -182,7 +182,8 @@ jobs:
           python ./tools/install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
           if [[ "${{ matrix.os }}" != "android" && -d "MFA" ]]; then
             mkdir -p install
-            rsync -av --ignore-existing MFA/ install/
+            # rsync 在 Windows runner 的 Git Bash 里不存在，用 cp 代替
+            cp -rn MFA/. install/ 2>/dev/null || cp -r MFA/. install/
             if [[ "${{ matrix.os }}" == "win" ]]; then
               if [ -f "install/MFAAvalonia.exe" ]; then mv install/MFAAvalonia.exe install/MRA.exe; fi
             elif [[ "${{ matrix.os }}" == "macos" ]]; then
