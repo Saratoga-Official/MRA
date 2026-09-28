@@ -121,8 +121,12 @@ jobs:
           distribution: temurin
           java-version: "17"
 
+      # 显式指定 packages，覆盖 action 默认的 "tools platform-tools"。
+      # 新版 Android SDK 已移除独立 tools 包，导致默认值里的 tools 找不到而报错。
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       - name: Set up Python
         uses: actions/setup-python@v5
