@@ -108,7 +108,7 @@ jobs:
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
-          tag: 'v5.14.1'
+          tag: 'v5.14.0'
           out-file-path: "deps"
           extract: true
           token: ${{ secrets.GITHUB_TOKEN }}
