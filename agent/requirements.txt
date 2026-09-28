@@ -1,0 +1,10 @@
+# 舰R小助手 Agent 运行时依赖（自定义识别 / 自定义动作）
+# 说明：这些依赖会随发布包内嵌的 Python 一起打包，终端用户无需自行安装。
+#
+# MaaFw：MaaFramework 的 Python 绑定，agent 代码 import maa.* 时使用。
+#        绑定与 MaaFramework 二进制配套发版，必须与 workflow 中下载的
+#        MaaFramework 版本（当前 v5.10.2）保持一致，否则可能不兼容。
+MaaFw==5.10.2
+
+# loguru：logger.py 的日志美化库（缺失时会自动回退到标准库 logging，但仍建议安装）。
+loguru
