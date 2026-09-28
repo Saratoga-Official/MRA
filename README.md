@@ -15,7 +15,7 @@ MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控�
 <p align="center">
   <img alt="license" src="https://img.shields.io/github/license/Saratoga-Official/MRA">
   <img alt="Pipeline" src="https://img.shields.io/badge/Pipeline-%23454545?logo=paddypower&logoColor=%23FFFFFF">
-  <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blueviolet">
+  <img alt="platform" src="https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS%20%7C%20Android-blueviolet">
   <img alt="commit" src="https://img.shields.io/github/commit-activity/m/Saratoga-Official/MRA">
   <img alt="stars" src="https://img.shields.io/github/stars/Saratoga-Official/MRA?style=social">
   <a href="https://mirrorchyan.com/zh/projects?rid=MaaJR" target="_blank"><img alt="mirrorc" src="https://img.shields.io/badge/Mirror%E9%85%B1-%239af3f6?logo=countingworkspro&logoColor=4f46e5"></a>
@@ -24,6 +24,8 @@ MRA，基于全新架构的 战舰少女R 小助手。图像技术 + 模拟控�
 <div align="center">
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** **[MFAAvalonia](https://github.com/MaaXYZ/MFAAvalonia)** 和 **[MXU](https://github.com/MistEO/MXU)** 强力驱动！
+
+安卓端由 **[MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)** 打包驱动！
 
 本项目项目已接入 **[Mirror酱](https://github.com/Saratoga-Official/MRA/blob/main/docs/zh_cn/Mirror酱.md)** 资源更新方式
 
@@ -69,6 +71,7 @@ QQ群457094182
 - [功能介绍](./docs/zh_cn/功能介绍.md)
 - [MaaPiCli使用说明](./docs/zh_cn/MaaPiCli.md)
 - [连接设置](./docs/zh_cn/连接设置.md)
+- [安卓打包](./docs/zh_cn/安卓打包.md)
 - [常见问题](./docs/zh_cn/常见问题.md)
 - [Mirror酱使用说明](./docs/zh_cn/Mirror酱.md)
 - [开发文档](./docs/zh_cn/开发文档.md)
@@ -97,6 +100,8 @@ QQ群457094182
  **[MFAAvalonia](https://github.com/MaaXYZ/MFAAvalonia)** 
 
  **[MXU](https://github.com/MistEO/MXU)**
+
+ **[MaaFwApp](https://github.com/Aliothmoon/MaaFwApp)**
  
  **[Mirror酱](https://mirrorchyan.com/zh/get-start)** 
 
