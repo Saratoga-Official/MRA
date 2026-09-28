@@ -63,6 +63,9 @@ jobs:
 
   install:
     needs: meta
+    # 按平台使用原生 runner：install_python.py 下载“当前运行平台”的 Python，
+    # 必须在目标平台上执行才能得到该平台可用的内嵌解释器。
+    # android 无对应桌面 runner，用 ubuntu 交叉打包（android 不内嵌 Python）。
     runs-on: ${{ matrix.runs-on }}
     env:
       PYTHONUTF8: "1"
@@ -78,7 +81,7 @@ jobs:
             runs-on: windows-11-arm
           - os: macos
             arch: x86_64
-            runs-on: macos-13
+            runs-on: macos-15-intel
           - os: macos
             arch: aarch64
             runs-on: macos-latest
