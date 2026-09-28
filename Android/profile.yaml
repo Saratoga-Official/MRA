@@ -1,0 +1,50 @@
+# Android 打包配方（MaaFwApp）。相对路径相对本文件所在目录（Android/）。
+#
+# 参考 MAA1999/M9A 的 Android/profile.yaml：MaaFwApp 作为子模块在 Android/MaaFwApp，
+# 配方与 agent 运行时目录都在 Android/ 下，本地与 CI 共用同一份。
+#
+# 结构差异：M9A 的 PI 在仓库根，可以 `assets: ..`；MRA 的 PI 在 assets/，而 agent/、LICENSE、
+# 图标在仓库根。include 只能匹配 assets 目录里的文件，所以出包前先跑
+# `python tools/stage_android.py` 把它们铺进 assets/（产物已加进 .gitignore）。
+
+# 含 interface.json 那一层
+assets: ../assets
+
+# 进包白名单，相对 assets 目录。写了 include 即整体替换默认值。
+include:
+  - interface.json
+  - resource/**
+  - agent/**
+  - logo.png
+  - LICENSE
+
+# announcement/Announcement.md 是 interface.json 的 welcome 来源，需要保留，故不排除。
+exclude: []
+
+# 出运行时（在 Android/MaaFwApp 下执行；--core-tag 与 .github/workflows/android.yml 的 AGENT_CORE_TAG 一致）：
+#   python scripts/build_agent_bundle.py --out ../agent-dist \
+#     --core-tag 3.13.15-maafw5.14.0 --abi arm64-v8a \
+#     --requirements ../../agent/requirements.txt
+agent:
+  sourceDir: agent-dist
+  # 不写死 abi：外壳按 agent-dist 里实际建出的运行时打包（等价于 ["*"]）。
+  # 建哪些 ABI 由 build_agent_bundle 的 --abi 决定，必须与 APK 的
+  # build.debugAbi / build.releaseAbi 对齐，否则 APK 会宣称支持一个不带运行时的架构。
+  runtimes:
+    # 条数须与 interface.json 的 agent[] 一一对应；MRA 只有一个 agent。
+    # 实际命令 = executable + args + identifier，工作目录为资源解包根。
+    - location: bundle
+      executable: bin/python3
+      args: [-u, agent/main.py]
+      env:
+        PYTHONHOME: "{bundle}/prefix"
+        PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+        LD_LIBRARY_PATH: "{bundle}/prefix/lib:{nativeLibs}"
+        MAAFW_BINARY_PATH: "{nativeLibs}"
+
+# 包名拼成 com.aliothmoon.maafw.mra；图标须 png/webp，由 tools/stage_android.py 从 logo.ico 转出。
+# 应用内更新默认查 PI 的 mirrorchyan_rid（MaaJR，按 os=android 过滤），所以不另写 update 段。
+app:
+  id: mra
+  label: MRA
+  icon: ../assets/logo.png
