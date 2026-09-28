@@ -22,6 +22,14 @@ import subprocess
 import urllib.request
 from pathlib import Path
 
+# Windows runner 控制台默认可能为 cp1252，直接 print 中文会 UnicodeEncodeError，
+# 先把标准输出/错误切到 UTF-8（Python 3.7+ 支持 reconfigure）。
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 # python-build-standalone 发布 tag 与 Python 版本（MaaFw 要求 >=3.9）
 RELEASE_TAG = "20251209"
 PYTHON_VERSION = "3.12.12"
