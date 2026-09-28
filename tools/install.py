@@ -113,8 +113,42 @@ def install_chores():
     shutil.copy2(working_dir / "LICENSE", install_path)
 
 
+def install_agent():
+    """复制 agent 代码，并在存在内嵌 Python（python-embed）时一并打包，
+    同时把 interface.json 的 agent 段指向内嵌 Python，实现开箱即用。"""
+    shutil.copytree(
+        working_dir / "agent",
+        install_path / "agent",
+        dirs_exist_ok=True,
+    )
+
+    py_src = working_dir / "python-embed"
+    if not py_src.exists():
+        # 未提供内嵌 Python（例如 android 或本地手动运行）：保留 interface.json
+        # 中原有的 agent 配置，不做改动。
+        print("未找到 python-embed，跳过内嵌 Python 打包与 agent 段改写。")
+        return
+
+    shutil.copytree(py_src, install_path / "python", dirs_exist_ok=True)
+
+    with open(install_path / "interface.json", "r", encoding="utf-8") as f:
+        interface = json.load(f)
+
+    agent = interface.get("agent") or {}
+    if os_name == "win":
+        agent["child_exec"] = "./python/python.exe"
+    else:  # macos / linux
+        agent["child_exec"] = "./python/bin/python3"
+    agent["child_args"] = ["-u", "./agent/main.py"]
+    interface["agent"] = agent
+
+    with open(install_path / "interface.json", "w", encoding="utf-8") as f:
+        json.dump(interface, f, ensure_ascii=False, indent=4)
+
+
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
+    install_agent()
     print(f"Install to {install_path} successfully.")
