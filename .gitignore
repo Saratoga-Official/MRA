@@ -452,3 +452,8 @@ tools/ImageCropper/**/*.png
 
 config
 debug
+# Android（MaaFwApp）出包：tools/stage_android.py 铺进 assets/ 的文件与 agent 运行时
+assets/agent/
+assets/LICENSE
+assets/logo.png
+Android/agent-dist/

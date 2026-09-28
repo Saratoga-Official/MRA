@@ -1,9 +1,9 @@
 name: android
 
-# 用 MaaFwApp（MaaFramework 的通用 Android GUI）把 MRA 资源打进 APK，替换原先由
-# install.yml 交叉打包的 android 产物。参考 MAA1999/M9A 的写法。
+# 用 MaaFwApp（MaaFramework 的通用 Android GUI，子模块 Android/MaaFwApp）把 MRA 资源打进 APK，
+# 替换原先由 install.yml 交叉打包的 android 产物。参考 MAA1999/M9A 的写法。
 #
-# 日常 debug：push / PR 自动触发。手动 dispatch 可选 debug/release 与 MaaFramework tag。
+# 日常 debug：push / PR 自动触发。手动 dispatch 可选 debug/release 与 agent 内核 tag。
 # 打 v* tag 时出 release 包并附到对应 Release。
 
 on:
@@ -14,19 +14,23 @@ on:
       - "**"
     paths:
       - ".github/workflows/android.yml"
-      - "pi-profile.yaml"
+      - "Android/**"
       - "assets/**"
       - "agent/**"
-      - "**.py"
+      - "tools/stage_android.py"
+      - "logo.ico"
+      - "LICENSE"
   pull_request:
     branches:
       - "**"
     paths:
       - ".github/workflows/android.yml"
-      - "pi-profile.yaml"
+      - "Android/**"
       - "assets/**"
       - "agent/**"
-      - "**.py"
+      - "tools/stage_android.py"
+      - "logo.ico"
+      - "LICENSE"
   workflow_dispatch:
     inputs:
       assemble:
@@ -36,8 +40,8 @@ on:
           - debug
           - release
         default: debug
-      maafw_tag:
-        description: "MaaFramework release tag；留空用下方 MAAFW_TAG 固定值"
+      agent_core_tag:
+        description: "MaaAgentCoreAndroid release tag；留空用下方 AGENT_CORE_TAG。MaaFramework 版本随它走"
         required: false
         default: ""
 
@@ -49,11 +53,10 @@ permissions:
   contents: write
 
 env:
-  # MaaFramework Android 产物版本，须 >= MaaFwApp 支持的最低版本（v5.13.0）。
-  MAAFW_TAG: "v5.14.1"
-  # MaaFwApp 仓库与固定 ref（锁版本更稳，避免上游 main 变动打断构建）。留空取默认分支。
-  MAAFWAPP_REPO: "Aliothmoon/MaaFwApp"
-  MAAFWAPP_REF: ""
+  # agent 内核（Aliothmoon/MaaAgentCoreAndroid 的 release tag），不跟子模块脚本里的默认值走。
+  # Android 上 agent 的 Python 绑定与 MaaFramework 原生库都来自这个内核，APK 里 client 侧的
+  # MaaFramework 必须与它同版本，所以 MAAFW_TAG 由它的 maafw 段反推，不单独配。
+  AGENT_CORE_TAG: "3.13.15-maafw5.14.0"
 
 jobs:
   meta:
@@ -96,24 +99,16 @@ jobs:
     env:
       PYTHONUTF8: "1"
       PYTHONIOENCODING: utf-8
-      # dispatch 未选时默认 debug
-      ASSEMBLE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.assemble || 'debug' }}
+      PI_PROFILE: ${{ github.workspace }}/Android/profile.yaml
+      # dispatch 按输入；v* tag 出 release；其余 debug
+      ASSEMBLE: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.assemble) || (startsWith(github.ref, 'refs/tags/v') && 'release') || 'debug' }}
     steps:
-      # 1) 检出 MRA（含子模块，MaaCommonAssets 提供 OCR 模型）
-      - name: Checkout MRA
+      # MaaCommonAssets（OCR 模型）与 MaaFwApp 都是子模块
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: recursive
           fetch-depth: 0
-
-      # 2) 检出 MaaFwApp 到仓库内 Android/MaaFwApp（与 M9A 的子模块布局一致，
-      #    使 pi-profile.yaml 的相对路径 agent-dist 稳定落在仓库内）
-      - name: Checkout MaaFwApp
-        uses: actions/checkout@v4
-        with:
-          repository: ${{ env.MAAFWAPP_REPO }}
-          ref: ${{ env.MAAFWAPP_REF || '' }}
-          path: Android/MaaFwApp
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -133,49 +128,40 @@ jobs:
         with:
           python-version: "3.12"
 
-      # 3) 生成 OCR 模型，并把 agent / LICENSE / 图标铺进 assets/
-      #    （include 相对 assets 目录，故这些文件要落在 assets/ 下）
-      - name: Stage PI assets
-        shell: bash
+      - name: Resolve versions
+        env:
+          CORE_TAG_INPUT: ${{ github.event.inputs.agent_core_tag }}
         run: |
-          python configure.py
-          cp -r agent assets/agent
-          cp LICENSE assets/LICENSE
-          # interface.json 图标是 logo.ico；Android 不解码 ico，转出 png 供 launcher 用
-          sudo apt-get update && sudo apt-get install -y imagemagick
-          convert "logo.ico[0]" assets/logo.png
-          # interface.json 版本号占位替换成本次 tag
-          python - <<'PY'
-          import json
-          p = "assets/interface.json"
-          with open(p, encoding="utf-8") as f:
-              data = json.load(f)
-          tag = "${{ needs.meta.outputs.tag }}"
-          data["version"] = tag
-          data["title"] = f"MRA {tag} | 舰R小助手"
-          with open(p, "w", encoding="utf-8") as f:
-              json.dump(data, f, ensure_ascii=False, indent=4)
-          PY
+          core_tag="${CORE_TAG_INPUT:-$AGENT_CORE_TAG}"
+          maafw_version="${core_tag##*-maafw}"
+          if [ "$maafw_version" = "$core_tag" ]; then
+            echo "内核 tag $core_tag 里解析不到 maafw 版本" >&2
+            exit 1
+          fi
+          echo "CORE_TAG=$core_tag" | tee -a "$GITHUB_ENV"
+          echo "MAAFW_TAG=v$maafw_version" | tee -a "$GITHUB_ENV"
 
-      # 4) 铺 MaaFramework Android .so（debug 只 arm64；release 出双 ABI）
+      # OCR 模型，以及 include 够不到的 agent/、LICENSE、图标（见 Android/profile.yaml）
+      - name: Stage PI assets
+        run: |
+          pip install pillow
+          python configure.py
+          python tools/stage_android.py --version "${{ needs.meta.outputs.tag }}"
+
+      # debug 只 arm64；release 出双 ABI
       - name: Setup MaaFramework native libs
-        shell: bash
         working-directory: Android/MaaFwApp
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MAAFW_TAG_OVERRIDE: ${{ github.event.inputs.maafw_tag }}
         run: |
-          TAG="${MAAFW_TAG_OVERRIDE:-$MAAFW_TAG}"
+          python scripts/setup_maa_framework.py --abi arm64-v8a --tag "$MAAFW_TAG"
           if [ "$ASSEMBLE" = "release" ]; then
-            python scripts/setup_maa_framework.py --abi arm64-v8a --tag "$TAG"
-            python scripts/setup_maa_framework.py --abi x86_64 --tag "$TAG"
-          else
-            python scripts/setup_maa_framework.py --abi arm64-v8a --tag "$TAG"
+            python scripts/setup_maa_framework.py --abi x86_64 --tag "$MAAFW_TAG"
           fi
 
-      # 5) 组装内嵌 Python 的 agent 运行时。ABI 与上面的 .so、以及 build.*Abi 对齐。
+      # 内嵌 Python 的 agent 运行时。ABI 与上面的 .so、以及 build.*Abi 对齐。
+      # requirements 里桌面端的 MaaFw pin 会被丢掉：Android 的 maa 绑定由内核自带
       - name: Build agent bundle
-        shell: bash
         working-directory: Android/MaaFwApp
         run: |
           if [ "$ASSEMBLE" = "release" ]; then
@@ -184,23 +170,21 @@ jobs:
             ABIS="--abi arm64-v8a"
           fi
           python scripts/build_agent_bundle.py \
-            --out "${GITHUB_WORKSPACE}/agent-dist" \
+            --out "${GITHUB_WORKSPACE}/Android/agent-dist" \
+            --core-tag "$CORE_TAG" \
             $ABIS \
             --requirements "${GITHUB_WORKSPACE}/agent/requirements.txt"
 
-      # 6) 指定配方与 ABI
       - name: Write local.properties
-        shell: bash
         working-directory: Android/MaaFwApp
         run: |
           {
             echo "sdk.dir=${ANDROID_HOME}"
-            echo "pi.profile=${GITHUB_WORKSPACE}/pi-profile.yaml"
+            echo "pi.profile=${PI_PROFILE}"
             if [ "$ASSEMBLE" != "release" ]; then
               echo "build.debugAbi=arm64-v8a"
             fi
           } > local.properties
-          echo "BUILD_VERSION_NAME=${{ needs.meta.outputs.tag }}" >> "$GITHUB_ENV"
 
       - name: Decode keystore
         if: env.ASSEMBLE == 'release'
@@ -211,9 +195,7 @@ jobs:
             echo "$KEYSTORE_BASE64" | base64 -d > "${GITHUB_WORKSPACE}/release.jks"
           fi
 
-      # 7) 出包
       - name: Build APK
-        shell: bash
         working-directory: Android/MaaFwApp
         env:
           KEYSTORE_PATH: ${{ github.workspace }}/release.jks
