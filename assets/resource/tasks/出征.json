@@ -4,7 +4,7 @@
             "name": "自动出征",
             "entry": "开始出征",
             "default_check": false,
-            "description": "<span style=\"color: red;\">需提前编好队，满足带路条件，再开始</span><br>本功能执行过程中会自动收发远征",
+            "description": "<span style=\"color: red;\">需提前编好队，满足带路条件，再开始</span><br>本功能执行过程中会自动收发远征<br>自动强化/技能只会识别特别关注（星标）的前五艘船",
             "option": [
                 "选择章节",
                 "选择关卡",
@@ -12,7 +12,7 @@
                 "战斗无限次数",
                 "战斗自动补给",
                 "战斗大破/中破舰船处理",
-                "船舱满自动拆船（危险功能）",
+                "船舱满后操作（危险功能）",
                 "战斗使用军阶buff",
                 "战斗节点数",
                 "凹点位节点",
@@ -766,16 +766,15 @@
                 }
             ]
         },
-        "船舱满自动拆船（危险功能）": {
-            "description": "确保船舱想保留的船均锁好才可使用",
-            "type": "switch",
+        "船舱满后操作（危险功能）": {
+            "description": "确保船舱想保留的船均锁好才可使用，自动强化/技能只会识别特别关注（星标）的前五艘船",
             "cases": [
                 {
-                    "name": "No",
+                    "name": "停止",
                     "pipeline_override": {}
                 },
                 {
-                    "name": "Yes",
+                    "name": "自动拆船",
                     "pipeline_override": {
                         "战斗船舱满": {
                             "recognition": "OCR",
@@ -789,6 +788,23 @@
                     },
                     "option": [
                         "拆船保留装备"
+                    ]
+                },
+                {
+                    "name": "自动强化",
+                    "pipeline_override": {
+                        "战斗船舱满": {
+                            "recognition": "OCR",
+                            "expected": "强化",
+                            "post_delay": 5000,
+                            "next": [
+                                "[JumpBack]重新连接",
+                                "强化点击添加舰船"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "强化后自动升级技能"
                     ]
                 }
             ]

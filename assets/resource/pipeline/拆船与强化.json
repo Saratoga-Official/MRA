@@ -1,0 +1,904 @@
+{
+    "开始拆船": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    45,
+                    630,
+                    38,
+                    28
+                ]
+            }
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "拆船点击建造",
+            "开始拆船"
+        ]
+    },
+    "拆船点击建造": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "建造",
+                "roi": [
+                    54,
+                    224,
+                    70,
+                    36
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船点击建造2"
+        ]
+    },
+    "拆船点击建造2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "建造",
+                "roi": [
+                    477,
+                    245,
+                    87,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船点击解装"
+        ]
+    },
+    "拆船点击解装": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "解装",
+                "roi": [
+                    360,
+                    11,
+                    77,
+                    42
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船点击添加"
+        ]
+    },
+    "拆船点击添加": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/添加舰船.png",
+                "roi": [
+                    18,
+                    111,
+                    156,
+                    298
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船点击快速选择"
+        ]
+    },
+    "拆船点击快速选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "快速选择"
+                ],
+                "roi": [
+                    1106,
+                    195,
+                    121,
+                    49
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船点击确定"
+        ]
+    },
+    "拆船点击确定": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确定"
+                ],
+                "roi": [
+                    1124,
+                    628,
+                    85,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船回到解装界面"
+        ]
+    },
+    "拆船回到解装界面": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "解装"
+                ],
+                "roi": [
+                    1087,
+                    619,
+                    107,
+                    51
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]拆船卸装备",
+            "拆船点击解装2"
+        ]
+    },
+    "拆船卸装备": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/解装卸装备.png",
+                "roi": [
+                    1051,
+                    441,
+                    46,
+                    51
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1061,
+                    453,
+                    26,
+                    26
+                ]
+            }
+        },
+        "inverse": true,
+        "enabled": false
+    },
+    "拆船点击解装2": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "拆船回到解装界面"
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]拆船点击确认",
+            "拆船结束退出"
+        ]
+    },
+    "拆船点击确认": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "确认"
+                ],
+                "roi": [
+                    402,
+                    373,
+                    169,
+                    70
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "拆船结束退出": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "拆船点击出征",
+            "拆船点击出征2",
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
+        ]
+    },
+    "拆船点击出征": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "拆船点击出征2",
+            "拆船点击出征",
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
+        ]
+    },
+    "拆船点击出征2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/出征.png",
+                "threshold": 0.9,
+                "roi": [
+                    144,
+                    0,
+                    174,
+                    71
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "无限战斗捞船检测",
+            "无限战斗胖次检测",
+            "检查远征",
+            "开始导航"
+        ]
+    },
+    "拆船结束退出2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    13,
+                    627,
+                    74,
+                    73
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 3000,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "点击船坞",
+            "关闭游戏"
+        ]
+    },
+    "开始强化": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "出征",
+                "roi": [
+                    1198,
+                    661,
+                    71,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    45,
+                    630,
+                    38,
+                    28
+                ]
+            }
+        },
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "[JumpBack]领取奖励",
+            "强化点击改造",
+            "开始强化"
+        ]
+    },
+    "强化点击改造": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "改造",
+                "roi": [
+                    54,
+                    317,
+                    70,
+                    36
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "强化点击改造2"
+        ]
+    },
+    "强化点击改造2": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "改造",
+                "roi": [
+                    477,
+                    338,
+                    87,
+                    41
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "强化点击添加舰船"
+        ]
+    },
+    "强化点击添加舰船": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "添加舰船",
+                "roi": [
+                    88,
+                    395,
+                    95,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "强化点击星星",
+            "自动强化重置"
+        ]
+    },
+    "强化点击星星": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/星星.png",
+                "roi": [
+                    1208,
+                    134,
+                    39,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    134,
+                    39,
+                    38
+                ]
+            }
+        },
+        "inverse": true,
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "自动强化重置"
+        ]
+    },
+    "自动强化重置": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "reset_enhance_state"
+            }
+        },
+        "post_wait_freezes": 0,
+        "next": [
+            "[JumpBack]重新连接",
+            "选船并挑一艘",
+            "返回选船界面3"
+        ]
+    },
+    "选船并挑一艘": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "select_ship_to_enhance"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "点击添加素材"
+        ]
+    },
+    "点击添加素材": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "添加",
+                "roi": [
+                    311,
+                    262,
+                    48,
+                    34
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "点自动选择"
+        ]
+    },
+    "点自动选择": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "自动选择",
+                "roi": [
+                    1102,
+                    548,
+                    129,
+                    47
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "读素材数值并判断"
+        ]
+    },
+    "读素材数值并判断": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "read_material_values"
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "judge_material"
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "点确定进强化确认"
+        ]
+    },
+    "点确定进强化确认": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "确定",
+                "roi": [
+                    1115,
+                    631,
+                    103,
+                    40
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "读强化结果并判断"
+        ]
+    },
+    "读强化结果并判断": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "read_enhance_result"
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "judge_enhance_result"
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "点强化按钮"
+        ]
+    },
+    "点强化按钮": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "强化",
+                "roi": [
+                    1069,
+                    563,
+                    96,
+                    53
+                ],
+                "replace": [
+                    "強化",
+                    "强化"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "强化确认",
+            "返回选船界面"
+        ]
+    },
+    "强化确认": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "确认",
+                "roi": [
+                    425,
+                    389,
+                    123,
+                    39
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "返回选船界面"
+        ]
+    },
+    "返回选船界面": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "强化点击添加舰船"
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "强化确认",
+            "选船并挑一艘",
+            "返回选船界面3"
+        ]
+    },
+    "强化任务结束": {
+        "next": [
+            "前往升级技能",
+            "拆船结束退出"
+        ]
+    },
+    "前往升级技能": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "技能",
+                "roi": [
+                    525,
+                    13,
+                    75,
+                    43
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "enabled": false,
+        "next": [
+            "[JumpBack]重新连接",
+            "选升级技能的船"
+        ]
+    },
+    "选升级技能的船": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "添加舰船",
+                "roi": [
+                    88,
+                    395,
+                    95,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "升级点击星星",
+            "选升级技能目标",
+            "返回选船界面3"
+        ]
+    },
+    "升级点击星星": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/星星.png",
+                "roi": [
+                    1208,
+                    134,
+                    39,
+                    38
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1208,
+                    134,
+                    39,
+                    38
+                ]
+            }
+        },
+        "post_delay": 500,
+        "inverse": true,
+        "next": [
+            "[JumpBack]重新连接",
+            "选升级技能目标",
+            "返回选船界面3"
+        ]
+    },
+    "选升级技能目标": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "select_ship_to_upgrade"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "点击升级技能"
+        ]
+    },
+    "点击升级技能": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "觉醒",
+                    "升级"
+                ],
+                "roi": [
+                    402,
+                    576,
+                    92,
+                    49
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "技能升级完成播报"
+        ]
+    },
+    "技能升级完成播报": {
+        "recognition": {
+            "type": "Custom",
+            "param": {
+                "custom_recognition": "read_skill_level"
+            }
+        },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "report_upgrade_done"
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "返回技能选船界面"
+        ]
+    },
+    "返回技能选船界面": {
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": "选升级技能的船"
+            }
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "升级点击星星",
+            "选升级技能目标",
+            "升级任务结束"
+        ]
+    },
+    "升级任务结束": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "拆船结束退出"
+        ]
+    },
+    "读强化格子": {
+        "recognition": "OCR"
+    },
+    "读素材数值": {
+        "recognition": "OCR"
+    },
+    "读强化结果": {
+        "recognition": "OCR"
+    },
+    "返回选船界面2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "返回选船界面"
+        ]
+    },
+    "返回选船界面3": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "通用/退出.png",
+                "green_mask": true,
+                "roi": [
+                    7,
+                    5,
+                    95,
+                    705
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "强化任务结束"
+        ]
+    }
+}

@@ -4,11 +4,11 @@
             "name": "结束前任务",
             "entry": "收尾工作",
             "default_check": false,
-            "description": "<span style=\"color: red;\">请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励</span>",
+            "description": "<span style=\"color: red;\">请将此任务放到所有任务或者战斗任务之后用来修船恢复，领取任务奖励</span><br>自动强化/技能只会识别特别关注（星标）的前五艘船",
             "option": [
                 "自动入浴",
                 "自动领取任务奖励",
-                "自动拆船（危险功能）",
+                "拆船与强化（危险功能）",
                 "结束后关闭游戏"
             ],
             "pipeline_override": {
@@ -63,23 +63,51 @@
                 }
             ]
         },
-        "自动拆船（危险功能）": {
+        "拆船与强化（危险功能）": {
+            "description": "确保船舱想保留的船均锁好才可使用，自动强化/技能只会识别特别关注（星标）的前五艘船",
+            "cases": [
+                {
+                    "name": "关",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "自动拆船",
+                    "pipeline_override": {
+                        "开始拆船": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "拆船保留装备"
+                    ]
+                },
+                {
+                    "name": "自动强化",
+                    "pipeline_override": {
+                        "开始强化": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "强化后自动升级技能"
+                    ]
+                }
+            ]
+        },
+        "强化后自动升级技能": {
             "type": "switch",
             "cases": [
                 {
                     "name": "No",
-                    "pipeline_override": {
-                        "开始拆船": {
-                            "enabled": false
-                        }
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "Yes",
-                    "pipeline_override": {},
-                    "option": [
-                        "拆船保留装备"
-                    ]
+                    "pipeline_override": {
+                        "前往升级技能": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
