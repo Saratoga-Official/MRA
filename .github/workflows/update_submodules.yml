@@ -2,7 +2,7 @@ name: Update Submodules
 
 on:
   schedule:
-    - cron: '0 12 * * 3'   # 每周三 12:00 UTC
+    - cron: '0 12 * * 3'
   workflow_dispatch:
 
 permissions:
@@ -13,18 +13,27 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate App Token
+        uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }}
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: main
           submodules: recursive
           fetch-depth: 0
-          token: ${{ secrets.PAT_FOR_TAG }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Configure Git
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "${{ steps.app-token.outputs.app-slug }}[bot]"
+          git config user.email "${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com"
 
       - name: Update submodules to latest remote
         run: |
@@ -33,7 +42,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
-          token: ${{ secrets.PAT_FOR_TAG }}
+          token: ${{ steps.app-token.outputs.token }}
           commit-message: "chore: auto-update submodules"
           title: "chore: auto-update submodules"
           body: |
