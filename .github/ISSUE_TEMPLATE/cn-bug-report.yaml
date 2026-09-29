@@ -39,10 +39,10 @@ body:
     attributes:
       label: 日志和配置文件
       description: |
-        **请在关闭`MRA`后，上传以下文件：**
-          1. `debug` 文件夹中的 `maa.log` `maa.bak.log` 日志文件，并说明问题出现的大致时间点
-          2. `config` 文件夹中的 `maa_pi_config.json`(MaaPiCli) 配置文件
-          3. `log` 文件夹中的 `log` 开头日志文件
+        **请在关闭`MRA`后，根据你所使用的GUI上传以下文件：**
+          1. 如果使用的是MFA，点击设置-关于我们-导出日志后上传日志包
+          2. 如果使用的是MXU，点击设置-调试-导出日志后上传日志包
+          3. 如果使用的是MFWAPP（安卓端），点击设置-日志-导出日志后上传日志包
 
         **请直接将完整的文件拖拽进来，而非自己裁切或复制的片段；若文件体积过大可压缩后再上传**
       placeholder: |
@@ -68,8 +68,10 @@ body:
         若是**识别相关问题**，请尽可能提供模拟器自带的截图工具截取的无遮挡的**原图**（或通过 adb 截取原图）
         用其他的工具（如QQ/微信）截取的图片包含窗口边框且长宽比、分辨率不固定，不利于我们排除bug
         若文件体积过大可压缩后再上传
+      placeholder: |
+        务必上传以便更好判断问题
     validations:
-      required: false
+      required: true
   - type: textarea
     id: others
     attributes:

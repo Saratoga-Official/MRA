@@ -1,41 +1,27 @@
-name: Bug Report (in English)
-description: >-
-  Recognition errors, operation abnormalities,
-  connection errors, etc.
+name: Bug Report (English)
+description: Recognition errors, operation anomalies, connection errors, etc.
 labels: ["bug"]
 body:
   - type: checkboxes
     id: checks
     attributes:
-      label: Before raising the issue...
+      label: Before you ask...
       description: |
-        Please ensure that you have completed the requirements before checking the box.
+        Please confirm you have completed the requirements before checking.
       options:
-        - label: >-
-            I understand that Issues are for feedback and problem solving,
-            not trolling the comments section, and will provide as
-            much information as possible to help solve the problem.
+        - label: I understand that Issues are for reporting and solving problems, not for ranting in the comments. I will provide as much information as possible to help solve the problem.
           required: true
-        - label: >-
-            I filled in a short, clear title
-            so that developers could quickly identify the general problem
-            when going through the issue list.
-            Instead of "Some suggestions", "Stuck", etc.
+        - label: I have filled in a short and clear title so that developers can quickly identify the general problem when browsing the Issue list, rather than "a suggestion", "stuck", etc.
           required: true
-        - label: >-
-            I am using the latest version of the current update and have reviewed
-            both the updates released so far and the unreleased changes in the Pull Requests,
-            there is no mention of the bug being fixed.
+        - label: I am using the latest version of the current update, and I have checked the version releases and Pull Requests for unreleased updates. The bug has not been mentioned as fixed.
           required: true
-        - label: >-
-            I have reviewed the Pinned issue (Announcements), Open issues, and Closed issues
-            to ensure that my issue has not been mentioned.
+        - label: I have checked Pinned Issues (announcements), Open Issues, and Closed Issues, and confirmed my problem has not been mentioned.
           required: true
   - type: textarea
     id: describe
     attributes:
-      label: Description
-      description: Please provide a detailed description of your issue.
+      label: Problem Description
+      description: Please describe the problem in as much detail as possible.
     validations:
       required: true
   - type: textarea
@@ -43,7 +29,7 @@ body:
     attributes:
       label: Version
       description: >-
-        Please provide the`MRA`version.
+        Please provide the software version, resource version, and framework version from the MRA update settings.
       placeholder: |
         MRA Version:
     validations:
@@ -51,55 +37,46 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: Log and config files
-      description: >-
-        **After closing`MRA`, upload the following files:**
-          1. The `maa.log` and `maa.bak.log` log file in the `debug` folder, and indicate the approximate point in time when the problem occurred.
-          2. The `maa_pi_config.json`(MaaPiCli) config file in the `config` folder
-          3. The `log` file in the `log` folder 
+      label: Logs and Configuration Files
+      description: |
+        **After closing `MRA`, upload the following files according to the GUI you are using:**
+          1. If using MFA, click Settings - About Us - Export Logs, then upload the log package.
+          2. If using MXU, click Settings - Debug - Export Logs, then upload the log package.
+          3. If using MFWAPP (Android), click Settings - Logs - Export Logs, then upload the log package.
 
-        **Please drag and drop the full file in, not your own cuttings or copies;**
-        **compress it before uploading if too large.**
+        **Please drag and drop the complete files directly, rather than cutting or copying fragments yourself; if the files are too large, compress them before uploading.**
       placeholder: |
-        Please confirm that MRA is not running before uploading files.
+        Please confirm MRA is closed before uploading files.
     validations:
       required: true
   - type: textarea
     id: configuration
     attributes:
-      label: Configuration information
+      label: Configuration Information
       description: |
-        Please specify the operating system and version, emulator brand, emulator resolution, DPI, and frame rate;
-        please specify whether GPU accelerated inference is enabled, and if so, provide the GPU model.
+        Please specify the operating system and version, emulator brand, emulator resolution, DPI, and frame rate.
+        Please specify whether GPU accelerated inference is enabled. If enabled, please provide the GPU model.
     validations:
       required: true
   - type: textarea
     id: screenshots
     attributes:
-      label: Screenshots or recordings
-      description: >-
-        If available, upload screenshots and recordings to help explain your problem,
-        including but not limited to screenshots of`MRA`software,
-        screenshots of game screens,`MRA`debug screenshots (`debug/vision` path pictures,
-        after modifying `save_draw` in `config/maa_option.json` to `true`, run MXX again to obtain)
-
-        If the problem is **recognition related**, please help by providing
-        the **original image** taken by the emulator's own screenshot tool
-        (or via adb).
-
-        Screenshots taken with other tools may contain the frames of the window/emulator
-        and their aspect ratio and resolution are inconsistent,
-        which makes it harder for us to debug.
-
-        If the file siz is too large, you may compress it before uploading.
-
+      label: Screenshots or Screen Recording
+      description: |
+        You can upload screenshots or recordings to help explain your problem, including but not limited to `MRA` software screenshots and game screen screenshots.
+        `MRA` debug screenshots (`debug/vision` path images, obtained after setting `save_draw` to `true` in `config/maa_option.json` and running `MRA` again).
+        If it is a **recognition-related problem**, please provide an unobstructed **original image** captured by the emulator's built-in screenshot tool (or via adb) as much as possible.
+        Images captured with other tools (such as QQ/WeChat) include window borders and have non-fixed aspect ratios and resolutions, which is not conducive to troubleshooting.
+        If the files are too large, compress them before uploading.
+      placeholder: |
+        Must upload to better determine the problem.
     validations:
-      required: false
+      required: true
   - type: textarea
     id: others
     attributes:
-      label: Anthing else?
+      label: Anything Else?
       description: |
-        Anything that will give us more insight into the problem you are having.
+        Anything that can give us more understanding of the problem you encountered.
     validations:
       required: false
