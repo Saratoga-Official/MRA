@@ -15,6 +15,7 @@ include:
   - interface.json
   - resource/**
   - agent/**
+  - docs/**
   - logo.png
   - LICENSE
 

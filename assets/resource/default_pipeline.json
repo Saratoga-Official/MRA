@@ -8,9 +8,6 @@
     "OCR": {
         "recognition": "OCR",
         "expected": [],
-        "replace": [
-            "鲍鱼",
-            "鲃鱼"
-        ]
+        "replace": []
     }
 }

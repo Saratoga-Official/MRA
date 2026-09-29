@@ -601,6 +601,10 @@
             "U-1206",
             "U-505"
         ],
+        "replace": [
+            "鲍鱼",
+            "鲃鱼"
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
@@ -616,6 +620,10 @@
         "recognition": "OCR",
         "expected": [
             "M-296"
+        ],
+        "replace": [
+            "鲍鱼",
+            "鲃鱼"
         ],
         "action": "Click",
         "next": [
@@ -757,6 +765,10 @@
             "鱼",
             "伊",
             "U"
+        ],
+        "replace": [
+            "鲍鱼",
+            "鲃鱼"
         ],
         "action": "Click",
         "target": [
