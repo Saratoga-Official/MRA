@@ -1,0 +1,194 @@
+{
+    "点击预设编队": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/预设编队.png",
+                "roi": [
+                    765,
+                    97,
+                    44,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "max_hit": 1,
+        "enabled": false,
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "预设编队1",
+            "预设编队2",
+            "预设编队3"
+        ]
+    },
+    "预设编队1": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/预设编队1.png",
+                "roi": [
+                    1046,
+                    22,
+                    27,
+                    26
+                ]
+            }
+        },
+        "enabled": false,
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "寻找预设编队",
+            "预设编队向下滑"
+        ]
+    },
+    "预设编队2": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/预设编队2.png",
+                "roi": [
+                    1130,
+                    24,
+                    19,
+                    23
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "寻找预设编队",
+            "预设编队向下滑"
+        ]
+    },
+    "预设编队3": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/预设编队3.png",
+                "roi": [
+                    1210,
+                    24,
+                    19,
+                    23
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "enabled": false,
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "寻找预设编队",
+            "预设编队向下滑"
+        ]
+    },
+    "预设编队向下滑": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    943,
+                    523
+                ],
+                "end": [
+                    943,
+                    97
+                ],
+                "duration": 500,
+                "end_hold": 500
+            }
+        },
+        "max_hit": 5,
+        "next": [
+            "[JumpBack]重新连接",
+            "寻找预设编队",
+            "预设编队向下滑",
+            "预设编队向上滑"
+        ]
+    },
+    "预设编队向上滑": {
+        "action": {
+            "type": "Swipe",
+            "param": {
+                "begin": [
+                    943,
+                    97
+                ],
+                "end": [
+                    943,
+                    523
+                ],
+                "duration": 500,
+                "end_hold": 500
+            }
+        },
+        "max_hit": 5,
+        "next": [
+            "[JumpBack]重新连接",
+            "寻找预设编队",
+            "预设编队向上滑",
+            "任务出错"
+        ]
+    },
+    "寻找预设编队": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "预设编队1",
+                "roi": [
+                    82,
+                    80,
+                    234,
+                    265
+                ]
+            }
+        },
+        "next": [
+            "[JumpBack]重新连接",
+            "预设编队点击套用"
+        ]
+    },
+    "预设编队点击套用": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "套用编队",
+                "roi": [
+                    1095,
+                    437,
+                    114,
+                    265
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 500,
+        "next": [
+            "[JumpBack]重新连接",
+            "预设编队回到关卡"
+        ]
+    },
+    "预设编队回到关卡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "战斗/开始出征.png"
+            }
+        },
+        "post_wait_freezes": 0
+    }
+}

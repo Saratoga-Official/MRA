@@ -158,6 +158,7 @@
         "post_wait_freezes": 0,
         "next": [
             "[JumpBack]战斗编队",
+            "[JumpBack]点击预设编队",
             "[JumpBack]启用军阶buff",
             "[JumpBack]关闭军阶buff",
             "战斗检测buff",

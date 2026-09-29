@@ -376,7 +376,10 @@
             "cases": [
                 {
                     "name": "第一编队",
-                    "pipeline_override": {}
+                    "pipeline_override": {},
+                    "option": [
+                        "使用预设编队"
+                    ]
                 },
                 {
                     "name": "第二编队",
@@ -395,7 +398,10 @@
                                 44
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "使用预设编队"
+                    ]
                 },
                 {
                     "name": "第三编队",
@@ -414,7 +420,10 @@
                                 44
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "使用预设编队"
+                    ]
                 },
                 {
                     "name": "第四编队",
@@ -433,9 +442,81 @@
                                 44
                             ]
                         }
-                    }
+                    },
+                    "option": [
+                        "使用预设编队"
+                    ]
                 }
             ]
+        },
+        "使用预设编队": {
+            "description": "选择想套用的预设编队右上角的数字",
+            "cases": [
+                {
+                    "name": "不使用",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "1",
+                    "pipeline_override": {
+                        "点击预设编队": {
+                            "enabled": true
+                        },
+                        "预设编队1": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "预设编队名"
+                    ]
+                },
+                {
+                    "name": "2",
+                    "pipeline_override": {
+                        "点击预设编队": {
+                            "enabled": true
+                        },
+                        "预设编队2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "预设编队名"
+                    ]
+                },
+                {
+                    "name": "3",
+                    "pipeline_override": {
+                        "点击预设编队": {
+                            "enabled": true
+                        },
+                        "预设编队3": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "预设编队名"
+                    ]
+                }
+            ]
+        },
+        "预设编队名": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "预设编队名",
+                    "description": "输入套用预设编队名",
+                    "default": "预设编队1",
+                    "pipeline_type": "string",
+                    "verify": ".+",
+                    "pattern_msg": "不能为空"
+                }
+            ],
+            "pipeline_override": {
+                "寻找预设编队": {
+                    "expected": "{预设编队名}"
+                }
+            }
         },
         "战斗无限次数": {
             "type": "switch",
