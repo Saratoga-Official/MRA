@@ -1,0 +1,44 @@
+name: Update Submodules
+
+on:
+  schedule:
+    - cron: '0 12 * * 3'   # 每周三 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.PAT_FOR_TAG }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update submodules to latest remote
+        run: |
+          git submodule update --remote --recursive
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.PAT_FOR_TAG }}
+          commit-message: "chore: auto-update submodules"
+          title: "chore: auto-update submodules"
+          body: |
+            子模块已自动更新到各自远程分支的最新 commit。
+            请审查 diff 后合并。
+          branch: "auto/update-submodules"
+          delete-branch: true
+          base: main
