@@ -207,18 +207,20 @@ jobs:
           if [ "$ASSEMBLE" = "release" ]; then
             ./gradlew clean :app:assembleRelease --no-daemon
             variant=release
+            arch=universal
           else
             ./gradlew clean :app:assembleDebug --no-daemon
             variant=debug
+            arch=arm64-v8a
           fi
           out="${GITHUB_WORKSPACE}/apk-out"
           mkdir -p "$out"
           apk=$(find app/build/outputs/apk/$variant -name "*.apk" | head -n 1)
-          cp "$apk" "$out/MRA-${{ needs.meta.outputs.tag }}-android-${variant}.apk"
+          cp "$apk" "$out/MRA-android-${arch}-MFWAPP-${{ needs.meta.outputs.tag }}.apk"
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MRA-android-apk
+          name: MRA-android-MFWAPP
           path: apk-out
           if-no-files-found: error
 
@@ -229,7 +231,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: MRA-android-apk
+          name: MRA-android-MFWAPP
           path: apk-out
       - uses: softprops/action-gh-release@v2.2.2
         with:
