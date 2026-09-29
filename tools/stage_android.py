@@ -39,6 +39,19 @@ def stage_icon():
         ico.save(assets_dir / "logo.png")
 
 
+def stage_docs():
+    # 与桌面端 install/docs 对齐：只留 docs/zh_cn 的内容，扁平铺到 assets/docs/
+    dst = assets_dir / "docs"
+    # 优先取仓库根的 docs/zh_cn；没有就退回 assets 里已有的 docs/zh_cn（原地提层）
+    src = root / "docs" / "zh_cn"
+    if not src.is_dir():
+        src = assets_dir / "docs" / "zh_cn"
+    if not src.is_dir():
+        return
+    shutil.rmtree(dst, ignore_errors=True)
+    shutil.copytree(src, dst)
+
+
 def stamp_version(version: str):
     # 与 tools/install.py 的 install_resource 一致
     path = assets_dir / "interface.json"
@@ -58,6 +71,7 @@ if __name__ == "__main__":
     stage_agent()
     stage_license()
     stage_icon()
+    stage_docs()
     if args.version:
         stamp_version(args.version)
     print("Android assets staged.")
