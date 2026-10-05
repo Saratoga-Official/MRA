@@ -1252,8 +1252,20 @@
         }
     },
     "决战追击": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "追击"
+                ],
+                "roi": [
+                    396,
+                    446,
+                    91,
+                    44
+                ]
+            }
+        },
         "next": [
             "[JumpBack]重新连接",
             "决战追击检查SS1",
@@ -1514,18 +1526,46 @@
         }
     },
     "决战追击点击": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "追击"
+                ],
+                "roi": [
+                    396,
+                    446,
+                    91,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_delay": 5000,
         "focus": {
             "Node.Recognition.Succeeded": "允许追击"
         }
     },
     "决战追击放弃": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/放弃.png",
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "放弃"
+                ],
+                "roi": [
+                    796,
+                    447,
+                    84,
+                    43
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_delay": 5000,
         "focus": {
             "Node.Recognition.Succeeded": "放弃追击"

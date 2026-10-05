@@ -554,7 +554,15 @@
                     "name": "No",
                     "pipeline_override": {
                         "立体强袭追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         }
                     }
                 }

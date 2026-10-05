@@ -287,9 +287,23 @@
         }
     },
     "立体强袭追击": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "追击"
+                ],
+                "roi": [
+                    396,
+                    446,
+                    91,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "post_wait_freezes": 5000,
         "timeout": 90000,
         "next": [

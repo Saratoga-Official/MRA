@@ -4629,22 +4629,70 @@
                     "name": "常规",
                     "pipeline_override": {
                         "节点1追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点2追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点3追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点4追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点5追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点6追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         }
                     },
                     "option": [
@@ -4655,22 +4703,70 @@
                     "name": "潜艇",
                     "pipeline_override": {
                         "节点1追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点2追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点3追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点4追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点5追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         },
                         "节点6追击": {
-                            "template": "战斗/放弃.png"
+                            "expected": [
+                                "放弃"
+                            ],
+                            "roi": [
+                                796,
+                                447,
+                                84,
+                                43
+                            ]
                         }
                     },
                     "option": [
@@ -4694,7 +4790,15 @@
                     "name": "节点1",
                     "pipeline_override": {
                         "节点1追击": {
-                            "template": "战斗/追击.png"
+                            "expected": [
+                                "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ]
                         }
                     }
                 },
@@ -4702,7 +4806,15 @@
                     "name": "节点2",
                     "pipeline_override": {
                         "节点2追击": {
-                            "template": "战斗/追击.png"
+                            "expected": [
+                                "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ]
                         }
                     }
                 },
@@ -4710,7 +4822,15 @@
                     "name": "节点3",
                     "pipeline_override": {
                         "节点3追击": {
-                            "template": "战斗/追击.png"
+                            "expected": [
+                                "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ]
                         }
                     }
                 },
@@ -4718,7 +4838,15 @@
                     "name": "节点4",
                     "pipeline_override": {
                         "节点4追击": {
-                            "template": "战斗/追击.png"
+                            "expected": [
+                                "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ]
                         }
                     }
                 },
@@ -4726,7 +4854,15 @@
                     "name": "节点5",
                     "pipeline_override": {
                         "节点5追击": {
-                            "template": "战斗/追击.png"
+                            "expected": [
+                                "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ]
                         }
                     }
                 },
@@ -4734,7 +4870,15 @@
                     "name": "节点6",
                     "pipeline_override": {
                         "节点6追击": {
-                            "template": "战斗/追击.png"
+                            "expected": [
+                                "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ]
                         }
                     }
                 }
@@ -4755,7 +4899,9 @@
                     "name": "节点1",
                     "pipeline_override": {
                         "节点1追击": {
-                            "template": "战斗/追击.png",
+                            "expected": [
+                                "追击"
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4777,7 +4923,9 @@
                     "name": "节点2",
                     "pipeline_override": {
                         "节点2追击": {
-                            "template": "战斗/追击.png",
+                            "expected": [
+                                "追击"
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4799,7 +4947,9 @@
                     "name": "节点3",
                     "pipeline_override": {
                         "节点3追击": {
-                            "template": "战斗/追击.png",
+                            "expected": [
+                                "追击"
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4821,7 +4971,9 @@
                     "name": "节点4",
                     "pipeline_override": {
                         "节点4追击": {
-                            "template": "战斗/追击.png",
+                            "expected": [
+                                "追击"
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4843,7 +4995,9 @@
                     "name": "节点5",
                     "pipeline_override": {
                         "节点5追击": {
-                            "template": "战斗/追击.png",
+                            "expected": [
+                                "追击"
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4865,7 +5019,9 @@
                     "name": "节点6",
                     "pipeline_override": {
                         "节点6追击": {
-                            "template": "战斗/追击.png",
+                            "expected": [
+                                "追击"
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",

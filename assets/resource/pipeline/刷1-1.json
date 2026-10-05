@@ -478,9 +478,23 @@
         ]
     },
     "狗粮追击": {
-        "recognition": "TemplateMatch",
-        "template": "战斗/追击.png",
-        "action": "Click",
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "追击"
+                ],
+                "roi": [
+                    396,
+                    446,
+                    91,
+                    44
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
         "timeout": 90000,
         "next": [
             "[JumpBack]重新连接",
