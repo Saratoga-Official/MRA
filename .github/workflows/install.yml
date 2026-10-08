@@ -108,7 +108,7 @@ jobs:
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
-          tag: 'v5.14.0'
+          tag: 'v5.14.2'
           out-file-path: "deps"
           extract: true
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -141,7 +141,7 @@ jobs:
         with:
           repository: MistEO/MXU
           fileName: "MXU-${{ matrix.os }}-${{ matrix.arch }}*"
-          tag: 'v2.6.1'
+          tag: 'v2.7.1'
           out-file-path: "MXU"
           extract: true
           token: ${{ secrets.GITHUB_TOKEN }}
