@@ -292,16 +292,31 @@
         },
         "post_wait_freezes": 0,
         "next": [
+            "演习重置识别器",
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "开始演习"
+        }
+    },
+    "演习重置识别器": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
+        "post_wait_freezes": 0,
+        "next": [
             "[JumpBack]重新连接",
             "[JumpBack]演习开始战斗",
             "[JumpBack]演习阵型",
             "[JumpBack]节点1追击",
             "演习点击继续",
             "[JumpBack]处于战斗中"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "开始演习"
-        }
+        ]
     },
     "演习开始战斗": {
         "recognition": {
@@ -683,13 +698,28 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 0,
+        "next": [
+            "演习重置识别器1"
+        ]
+    },
+    "演习重置识别器1": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]演习开始战斗",
             "[JumpBack]演习阵型",
-            "演习点击继续1",
             "[JumpBack]节点1追击",
+            "演习点击继续",
             "[JumpBack]处于战斗中"
         ]
     },
@@ -810,13 +840,28 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 0,
+        "next": [
+            "演习重置识别器2"
+        ]
+    },
+    "演习重置识别器2": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]演习开始战斗",
             "[JumpBack]演习阵型",
-            "演习点击继续2",
             "[JumpBack]节点1追击",
+            "演习点击继续",
             "[JumpBack]处于战斗中"
         ]
     },
@@ -937,13 +982,28 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 0,
+        "next": [
+            "演习重置识别器3"
+        ]
+    },
+    "演习重置识别器3": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]演习开始战斗",
             "[JumpBack]演习阵型",
-            "演习点击继续3",
             "[JumpBack]节点1追击",
+            "演习点击继续",
             "[JumpBack]处于战斗中"
         ]
     },
@@ -1087,13 +1147,28 @@
         "action": {
             "type": "Click"
         },
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 0,
+        "next": [
+            "演习重置识别器4"
+        ]
+    },
+    "演习重置识别器4": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
+        "post_wait_freezes": 0,
         "next": [
             "[JumpBack]重新连接",
             "[JumpBack]演习开始战斗",
             "[JumpBack]演习阵型",
-            "演习点击继续4",
             "[JumpBack]节点1追击",
+            "演习点击继续",
             "[JumpBack]处于战斗中"
         ]
     },

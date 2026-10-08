@@ -1176,6 +1176,15 @@
                 "template": "战斗/开始出征.png"
             }
         },
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
         "inverse": true,
         "post_wait_freezes": 0,
         "pre_delay": 0,
@@ -1585,12 +1594,11 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "节点1点击继续",
-                "target_offset": [
-                    -150,
-                    30,
-                    0,
-                    0
+                "target": [
+                    957,
+                    677,
+                    322,
+                    42
                 ]
             }
         },
@@ -1863,6 +1871,15 @@
         }
     },
     "进入战斗节点2": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
         "post_wait_freezes": 0,
         "pre_delay": 0,
         "post_delay": 0,
@@ -2272,12 +2289,11 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "节点2点击继续",
-                "target_offset": [
-                    -150,
-                    30,
-                    0,
-                    0
+                "target": [
+                    957,
+                    677,
+                    322,
+                    42
                 ]
             }
         },
@@ -2479,6 +2495,15 @@
         }
     },
     "进入战斗节点3": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
         "post_wait_freezes": 0,
         "pre_delay": 0,
         "post_delay": 0,
@@ -2888,12 +2913,11 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "节点3点击继续",
-                "target_offset": [
-                    -150,
-                    30,
-                    0,
-                    0
+                "target": [
+                    957,
+                    677,
+                    322,
+                    42
                 ]
             }
         },
@@ -3095,6 +3119,15 @@
         }
     },
     "进入战斗节点4": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
         "post_wait_freezes": 0,
         "pre_delay": 0,
         "post_delay": 0,
@@ -3504,12 +3537,11 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "节点4点击继续",
-                "target_offset": [
-                    -150,
-                    30,
-                    0,
-                    0
+                "target": [
+                    957,
+                    677,
+                    322,
+                    42
                 ]
             }
         },
@@ -3711,6 +3743,15 @@
         }
     },
     "进入战斗节点5": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
         "post_wait_freezes": 0,
         "pre_delay": 0,
         "post_delay": 0,
@@ -4118,12 +4159,11 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "节点5点击继续",
-                "target_offset": [
-                    -150,
-                    30,
-                    0,
-                    0
+                "target": [
+                    957,
+                    677,
+                    322,
+                    42
                 ]
             }
         },
@@ -4181,6 +4221,15 @@
         }
     },
     "进入战斗节点6": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
         "post_wait_freezes": 0,
         "pre_delay": 0,
         "post_delay": 0,
@@ -4314,12 +4363,11 @@
         "action": {
             "type": "Click",
             "param": {
-                "target": "节点6点击继续",
-                "target_offset": [
-                    -150,
-                    30,
-                    0,
-                    0
+                "target": [
+                    957,
+                    677,
+                    322,
+                    42
                 ]
             }
         },

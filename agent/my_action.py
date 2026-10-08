@@ -83,3 +83,79 @@ class ReportUpgradeDone(CustomAction):
         等级 = 取识别detail(reco).get("技能等级", "未识别")
         logger.info(f"{st.当前船名}：技能升级完成（当前等级 {等级}）")
         return True
+# ========== 动作4：重置hit次数 ==========
+@AgentServer.custom_action("clear_node_hit")
+class ClearNodeHit(CustomAction):
+    def run(self, context: Context, argv: CustomAction.RunArg) -> bool:
+        # 1. 读取 custom_action_param（JSON 字符串）
+        param_str = argv.custom_action_param
+        
+        # 2. 解析为字典；若为空则视为空字典
+        if param_str:
+            try:
+                param = json.loads(param_str)
+            except json.JSONDecodeError:
+                return True
+        else:
+            param = {}
+        
+        target_node = param.get("target_node")
+        if not target_node:
+            return True
+        
+        # 3. 重置 hit 计数
+        success = context.clear_hit_count(target_node)
+        
+        return True
+# ========== 动作5：累加 dynamic_ocr 识别到的数值并输出到 UI ==========
+@AgentServer.custom_action("accumulate_value")
+class AccumulateValue(CustomAction):
+    """
+    读取指定识别节点的 detail.values，累加后输出到 UI。
+
+    custom_action_param:
+    {
+        "reco_node": "读动态属性",     # 必填，要调用的识别节点名（该节点用 dynamic_ocr）
+        "mode": "each",                # "each" 每个 key 单独累加；"sum" 所有 key 相加成一个总和
+        "reset": false,                # true 时先清零再累加
+        "prefix": "累计"               # 输出前缀
+    }
+    """
+
+    def run(self, context: Context, argv: CustomAction.RunArg) -> bool:
+        param = argv.param or {}
+        reco_node = param.get("reco_node")
+        mode = param.get("mode", "each")
+        reset = param.get("reset", False)
+        prefix = param.get("prefix", "累计")
+
+        if not reco_node:
+            logger.error("[AccumulateValue] 请在 custom_action_param 中指定 'reco_node'")
+            return True
+
+        if reset:
+            st.重置累加()
+            logger.info(f"{prefix}：已清零")
+
+        # 主动运行识别节点，取 detail
+        reco = context.run_recognition(
+            reco_node,
+            context.tasker.controller.cached_image,
+        )
+        detail = 取识别detail(reco)
+        values = detail.get("values", {}) if isinstance(detail, dict) else {}
+
+        if not values:
+            logger.warning(f"{prefix}：本次没有可累加的数值（节点 {reco_node}）")
+            return True
+
+        if mode == "sum":
+            total = sum(values.values())
+            st.累加("总和", total)
+            logger.info(f"{prefix}总和：{st.累加值['总和']}")
+        else:
+            for key, val in values.items():
+                st.累加(key, val)
+                logger.info(f"{prefix} {key}：{st.累加值[key]}")
+
+        return True

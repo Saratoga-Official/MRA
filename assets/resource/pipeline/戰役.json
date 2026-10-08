@@ -311,16 +311,31 @@
         "post_wait_freezes": 0,
         "post_delay": 1000,
         "next": [
+            "战役重置识别器"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "战役开始"
+        }
+    },
+    "战役重置识别器": {
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "clear_node_hit",
+                "custom_action_param": {
+                    "target_node": "识别战斗优劣"
+                }
+            }
+        },
+        "post_wait_freezes": 0,
+        "next": [
             "[JumpBack]重新连接",
             "[JumpBack]战役开始战斗",
             "[JumpBack]战役阵型",
             "战役点击继续",
             "[JumpBack]节点1追击",
             "[JumpBack]处于战斗中"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "战役开始"
-        }
+        ]
     },
     "战役开始战斗": {
         "recognition": {

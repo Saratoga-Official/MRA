@@ -4902,6 +4902,12 @@
                             "expected": [
                                 "追击"
                             ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4925,6 +4931,12 @@
                         "节点2追击": {
                             "expected": [
                                 "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
                             ],
                             "action": "DoNothing",
                             "next": [
@@ -4950,6 +4962,12 @@
                             "expected": [
                                 "追击"
                             ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -4973,6 +4991,12 @@
                         "节点4追击": {
                             "expected": [
                                 "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
                             ],
                             "action": "DoNothing",
                             "next": [
@@ -4998,6 +5022,12 @@
                             "expected": [
                                 "追击"
                             ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
+                            ],
                             "action": "DoNothing",
                             "next": [
                                 "[JumpBack]重新连接",
@@ -5021,6 +5051,12 @@
                         "节点6追击": {
                             "expected": [
                                 "追击"
+                            ],
+                            "roi": [
+                                396,
+                                446,
+                                91,
+                                44
                             ],
                             "action": "DoNothing",
                             "next": [

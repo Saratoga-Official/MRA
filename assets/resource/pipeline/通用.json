@@ -913,7 +913,41 @@
                     120
                 ]
             }
-        }
+        },
+        "next": [
+            "识别战斗优劣",
+            "无动作结束"
+        ]
+    },
+    "识别战斗优劣": {
+        "recognition": "Custom",
+        "custom_recognition": "dynamic_ocr",
+        "custom_recognition_param": {
+            "base_node": "通用OCR识别",
+            "items": [
+                {
+                    "key": "识别战斗优劣",
+                    "roi": [
+                        105,
+                        23,
+                        84,
+                        33
+                    ],
+                    "return_text": "已进入战斗："
+                }
+            ]
+        },
+        "max_hit": 1
+    },
+    "通用OCR识别": {
+        "recognition": "OCR",
+        "expected": [],
+        "roi": [
+            0,
+            0,
+            1,
+            1
+        ]
     },
     "大退检测": {
         "recognition": {

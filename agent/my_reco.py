@@ -4,6 +4,8 @@ from maa.custom_recognition import CustomRecognition
 from maa.context import Context
 import enhance_state as st
 from logger import logger
+import json
+import re
 def 记录识别(名称: str, detail) -> None:
     """把自定义识别结果打进文件日志（debug 级，不刷 UI），方便排查。"""
     logger.debug(f"[识别] {名称}: {detail}")
@@ -206,4 +208,143 @@ class ReadSkillLevel(CustomRecognition):
         return CustomRecognition.AnalyzeResult(
             box=[0, 0, 1, 1],
             detail={"技能等级": 等级},
+        )
+# ========== 识别6：通用动态识别 —— 支持多区域、单行输出、数字校验 ==========
+@AgentServer.custom_recognition("dynamic_ocr")
+class DynamicOCR(CustomRecognition):
+    """
+    custom_recognition_param:
+    {
+        "base_node": "读强化格子",
+        "line_format": "掉落物品：<yellow>{物品名}</yellow> 数量：<cyan>{数量}</cyan>",
+        "items": [
+            {
+                "key": "物品名",
+                "roi": [x, y, w, h],
+                "digit_mode": "none",       # none / strict / loose
+                "base_node": "读强化格子",    # 可选
+                "expected": ["..."],          # 可选
+                "threshold": 0.8,             # 可选
+                "recognition": "OCR",         # 可选
+                "return_text": "{key}："      # 无 line_format 时生效
+            },
+            {
+                "key": "数量",
+                "roi": [x, y, w, h],
+                "digit_mode": "strict",
+                "default_value": 0            # 仅 loose 模式用
+            }
+        ]
+    }
+
+    digit_mode:
+    - "none"  ：不检查数字，命中即有效（默认）
+    - "strict"：整段必须是纯阿拉伯数字（无负号、无空格、无小数点、无符号）
+    - "loose" ：提取第一个数字；没数字用 default_value（默认 0），命中即有效
+
+    detail 返回：
+    {
+        "texts":  {"物品名": "战利品", "数量": "5"},
+        "values": {"数量": 5},
+        "valid":  {"物品名": true, "数量": true}
+    }
+    """
+
+    def analyze(self, context: Context, argv: CustomRecognition.AnalyzeArg):
+        param_dict = json.loads(argv.custom_recognition_param) if argv.custom_recognition_param else {}
+        default_base = param_dict.get("base_node", "读强化格子")
+        items = param_dict.get("items", [])
+        line_format = param_dict.get("line_format", "")
+
+        if not items:
+            logger.warning("dynamic_ocr: 未提供识别区域 items")
+            return CustomRecognition.AnalyzeResult(
+                box=None,
+                detail={"texts": {}, "values": {}, "valid": {}},
+            )
+
+        文本结果 = {}
+        数值结果 = {}
+        有效 = {}
+
+        for i, item in enumerate(items):
+            key = item.get("key", f"区域{i + 1}")
+            roi = item.get("roi")
+            base_node = item.get("base_node", default_base)
+            default_value = item.get("default_value", 0)
+            digit_mode = item.get("digit_mode", "none")
+
+            if not roi:
+                文本结果[key] = "<未提供ROI>"
+                有效[key] = False
+                continue
+
+            override = {"roi": roi}
+            if "expected" in item:
+                override["expected"] = item["expected"]
+            if "threshold" in item:
+                override["threshold"] = item["threshold"]
+            if "recognition" in item:
+                override["recognition"] = item["recognition"]
+
+            reco = context.run_recognition(
+                base_node,
+                argv.image,
+                pipeline_override={base_node: override},
+            )
+
+            if reco is not None and reco.hit:
+                文字 = str(reco.best_result.text).strip()
+                文本结果[key] = 文字
+
+                if digit_mode == "strict":
+                    if re.fullmatch(r"[0-9]+", 文字):
+                        数值结果[key] = int(文字)
+                        有效[key] = True
+                    else:
+                        有效[key] = False
+
+                elif digit_mode == "loose":
+                    数字匹配 = re.search(r"[0-9]+", 文字.replace(",", ""))
+                    if 数字匹配:
+                        数值结果[key] = int(数字匹配.group(0))
+                    else:
+                        数值结果[key] = default_value
+                    有效[key] = True
+
+                else:  # none
+                    有效[key] = True
+                    数字匹配 = re.search(r"[0-9]+", 文字.replace(",", ""))
+                    if 数字匹配:
+                        数值结果[key] = int(数字匹配.group(0))
+
+            else:
+                文本结果[key] = "<未命中>"
+                有效[key] = False
+
+        # ---- 输出到 UI ----
+        if line_format:
+            引用key = re.findall(r"\{([^{}]+)\}", line_format)
+            if not 引用key or all(有效.get(k, False) for k in 引用key):
+                行 = line_format
+                for k in 引用key:
+                    行 = 行.replace("{" + k + "}", str(文本结果.get(k, "")))
+                # 关键：用 colors=True 让 loguru 解析颜色标记
+                logger.opt(colors=True).info(行)
+        else:
+            for i, item in enumerate(items):
+                key = item.get("key", f"区域{i + 1}")
+                if 有效.get(key, False):
+                    return_text = item.get("return_text", "{key}：").replace("{key}", key)
+                    logger.info(f"{return_text}{文本结果[key]}")
+
+        记录识别("dynamic_ocr", {"texts": 文本结果, "values": 数值结果, "valid": 有效})
+
+        return CustomRecognition.AnalyzeResult(
+            box=[0, 0, 1, 1],
+            detail={
+                "texts": 文本结果,
+                "values": 数值结果,
+                "valid": 有效,
+            },
         )
