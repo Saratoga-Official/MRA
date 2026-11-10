@@ -2638,7 +2638,8 @@
         "recognition": "OCR",
         "expected": [
             "Lv\\.9",
-            "Lv\\.10"
+            "Lv\\.10",
+            "Max"
         ],
         "inverse": true,
         "roi": [
