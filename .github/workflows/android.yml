@@ -56,7 +56,7 @@ env:
   # agent 内核（Aliothmoon/MaaAgentCoreAndroid 的 release tag），不跟子模块脚本里的默认值走。
   # Android 上 agent 的 Python 绑定与 MaaFramework 原生库都来自这个内核，APK 里 client 侧的
   # MaaFramework 必须与它同版本，所以 MAAFW_TAG 由它的 maafw 段反推，不单独配。
-  AGENT_CORE_TAG: "3.13.15-maafw5.14.0"
+  AGENT_CORE_TAG: "3.13.15-maafw5.16.1"
 
 jobs:
   meta:
