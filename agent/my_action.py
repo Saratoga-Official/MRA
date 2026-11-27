@@ -111,14 +111,15 @@ class ClearNodeHit(CustomAction):
 @AgentServer.custom_action("accumulate_value")
 class AccumulateValue(CustomAction):
     """
-    读取指定识别节点的 detail.values，累加后输出到 UI。
+    读取指定识别节点的 detail.values，按需过滤后累加，输出到 UI。
 
     custom_action_param:
     {
-        "reco_node": "读动态属性",     # 必填，要调用的识别节点名（该节点用 dynamic_ocr）
-        "mode": "each",                # "each" 每个 key 单独累加；"sum" 所有 key 相加成一个总和
-        "reset": false,                # true 时先清零再累加
-        "prefix": "累计"               # 输出前缀
+        "reco_node": "读掉落物",         # 必填，要调用的识别节点名（该节点用 dynamic_ocr）
+        "mode": "each",                  # "each" 每个 key 单独累加；"sum" 所有 key 相加成一个总和
+        "reset": false,                  # true 时先清零再累加
+        "prefix": "累计",                # 输出前缀
+        "only_keys": ["A_数量", "C_数量"] # 可选，只累加这些 key（精确匹配）；不传则累加全部
     }
     """
 
@@ -128,6 +129,7 @@ class AccumulateValue(CustomAction):
         mode = param.get("mode", "each")
         reset = param.get("reset", False)
         prefix = param.get("prefix", "累计")
+        only_keys = param.get("only_keys")
 
         if not reco_node:
             logger.error("[AccumulateValue] 请在 custom_action_param 中指定 'reco_node'")
@@ -137,7 +139,6 @@ class AccumulateValue(CustomAction):
             st.重置累加()
             logger.info(f"{prefix}：已清零")
 
-        # 主动运行识别节点，取 detail
         reco = context.run_recognition(
             reco_node,
             context.tasker.controller.cached_image,
@@ -147,6 +148,15 @@ class AccumulateValue(CustomAction):
 
         if not values:
             logger.warning(f"{prefix}：本次没有可累加的数值（节点 {reco_node}）")
+            return True
+
+        # 按 key 名精确过滤
+        if only_keys:
+            允许 = set(only_keys)
+            values = {k: v for k, v in values.items() if k in 允许}
+
+        if not values:
+            logger.warning(f"{prefix}：没有匹配的数值")
             return True
 
         if mode == "sum":

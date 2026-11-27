@@ -216,37 +216,33 @@ class DynamicOCR(CustomRecognition):
     custom_recognition_param:
     {
         "base_node": "读强化格子",
-        "line_format": "掉落物品：<yellow>{物品名}</yellow> 数量：<cyan>{数量}</cyan>",
+        "line_formats": [
+            "掉落物A：<yellow>{A_物品名}</yellow> 数量：<cyan>{A_数量}</cyan>",
+            "掉落物C：<yellow>{C_物品名}</yellow> 数量：<cyan>{C_数量}</cyan>"
+        ],
         "items": [
-            {
-                "key": "物品名",
-                "roi": [x, y, w, h],
-                "digit_mode": "none",       # none / strict / loose
-                "base_node": "读强化格子",    # 可选
-                "expected": ["..."],          # 可选
-                "threshold": 0.8,             # 可选
-                "recognition": "OCR",         # 可选
-                "return_text": "{key}："      # 无 line_format 时生效
-            },
-            {
-                "key": "数量",
-                "roi": [x, y, w, h],
-                "digit_mode": "strict",
-                "default_value": 0            # 仅 loose 模式用
-            }
+            {"key": "A_物品名", "roi": [x, y, w, h], "digit_mode": "none"},
+            {"key": "A_数量",   "roi": [x, y, w, h], "digit_mode": "strict"},
+            {"key": "C_物品名", "roi": [x, y, w, h], "digit_mode": "none"},
+            {"key": "C_数量",   "roi": [x, y, w, h], "digit_mode": "strict"}
         ]
     }
 
-    digit_mode:
-    - "none"  ：不检查数字，命中即有效（默认）
-    - "strict"：整段必须是纯阿拉伯数字（无负号、无空格、无小数点、无符号）
-    - "loose" ：提取第一个数字；没数字用 default_value（默认 0），命中即有效
+    line_formats:
+    - 数组，每个元素是一条输出模板。
+    - 每条模板独立判断：它引用的所有 {key} 都 valid 才输出这一行。
+    - 支持 loguru 颜色标记，用 logger.opt(colors=True) 渲染。
+    - 为空数组或不写时，退化为逐项输出 valid 的 item。
+
+    items:
+    - key 必须全局唯一，建议用前缀区分不同目标（A_、C_ 等）。
+    - digit_mode: none / strict / loose。
 
     detail 返回：
     {
-        "texts":  {"物品名": "战利品", "数量": "5"},
-        "values": {"数量": 5},
-        "valid":  {"物品名": true, "数量": true}
+        "texts":  {"A_物品名": "金币", "A_数量": "5", "C_物品名": "经验", "C_数量": "10"},
+        "values": {"A_数量": 5, "C_数量": 10},
+        "valid":  {"A_物品名": true, "A_数量": true, "C_物品名": true, "C_数量": true}
     }
     """
 
@@ -254,7 +250,9 @@ class DynamicOCR(CustomRecognition):
         param_dict = json.loads(argv.custom_recognition_param) if argv.custom_recognition_param else {}
         default_base = param_dict.get("base_node", "读强化格子")
         items = param_dict.get("items", [])
-        line_format = param_dict.get("line_format", "")
+        line_formats = param_dict.get("line_formats", [])
+        save_keys = param_dict.get("save_keys", [])
+        silent = param_dict.get("silent", False)
 
         if not items:
             logger.warning("dynamic_ocr: 未提供识别区域 items")
@@ -286,6 +284,31 @@ class DynamicOCR(CustomRecognition):
                 override["threshold"] = item["threshold"]
             if "recognition" in item:
                 override["recognition"] = item["recognition"]
+
+            # ---- 缓存优先 ----
+            from_cache = item.get("from_cache", False)
+            cache_key = item.get("cache_key", key)
+            if from_cache:
+                缓存值 = st.取识别缓存(cache_key)
+                if 缓存值:
+                    文字 = 缓存值
+                    文本结果[key] = 文字
+                    if digit_mode == "strict":
+                        if re.fullmatch(r"[0-9]+", 文字):
+                            数值结果[key] = int(文字)
+                            有效[key] = True
+                        else:
+                            有效[key] = False
+                    elif digit_mode == "loose":
+                        数字匹配 = re.search(r"[0-9]+", 文字.replace(",", ""))
+                        数值结果[key] = int(数字匹配.group(0)) if 数字匹配 else default_value
+                        有效[key] = True
+                    else:
+                        有效[key] = True
+                        数字匹配 = re.search(r"[0-9]+", 文字.replace(",", ""))
+                        if 数字匹配:
+                            数值结果[key] = int(数字匹配.group(0))
+                    continue
 
             reco = context.run_recognition(
                 base_node,
@@ -323,22 +346,31 @@ class DynamicOCR(CustomRecognition):
                 有效[key] = False
 
         # ---- 输出到 UI ----
-        if line_format:
-            引用key = re.findall(r"\{([^{}]+)\}", line_format)
-            if not 引用key or all(有效.get(k, False) for k in 引用key):
-                行 = line_format
-                for k in 引用key:
-                    行 = 行.replace("{" + k + "}", str(文本结果.get(k, "")))
-                # 关键：用 colors=True 让 loguru 解析颜色标记
-                logger.opt(colors=True).info(行)
-        else:
-            for i, item in enumerate(items):
-                key = item.get("key", f"区域{i + 1}")
-                if 有效.get(key, False):
-                    return_text = item.get("return_text", "{key}：").replace("{key}", key)
-                    logger.info(f"{return_text}{文本结果[key]}")
+        if not silent:
+            if line_formats:
+                for fmt in line_formats:
+                    引用key = re.findall(r"\{([^{}]+)\}", fmt)
+                    # 引用到的 key 全部 valid 才输出这一行
+                    if not 引用key or all(有效.get(k, False) for k in 引用key):
+                        行 = fmt
+                        for k in 引用key:
+                            行 = 行.replace("{" + k + "}", str(文本结果.get(k, "")))
+                        logger.opt(colors=True).info(行)
+                    # 否则这一行不输出，其他行不受影响
+            else:
+                for i, item in enumerate(items):
+                    key = item.get("key", f"区域{i + 1}")
+                    if 有效.get(key, False):
+                        return_text = item.get("return_text", "{key}：").replace("{key}", key)
+                        logger.info(f"{return_text}{文本结果[key]}")
 
         记录识别("dynamic_ocr", {"texts": 文本结果, "values": 数值结果, "valid": 有效})
+
+        # ---- 把指定 key 写入缓存，供后续 from_cache 使用 ----
+        if save_keys:
+            for k in save_keys:
+                if 有效.get(k, False) and k in 文本结果:
+                    st.存识别缓存(k, 文本结果[k])
 
         return CustomRecognition.AnalyzeResult(
             box=[0, 0, 1, 1],

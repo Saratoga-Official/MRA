@@ -10,15 +10,15 @@
 
 
 def 重置():
-    """开始一次完整强化任务前调用，清空强化相关的记忆。
+    """开始一次完整任务前调用，清空相关的记忆。
 
-    注意：不清 累加值。累加是跨任务统计，不跟着每轮任务清零。
-    需要清累加时请显式调用 重置累加()。
     """
     已耗尽属性.clear()
     当前船可强化属性.clear()
     global 当前船名
     当前船名 = ""
+    累加值.clear()
+    识别缓存.clear()
 
 
 def 重置累加():
@@ -30,3 +30,18 @@ def 累加(key: str, value: float) -> float:
     """把 value 加到 key 上，返回累加后的值。"""
     累加值[key] = 累加值.get(key, 0) + value
     return 累加值[key]
+
+# 识别结果缓存：{key: 文本}，供 dynamic_ocr 的 from_cache 读取
+识别缓存 = {}
+
+
+def 重置缓存():
+    识别缓存.clear()
+
+
+def 存识别缓存(key: str, value: str) -> None:
+    识别缓存[key] = value
+
+
+def 取识别缓存(key: str, default: str = "") -> str:
+    return 识别缓存.get(key, default)
