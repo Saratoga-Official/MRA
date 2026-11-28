@@ -6,6 +6,10 @@ on:
       tag:
         default: ''
         required: false
+      android:
+        description: '仅上传 Android 包（跳过桌面包）'
+        type: boolean
+        default: false
 #   release:
 #     types: [released]
 
@@ -15,7 +19,7 @@ jobs:
     # Mirror酱为第三方分发服务，新项目默认关闭
     # 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
     # https://mirrorchyan.com/
-    if: ${{ github.repository_owner == 'Saratoga-Official' }}
+    if: ${{ github.repository_owner == 'Saratoga-Official' && inputs.android != true && github.event.inputs.android != 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -42,7 +46,7 @@ jobs:
     # Mirror酱为第三方分发服务，新项目默认关闭
     # 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
     # https://mirrorchyan.com/
-    if: ${{ github.repository_owner == 'Saratoga-Official' }}
+    if: ${{ github.repository_owner == 'Saratoga-Official' && inputs.android != true && github.event.inputs.android != 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -64,3 +68,25 @@ jobs:
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           os: ${{ matrix.os }}
           arch: ${{ matrix.arch }}
+
+  mirrorchyan_android:
+    runs-on: ubuntu-latest
+    # Mirror酱为第三方分发服务，新项目默认关闭
+    # 若有需要请联系 Mirror酱 开通，直接自行开启是无法使用的
+    # https://mirrorchyan.com/
+    if: ${{ github.repository_owner == 'Saratoga-Official' && (inputs.android == true || github.event.inputs.android == 'true') }}
+    steps:
+      - id: uploading
+        uses: MirrorChyan/uploading-action@v1
+        with:
+          filetype: latest-release
+          filename: 'MRA-android-universal-MFWAPP-*.apk'
+          mirrorchyan_rid: MaaJR
+          tag: ${{ inputs.tag }}
+
+          owner: Saratoga-Official
+          repo: MRA
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+          os: android
+          arch: any
