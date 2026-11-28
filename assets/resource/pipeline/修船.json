@@ -25,6 +25,12 @@
     "快速修理": {
         "recognition": "TemplateMatch",
         "template": "通用/快速修理.png",
+        "roi": [
+            568,
+            102,
+            85,
+            41
+        ],
         "action": "Click",
         "target": [
             591,
@@ -131,8 +137,14 @@
         ]
     },
     "全部入浴": {
-        "recognition": "TemplateMatch",
-        "template": "通用/全部入浴.png",
+        "recognition": "OCR",
+        "expected": "全部入浴",
+        "roi": [
+            817,
+            98,
+            169,
+            48
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]重新连接",
