@@ -4,7 +4,7 @@ name: android
 # 替换原先由 install.yml 交叉打包的 android 产物。参考 MAA1999/M9A 的写法。
 #
 # 日常 debug：push / PR 自动触发。手动 dispatch 可选 debug/release 与 agent 内核 tag。
-# 打 v* tag 时出 release 包并附到对应 Release。
+# 打 v* tag 时出 release 包、附到对应 Release 并触发 Mirror酱上传。
 
 on:
   push:
@@ -51,6 +51,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 env:
   # agent 内核（Aliothmoon/MaaAgentCoreAndroid 的 release tag），不跟子模块脚本里的默认值走。
@@ -239,3 +240,10 @@ jobs:
           tag_name: ${{ needs.meta.outputs.tag }}
           draft: false
           prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
+      - name: Trigger MirrorChyanUploading
+        if: ${{ github.repository_owner == 'Saratoga-Official' }}
+        shell: bash
+        run: |
+          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release.yml -f tag=${{ needs.meta.outputs.tag }} -f android=true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
